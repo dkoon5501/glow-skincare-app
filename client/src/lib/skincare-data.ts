@@ -296,8 +296,14 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "normal", "sensitive", "dehydration", "budget"],
     whyRecommended:
       "Restores and maintains the skin barrier without stripping moisture. Non-comedogenic and fragrance-free. Dr. Alexis Stephens recommends it as her go-to hydrating cleanser for dry and normal skin.",
-    source: "Dr. Alexis Stephens (YouTube)",
+    source: "Dr. Alexis Stephens, Dr. Daniel Sugai, Dr. Dray & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=OeNJbShiOOw",
+    sourceLinks: [
+      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=VxG9rE4seIs" },
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
+      { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
+    ],
     manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-facial-cleanser",
     amazonUrl: "https://www.amazon.com/dp/B01MSSDEPK?tag=glowskincar0c-20",
   },
@@ -311,8 +317,12 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "combination", "acne", "normal", "budget"],
     whyRecommended:
       "Removes excess oil and dirt without disrupting the skin barrier. Dr. Alexis Stephens recommends the foaming formula for oily and combination skin types who want a deeper cleanse while keeping ceramides intact.",
-    source: "Dr. Alexis Stephens (YouTube)",
+    source: "Dr. Daniel Sugai & Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=OeNJbShiOOw",
+    sourceLinks: [
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
+      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
+    ],
     manufacturerUrl: "https://www.cerave.com/skincare/cleansers/foaming-facial-cleanser",
     amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=glowskincar0c-20",
   },
@@ -326,13 +336,14 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "oily", "combination", "acne", "redness", "rosacea"],
     whyRecommended:
       "Clinically tested on sensitive skin with niacinamide to control oil and calm inflammation. Dr. Muneeb Shah, Dr. Daniel Sugai, and Dr. Alexis Stephens all recommend this cleanser for oily and sensitive skin types.",
-    source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Muneeb Shah, Dr. Daniel Sugai & Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=6JjijIeEsZM",
     sourceLinks: [
-      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=lgR4ZOXdRko" },
+      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=lgR4ZOXdRko" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
+      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
     ],
-    manufacturerUrl:
+        manufacturerUrl:
       "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-purifying-foaming-facial-cleanser-tolerianefoamingfacialwash.html",
     // No Amazon ASIN available for this specific SKU in the spec
   },
@@ -346,9 +357,9 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "combination", "normal", "sensitive", "budget"],
     whyRecommended:
       "A gel cleanser that turns into a low-lather foam — ideal for oily to combination skin. Dr. Daniel Sugai recommends the Cetaphil Daily Facial Cleanser for its gentle yet effective cleansing for oily and combination skin types.",
-    source: "Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Daniel Sugai & Dr. Sam Ellis (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=VxG9rE4seIs",
-    manufacturerUrl: "https://www.cetaphil.com/us/cleansers/daily-facial-cleanser/302993927985.html",
+        manufacturerUrl: "https://www.cetaphil.com/us/cleansers/daily-facial-cleanser/302993927985.html",
     // No ASIN listed in spec for this product
   },
   {
@@ -615,13 +626,14 @@ export const productDatabase: Product[] = [
     bestFor: ["acne", "oily", "pores", "texture", "breakouts", "midrange"],
     whyRecommended:
       "Dr. Azadeh Shirazi and Dr. Daniel Sugai both recommend this iconic chemical exfoliant. It works inside the pore to unclog congestion, smooth texture, and reduce breakouts — consistently ranked as one of the most effective OTC BHA exfoliants.",
-    source: "Dr. Azadeh Shirazi & Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Azadeh Shirazi, Dr. Daniel Sugai & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=3-MoLqxNFtY",
     sourceLinks: [
       { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=YJxARaLMSpc" },
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=4By-S9xY4h8" },
     ],
-    manufacturerUrl:
+        manufacturerUrl:
       "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
     amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
   },
@@ -635,8 +647,12 @@ export const productDatabase: Product[] = [
     bestFor: ["texture", "dullness", "hyperpigmentation", "budget", "oily"],
     whyRecommended:
       "Dr. Muneeb Shah and Dr. Dray both recommend The Ordinary Glycolic Acid Toner as the most affordable effective AHA exfoliant on the market. It smooths texture, brightens dullness, and fades hyperpigmentation at a price point available to everyone.",
-    source: "Dr. Muneeb Shah (YouTube)",
+    source: "Dr. Muneeb Shah & Dr. Azadeh Shirazi (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=IyxTc0iZ6V8",
+    sourceLinks: [
+      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
+      { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
+    ],
     manufacturerUrl: "https://theordinary.com",
     amazonUrl: "https://www.amazon.com/dp/B07FLQDTS9?tag=glowskincar0c-20",
   },
@@ -758,13 +774,14 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "normal", "combination", "redness", "rosacea", "midrange"],
     whyRecommended:
       "Dr. Alexis Stephens and Dr. Karen Locke both recommend this lightweight yet effective barrier repair moisturizer. Its prebiotic formula supports the skin microbiome. Dr. Locke featured it in her complete acne routines for dry skin.",
-    source: "Dr. Alexis Stephens & Dr. Karen Locke / The Budget Dermatologist (YouTube)",
+    source: "Dr. Alexis Stephens, Dr. Karen Locke & Dr. Whitney Bowe (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=APC16_cpYyk",
     sourceLinks: [
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=APC16_cpYyk" },
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
+      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
-    manufacturerUrl:
+        manufacturerUrl:
       "https://www.laroche-posay.us/our-products/face/face-moisturizer/toleriane-double-repair-face-moisturizer-tolerianedoublerepair.html",
     amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20",
   },
@@ -778,8 +795,13 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "dehydration", "sensitive", "budget", "normal"],
     whyRecommended:
       "A derm consensus pick. Dr. Daniel Sugai features it as the gold standard for dry and eczema-prone skin, praising its patented MVE delivery technology for 24-hour continuous hydration and barrier restoration.",
-    source: "Dr. Daniel Sugai & Dr. Whitney Bowe (YouTube)",
+    source: "Dr. Daniel Sugai, Dr. Whitney Bowe & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=SvB_EaH29wQ",
+    sourceLinks: [
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=SvB_EaH29wQ" },
+      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+      { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
+    ],
     manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/moisturizing-cream",
     amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
   },
@@ -824,13 +846,14 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "combination", "dehydration", "budget", "normal"],
     whyRecommended:
       "A multi-derm consensus pick. Dr. Muneeb Shah and Dr. Daniel Sugai have both recommended this oil-free gel moisturizer for oily and combination skin. Absorbs instantly, providing deep hydration without heaviness — ideal under sunscreen.",
-    source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Muneeb Shah, Dr. Daniel Sugai & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=XYr2_QlQiyA",
     sourceLinks: [
-      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
+      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=XYr2_QlQiyA" },
+      { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-    manufacturerUrl:
+        manufacturerUrl:
       "https://www.neutrogena.com/products/skincare/neutrogena-hydro-boost-water-gel-with-hyaluronic-acid/6811047",
     amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
   },
@@ -859,6 +882,10 @@ export const productDatabase: Product[] = [
       "Dr. Dray featured this K-beauty barrier cream for its impressive ceramide-rich formula designed to restore moisture to very dry and sensitive skin. Its 365-day barrier support positioning reflects its gentle, redness-reducing formula that works for year-round use.",
     source: "Dr. Dray & Dr. Whitney Bowe (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=oyJRxD9YQnE",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=oyJRxD9YQnE" },
+      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+    ],
   },
   {
     id: "vanicream-daily-facial-moisturizer",
@@ -915,13 +942,14 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "acne", "rosacea", "redness", "midrange"],
     whyRecommended:
       "Dr. Sam Ellis and Dr. Daniel Sugai both call this the #1 dermatologist-recommended sunscreen brand. Dr. Sugai gave it 4.5/5 stars in a dedicated video review, praising its niacinamide, sheer zinc formula, and no white cast.",
-    source: "Dr. Sam Ellis & Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Sam Ellis, Dr. Daniel Sugai & Dr. Muneeb Shah (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
     sourceLinks: [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
+      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
     ],
-    manufacturerUrl: "https://eltamd.com/products/uv-clear-broad-spectrum-spf-46",
+        manufacturerUrl: "https://eltamd.com/products/uv-clear-broad-spectrum-spf-46",
     amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20",
   },
   {
@@ -950,8 +978,12 @@ export const productDatabase: Product[] = [
     bestFor: ["aging", "mature", "premium", "hyperpigmentation", "high_sun", "forties", "fiftyplus"],
     whyRecommended:
       "Dr. Daniel Sugai recommends ISDIN Eryfotona Ageless for mature skin, calling it an outstanding choice for those 40+ due to its DNA-repair photolyase enzyme technology, anti-aging peptides, and natural tint that suits deeper skin tones.",
-    source: "Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Daniel Sugai & Dr. Joyce Park (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=hHfcGTA7A70",
+    sourceLinks: [
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
+      { name: "Dr. Joyce Park", url: "https://www.youtube.com/watch?v=Max9p5NGANI" },
+    ],
     manufacturerUrl: "https://www.isdin.com/us/p/ageless-34-fl-oz/3431",
     amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=glowskincar0c-20",
   },
@@ -981,8 +1013,12 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "combination", "normal", "midrange", "pores"],
     whyRecommended:
       "Dr. Sam Ellis recommends Supergoop! Unseen Sunscreen for its weightless, invisible, primer-like finish that works for oily and combination skin. It wears beautifully under makeup, has no white cast, and provides SPF 40 broad-spectrum protection — making it one of the most wearable daily sunscreens available.",
-    source: "Dr. Sam Ellis (YouTube)",
+    source: "Dr. Sam Ellis & Dr. Azadeh Shirazi (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
+    sourceLinks: [
+      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
+      { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=Rpx_pSJNP1A" },
+    ],
   },
   {
     id: "eucerin-radiant-tone-spf30",
@@ -1007,8 +1043,12 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "combination", "oily", "midrange"],
     whyRecommended:
       "Doctorly reviewed DRMTLGY Universal Tinted Moisturizer for its versatile hybrid formula that provides light coverage and SPF 46 protection. The universal tint adapts to a wide range of skin tones, making it a practical 3-in-1 SPF, moisturizer, and tint.",
-    source: "Doctorly (YouTube)",
+    source: "Doctorly & Dr. Neera Nathan (YouTube/Instagram)",
     sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
+    sourceLinks: [
+      { name: "Doctorly", url: "https://www.youtube.com/watch?v=WKN8W7Os9fY" },
+      { name: "Dr. Neera Nathan", url: "https://www.instagram.com/reel/DLI5IIpBQDf/" },
+    ],
     amazonUrl: "https://www.amazon.com/dp/B07NV8YLBT?tag=glowskincar0c-20",
   },
   {
@@ -1047,8 +1087,12 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "combination", "budget", "dullness"],
     whyRecommended:
       "Dr. Dray reviewed this K-beauty tinted SPF for its elegant texture, budget price, and brightening effect. Beauty of Joseon's SPF lineup is widely praised for its lightweight feel and glow-enhancing properties — making daily sunscreen application a pleasure rather than a chore.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Neera Nathan (YouTube/Instagram)",
     sourceUrl: "https://www.youtube.com/watch?v=YW05mDjpwnw",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=YW05mDjpwnw" },
+      { name: "Dr. Neera Nathan", url: "https://www.instagram.com/reel/DLI5IIpBQDf/" },
+    ],
   },
 
   // ─────────────────────────────────────────────
@@ -1064,13 +1108,9 @@ export const productDatabase: Product[] = [
     bestFor: ["acne", "breakouts", "retinoid_new", "retinoid_beginner", "budget", "pores", "texture", "hyperpigmentation"],
     whyRecommended:
       "The only FDA-approved OTC retinoid for acne. Dr. Dray is a long-time advocate, making it a top pick in her most-purchased skincare of 2025 list. Dr. Muneeb Shah also recommends adapalene as the best-evidenced OTC retinoid for acne. Apply at night only. Start 2–3× per week.",
-    source: "Dr. Dray & Dr. Muneeb Shah (YouTube)",
+    source: "Dr. Dray, Dr. Muneeb Shah & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
-    sourceLinks: [
-      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
-      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
-    ],
-    manufacturerUrl: "https://differin.com/shop/differin-gel/3029949.html",
+            manufacturerUrl: "https://differin.com/shop/differin-gel/3029949.html",
     amazonUrl: "https://www.amazon.com/dp/B07V2BRPVS?tag=glowskincar0c-20",
     pmOnly: true,
   },
