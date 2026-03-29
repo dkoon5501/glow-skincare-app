@@ -31,14 +31,16 @@ import {
   ArrowRight,
   Check,
   Copy,
+  ThumbsUp,
 } from "lucide-react";
 import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers, RoutineItem } from "@/lib/skincare-data";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ProductImage } from "@/components/product-image";
 import { shareResults } from "@/lib/share-utils";
+import { SEED_UPVOTES } from "@/lib/seed-upvotes";
 import { useAuth } from "@/lib/auth-context";
-import { saveRoutine, saveDiscardedProduct } from "@/lib/firestore";
+import { saveRoutine, saveDiscardedProduct, toggleUpvote, getUpvoteCounts, getUserUpvotes } from "@/lib/firestore";
 import { useHashLocation } from "wouter/use-hash-location";
 
 interface ResultsProps {
@@ -191,6 +193,10 @@ function ProductCard({
   index,
   essential,
   onDiscard,
+  upvoteCount,
+  isUpvoted,
+  onUpvote,
+  canUpvote,
 }: {
   step: RoutineStep;
   product: Product;
@@ -198,6 +204,10 @@ function ProductCard({
   index: number;
   essential: boolean;
   onDiscard: (product: Product, reason: RejectionReason, customReason: string) => Promise<void>;
+  upvoteCount: number;
+  isUpvoted: boolean;
+  onUpvote: (productId: string) => void;
+  canUpvote: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [currentProduct, setCurrentProduct] = useState<Product>(product);
@@ -285,6 +295,19 @@ function ProductCard({
                     PM Only
                   </Badge>
                 )}
+                <button
+                  onClick={() => canUpvote && onUpvote(currentProduct.id)}
+                  className={cn(
+                    "flex items-center gap-1 text-xs transition-colors",
+                    canUpvote ? "hover:text-primary cursor-pointer" : "cursor-default",
+                    isUpvoted ? "text-primary font-medium" : "text-muted-foreground"
+                  )}
+                  title={canUpvote ? (isUpvoted ? "Remove upvote" : "Upvote this product") : "Sign in to upvote"}
+                  data-testid={`button-upvote-${currentProduct.id}`}
+                >
+                  <ThumbsUp className={cn("w-3 h-3", isUpvoted && "fill-primary")} />
+                  {upvoteCount > 0 && <span>{upvoteCount}</span>}
+                </button>
                 <button
                   onClick={() => setExpanded(!expanded)}
                   className="flex items-center gap-1 text-xs text-primary hover:underline"
@@ -556,6 +579,55 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
   const { user } = useAuth();
   const { amRoutine, pmRoutine, skinProfile, tips } = recommendation;
 
+  // Upvote state
+  const [upvoteCounts, setUpvoteCounts] = useState<Record<string, number>>({});
+  const [userUpvotes, setUserUpvotes] = useState<Set<string>>(new Set());
+
+  // Collect all product IDs from the routine
+  const allProductIds = [...amRoutine, ...pmRoutine].map(item => item.product.id);
+
+  // Load upvote counts on mount (merge seed counts with live Firestore counts)
+  useEffect(() => {
+    getUpvoteCounts(allProductIds).then(liveCounts => {
+      const merged: Record<string, number> = {};
+      for (const pid of allProductIds) {
+        merged[pid] = (SEED_UPVOTES[pid] || 0) + (liveCounts[pid] || 0);
+      }
+      setUpvoteCounts(merged);
+    }).catch(() => {
+      // Fallback to seed counts if Firestore fails
+      const fallback: Record<string, number> = {};
+      for (const pid of allProductIds) {
+        fallback[pid] = SEED_UPVOTES[pid] || 0;
+      }
+      setUpvoteCounts(fallback);
+    });
+  }, []);
+
+  // Load user's own upvotes when signed in
+  useEffect(() => {
+    if (user) {
+      getUserUpvotes(user.uid).then(setUserUpvotes).catch(() => {});
+    } else {
+      setUserUpvotes(new Set());
+    }
+  }, [user]);
+
+  const handleUpvote = useCallback(async (productId: string) => {
+    if (!user) return;
+    const nowUpvoted = await toggleUpvote(user.uid, productId);
+    // Optimistic update
+    setUserUpvotes(prev => {
+      const next = new Set(prev);
+      if (nowUpvoted) next.add(productId); else next.delete(productId);
+      return next;
+    });
+    setUpvoteCounts(prev => ({
+      ...prev,
+      [productId]: (prev[productId] || 0) + (nowUpvoted ? 1 : -1)
+    }));
+  }, [user]);
+
   const baumannDescriptions: Record<string, string> = {
     D: "Dry",
     O: "Oily",
@@ -616,9 +688,31 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
           </CardContent>
         </Card>
 
+        {/* Shared view banner — right after skin profile */}
+        {isSharedView && (
+          <Card className="mt-4 border-primary/20 bg-primary/3" data-testid="card-shared-banner">
+            <CardContent className="p-4 text-center">
+              <p className="text-sm text-foreground mb-3">
+                This is someone else's personalized routine. Take the quiz to get your own.
+              </p>
+              <Button
+                onClick={onRetake}
+                className="gap-2 rounded-full text-sm"
+                data-testid="button-take-own-quiz"
+              >
+                <ArrowRight className="w-4 h-4" />
+                Take My Own Quiz
+              </Button>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Routine Tabs */}
         <div className="mt-6" data-testid="routine-tabs">
-          <h2 className="text-lg font-semibold text-foreground mb-3">Your Routine</h2>
+          <div className="flex items-center justify-between mb-3">
+            <h2 className="text-lg font-semibold text-foreground">Your Routine</h2>
+            <ShareButton answers={answers} skinProfile={skinProfile} />
+          </div>
 
           <Tabs defaultValue="am">
             <TabsList className="w-full">
@@ -642,6 +736,10 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
                   index={i}
                   essential={item.essential}
                   onDiscard={handleDiscard}
+                  upvoteCount={upvoteCounts[item.product.id] || 0}
+                  isUpvoted={userUpvotes.has(item.product.id)}
+                  onUpvote={handleUpvote}
+                  canUpvote={!!user}
                 />
               ))}
             </TabsContent>
@@ -656,6 +754,10 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
                   index={i}
                   essential={item.essential}
                   onDiscard={handleDiscard}
+                  upvoteCount={upvoteCounts[item.product.id] || 0}
+                  isUpvoted={userUpvotes.has(item.product.id)}
+                  onUpvote={handleUpvote}
+                  canUpvote={!!user}
                 />
               ))}
             </TabsContent>
@@ -665,25 +767,6 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
         {/* Save Routine Section — hide on shared views */}
         {!isSharedView && (
           <SaveRoutineSection recommendation={recommendation} answers={answers} />
-        )}
-
-        {/* Shared view banner */}
-        {isSharedView && (
-          <Card className="mt-6 border-primary/20 bg-primary/3" data-testid="card-shared-banner">
-            <CardContent className="p-5 text-center">
-              <p className="text-sm text-foreground mb-3">
-                This is someone else's personalized routine. Take the quiz to get your own.
-              </p>
-              <Button
-                onClick={onRetake}
-                className="gap-2 rounded-full text-sm"
-                data-testid="button-take-own-quiz"
-              >
-                <ArrowRight className="w-4 h-4" />
-                Take My Own Quiz
-              </Button>
-            </CardContent>
-          </Card>
         )}
 
         {/* Pro Tips */}
@@ -749,7 +832,6 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
             <RotateCcw className="w-4 h-4" />
             Retake the Quiz
           </Button>
-          <ShareButton answers={answers} skinProfile={skinProfile} />
         </div>
 
         <p className="mt-10 mb-4 text-center text-[11px] text-muted-foreground/60 leading-relaxed max-w-md mx-auto">

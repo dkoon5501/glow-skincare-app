@@ -226,3 +226,69 @@ export async function getUserDiscardedProducts(userId: string): Promise<Discarde
 export async function removeDiscardedProduct(docId: string): Promise<void> {
   await deleteDoc(doc(db, "discardedProducts", docId));
 }
+
+// ─── Upvotes ─────────────────────────────────────────────
+export interface Upvote {
+  id: string;
+  userId: string;
+  productId: string;
+}
+
+/**
+ * Toggle upvote: add if not exists, remove if already upvoted.
+ * Returns the new state (true = upvoted, false = removed).
+ */
+export async function toggleUpvote(userId: string, productId: string): Promise<boolean> {
+  const q = query(
+    collection(db, "upvotes"),
+    where("userId", "==", userId),
+    where("productId", "==", productId)
+  );
+  const snapshot = await getDocs(q);
+
+  if (snapshot.empty) {
+    // Add upvote
+    await addDoc(collection(db, "upvotes"), { userId, productId });
+    return true;
+  } else {
+    // Remove upvote (toggle off)
+    for (const docSnap of snapshot.docs) {
+      await deleteDoc(doc(db, "upvotes", docSnap.id));
+    }
+    return false;
+  }
+}
+
+/**
+ * Get upvote counts for a list of product IDs.
+ * Returns a map of productId -> count.
+ */
+export async function getUpvoteCounts(productIds: string[]): Promise<Record<string, number>> {
+  const counts: Record<string, number> = {};
+  // Firestore 'in' queries max 30 items, batch if needed
+  for (let i = 0; i < productIds.length; i += 30) {
+    const batch = productIds.slice(i, i + 30);
+    const q = query(
+      collection(db, "upvotes"),
+      where("productId", "in", batch)
+    );
+    const snapshot = await getDocs(q);
+    for (const docSnap of snapshot.docs) {
+      const pid = docSnap.data().productId as string;
+      counts[pid] = (counts[pid] || 0) + 1;
+    }
+  }
+  return counts;
+}
+
+/**
+ * Get the product IDs a specific user has upvoted.
+ */
+export async function getUserUpvotes(userId: string): Promise<Set<string>> {
+  const q = query(
+    collection(db, "upvotes"),
+    where("userId", "==", userId)
+  );
+  const snapshot = await getDocs(q);
+  return new Set(snapshot.docs.map(d => d.data().productId as string));
+}

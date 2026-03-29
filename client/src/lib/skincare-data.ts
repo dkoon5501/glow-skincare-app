@@ -281,7 +281,7 @@ export const quizQuestions: QuizQuestion[] = [
   }
 ];
 
-// Curated product database — every product recommended by a named derm influencer
+// Curated product database — every product recommended by a board-certified dermatologist
 export const productDatabase: Product[] = [
   // ─────────────────────────────────────────────
   // CLEANSERS
@@ -483,7 +483,7 @@ export const productDatabase: Product[] = [
     keyIngredients: ["10% Niacinamide", "1% Zinc PCA"],
     bestFor: ["oily", "acne", "pores", "budget", "breakouts", "hyperpigmentation", "dullness"],
     whyRecommended:
-      "Consensus pick across multiple derm influencers. Controls oil, minimizes pores, reduces post-acne marks, and brightens — all at a fraction of the cost. Dr. Muneeb Shah and Dr. Daniel Sugai both frequently cite it as a go-to for oily and acne-prone skin.",
+      "Consensus pick across multiple board-certified dermatologists. Controls oil, minimizes pores, reduces post-acne marks, and brightens — all at a fraction of the cost. Dr. Muneeb Shah and Dr. Daniel Sugai both frequently cite it as a go-to for oily and acne-prone skin.",
     source: "Dr. Muneeb Shah & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=IyxTc0iZ6V8",
     sourceLinks: [
