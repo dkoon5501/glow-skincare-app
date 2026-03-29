@@ -2,7 +2,6 @@ import { useState, useCallback } from "react";
 import { QuizFlow } from "@/components/quiz-flow";
 import { Results } from "@/components/results";
 import { Landing } from "@/components/landing";
-import { PerplexityAttribution } from "@/components/PerplexityAttribution";
 import type { QuizAnswers, RecommendedRoutine } from "@/lib/skincare-data";
 import { generateRecommendation } from "@/lib/skincare-data";
 
@@ -40,7 +39,6 @@ export default function Home() {
       {appState === "results" && recommendation && (
         <Results recommendation={recommendation} answers={answers} onRetake={handleRetake} />
       )}
-      <PerplexityAttribution />
     </div>
   );
 }

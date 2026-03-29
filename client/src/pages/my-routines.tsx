@@ -18,7 +18,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
-import { PerplexityAttribution } from "@/components/PerplexityAttribution";
 import type { Timestamp } from "firebase/firestore";
 
 function formatDate(ts: Timestamp): string {
@@ -340,7 +339,6 @@ export default function MyRoutines() {
           </div>
         )}
       </main>
-      <PerplexityAttribution />
     </div>
   );
 }
