@@ -31,6 +31,7 @@ import {
 import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers, RoutineItem } from "@/lib/skincare-data";
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
+import { ProductImage } from "@/components/product-image";
 import { useAuth } from "@/lib/auth-context";
 import { saveRoutine, saveDiscardedProduct } from "@/lib/firestore";
 import { useHashLocation } from "wouter/use-hash-location";
@@ -241,8 +242,9 @@ function ProductCard({
       <Card className="overflow-hidden border-card-border" data-testid={`card-product-${currentProduct.id}`}>
         <CardContent className="p-4">
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-              <span className="text-xs font-bold text-primary">{index + 1}</span>
+            <div className="flex flex-col items-center gap-1 shrink-0">
+              <ProductImage brand={currentProduct.brand} className="w-10 h-10" />
+              <span className="text-[10px] text-muted-foreground">{index + 1}</span>
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5">
