@@ -18,7 +18,7 @@ function AppRouter() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/my-routines" component={MyRoutines} />
-        <Route path="/shared/:encoded" component={SharedResults} />
+        <Route path="/r/:encoded" component={SharedResults} />
         <Route component={NotFound} />
       </Switch>
     </>
