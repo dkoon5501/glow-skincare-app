@@ -11,6 +11,7 @@ import {
   ShoppingBag,
   CheckCircle2,
   ArrowRight,
+  ExternalLink,
 } from "lucide-react";
 
 interface LandingProps {
@@ -77,12 +78,19 @@ const HOW_IT_WORKS = [
 ];
 
 const DERMATOLOGISTS = [
-  { name: "Dr. Muneeb Shah / Doctorly", stat: "3.5M YouTube subscribers" },
-  { name: "Dr. Dray", stat: "2.6M YouTube subscribers" },
-  { name: "Dr. Sam Ellis", stat: "807K YouTube subscribers" },
-  { name: "Dr. Karen Locke / The Budget Dermatologist", stat: "712K YouTube subscribers" },
-  { name: "Dr. Daniel Sugai", stat: "708K YouTube subscribers" },
-  { name: "Dr. Whitney Bowe", stat: "200K Instagram followers" },
+  { name: "Dr. Muneeb Shah / Doctorly", stat: "3.5M YouTube", url: "https://www.youtube.com/@Doctorly", platform: "YouTube" },
+  { name: "Dr. Dray", stat: "2.6M YouTube", url: "https://www.youtube.com/@DrDrayzday", platform: "YouTube" },
+  { name: "Dr. Sam Ellis", stat: "807K YouTube", url: "https://www.youtube.com/@drsamellis", platform: "YouTube" },
+  { name: "Dr. Karen Locke", stat: "712K YouTube", url: "https://www.youtube.com/@TheBudgetDermatologist", platform: "YouTube" },
+  { name: "Dr. Daniel Sugai", stat: "708K YouTube", url: "https://www.youtube.com/@DrDanielSugai", platform: "YouTube" },
+  { name: "Dr. Alexis Stephens", stat: "578K YouTube", url: "https://www.youtube.com/@dralexisstephens", platform: "YouTube" },
+  { name: "Dr. Azadeh Shirazi", stat: "283K Instagram", url: "https://www.instagram.com/skinbydrazi/", platform: "Instagram" },
+  { name: "Dr. Whitney Bowe", stat: "200K Instagram", url: "https://www.instagram.com/drwhitneybowe/", platform: "Instagram" },
+  { name: "Dr. Jenny Liu", stat: "YouTube & Instagram", url: "https://www.youtube.com/@derm.talk", platform: "YouTube" },
+  { name: "Dr. Joyce Park", stat: "499K Instagram", url: "https://www.instagram.com/teawithmd/", platform: "Instagram" },
+  { name: "Dr. Neera Nathan", stat: "1M Instagram", url: "https://www.instagram.com/drneera/", platform: "Instagram" },
+  { name: "Dr. Dustin Portela", stat: "YouTube & Instagram", url: "https://www.instagram.com/drdustinportela/", platform: "Instagram" },
+  { name: "Dr. Lindsey Zubritsky", stat: "2M Instagram", url: "https://www.instagram.com/dermguru/", platform: "Instagram" },
 ];
 
 const STATS = [
@@ -248,25 +256,35 @@ export function Landing({ onStart }: LandingProps) {
             </p>
           </div>
 
-          {/* Derm list */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-12">
-            {DERMATOLOGISTS.map(({ name, stat }) => (
-              <div
-                key={name}
-                className="flex items-center gap-3 p-4 rounded-xl bg-card border border-card-border"
-                data-testid={`card-derm-${name.replace(/\s+/g, "-").toLowerCase()}`}
-              >
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <span className="text-primary text-xs font-bold">
-                    {name.charAt(3).toUpperCase()}
-                  </span>
-                </div>
-                <div className="min-w-0">
-                  <p className="text-sm font-medium text-foreground truncate">{name}</p>
-                  <p className="text-xs text-muted-foreground">{stat}</p>
-                </div>
+          {/* Derm list — scrollable container showing ~4 at a time */}
+          <div className="relative mb-12">
+            <div className="max-h-[280px] overflow-y-auto rounded-xl border border-card-border bg-card scrollbar-thin">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 divide-y sm:divide-y-0">
+                {DERMATOLOGISTS.map(({ name, stat, url, platform }) => (
+                  <a
+                    key={name}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-4 hover:bg-accent/50 transition-colors"
+                    data-testid={`card-derm-${name.replace(/\s+/g, "-").toLowerCase()}`}
+                  >
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="text-primary text-xs font-bold">
+                        {name.charAt(4).toUpperCase()}
+                      </span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-foreground truncate">{name}</p>
+                      <p className="text-xs text-muted-foreground">{stat}</p>
+                    </div>
+                    <ExternalLink className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
+                  </a>
+                ))}
               </div>
-            ))}
+            </div>
+            {/* Fade hint at bottom to indicate scrollability */}
+            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card to-transparent rounded-b-xl pointer-events-none" />
           </div>
 
           {/* Stats bar */}
