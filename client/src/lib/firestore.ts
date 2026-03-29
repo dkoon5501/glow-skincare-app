@@ -6,7 +6,6 @@ import {
   doc,
   query,
   where,
-  orderBy,
   Timestamp,
 } from "firebase/firestore";
 import { db } from "./firebase";
@@ -67,6 +66,33 @@ export interface SerializedRecommendation {
   tips: string[];
 }
 
+/** Strip undefined values — Firestore rejects them */
+function stripUndefined(obj: Record<string, unknown>): Record<string, unknown> {
+  const clean: Record<string, unknown> = {};
+  for (const [key, val] of Object.entries(obj)) {
+    if (val !== undefined) clean[key] = val;
+  }
+  return clean;
+}
+
+function serializeProduct(product: RecommendedRoutine["amRoutine"][0]["product"]) {
+  return stripUndefined({
+    id: product.id,
+    name: product.name,
+    brand: product.brand,
+    category: product.category,
+    price: product.price,
+    keyIngredients: product.keyIngredients,
+    bestFor: product.bestFor,
+    whyRecommended: product.whyRecommended,
+    source: product.source,
+    sourceUrl: product.sourceUrl,
+    manufacturerUrl: product.manufacturerUrl,
+    amazonUrl: product.amazonUrl,
+    pmOnly: product.pmOnly,
+  });
+}
+
 function serializeRecommendation(recommendation: RecommendedRoutine): SerializedRecommendation {
   return {
     amRoutine: recommendation.amRoutine.map((item) => ({
@@ -77,21 +103,7 @@ function serializeRecommendation(recommendation: RecommendedRoutine): Serialized
         category: item.step.category,
         description: item.step.description,
       },
-      product: {
-        id: item.product.id,
-        name: item.product.name,
-        brand: item.product.brand,
-        category: item.product.category,
-        price: item.product.price,
-        keyIngredients: item.product.keyIngredients,
-        bestFor: item.product.bestFor,
-        whyRecommended: item.product.whyRecommended,
-        source: item.product.source,
-        sourceUrl: item.product.sourceUrl,
-        manufacturerUrl: item.product.manufacturerUrl,
-        amazonUrl: item.product.amazonUrl,
-        pmOnly: item.product.pmOnly,
-      },
+      product: serializeProduct(item.product) as SerializedRecommendation["amRoutine"][0]["product"],
     })),
     pmRoutine: recommendation.pmRoutine.map((item) => ({
       step: {
@@ -101,21 +113,7 @@ function serializeRecommendation(recommendation: RecommendedRoutine): Serialized
         category: item.step.category,
         description: item.step.description,
       },
-      product: {
-        id: item.product.id,
-        name: item.product.name,
-        brand: item.product.brand,
-        category: item.product.category,
-        price: item.product.price,
-        keyIngredients: item.product.keyIngredients,
-        bestFor: item.product.bestFor,
-        whyRecommended: item.product.whyRecommended,
-        source: item.product.source,
-        sourceUrl: item.product.sourceUrl,
-        manufacturerUrl: item.product.manufacturerUrl,
-        amazonUrl: item.product.amazonUrl,
-        pmOnly: item.product.pmOnly,
-      },
+      product: serializeProduct(item.product) as SerializedRecommendation["pmRoutine"][0]["product"],
     })),
     tips: recommendation.tips,
   };
@@ -136,16 +134,24 @@ export async function saveRoutine(
 }
 
 export async function getUserRoutines(userId: string): Promise<SavedRoutine[]> {
+  // Simple query without orderBy to avoid needing a composite index.
+  // We sort client-side instead.
   const q = query(
     collection(db, "routines"),
-    where("userId", "==", userId),
-    orderBy("createdAt", "desc")
+    where("userId", "==", userId)
   );
   const snapshot = await getDocs(q);
-  return snapshot.docs.map((docSnap) => ({
+  const routines = snapshot.docs.map((docSnap) => ({
     id: docSnap.id,
     ...(docSnap.data() as Omit<SavedRoutine, "id">),
   }));
+  // Sort by createdAt descending (client-side)
+  routines.sort((a, b) => {
+    const aTime = a.createdAt?.toMillis?.() || 0;
+    const bTime = b.createdAt?.toMillis?.() || 0;
+    return bTime - aTime;
+  });
+  return routines;
 }
 
 export async function deleteRoutine(routineId: string): Promise<void> {
