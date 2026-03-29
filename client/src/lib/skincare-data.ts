@@ -279,9 +279,11 @@ export const quizQuestions: QuizQuestion[] = [
   }
 ];
 
-// Curated product database based on dermatologist recommendations
+// Curated product database — every product recommended by a named derm influencer
 export const productDatabase: Product[] = [
+  // ─────────────────────────────────────────────
   // CLEANSERS
+  // ─────────────────────────────────────────────
   {
     id: "cerave-hydrating-cleanser",
     name: "Hydrating Facial Cleanser",
@@ -289,26 +291,13 @@ export const productDatabase: Product[] = [
     category: "cleanser",
     price: "$15.99",
     keyIngredients: ["Ceramides", "Hyaluronic Acid", "Glycerin"],
-    bestFor: ["dry", "normal", "sensitive", "dehydration"],
-    whyRecommended: "Dermatologist-developed, restores and maintains the skin barrier without stripping moisture. Non-comedogenic and fragrance-free.",
-    source: "Vogue (Dr. Corey L. Hartman, board-certified dermatologist)",
-    sourceUrl: "https://www.vogue.com/article/cerave-cleanser-for-your-skin-type",
+    bestFor: ["dry", "normal", "sensitive", "dehydration", "budget"],
+    whyRecommended:
+      "Restores and maintains the skin barrier without stripping moisture. Non-comedogenic and fragrance-free. Dr. Alexis Stephens recommends it as her go-to hydrating cleanser for dry and normal skin.",
+    source: "Dr. Alexis Stephens (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=OeNJbShiOOw",
     manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-facial-cleanser",
-    amazonUrl: "https://www.amazon.com/dp/B01MSSDEPK?tag=glowskincar0c-20"
-  },
-  {
-    id: "lrp-toleriane-cleanser",
-    name: "Toleriane Hydrating Gentle Cleanser",
-    brand: "La Roche-Posay",
-    category: "cleanser",
-    price: "$17.00",
-    keyIngredients: ["Niacinamide", "Ceramide-3", "Thermal Spring Water"],
-    bestFor: ["sensitive", "dry", "redness", "rosacea"],
-    whyRecommended: "Clinically tested on sensitive skin. La Roche-Posay's thermal spring water provides soothing antioxidant benefits.",
-    source: "Vogue (dermatologist-recommended gentle cleanser)",
-    sourceUrl: "https://www.vogue.com/article/best-skincare-routines",
-    manufacturerUrl: "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-hydrating-gentle-facial-cleanser-tolerianehydratinggentlefacialcleanser.html",
-    amazonUrl: "https://www.amazon.com/dp/B01N7T7JKJ?tag=glowskincar0c-20"
+    amazonUrl: "https://www.amazon.com/dp/B01MSSDEPK?tag=glowskincar0c-20",
   },
   {
     id: "cerave-foaming-cleanser",
@@ -317,55 +306,79 @@ export const productDatabase: Product[] = [
     category: "cleanser",
     price: "$15.99",
     keyIngredients: ["Ceramides", "Niacinamide", "Hyaluronic Acid"],
-    bestFor: ["oily", "combination", "acne", "normal"],
-    whyRecommended: "Removes excess oil and dirt without disrupting the skin barrier. Foaming formula is ideal for oily and combination skin types.",
-    source: "Vogue (Dr. Kristi Collins, FAAD)",
-    sourceUrl: "https://www.vogue.com/article/cerave-cleanser-for-your-skin-type",
+    bestFor: ["oily", "combination", "acne", "normal", "budget"],
+    whyRecommended:
+      "Removes excess oil and dirt without disrupting the skin barrier. Dr. Alexis Stephens recommends the foaming formula for oily and combination skin types who want a deeper cleanse while keeping ceramides intact.",
+    source: "Dr. Alexis Stephens (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=OeNJbShiOOw",
     manufacturerUrl: "https://www.cerave.com/skincare/cleansers/foaming-facial-cleanser",
-    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=glowskincar0c-20"
+    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=glowskincar0c-20",
   },
   {
-    id: "lrp-effaclar-cleanser",
-    name: "Effaclar Medicated Gel Cleanser",
+    id: "lrp-toleriane-purifying-cleanser",
+    name: "Toleriane Purifying Foaming Cleanser",
     brand: "La Roche-Posay",
     category: "cleanser",
     price: "$17.99",
-    keyIngredients: ["Salicylic Acid 2%", "Glycerin", "Zinc Pidolate"],
-    bestFor: ["acne", "oily", "breakouts", "pores"],
-    whyRecommended: "Medicated formula with 2% salicylic acid clears acne and unclogs pores. Recommended by dermatologists for acne-prone skin.",
-    source: "La Roche-Posay (Dr. Jenny Liu, board-certified dermatologist)",
-    sourceUrl: "https://www.laroche-posay.us/our-products/face/acne-products/effaclar-medicated-acne-face-wash-effaclaracnewash.html",
-    manufacturerUrl: "https://www.laroche-posay.us/our-products/face/acne-products/effaclar-medicated-acne-face-wash-effaclaracnewash.html",
-    amazonUrl: "https://www.amazon.com/dp/B00LO1DNXU?tag=glowskincar0c-20"
+    keyIngredients: ["Niacinamide", "Ceramide-3", "La Roche-Posay Thermal Spring Water"],
+    bestFor: ["sensitive", "oily", "combination", "acne", "redness", "rosacea"],
+    whyRecommended:
+      "Clinically tested on sensitive skin with niacinamide to control oil and calm inflammation. Dr. Muneeb Shah, Dr. Daniel Sugai, and Dr. Alexis Stephens all recommend this cleanser for oily and sensitive skin types.",
+    source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=6JjijIeEsZM",
+    manufacturerUrl:
+      "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-purifying-foaming-facial-cleanser-tolerianefoamingfacialwash.html",
+    // No Amazon ASIN available for this specific SKU in the spec
   },
   {
-    id: "cerave-sa-cleanser",
-    name: "SA Smoothing Cleanser",
+    id: "cetaphil-daily-facial-cleanser",
+    name: "Daily Facial Cleanser",
+    brand: "Cetaphil",
+    category: "cleanser",
+    price: "$13.99",
+    keyIngredients: ["Glycerin", "Niacinamide", "Vitamin B5 (Panthenol)"],
+    bestFor: ["oily", "combination", "normal", "sensitive", "budget"],
+    whyRecommended:
+      "A gel cleanser that turns into a low-lather foam — ideal for oily to combination skin. Dr. Daniel Sugai recommends the Cetaphil Daily Facial Cleanser for its gentle yet effective cleansing for oily and combination skin types.",
+    source: "Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=VxG9rE4seIs",
+    manufacturerUrl: "https://www.cetaphil.com/us/cleansers/daily-facial-cleanser/302993927985.html",
+    // No ASIN listed in spec for this product
+  },
+  {
+    id: "cerave-hydrating-foaming-oil-cleanser",
+    name: "Hydrating Foaming Oil Cleanser",
     brand: "CeraVe",
     category: "cleanser",
     price: "$16.99",
-    keyIngredients: ["Salicylic Acid", "Ceramides", "Niacinamide"],
-    bestFor: ["texture", "acne", "pores", "combination"],
-    whyRecommended: "Combines gentle chemical exfoliation with ceramide barrier support. Great for rough texture and bumpy skin.",
-    source: "CeraVe (Dr. Tiffany Clay, board-certified dermatologist)",
-    sourceUrl: "https://www.cerave.com/skincare/cleansers/renewing-sa-cleanser",
-    manufacturerUrl: "https://www.cerave.com/skincare/cleansers/renewing-sa-cleanser",
-    amazonUrl: "https://www.amazon.com/dp/B00U1YCRD8?tag=glowskincar0c-20"
+    keyIngredients: ["Squalane Oil", "Ceramides", "Hyaluronic Acid"],
+    bestFor: ["dry", "sensitive", "dehydration", "normal", "budget"],
+    whyRecommended:
+      "Dr. Karen Locke (The Budget Dermatologist) calls this one of her current favorite cleansers — it acts as a single-step double cleanse, breaking down makeup and sunscreen while keeping dry skin barrier-intact.",
+    source: "Dr. Karen Locke / The Budget Dermatologist (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=iZc8UWcq5dY",
+    manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-foaming-oil-cleanser",
+    // No ASIN in spec; omitting amazonUrl
   },
 
-  // SERUMS
+  // ─────────────────────────────────────────────
+  // SERUMS — AM-SAFE
+  // ─────────────────────────────────────────────
   {
     id: "skinceuticals-ce-ferulic",
     name: "C E Ferulic Serum",
     brand: "SkinCeuticals",
     category: "serum",
     price: "$182.00",
-    keyIngredients: ["15% Vitamin C (L-Ascorbic Acid)", "Vitamin E", "Ferulic Acid"],
+    keyIngredients: ["15% L-Ascorbic Acid (Vitamin C)", "1% Vitamin E", "0.5% Ferulic Acid"],
     bestFor: ["aging", "dullness", "hyperpigmentation", "dark_spots", "premium"],
-    whyRecommended: "Considered the gold standard antioxidant serum by dermatologists. Provides photoprotection and brightens skin tone.",
-    source: "Vogue (Dr. Corey L. Hartman & Dr. Vicki Rapaport, board-certified dermatologists)",
-    sourceUrl: "https://www.vogue.com/article/skinceuticals-ce-ferulic-vitamin-c-review",
-    manufacturerUrl: "https://www.skinceuticals.com/skincare/vitamin-c-serums/c-e-ferulic-with-15-l-ascorbic-acid/S17.html"
+    whyRecommended:
+      "Considered the gold standard antioxidant serum. Dr. Shereene Idriss calls it the most studied and effective L-ascorbic acid serum on the market, citing its proprietary pH and synergistic vitamin C/E/ferulic acid ratio backed by clinical data.",
+    source: "Dr. Shereene Idriss (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=1kLLEyFeZq8",
+    manufacturerUrl:
+      "https://www.skinceuticals.com/skincare/vitamin-c-serums/c-e-ferulic-with-15-l-ascorbic-acid/S17.html",
+    // No Amazon listing for SkinCeuticals CE Ferulic per spec
   },
   {
     id: "ordinary-niacinamide",
@@ -374,12 +387,28 @@ export const productDatabase: Product[] = [
     category: "serum",
     price: "$6.00",
     keyIngredients: ["10% Niacinamide", "1% Zinc PCA"],
-    bestFor: ["oily", "acne", "pores", "budget", "breakouts"],
-    whyRecommended: "Highly effective at controlling oil production and minimizing pores. One of the most cost-effective serums on the market.",
-    source: "NBC News (Dr. Annie Chiu, board-certified dermatologist)",
-    sourceUrl: "https://www.nbcnews.com/select/shopping/best-niacinamide-products-ncna1303572",
+    bestFor: ["oily", "acne", "pores", "budget", "breakouts", "hyperpigmentation", "dullness"],
+    whyRecommended:
+      "Consensus pick across multiple derm influencers. Controls oil, minimizes pores, reduces post-acne marks, and brightens — all at a fraction of the cost. Dr. Muneeb Shah and Dr. Daniel Sugai both frequently cite it as a go-to for oily and acne-prone skin.",
+    source: "Dr. Muneeb Shah (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=IyxTc0iZ6V8",
     manufacturerUrl: "https://theordinary.com/en-us/niacinamide-10-zinc-1-serum-100436.html",
-    amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=glowskincar0c-20"
+    amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=glowskincar0c-20",
+  },
+  {
+    id: "maelove-glow-maker",
+    name: "The Glow Maker Vitamin C Serum",
+    brand: "Maelove",
+    category: "serum",
+    price: "$24.00",
+    keyIngredients: ["15% L-Ascorbic Acid", "Vitamin E", "Ferulic Acid", "Hyaluronic Acid"],
+    bestFor: ["dullness", "hyperpigmentation", "dark_spots", "aging", "budget", "midrange"],
+    whyRecommended:
+      "Dr. Karen Locke (The Budget Dermatologist) rates this as one of her top vitamin C serum picks, calling it a worthy budget alternative to SkinCeuticals CE Ferulic with the same 15% L-ascorbic acid + vitamin E + ferulic acid formula.",
+    source: "Dr. Karen Locke / The Budget Dermatologist (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=OTlliSx7dQU",
+    manufacturerUrl: "https://maelove.com/products/the-glow-maker",
+    // No ASIN in spec; omitting amazonUrl
   },
   {
     id: "ordinary-hyaluronic-acid",
@@ -387,43 +416,57 @@ export const productDatabase: Product[] = [
     brand: "The Ordinary",
     category: "serum",
     price: "$8.90",
-    keyIngredients: ["Hyaluronic Acid (multi-weight)", "Vitamin B5"],
-    bestFor: ["dehydration", "dry", "dullness", "budget", "normal"],
-    whyRecommended: "Multi-weight hyaluronic acid provides deep and surface-level hydration. Excellent value for a hydration booster.",
-    source: "The Ordinary (widely recommended hydration serum by dermatologists)",
-    sourceUrl: "https://theordinary.com/en-us/hyaluronic-acid-2-b5-serum-with-ceramides-100637.html",
-    manufacturerUrl: "https://theordinary.com/en-us/hyaluronic-acid-2-b5-serum-with-ceramides-100637.html",
-    amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=glowskincar0c-20"
+    keyIngredients: ["Multi-weight Hyaluronic Acid", "Vitamin B5 (Panthenol)", "Ceramides"],
+    bestFor: ["dehydration", "dry", "dullness", "budget", "normal", "sensitive"],
+    whyRecommended:
+      "Dr. Sam Ellis recommends The Ordinary's HA serum as a reliable, affordable hydration booster. Multi-molecular hyaluronic acid hydrates at surface and deeper skin levels; B5 soothes and supports barrier repair.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=iGBIxwOxfWU",
+    manufacturerUrl:
+      "https://theordinary.com/en-us/hyaluronic-acid-2-b5-serum-with-ceramides-100637.html",
+    amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=glowskincar0c-20",
   },
   {
-    id: "ordinary-vitamin-c",
-    name: "Vitamin C Suspension 23% + HA Spheres 2%",
-    brand: "The Ordinary",
+    id: "neutrogena-collagen-bank-serum",
+    name: "Collagen Bank Vitamin C Serum",
+    brand: "Neutrogena",
     category: "serum",
-    price: "$6.80",
-    keyIngredients: ["23% L-Ascorbic Acid", "Hyaluronic Acid Spheres"],
-    bestFor: ["dullness", "hyperpigmentation", "dark_spots", "aging", "budget"],
-    whyRecommended: "High-concentration vitamin C at a fraction of the cost. Brightens skin tone, provides antioxidant protection, and enhances sunscreen effectiveness when used in the morning.",
-    source: "The Ordinary (high-concentration vitamin C per dermatologist guidance)",
-    sourceUrl: "https://theordinary.com/en-us/vitamin-c-suspension-23-ha-spheres-2-vitamin-c-100451.html",
-    manufacturerUrl: "https://theordinary.com/en-us/vitamin-c-suspension-23-ha-spheres-2-vitamin-c-100451.html",
-    amazonUrl: "https://www.amazon.com/dp/B07Y556CPP?tag=glowskincar0c-20"
+    price: "$22.99",
+    keyIngredients: ["15% L-Ascorbic Acid", "Jazzy Micropeptide", "Hydrolyzed Collagen"],
+    bestFor: ["aging", "wrinkles", "hyperpigmentation", "dullness", "budget", "midrange"],
+    whyRecommended:
+      "Dr. Dray reviewed this as a compelling and affordable drugstore vitamin C serum, praising its 15% ascorbic acid formula, novel collagen-stimulating micropeptide, and good tolerance compared to typical vitamin C irritants.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=FLnu9Q8OzHE",
+    manufacturerUrl:
+      "https://www.neutrogena.com/products/skincare/neutrogena-collagen-bank-vitamin-c-serum/",
+    // No ASIN in spec; omitting amazonUrl
   },
+
+  // ─────────────────────────────────────────────
+  // SERUMS — PM-ONLY (retinol-containing)
+  // ─────────────────────────────────────────────
   {
     id: "lrp-retinol-b3",
     name: "Retinol B3 Serum",
     brand: "La Roche-Posay",
     category: "serum",
     price: "$46.99",
-    keyIngredients: ["Pure Retinol", "Niacinamide (Vitamin B3)", "Thermal Spring Water"],
-    bestFor: ["aging", "wrinkles", "dark_spots", "midrange", "retinoid_beginner"],
-    whyRecommended: "Potent retinol combined with niacinamide for soothing. Excellent for those transitioning to retinol with sensitive skin concerns. Apply at night only — retinol degrades in sunlight.",
-    source: "La Roche-Posay (Dr. Anna Karp, board-certified dermatologist)",
-    sourceUrl: "https://www.laroche-posay.us/our-products/face/face-serum/retinol-b3-pure-retinol-serum-3337875694469.html",
-    manufacturerUrl: "https://www.laroche-posay.us/our-products/face/face-serum/retinol-b3-pure-retinol-serum-3337875694469.html",
+    keyIngredients: ["Pure Retinol", "Niacinamide (Vitamin B3)", "La Roche-Posay Thermal Spring Water"],
+    bestFor: ["aging", "wrinkles", "dark_spots", "midrange", "retinoid_beginner", "sensitive"],
+    whyRecommended:
+      "Potent retinol paired with niacinamide for soothing. Recommended for those transitioning to retinol who also have sensitive skin concerns. Apply at night only — retinol degrades in sunlight and increases photosensitivity.",
+    source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=6JjijIeEsZM",
+    manufacturerUrl:
+      "https://www.laroche-posay.us/our-products/face/face-serum/retinol-b3-pure-retinol-serum-3337875694469.html",
     amazonUrl: "https://www.amazon.com/dp/B07Z9Y4M3C?tag=glowskincar0c-20",
-    pmOnly: true
+    pmOnly: true,
   },
+
+  // ─────────────────────────────────────────────
+  // EXFOLIANTS
+  // ─────────────────────────────────────────────
   {
     id: "paulas-choice-bha",
     name: "Skin Perfecting 2% BHA Liquid Exfoliant",
@@ -432,14 +475,34 @@ export const productDatabase: Product[] = [
     price: "$34.00",
     keyIngredients: ["2% Salicylic Acid (BHA)", "Green Tea Extract", "Methylpropanediol"],
     bestFor: ["acne", "oily", "pores", "texture", "breakouts", "midrange"],
-    whyRecommended: "The iconic chemical exfoliant. Unclogs pores, smooths texture, and reduces breakouts. Works inside the pore for deep cleaning.",
-    source: "Paula's Choice (widely cited as top BHA exfoliant by dermatologists)",
-    sourceUrl: "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
-    manufacturerUrl: "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
-    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20"
+    whyRecommended:
+      "Dr. Shereene Idriss and Dr. Daniel Sugai both recommend this iconic chemical exfoliant. It works inside the pore to unclog congestion, smooth texture, and reduce breakouts — consistently ranked as one of the most effective OTC BHA exfoliants.",
+    source: "Dr. Shereene Idriss & Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=3-MoLqxNFtY",
+    manufacturerUrl:
+      "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
+    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
   },
 
+  // ─────────────────────────────────────────────
   // MOISTURIZERS
+  // ─────────────────────────────────────────────
+  {
+    id: "lrp-toleriane-double-repair",
+    name: "Toleriane Double Repair Moisturizer",
+    brand: "La Roche-Posay",
+    category: "moisturizer",
+    price: "$22.99",
+    keyIngredients: ["Ceramide-3", "Niacinamide", "Prebiotic Thermal Spring Water"],
+    bestFor: ["sensitive", "normal", "combination", "redness", "rosacea", "midrange"],
+    whyRecommended:
+      "Dr. Alexis Stephens and Dr. Karen Locke both recommend this lightweight yet effective barrier repair moisturizer. Its prebiotic formula supports the skin microbiome. Dr. Locke featured it in her complete acne routines for dry skin.",
+    source: "Dr. Alexis Stephens & Dr. Karen Locke / The Budget Dermatologist (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=APC16_cpYyk",
+    manufacturerUrl:
+      "https://www.laroche-posay.us/our-products/face/face-moisturizer/toleriane-double-repair-face-moisturizer-tolerianedoublerepair.html",
+    amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20",
+  },
   {
     id: "cerave-moisturizing-cream",
     name: "Moisturizing Cream",
@@ -447,40 +510,29 @@ export const productDatabase: Product[] = [
     category: "moisturizer",
     price: "$18.99",
     keyIngredients: ["Ceramides (1, 3, 6-II)", "Hyaluronic Acid", "MVE Technology"],
-    bestFor: ["dry", "dehydration", "sensitive", "budget"],
-    whyRecommended: "Rich, long-lasting moisture with patented MVE delivery technology for 24-hour hydration. The gold standard for dry and eczema-prone skin.",
-    source: "Dr. Daniel Sugai, board-certified dermatologist",
+    bestFor: ["dry", "dehydration", "sensitive", "budget", "normal"],
+    whyRecommended:
+      "A derm consensus pick. Dr. Daniel Sugai features it as the gold standard for dry and eczema-prone skin, praising its patented MVE delivery technology for 24-hour continuous hydration and barrier restoration.",
+    source: "Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=SvB_EaH29wQ",
     manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/moisturizing-cream",
-    amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20"
+    amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
   },
   {
-    id: "lrp-toleriane-moisturizer",
-    name: "Toleriane Double Repair Moisturizer",
+    id: "lrp-cicaplast-gel-b5",
+    name: "Cicaplast Gel B5 Skin Protectant",
     brand: "La Roche-Posay",
     category: "moisturizer",
     price: "$22.99",
-    keyIngredients: ["Ceramide-3", "Niacinamide", "Prebiotic Thermal Water"],
-    bestFor: ["sensitive", "normal", "combination", "redness", "rosacea"],
-    whyRecommended: "Lightweight yet effective barrier repair with prebiotic formula that supports the skin microbiome. Fast-absorbing and fragrance-free.",
-    source: "People Magazine (Dr. Hovenic & Dr. Viola, board-certified dermatologists)",
-    sourceUrl: "https://people.com/mature-skincare-routine-dermatologist-recommendations-january-2026-11891556",
-    manufacturerUrl: "https://www.laroche-posay.us/our-products/face/face-moisturizer/toleriane-double-repair-face-moisturizer-tolerianedoublerepair.html",
-    amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20"
-  },
-  {
-    id: "neutrogena-hydro-boost",
-    name: "Hydro Boost Water Gel",
-    brand: "Neutrogena",
-    category: "moisturizer",
-    price: "$19.99",
-    keyIngredients: ["Hyaluronic Acid", "Glycerin", "Dimethicone"],
-    bestFor: ["oily", "combination", "dehydration", "budget", "normal"],
-    whyRecommended: "Oil-free gel formula provides deep hydration without heaviness. Absorbs instantly, making it ideal under sunscreen and makeup.",
-    source: "Who What Wear (Dr. Jessie Cheung & Dr. Sheila Farhang, board-certified dermatologists)",
-    sourceUrl: "https://www.whowhatwear.com/beauty/skin/neutrogena-hydro-boost-water-gel-review",
-    manufacturerUrl: "https://www.neutrogena.com/products/skincare/neutrogena-hydro-boost-water-gel-with-hyaluronic-acid/6811047",
-    amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20"
+    keyIngredients: ["Glycerin", "Vitamin B5 (Panthenol)", "Madecassoside"],
+    bestFor: ["sensitive", "redness", "rosacea", "dehydration", "dry", "midrange"],
+    whyRecommended:
+      "Dr. Dray calls this one of her most repurchased products, featuring it in her top skincare products of 2024 and 2025. A go-to for soothing damaged, sensitive, and post-procedure skin with a lightweight gel texture.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
+    manufacturerUrl:
+      "https://www.laroche-posay.us/our-products/body/body-lotion/cicaplast-gel-b5-skin-protectant-3337875865302.html",
+    // No ASIN in spec; omitting amazonUrl
   },
   {
     id: "cerave-pm-lotion",
@@ -490,13 +542,33 @@ export const productDatabase: Product[] = [
     price: "$17.49",
     keyIngredients: ["Niacinamide", "Ceramides", "Hyaluronic Acid"],
     bestFor: ["oily", "acne", "combination", "budget", "normal"],
-    whyRecommended: "Lightweight, oil-free formula with niacinamide to calm skin overnight. Won't clog pores — perfect for acne-prone skin.",
-    source: "NewBeauty (Dr. Kenneth Beer, board-certified dermatologist)",
-    sourceUrl: "https://www.newbeauty.com/view/the-best-moisturizers-to-use-with-tretinoin",
-    manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/pm-facial-moisturizing-lotion"
+    whyRecommended:
+      "Dr. Alexis Stephens recommends CeraVe PM as her go-to lightweight moisturizer for normal skin, praising its niacinamide content for calming and barrier support overnight. The oil-free formula won't clog pores.",
+    source: "Dr. Alexis Stephens (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=APC16_cpYyk",
+    manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/pm-facial-moisturizing-lotion",
+    // No ASIN listed for CeraVe PM Lotion in spec
+  },
+  {
+    id: "neutrogena-hydro-boost",
+    name: "Hydro Boost Water Gel",
+    brand: "Neutrogena",
+    category: "moisturizer",
+    price: "$19.99",
+    keyIngredients: ["Hyaluronic Acid", "Glycerin", "Dimethicone"],
+    bestFor: ["oily", "combination", "dehydration", "budget", "normal"],
+    whyRecommended:
+      "A multi-derm consensus pick. Dr. Muneeb Shah and Dr. Daniel Sugai have both recommended this oil-free gel moisturizer for oily and combination skin. Absorbs instantly, providing deep hydration without heaviness — ideal under sunscreen.",
+    source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=XYr2_QlQiyA",
+    manufacturerUrl:
+      "https://www.neutrogena.com/products/skincare/neutrogena-hydro-boost-water-gel-with-hyaluronic-acid/6811047",
+    amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
   },
 
+  // ─────────────────────────────────────────────
   // SUNSCREENS
+  // ─────────────────────────────────────────────
   {
     id: "eltamd-uv-clear",
     name: "UV Clear Broad-Spectrum SPF 46",
@@ -505,25 +577,43 @@ export const productDatabase: Product[] = [
     price: "$41.00",
     keyIngredients: ["Zinc Oxide 9%", "Niacinamide", "Hyaluronic Acid"],
     bestFor: ["sensitive", "acne", "rosacea", "redness", "midrange"],
-    whyRecommended: "The #1 dermatologist-recommended sunscreen brand. Sheer, no white cast, calming niacinamide. Suitable for post-procedure skin.",
-    source: "People Magazine (Dr. Engelman, board-certified dermatologist)",
-    sourceUrl: "https://people.com/mature-skincare-routine-dermatologist-recommendations-january-2026-11891556",
+    whyRecommended:
+      "Dr. Sam Ellis and Dr. Daniel Sugai both call this the #1 dermatologist-recommended sunscreen brand. Dr. Sugai gave it 4.5/5 stars in a dedicated video review, praising its niacinamide, sheer zinc formula, and no white cast.",
+    source: "Dr. Sam Ellis & Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
     manufacturerUrl: "https://eltamd.com/products/uv-clear-broad-spectrum-spf-46",
-    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20"
+    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20",
   },
   {
-    id: "lrp-anthelios",
+    id: "lrp-anthelios-clear-skin",
     name: "Anthelios Clear Skin Dry Touch SPF 60",
     brand: "La Roche-Posay",
     category: "sunscreen",
     price: "$35.99",
-    keyIngredients: ["Cell-Ox Shield Technology", "Silica", "Perlite"],
-    bestFor: ["oily", "acne", "combination", "high_sun"],
-    whyRecommended: "Oil-absorbing, dry-touch finish perfect for oily and acne-prone skin. SPF 60 provides strong protection for high sun exposure.",
-    source: "Vogue (dermatologist-recommended sunscreen for oily skin)",
-    sourceUrl: "https://www.vogue.com/article/best-skincare-routines",
-    manufacturerUrl: "https://www.laroche-posay.us/our-products/sun/face-sunscreen/anthelios-clear-skin-oil-free-sunscreen-spf-60-antheliosclearskin.html",
-    amazonUrl: "https://www.amazon.com/dp/B07YZRFH5C?tag=glowskincar0c-20"
+    keyIngredients: ["Cell-Ox Shield XL Technology", "Silica", "Perlite"],
+    bestFor: ["oily", "acne", "combination", "high_sun", "midrange"],
+    whyRecommended:
+      "Dr. Daniel Sugai recommends this for oily and acne-prone patients. Its oil-absorbing silica and dry-touch finish keep the face matte without clogging pores, and SPF 60 provides robust protection for high sun-exposure days.",
+    source: "Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=NK6ThY5Pt74",
+    manufacturerUrl:
+      "https://www.laroche-posay.us/our-products/sun/face-sunscreen/anthelios-clear-skin-oil-free-sunscreen-spf-60-antheliosclearskin.html",
+    amazonUrl: "https://www.amazon.com/dp/B07YZRFH5C?tag=glowskincar0c-20",
+  },
+  {
+    id: "isdin-eryfotona",
+    name: "Eryfotona Ageless Tinted SPF 50",
+    brand: "ISDIN",
+    category: "sunscreen",
+    price: "$55.00",
+    keyIngredients: ["Zinc Oxide", "Photolyase DNA Repair Enzyme", "Vitamin E"],
+    bestFor: ["aging", "mature", "premium", "hyperpigmentation", "high_sun", "forties", "fiftyplus"],
+    whyRecommended:
+      "Dr. Daniel Sugai recommends ISDIN Eryfotona Ageless for mature skin, calling it an outstanding choice for those 40+ due to its DNA-repair photolyase enzyme technology, anti-aging peptides, and natural tint that suits deeper skin tones.",
+    source: "Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=hHfcGTA7A70",
+    manufacturerUrl: "https://www.isdin.com/us/p/ageless-34-fl-oz/3431",
+    amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=glowskincar0c-20",
   },
   {
     id: "cerave-am-lotion",
@@ -533,42 +623,49 @@ export const productDatabase: Product[] = [
     price: "$17.99",
     keyIngredients: ["Zinc Oxide", "Ceramides", "Niacinamide"],
     bestFor: ["dry", "normal", "sensitive", "budget", "dehydration"],
-    whyRecommended: "Combines moisturizing ceramides with broad-spectrum SPF 30. Two-in-one convenience at a drugstore price point.",
-    source: "CeraVe (Dr. Ted Lain, board-certified dermatologist)",
-    sourceUrl: "https://www.cerave.com/skincare/moisturizers/am-facial-moisturizing-lotion-with-sunscreen",
-    manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/am-facial-moisturizing-lotion-with-sunscreen",
-    amazonUrl: "https://www.amazon.com/dp/B00F97FHAW?tag=glowskincar0c-20"
-  },
-  {
-    id: "isdin-eryfotona",
-    name: "Eryfotona Ageless Tinted SPF 50",
-    brand: "ISDIN",
-    category: "sunscreen",
-    price: "$55.00",
-    keyIngredients: ["Zinc Oxide", "Peptide Technology", "Vitamin E"],
-    bestFor: ["aging", "mature", "premium", "hyperpigmentation", "high_sun"],
-    whyRecommended: "Combines photoprotection with peptide anti-aging technology. The tint provides a natural, even finish. Repairs existing photodamage.",
-    source: "CNN Underscored (Dr. Jaimie Glick, board-certified dermatologist)",
-    sourceUrl: "https://www.cnn.com/cnn-underscored/beauty/best-sunscreens-for-mature-skin",
-    manufacturerUrl: "https://www.isdin.com/us/p/ageless-34-fl-oz/3431",
-    amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=glowskincar0c-20"
+    whyRecommended:
+      "Dr. Daniel Sugai recommends this two-in-one moisturizer + SPF 30 for those who prefer a simplified morning routine. The ceramide and niacinamide formula supports barrier repair while delivering daily broad-spectrum sun protection at a drugstore price.",
+    source: "Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=NK6ThY5Pt74",
+    manufacturerUrl:
+      "https://www.cerave.com/skincare/moisturizers/am-facial-moisturizing-lotion-with-sunscreen",
+    amazonUrl: "https://www.amazon.com/dp/B00F97FHAW?tag=glowskincar0c-20",
   },
 
-  // TREATMENTS
+  // ─────────────────────────────────────────────
+  // TREATMENTS — all PM-only (retinoids)
+  // ─────────────────────────────────────────────
   {
     id: "differin-gel",
     name: "Adapalene Gel 0.1%",
     brand: "Differin",
     category: "treatment",
     price: "$14.99",
-    keyIngredients: ["Adapalene 0.1%"],
-    bestFor: ["acne", "breakouts", "retinoid_new", "retinoid_beginner", "budget", "pores", "texture"],
-    whyRecommended: "The only FDA-approved OTC retinoid for acne. Prevents future breakouts, normalizes cell turnover. Apply at night only. Start 2-3x per week.",
-    source: "Dr. Heather Rogers, board-certified dermatologist",
-    sourceUrl: "https://www.doctorrogers.com/blogs/blog/dermatologist-s-retinol-recommendations-for-every-skin-type",
+    keyIngredients: ["Adapalene 0.1% (OTC Retinoid)"],
+    bestFor: ["acne", "breakouts", "retinoid_new", "retinoid_beginner", "budget", "pores", "texture", "hyperpigmentation"],
+    whyRecommended:
+      "The only FDA-approved OTC retinoid for acne. Dr. Dray is a long-time advocate, making it a top pick in her most-purchased skincare of 2025 list. Dr. Muneeb Shah also recommends adapalene as the best-evidenced OTC retinoid for acne. Apply at night only. Start 2–3× per week.",
+    source: "Dr. Dray & Dr. Muneeb Shah (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
     manufacturerUrl: "https://differin.com/shop/differin-gel/3029949.html",
     amazonUrl: "https://www.amazon.com/dp/B07V2BRPVS?tag=glowskincar0c-20",
-    pmOnly: true
+    pmOnly: true,
+  },
+  {
+    id: "medik8-crystal-retinal",
+    name: "Crystal Retinal (Retinaldehyde Serum)",
+    brand: "Medik8",
+    category: "treatment",
+    price: "$69.00",
+    keyIngredients: ["Retinaldehyde (Retinal)", "Hyaluronic Acid", "Vitamin E"],
+    bestFor: ["aging", "wrinkles", "acne", "retinoid_experienced", "retinoid_beginner", "premium", "midrange", "texture"],
+    whyRecommended:
+      "Dr. Karen Locke (The Budget Dermatologist) and Dr. Sam Ellis both recommend Medik8 Crystal Retinal. Dr. Ellis featured it in a video on how to make retinoids work better, demonstrating usage of Crystal Retinal's graduated strengths. Retinaldehyde is one step closer to retinoic acid than retinol — faster results with less irritation. Apply at night only.",
+    source: "Dr. Karen Locke / The Budget Dermatologist & Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=xE2ljf69hBc",
+    manufacturerUrl: "https://us.medik8.com/products/crystal-retinal",
+    // No ASIN in spec; omitting amazonUrl
+    pmOnly: true,
   },
   {
     id: "ordinary-retinol-squalane",
@@ -578,12 +675,13 @@ export const productDatabase: Product[] = [
     price: "$8.90",
     keyIngredients: ["1% Retinol", "Squalane"],
     bestFor: ["aging", "wrinkles", "acne", "budget", "retinoid_beginner", "texture"],
-    whyRecommended: "Budget-friendly retinol in a moisturizing squalane base. Effective for mild acne, texture improvement, and early anti-aging. Apply at night only.",
-    source: "Dr. Heather Rogers, board-certified dermatologist",
-    sourceUrl: "https://www.doctorrogers.com/blogs/blog/dermatologist-s-retinol-recommendations-for-every-skin-type",
+    whyRecommended:
+      "Dr. Dray recommends The Ordinary's retinol range as affordable, effective OTC retinoids. The squalane base keeps the formula moisturizing and tolerable. Effective for mild acne, texture improvement, and early anti-aging. Apply at night only.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=o2CjoLldFCg",
     manufacturerUrl: "https://theordinary.com/en-us/retinol-1-in-squalane-serum-100441.html",
     amazonUrl: "https://www.amazon.com/dp/B0DQ6496LC?tag=glowskincar0c-20",
-    pmOnly: true
+    pmOnly: true,
   },
   {
     id: "paulas-choice-retinol",
@@ -593,27 +691,14 @@ export const productDatabase: Product[] = [
     price: "$65.00",
     keyIngredients: ["1% Retinol", "Peptides", "Vitamin C"],
     bestFor: ["aging", "wrinkles", "retinoid_experienced", "midrange", "premium", "texture"],
-    whyRecommended: "High-strength retinol with collagen-promoting peptides. For experienced retinol users seeking advanced anti-aging results. Apply at night only.",
-    source: "Dr. Heather Rogers, board-certified dermatologist",
-    sourceUrl: "https://www.doctorrogers.com/blogs/blog/dermatologist-s-retinol-recommendations-for-every-skin-type",
+    whyRecommended:
+      "Dr. Alexis Stephens references Paula's Choice as a strong clinical retinol option for experienced users. This high-strength formula combines 1% retinol with collagen-promoting peptides for advanced anti-aging results. Apply at night only.",
+    source: "Dr. Alexis Stephens (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=evzPfPeGp8k",
     manufacturerUrl: "https://www.paulaschoice.com/clinical-1pct-retinol-treatment/801.html",
     amazonUrl: "https://www.amazon.com/dp/B00L5O31VK?tag=glowskincar0c-20",
-    pmOnly: true
+    pmOnly: true,
   },
-  {
-    id: "skinceuticals-retinol",
-    name: "Retinol 1.0",
-    brand: "SkinCeuticals",
-    category: "treatment",
-    price: "$102.00",
-    keyIngredients: ["1.0% Pure Retinol", "Bisabolol"],
-    bestFor: ["aging", "wrinkles", "acne", "retinoid_experienced", "premium", "texture"],
-    whyRecommended: "High-potency retinol for experienced users. Tackles deep wrinkles, stubborn acne, and rough texture with clinical-grade results. Apply at night only.",
-    source: "Dr. Heather Rogers, board-certified dermatologist",
-    sourceUrl: "https://www.doctorrogers.com/blogs/blog/dermatologist-s-retinol-recommendations-for-every-skin-type",
-    manufacturerUrl: "https://www.skinceuticals.com/skincare/retinol-creams/retinol-1.0/S70.html",
-    pmOnly: true
-  }
 ];
 
 // AM/PM routine step templates
