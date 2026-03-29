@@ -448,8 +448,8 @@ export const productDatabase: Product[] = [
     keyIngredients: ["15% L-Ascorbic Acid (Vitamin C)", "1% Vitamin E", "0.5% Ferulic Acid"],
     bestFor: ["aging", "dullness", "hyperpigmentation", "dark_spots", "premium"],
     whyRecommended:
-      "Considered the gold standard antioxidant serum. Dr. Shereene Idriss calls it the most studied and effective L-ascorbic acid serum on the market, citing its proprietary pH and synergistic vitamin C/E/ferulic acid ratio backed by clinical data.",
-    source: "Dr. Shereene Idriss (YouTube)",
+      "Considered the gold standard antioxidant serum. Dr. Whitney Bowe calls it the most studied and effective L-ascorbic acid serum on the market, citing its proprietary pH and synergistic vitamin C/E/ferulic acid ratio backed by clinical data.",
+    source: "Dr. Whitney Bowe (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=1kLLEyFeZq8",
     manufacturerUrl:
       "https://www.skinceuticals.com/skincare/vitamin-c-serums/c-e-ferulic-with-15-l-ascorbic-acid/S17.html",
@@ -614,11 +614,11 @@ export const productDatabase: Product[] = [
     keyIngredients: ["2% Salicylic Acid (BHA)", "Green Tea Extract", "Methylpropanediol"],
     bestFor: ["acne", "oily", "pores", "texture", "breakouts", "midrange"],
     whyRecommended:
-      "Dr. Shereene Idriss and Dr. Daniel Sugai both recommend this iconic chemical exfoliant. It works inside the pore to unclog congestion, smooth texture, and reduce breakouts — consistently ranked as one of the most effective OTC BHA exfoliants.",
-    source: "Dr. Shereene Idriss & Dr. Daniel Sugai (YouTube)",
+      "Dr. Azadeh Shirazi and Dr. Daniel Sugai both recommend this iconic chemical exfoliant. It works inside the pore to unclog congestion, smooth texture, and reduce breakouts — consistently ranked as one of the most effective OTC BHA exfoliants.",
+    source: "Dr. Azadeh Shirazi & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=3-MoLqxNFtY",
     sourceLinks: [
-      { name: "Dr. Shereene Idriss", url: "https://shopmy.us/collections/23674" },
+      { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=YJxARaLMSpc" },
     ],
     manufacturerUrl:
@@ -778,7 +778,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "dehydration", "sensitive", "budget", "normal"],
     whyRecommended:
       "A derm consensus pick. Dr. Daniel Sugai features it as the gold standard for dry and eczema-prone skin, praising its patented MVE delivery technology for 24-hour continuous hydration and barrier restoration.",
-    source: "Dr. Daniel Sugai (YouTube)",
+    source: "Dr. Daniel Sugai & Dr. Whitney Bowe (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=SvB_EaH29wQ",
     manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/moisturizing-cream",
     amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
@@ -857,7 +857,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "sensitive", "dehydration", "redness"],
     whyRecommended:
       "Dr. Dray featured this K-beauty barrier cream for its impressive ceramide-rich formula designed to restore moisture to very dry and sensitive skin. Its 365-day barrier support positioning reflects its gentle, redness-reducing formula that works for year-round use.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Whitney Bowe (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=oyJRxD9YQnE",
   },
   {
