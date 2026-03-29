@@ -448,6 +448,10 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
             Retake the Quiz
           </Button>
         </div>
+
+        <p className="mt-10 mb-4 text-center text-[11px] text-muted-foreground/60 leading-relaxed max-w-md mx-auto">
+          As an Amazon Associate, we earn from qualifying purchases. Product links may generate a small commission at no extra cost to you.
+        </p>
       </main>
     </div>
   );
