@@ -8,17 +8,6 @@ interface LandingProps {
 export function Landing({ onStart }: LandingProps) {
   return (
     <div className="flex flex-col items-center min-h-screen">
-      {/* Hero */}
-      <header className="w-full pt-8 pb-4 px-6 flex justify-center">
-        <div className="flex items-center gap-2">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-label="Glow logo">
-            <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.5" className="text-primary" />
-            <circle cx="16" cy="16" r="8" stroke="currentColor" strokeWidth="1.5" className="text-primary" opacity="0.6" />
-            <circle cx="16" cy="16" r="3" fill="currentColor" className="text-primary" />
-          </svg>
-          <span className="text-lg font-semibold tracking-tight" data-testid="text-logo">Glow</span>
-        </div>
-      </header>
 
       <main className="flex-1 flex flex-col items-center justify-center px-6 pb-16 max-w-2xl mx-auto text-center">
         <div className="mb-3">
