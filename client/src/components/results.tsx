@@ -269,8 +269,8 @@ function ProductCard({
               <p className="text-xs text-muted-foreground mt-0.5">{step.description}</p>
 
               <div className="flex items-center gap-2 mt-2 flex-wrap">
-                <Badge variant="secondary" className="text-xs">
-                  {currentProduct.price}
+                <Badge variant="secondary" className="text-xs" title="Approximate range — check retailer for current price">
+                  ~{currentProduct.price}
                 </Badge>
                 {currentProduct.pmOnly && (
                   <Badge variant="outline" className="text-xs gap-1 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">

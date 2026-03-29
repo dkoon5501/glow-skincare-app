@@ -291,7 +291,7 @@ export const productDatabase: Product[] = [
     name: "Hydrating Facial Cleanser",
     brand: "CeraVe",
     category: "cleanser",
-    price: "$15.99",
+    price: "$10–15",
     keyIngredients: ["Ceramides", "Hyaluronic Acid", "Glycerin"],
     bestFor: ["dry", "normal", "sensitive", "dehydration", "budget"],
     whyRecommended:
@@ -306,7 +306,7 @@ export const productDatabase: Product[] = [
     name: "Foaming Facial Cleanser",
     brand: "CeraVe",
     category: "cleanser",
-    price: "$15.99",
+    price: "$10–15",
     keyIngredients: ["Ceramides", "Niacinamide", "Hyaluronic Acid"],
     bestFor: ["oily", "combination", "acne", "normal", "budget"],
     whyRecommended:
@@ -321,7 +321,7 @@ export const productDatabase: Product[] = [
     name: "Toleriane Purifying Foaming Cleanser",
     brand: "La Roche-Posay",
     category: "cleanser",
-    price: "$17.99",
+    price: "$15–20",
     keyIngredients: ["Niacinamide", "Ceramide-3", "La Roche-Posay Thermal Spring Water"],
     bestFor: ["sensitive", "oily", "combination", "acne", "redness", "rosacea"],
     whyRecommended:
@@ -341,7 +341,7 @@ export const productDatabase: Product[] = [
     name: "Daily Facial Cleanser",
     brand: "Cetaphil",
     category: "cleanser",
-    price: "$13.99",
+    price: "$10–15",
     keyIngredients: ["Glycerin", "Niacinamide", "Vitamin B5 (Panthenol)"],
     bestFor: ["oily", "combination", "normal", "sensitive", "budget"],
     whyRecommended:
@@ -356,7 +356,7 @@ export const productDatabase: Product[] = [
     name: "Hydrating Foaming Oil Cleanser",
     brand: "CeraVe",
     category: "cleanser",
-    price: "$16.99",
+    price: "$15–20",
     keyIngredients: ["Squalane Oil", "Ceramides", "Hyaluronic Acid"],
     bestFor: ["dry", "sensitive", "dehydration", "normal", "budget"],
     whyRecommended:
@@ -371,7 +371,7 @@ export const productDatabase: Product[] = [
     name: "Ultra Gentle Daily Cleanser",
     brand: "Neutrogena",
     category: "cleanser",
-    price: "$11.99",
+    price: "$10–15",
     keyIngredients: ["Glycerin", "Dextran", "Fragrance-free"],
     bestFor: ["sensitive", "redness", "rosacea", "normal", "budget"],
     whyRecommended:
@@ -385,7 +385,7 @@ export const productDatabase: Product[] = [
     name: "Heartleaf Pore Control Cleansing Oil",
     brand: "Anua",
     category: "cleanser",
-    price: "$22.00",
+    price: "$20–25",
     keyIngredients: ["Heartleaf Extract", "Olive Oil", "Jojoba Oil"],
     bestFor: ["oily", "acne", "sensitive", "breakouts"],
     whyRecommended:
@@ -399,7 +399,7 @@ export const productDatabase: Product[] = [
     name: "Dual Barrier Purifying Cleansing Balm",
     brand: "CELIMAX",
     category: "cleanser",
-    price: "$28.00",
+    price: "$25–30",
     keyIngredients: ["Noni Extract", "Ceramides", "Shea Butter"],
     bestFor: ["sensitive", "acne", "dry", "combination"],
     whyRecommended:
@@ -412,7 +412,7 @@ export const productDatabase: Product[] = [
     name: "Radiant Tone Cleansing Gel",
     brand: "Eucerin",
     category: "cleanser",
-    price: "$19.00",
+    price: "$15–20",
     keyIngredients: ["Thiamidol", "Glycerin", "Panthenol"],
     bestFor: ["dullness", "hyperpigmentation", "dry", "budget"],
     whyRecommended:
@@ -426,7 +426,7 @@ export const productDatabase: Product[] = [
     name: "Gentle Facial Cleanser",
     brand: "Vanicream",
     category: "cleanser",
-    price: "$9.00",
+    price: "$5–10",
     keyIngredients: ["Glycerin", "PEG-free formula", "Dye-free"],
     bestFor: ["sensitive", "rosacea", "redness", "dry", "budget"],
     whyRecommended:
@@ -444,7 +444,7 @@ export const productDatabase: Product[] = [
     name: "C E Ferulic Serum",
     brand: "SkinCeuticals",
     category: "serum",
-    price: "$182.00",
+    price: "$150+",
     keyIngredients: ["15% L-Ascorbic Acid (Vitamin C)", "1% Vitamin E", "0.5% Ferulic Acid"],
     bestFor: ["aging", "dullness", "hyperpigmentation", "dark_spots", "premium"],
     whyRecommended:
@@ -460,7 +460,7 @@ export const productDatabase: Product[] = [
     name: "Niacinamide 10% + Zinc 1%",
     brand: "The Ordinary",
     category: "serum",
-    price: "$6.00",
+    price: "$5–10",
     keyIngredients: ["10% Niacinamide", "1% Zinc PCA"],
     bestFor: ["oily", "acne", "pores", "budget", "breakouts", "hyperpigmentation", "dullness"],
     whyRecommended:
@@ -475,7 +475,7 @@ export const productDatabase: Product[] = [
     name: "The Glow Maker Vitamin C Serum",
     brand: "Maelove",
     category: "serum",
-    price: "$24.00",
+    price: "$20–25",
     keyIngredients: ["15% L-Ascorbic Acid", "Vitamin E", "Ferulic Acid", "Hyaluronic Acid"],
     bestFor: ["dullness", "hyperpigmentation", "dark_spots", "aging", "budget", "midrange"],
     whyRecommended:
@@ -490,7 +490,7 @@ export const productDatabase: Product[] = [
     name: "Hyaluronic Acid 2% + B5",
     brand: "The Ordinary",
     category: "serum",
-    price: "$8.90",
+    price: "$5–10",
     keyIngredients: ["Multi-weight Hyaluronic Acid", "Vitamin B5 (Panthenol)", "Ceramides"],
     bestFor: ["dehydration", "dry", "dullness", "budget", "normal", "sensitive"],
     whyRecommended:
@@ -506,7 +506,7 @@ export const productDatabase: Product[] = [
     name: "Collagen Bank Vitamin C Serum",
     brand: "Neutrogena",
     category: "serum",
-    price: "$22.99",
+    price: "$20–25",
     keyIngredients: ["15% L-Ascorbic Acid", "Jazzy Micropeptide", "Hydrolyzed Collagen"],
     bestFor: ["aging", "wrinkles", "hyperpigmentation", "dullness", "budget", "midrange"],
     whyRecommended:
@@ -523,7 +523,7 @@ export const productDatabase: Product[] = [
     name: "Vitamin C Serum with Hyaluronic Acid",
     brand: "InstaNatural",
     category: "serum",
-    price: "$20.00",
+    price: "$15–20",
     keyIngredients: ["20% Vitamin C", "Hyaluronic Acid", "Ferulic Acid"],
     bestFor: ["dullness", "budget", "dark_spots", "aging"],
     whyRecommended:
@@ -536,7 +536,7 @@ export const productDatabase: Product[] = [
     name: "20% Vitamin C + E Ferulic Acid Serum",
     brand: "Timeless",
     category: "serum",
-    price: "$26.00",
+    price: "$25–30",
     keyIngredients: ["20% L-Ascorbic Acid", "Vitamin E", "Ferulic Acid"],
     bestFor: ["aging", "dullness", "hyperpigmentation", "midrange"],
     whyRecommended:
@@ -551,7 +551,7 @@ export const productDatabase: Product[] = [
     name: "Advanced Snail 96 Mucin Power Essence",
     brand: "COSRX",
     category: "serum",
-    price: "$25.00",
+    price: "$20–25",
     keyIngredients: ["96% Snail Secretion Filtrate", "Sodium Hyaluronate", "Betaine"],
     bestFor: ["dehydration", "dry", "sensitive", "dullness", "budget"],
     whyRecommended:
@@ -566,7 +566,7 @@ export const productDatabase: Product[] = [
     name: "Vitamin C Facial Serum",
     brand: "TruSkin",
     category: "serum",
-    price: "$22.00",
+    price: "$20–25",
     keyIngredients: ["Vitamin C", "Hyaluronic Acid", "Vitamin E", "Retinol"],
     bestFor: ["aging", "dullness", "budget", "dark_spots"],
     whyRecommended:
@@ -585,7 +585,7 @@ export const productDatabase: Product[] = [
     name: "Retinol B3 Serum",
     brand: "La Roche-Posay",
     category: "serum",
-    price: "$46.99",
+    price: "$45–50",
     keyIngredients: ["Pure Retinol", "Niacinamide (Vitamin B3)", "La Roche-Posay Thermal Spring Water"],
     bestFor: ["aging", "wrinkles", "dark_spots", "midrange", "retinoid_beginner", "sensitive"],
     whyRecommended:
@@ -610,7 +610,7 @@ export const productDatabase: Product[] = [
     name: "Skin Perfecting 2% BHA Liquid Exfoliant",
     brand: "Paula's Choice",
     category: "exfoliant",
-    price: "$34.00",
+    price: "$30–35",
     keyIngredients: ["2% Salicylic Acid (BHA)", "Green Tea Extract", "Methylpropanediol"],
     bestFor: ["acne", "oily", "pores", "texture", "breakouts", "midrange"],
     whyRecommended:
@@ -630,7 +630,7 @@ export const productDatabase: Product[] = [
     name: "Glycolic Acid 7% Toning Solution",
     brand: "The Ordinary",
     category: "exfoliant",
-    price: "$9.50",
+    price: "$5–10",
     keyIngredients: ["7% Glycolic Acid", "Aloe Vera", "Ginseng Extract"],
     bestFor: ["texture", "dullness", "hyperpigmentation", "budget", "oily"],
     whyRecommended:
@@ -645,7 +645,7 @@ export const productDatabase: Product[] = [
     name: "PHA Gentle Exfoliating Toner",
     brand: "The Inkey List",
     category: "exfoliant",
-    price: "$15.00",
+    price: "$10–15",
     keyIngredients: ["PHA (Polyhydroxy Acid)", "Hyaluronic Acid", "Aloe Vera"],
     bestFor: ["sensitive", "redness", "rosacea", "texture", "budget"],
     whyRecommended:
@@ -658,7 +658,7 @@ export const productDatabase: Product[] = [
     name: "10% Azelaic Acid Booster",
     brand: "Paula's Choice",
     category: "exfoliant",
-    price: "$39.00",
+    price: "$35–40",
     keyIngredients: ["10% Azelaic Acid", "Salicylic Acid", "Green Tea Extract"],
     bestFor: ["acne", "rosacea", "redness", "hyperpigmentation", "midrange"],
     whyRecommended:
@@ -671,7 +671,7 @@ export const productDatabase: Product[] = [
     name: "Mandelic Topical Acid 12%",
     brand: "Naturium",
     category: "exfoliant",
-    price: "$20.00",
+    price: "$15–20",
     keyIngredients: ["12% Mandelic Acid (AHA)", "Niacinamide", "Licorice Root Extract"],
     bestFor: ["acne", "dark_spots", "texture", "budget"],
     whyRecommended:
@@ -684,7 +684,7 @@ export const productDatabase: Product[] = [
     name: "Bionic Face Cream",
     brand: "NeoStrata",
     category: "exfoliant",
-    price: "$50.00",
+    price: "$45–50",
     keyIngredients: ["PHA (Gluconolactone)", "Lactobionic Acid", "Ceramides"],
     bestFor: ["aging", "dry", "sensitive", "mature", "premium"],
     whyRecommended:
@@ -697,7 +697,7 @@ export const productDatabase: Product[] = [
     name: "Strawberry Smooth BHA + AHA Salicylic Serum",
     brand: "Glow Recipe",
     category: "exfoliant",
-    price: "$42.00",
+    price: "$40–45",
     keyIngredients: ["Salicylic Acid (BHA)", "AHA Complex", "Strawberry Extract"],
     bestFor: ["pores", "texture", "oily", "combination", "midrange"],
     whyRecommended:
@@ -710,7 +710,7 @@ export const productDatabase: Product[] = [
     name: "T.L.C. Sukari Babyfacial",
     brand: "Drunk Elephant",
     category: "exfoliant",
-    price: "$80.00",
+    price: "$60–80",
     keyIngredients: ["AHA Complex (Glycolic, Tartaric, Lactic, Citric)", "2% BHA", "Marula Oil"],
     bestFor: ["dullness", "texture", "aging", "premium"],
     whyRecommended:
@@ -723,7 +723,7 @@ export const productDatabase: Product[] = [
     name: "Azelaic Acid 10% Serum",
     brand: "Anua",
     category: "exfoliant",
-    price: "$25.00",
+    price: "$20–25",
     keyIngredients: ["10% Azelaic Acid", "Niacinamide", "Heartleaf Extract"],
     bestFor: ["acne", "rosacea", "redness", "budget"],
     whyRecommended:
@@ -736,7 +736,7 @@ export const productDatabase: Product[] = [
     name: "Exfoliating Serum 3 with Azelaic + Glycolic",
     brand: "Glytone",
     category: "exfoliant",
-    price: "$60.00",
+    price: "$50–60",
     keyIngredients: ["Glycolic Acid", "Azelaic Acid", "Kojic Acid"],
     bestFor: ["dark_spots", "hyperpigmentation", "aging", "premium"],
     whyRecommended:
@@ -753,7 +753,7 @@ export const productDatabase: Product[] = [
     name: "Toleriane Double Repair Moisturizer",
     brand: "La Roche-Posay",
     category: "moisturizer",
-    price: "$22.99",
+    price: "$20–25",
     keyIngredients: ["Ceramide-3", "Niacinamide", "Prebiotic Thermal Spring Water"],
     bestFor: ["sensitive", "normal", "combination", "redness", "rosacea", "midrange"],
     whyRecommended:
@@ -773,7 +773,7 @@ export const productDatabase: Product[] = [
     name: "Moisturizing Cream",
     brand: "CeraVe",
     category: "moisturizer",
-    price: "$18.99",
+    price: "$15–20",
     keyIngredients: ["Ceramides (1, 3, 6-II)", "Hyaluronic Acid", "MVE Technology"],
     bestFor: ["dry", "dehydration", "sensitive", "budget", "normal"],
     whyRecommended:
@@ -788,7 +788,7 @@ export const productDatabase: Product[] = [
     name: "Cicaplast Gel B5 Skin Protectant",
     brand: "La Roche-Posay",
     category: "moisturizer",
-    price: "$22.99",
+    price: "$20–25",
     keyIngredients: ["Glycerin", "Vitamin B5 (Panthenol)", "Madecassoside"],
     bestFor: ["sensitive", "redness", "rosacea", "dehydration", "dry", "midrange"],
     whyRecommended:
@@ -804,7 +804,7 @@ export const productDatabase: Product[] = [
     name: "PM Facial Moisturizing Lotion",
     brand: "CeraVe",
     category: "moisturizer",
-    price: "$17.49",
+    price: "$15–20",
     keyIngredients: ["Niacinamide", "Ceramides", "Hyaluronic Acid"],
     bestFor: ["oily", "acne", "combination", "budget", "normal"],
     whyRecommended:
@@ -819,7 +819,7 @@ export const productDatabase: Product[] = [
     name: "Hydro Boost Water Gel",
     brand: "Neutrogena",
     category: "moisturizer",
-    price: "$19.99",
+    price: "$15–20",
     keyIngredients: ["Hyaluronic Acid", "Glycerin", "Dimethicone"],
     bestFor: ["oily", "combination", "dehydration", "budget", "normal"],
     whyRecommended:
@@ -839,7 +839,7 @@ export const productDatabase: Product[] = [
     name: "Ultra Repair Cream",
     brand: "First Aid Beauty",
     category: "moisturizer",
-    price: "$34.00",
+    price: "$30–35",
     keyIngredients: ["Colloidal Oatmeal", "Shea Butter", "Ceramides"],
     bestFor: ["dry", "sensitive", "dehydration", "midrange", "redness"],
     whyRecommended:
@@ -852,7 +852,7 @@ export const productDatabase: Product[] = [
     name: "AtoBarrier 365 Cream",
     brand: "Aestura",
     category: "moisturizer",
-    price: "$30.00",
+    price: "$25–30",
     keyIngredients: ["Ceramides", "Niacinamide", "Panthenol"],
     bestFor: ["dry", "sensitive", "dehydration", "redness"],
     whyRecommended:
@@ -865,7 +865,7 @@ export const productDatabase: Product[] = [
     name: "Daily Facial Moisturizer",
     brand: "Vanicream",
     category: "moisturizer",
-    price: "$16.00",
+    price: "$15–20",
     keyIngredients: ["Glycerin", "Dimethicone", "PEG-free formula"],
     bestFor: ["sensitive", "rosacea", "redness", "budget", "normal"],
     whyRecommended:
@@ -879,7 +879,7 @@ export const productDatabase: Product[] = [
     name: "Ultra Facial Cream",
     brand: "Kiehl's",
     category: "moisturizer",
-    price: "$35.00",
+    price: "$30–35",
     keyIngredients: ["Glacial Glycoprotein", "Squalane", "Imperata Cylindrica Root Extract"],
     bestFor: ["normal", "combination", "dry", "midrange"],
     whyRecommended:
@@ -893,7 +893,7 @@ export const productDatabase: Product[] = [
     name: "Ectoin Panthenol 11% Moisturizer",
     brand: "Abib",
     category: "moisturizer",
-    price: "$25.00",
+    price: "$20–25",
     keyIngredients: ["11% Panthenol (Vitamin B5)", "Ectoin", "Ceramides"],
     bestFor: ["sensitive", "redness", "rosacea", "dehydration"],
     whyRecommended:
@@ -910,7 +910,7 @@ export const productDatabase: Product[] = [
     name: "UV Clear Broad-Spectrum SPF 46",
     brand: "EltaMD",
     category: "sunscreen",
-    price: "$41.00",
+    price: "$40–45",
     keyIngredients: ["Zinc Oxide 9%", "Niacinamide", "Hyaluronic Acid"],
     bestFor: ["sensitive", "acne", "rosacea", "redness", "midrange"],
     whyRecommended:
@@ -929,7 +929,7 @@ export const productDatabase: Product[] = [
     name: "Anthelios Clear Skin Dry Touch SPF 60",
     brand: "La Roche-Posay",
     category: "sunscreen",
-    price: "$35.99",
+    price: "$30–35",
     keyIngredients: ["Cell-Ox Shield XL Technology", "Silica", "Perlite"],
     bestFor: ["oily", "acne", "combination", "high_sun", "midrange"],
     whyRecommended:
@@ -945,7 +945,7 @@ export const productDatabase: Product[] = [
     name: "Eryfotona Ageless Tinted SPF 50",
     brand: "ISDIN",
     category: "sunscreen",
-    price: "$55.00",
+    price: "$50–60",
     keyIngredients: ["Zinc Oxide", "Photolyase DNA Repair Enzyme", "Vitamin E"],
     bestFor: ["aging", "mature", "premium", "hyperpigmentation", "high_sun", "forties", "fiftyplus"],
     whyRecommended:
@@ -960,7 +960,7 @@ export const productDatabase: Product[] = [
     name: "AM Facial Moisturizing Lotion SPF 30",
     brand: "CeraVe",
     category: "sunscreen",
-    price: "$17.99",
+    price: "$15–20",
     keyIngredients: ["Zinc Oxide", "Ceramides", "Niacinamide"],
     bestFor: ["dry", "normal", "sensitive", "budget", "dehydration"],
     whyRecommended:
@@ -976,7 +976,7 @@ export const productDatabase: Product[] = [
     name: "Unseen Sunscreen SPF 40",
     brand: "Supergoop!",
     category: "sunscreen",
-    price: "$38.00",
+    price: "$35–40",
     keyIngredients: ["Meadowfoam Seed Oil", "Red Algae", "Chemical SPF Filters"],
     bestFor: ["oily", "combination", "normal", "midrange", "pores"],
     whyRecommended:
@@ -989,7 +989,7 @@ export const productDatabase: Product[] = [
     name: "Radiant Tone Daily Face Lotion SPF 30",
     brand: "Eucerin",
     category: "sunscreen",
-    price: "$35.00",
+    price: "$30–35",
     keyIngredients: ["Thiamidol", "SPF 30 Filters", "Niacinamide"],
     bestFor: ["hyperpigmentation", "dark_spots", "combination"],
     whyRecommended:
@@ -1002,7 +1002,7 @@ export const productDatabase: Product[] = [
     name: "Universal Tinted Moisturizer SPF 46",
     brand: "DRMTLGY",
     category: "sunscreen",
-    price: "$40.00",
+    price: "$35–40",
     keyIngredients: ["SPF 46 Broad Spectrum", "Universal Tint", "Hyaluronic Acid"],
     bestFor: ["normal", "combination", "oily", "midrange"],
     whyRecommended:
@@ -1016,7 +1016,7 @@ export const productDatabase: Product[] = [
     name: "Dew-Glow Moisturizer SPF 50",
     brand: "Naturium",
     category: "sunscreen",
-    price: "$25.00",
+    price: "$20–25",
     keyIngredients: ["SPF 50 Broad Spectrum", "Hyaluronic Acid", "Niacinamide"],
     bestFor: ["dry", "dehydration", "budget", "dullness"],
     whyRecommended:
@@ -1029,7 +1029,7 @@ export const productDatabase: Product[] = [
     name: "Sunforgettable Face Shield Flex SPF 50",
     brand: "Colorescience",
     category: "sunscreen",
-    price: "$52.00",
+    price: "$50–60",
     keyIngredients: ["Zinc Oxide (Mineral)", "Titanium Dioxide", "Flex-Ready Technology"],
     bestFor: ["sensitive", "rosacea", "premium", "redness"],
     whyRecommended:
@@ -1042,7 +1042,7 @@ export const productDatabase: Product[] = [
     name: "Daily Tinted Fluid SPF 40",
     brand: "Beauty of Joseon",
     category: "sunscreen",
-    price: "$20.00",
+    price: "$15–20",
     keyIngredients: ["SPF 40 PA++++", "Niacinamide", "Rice Bran Extract"],
     bestFor: ["normal", "combination", "budget", "dullness"],
     whyRecommended:
@@ -1059,7 +1059,7 @@ export const productDatabase: Product[] = [
     name: "Adapalene Gel 0.1%",
     brand: "Differin",
     category: "treatment",
-    price: "$14.99",
+    price: "$10–15",
     keyIngredients: ["Adapalene 0.1% (OTC Retinoid)"],
     bestFor: ["acne", "breakouts", "retinoid_new", "retinoid_beginner", "budget", "pores", "texture", "hyperpigmentation"],
     whyRecommended:
@@ -1079,7 +1079,7 @@ export const productDatabase: Product[] = [
     name: "Crystal Retinal (Retinaldehyde Serum)",
     brand: "Medik8",
     category: "treatment",
-    price: "$69.00",
+    price: "$60–80",
     keyIngredients: ["Retinaldehyde (Retinal)", "Hyaluronic Acid", "Vitamin E"],
     bestFor: ["aging", "wrinkles", "acne", "retinoid_experienced", "retinoid_beginner", "premium", "midrange", "texture"],
     whyRecommended:
@@ -1099,7 +1099,7 @@ export const productDatabase: Product[] = [
     name: "Retinol 1% in Squalane",
     brand: "The Ordinary",
     category: "treatment",
-    price: "$8.90",
+    price: "$5–10",
     keyIngredients: ["1% Retinol", "Squalane"],
     bestFor: ["aging", "wrinkles", "acne", "budget", "retinoid_beginner", "texture"],
     whyRecommended:
@@ -1115,7 +1115,7 @@ export const productDatabase: Product[] = [
     name: "Clinical 1% Retinol Treatment",
     brand: "Paula's Choice",
     category: "treatment",
-    price: "$65.00",
+    price: "$60–80",
     keyIngredients: ["1% Retinol", "Peptides", "Vitamin C"],
     bestFor: ["aging", "wrinkles", "retinoid_experienced", "midrange", "premium", "texture"],
     whyRecommended:
@@ -1131,7 +1131,7 @@ export const productDatabase: Product[] = [
     name: "Rapid Wrinkle Repair Retinol Serum",
     brand: "Neutrogena",
     category: "treatment",
-    price: "$22.99",
+    price: "$20–25",
     keyIngredients: ["Accelerated Retinol SA", "Glucose Complex", "Hyaluronic Acid"],
     bestFor: ["aging", "wrinkles", "retinoid_beginner", "budget", "dark_spots"],
     whyRecommended:
@@ -1147,7 +1147,7 @@ export const productDatabase: Product[] = [
     name: "Resurfacing Retinol Serum",
     brand: "CeraVe",
     category: "treatment",
-    price: "$19.99",
+    price: "$15–20",
     keyIngredients: ["Encapsulated Retinol", "Niacinamide", "Ceramides"],
     bestFor: ["acne", "texture", "pores", "budget", "retinoid_new", "retinoid_beginner"],
     whyRecommended:
@@ -1162,7 +1162,7 @@ export const productDatabase: Product[] = [
     name: "Retinol Complex Cream",
     brand: "Naturium",
     category: "treatment",
-    price: "$25.00",
+    price: "$20–25",
     keyIngredients: ["Retinol", "Peptides", "Squalane"],
     bestFor: ["sensitive", "retinoid_beginner", "budget"],
     whyRecommended:
@@ -1176,7 +1176,7 @@ export const productDatabase: Product[] = [
     name: "Retinol Correxion Max Hydration Moisturizer",
     brand: "RoC",
     category: "treatment",
-    price: "$30.00",
+    price: "$25–30",
     keyIngredients: ["Retinol", "Hyaluronic Acid", "Ceramides"],
     bestFor: ["dry", "retinoid_new", "retinoid_beginner", "budget"],
     whyRecommended:
@@ -1191,7 +1191,7 @@ export const productDatabase: Product[] = [
     name: "Revitalift Pressed Night Cream with Retinol",
     brand: "L'Oreal",
     category: "treatment",
-    price: "$40.00",
+    price: "$35–40",
     keyIngredients: ["Pro-Retinol", "Hyaluronic Acid", "Vitamin C"],
     bestFor: ["aging", "combination", "retinoid_beginner", "midrange"],
     whyRecommended:
@@ -1205,7 +1205,7 @@ export const productDatabase: Product[] = [
     name: "0.3% Retinol Complex Serum",
     brand: "First Aid Beauty",
     category: "treatment",
-    price: "$60.00",
+    price: "$50–60",
     keyIngredients: ["0.3% Pure Retinol", "Colloidal Oat", "Peptides"],
     bestFor: ["sensitive", "aging", "retinoid_beginner", "midrange", "premium"],
     whyRecommended:
