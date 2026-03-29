@@ -38,7 +38,7 @@ export default function Home() {
         <QuizFlow onComplete={handleQuizComplete} onBack={() => setAppState("landing")} />
       )}
       {appState === "results" && recommendation && (
-        <Results recommendation={recommendation} onRetake={handleRetake} />
+        <Results recommendation={recommendation} answers={answers} onRetake={handleRetake} />
       )}
       <PerplexityAttribution />
     </div>
