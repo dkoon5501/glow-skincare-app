@@ -27,11 +27,16 @@ import {
   BookmarkCheck,
   BookOpen,
   RefreshCw,
+  Share2,
+  ArrowRight,
+  Check,
+  Copy,
 } from "lucide-react";
 import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers, RoutineItem } from "@/lib/skincare-data";
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { ProductImage } from "@/components/product-image";
+import { shareResults } from "@/lib/share-utils";
 import { useAuth } from "@/lib/auth-context";
 import { saveRoutine, saveDiscardedProduct } from "@/lib/firestore";
 import { useHashLocation } from "wouter/use-hash-location";
@@ -40,6 +45,8 @@ interface ResultsProps {
   recommendation: RecommendedRoutine;
   answers: QuizAnswers;
   onRetake: () => void;
+  /** When true, this is a shared view — hide save section, show CTA to take own quiz */
+  isSharedView?: boolean;
 }
 
 const REJECTION_REASONS = [
@@ -516,7 +523,36 @@ function SaveRoutineSection({
   );
 }
 
-export function Results({ recommendation, answers, onRetake }: ResultsProps) {
+function ShareButton({ answers, skinProfile }: { answers: QuizAnswers; skinProfile: { type: string; baumannCode: string } }) {
+  const [status, setStatus] = useState<"idle" | "copied" | "shared" | "failed">("idle");
+
+  const handleShare = useCallback(async () => {
+    const result = await shareResults(answers, skinProfile);
+    setStatus(result);
+    if (result === "copied") {
+      setTimeout(() => setStatus("idle"), 2500);
+    }
+  }, [answers, skinProfile]);
+
+  return (
+    <Button
+      variant="outline"
+      onClick={handleShare}
+      className="gap-2 rounded-full"
+      data-testid="button-share-results"
+    >
+      {status === "copied" ? (
+        <><Check className="w-4 h-4" /> Link Copied</>
+      ) : status === "shared" ? (
+        <><Check className="w-4 h-4" /> Shared</>
+      ) : (
+        <><Share2 className="w-4 h-4" /> Share Results</>
+      )}
+    </Button>
+  );
+}
+
+export function Results({ recommendation, answers, onRetake, isSharedView }: ResultsProps) {
   const { user } = useAuth();
   const { amRoutine, pmRoutine, skinProfile, tips } = recommendation;
 
@@ -626,8 +662,29 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
           </Tabs>
         </div>
 
-        {/* Save Routine Section */}
-        <SaveRoutineSection recommendation={recommendation} answers={answers} />
+        {/* Save Routine Section — hide on shared views */}
+        {!isSharedView && (
+          <SaveRoutineSection recommendation={recommendation} answers={answers} />
+        )}
+
+        {/* Shared view banner */}
+        {isSharedView && (
+          <Card className="mt-6 border-primary/20 bg-primary/3" data-testid="card-shared-banner">
+            <CardContent className="p-5 text-center">
+              <p className="text-sm text-foreground mb-3">
+                This is someone else's personalized routine. Take the quiz to get your own.
+              </p>
+              <Button
+                onClick={onRetake}
+                className="gap-2 rounded-full text-sm"
+                data-testid="button-take-own-quiz"
+              >
+                <ArrowRight className="w-4 h-4" />
+                Take My Own Quiz
+              </Button>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Pro Tips */}
         <Card className="mt-6" data-testid="card-tips">
@@ -681,8 +738,8 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
           </div>
         </div>
 
-        {/* Retake */}
-        <div className="mt-8 text-center">
+        {/* Retake & Share */}
+        <div className="mt-8 flex items-center justify-center gap-3">
           <Button
             variant="outline"
             onClick={onRetake}
@@ -692,6 +749,7 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
             <RotateCcw className="w-4 h-4" />
             Retake the Quiz
           </Button>
+          <ShareButton answers={answers} skinProfile={skinProfile} />
         </div>
 
         <p className="mt-10 mb-4 text-center text-[11px] text-muted-foreground/60 leading-relaxed max-w-md mx-auto">

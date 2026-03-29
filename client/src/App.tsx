@@ -9,6 +9,7 @@ import { Header } from "@/components/header";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import MyRoutines from "@/pages/my-routines";
+import SharedResults from "@/pages/shared-results";
 
 function AppRouter() {
   return (
@@ -17,6 +18,7 @@ function AppRouter() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/my-routines" component={MyRoutines} />
+        <Route path="/shared/:encoded" component={SharedResults} />
         <Route component={NotFound} />
       </Switch>
     </>

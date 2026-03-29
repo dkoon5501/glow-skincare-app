@@ -372,8 +372,12 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "sensitive", "dehydration", "normal", "budget"],
     whyRecommended:
       "Dr. Karen Locke (The Budget Dermatologist) calls this one of her current favorite cleansers — it acts as a single-step double cleanse, breaking down makeup and sunscreen while keeping dry skin barrier-intact.",
-    source: "Dr. Karen Locke / The Budget Dermatologist (YouTube)",
+    source: "Dr. Karen Locke & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=iZc8UWcq5dY",
+    sourceLinks: [
+      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=OTlliSx7dQU" },
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
+    ],
     manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-foaming-oil-cleanser",
     // No ASIN in spec; omitting amazonUrl
   },
@@ -442,7 +446,7 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "rosacea", "redness", "dry", "budget"],
     whyRecommended:
       "Dr. Dray is a strong advocate for Vanicream products for sensitive and reactive skin. This fragrance-free, dye-free, and preservative-free formula is one of the most hypoallergenic cleansers available — ideal for rosacea, eczema, and skin that reacts to almost everything.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Karen Locke (YouTube)",
     manufacturerUrl: "https://www.vanicream.com",
     amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=glowskincar0c-20",
   },
@@ -460,9 +464,13 @@ export const productDatabase: Product[] = [
     bestFor: ["aging", "dullness", "hyperpigmentation", "dark_spots", "premium"],
     whyRecommended:
       "Considered the gold standard antioxidant serum. Dr. Whitney Bowe calls it the most studied and effective L-ascorbic acid serum on the market, citing its proprietary pH and synergistic vitamin C/E/ferulic acid ratio backed by clinical data.",
-    source: "Dr. Whitney Bowe (YouTube)",
+    source: "Dr. Whitney Bowe, Dr. Daniel Sugai & Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=1kLLEyFeZq8",
-    manufacturerUrl:
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=1kLLEyFeZq8" },
+      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
+    ],
+        manufacturerUrl:
       "https://www.skinceuticals.com/skincare/vitamin-c-serums/c-e-ferulic-with-15-l-ascorbic-acid/S17.html",
     // No Amazon listing for SkinCeuticals CE Ferulic per spec
   },
@@ -476,8 +484,12 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "acne", "pores", "budget", "breakouts", "hyperpigmentation", "dullness"],
     whyRecommended:
       "Consensus pick across multiple derm influencers. Controls oil, minimizes pores, reduces post-acne marks, and brightens — all at a fraction of the cost. Dr. Muneeb Shah and Dr. Daniel Sugai both frequently cite it as a go-to for oily and acne-prone skin.",
-    source: "Dr. Muneeb Shah (YouTube)",
+    source: "Dr. Muneeb Shah & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=IyxTc0iZ6V8",
+    sourceLinks: [
+      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
+    ],
     manufacturerUrl: "https://theordinary.com/en-us/niacinamide-10-zinc-1-serum-100436.html",
     amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=glowskincar0c-20",
   },
@@ -491,8 +503,12 @@ export const productDatabase: Product[] = [
     bestFor: ["dullness", "hyperpigmentation", "dark_spots", "aging", "budget", "midrange"],
     whyRecommended:
       "Dr. Karen Locke (The Budget Dermatologist) rates this as one of her top vitamin C serum picks, calling it a worthy budget alternative to SkinCeuticals CE Ferulic with the same 15% L-ascorbic acid + vitamin E + ferulic acid formula.",
-    source: "Dr. Karen Locke / The Budget Dermatologist (YouTube)",
+    source: "Dr. Karen Locke & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=OTlliSx7dQU",
+    sourceLinks: [
+      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
+    ],
     manufacturerUrl: "https://maelove.com/products/the-glow-maker",
     // No ASIN in spec; omitting amazonUrl
   },
@@ -506,9 +522,9 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "dry", "dullness", "budget", "normal", "sensitive"],
     whyRecommended:
       "Dr. Sam Ellis recommends The Ordinary's HA serum as a reliable, affordable hydration booster. Multi-molecular hyaluronic acid hydrates at surface and deeper skin levels; B5 soothes and supports barrier repair.",
-    source: "Dr. Sam Ellis (YouTube)",
+    source: "Dr. Sam Ellis & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=iGBIxwOxfWU",
-    manufacturerUrl:
+        manufacturerUrl:
       "https://theordinary.com/en-us/hyaluronic-acid-2-b5-serum-with-ceramides-100637.html",
     amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=glowskincar0c-20",
   },
@@ -552,8 +568,12 @@ export const productDatabase: Product[] = [
     bestFor: ["aging", "dullness", "hyperpigmentation", "midrange"],
     whyRecommended:
       "Dr. Sam Ellis recommended this as a budget alternative to SkinCeuticals CE Ferulic. With 20% L-ascorbic acid plus the same synergistic ferulic acid pairing, it delivers potent antioxidant protection and brightening at a fraction of the luxury price.",
-    source: "Dr. Sam Ellis (YouTube)",
+    source: "Dr. Sam Ellis & Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
+    sourceLinks: [
+      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=L2SLL8a6qxA" },
+      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=APC16_cpYyk" },
+    ],
     manufacturerUrl: "https://www.timelessha.com",
     amazonUrl: "https://www.amazon.com/dp/B0036BI56G?tag=glowskincar0c-20",
   },
@@ -567,9 +587,9 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "dry", "sensitive", "dullness", "budget"],
     whyRecommended:
       "Doctorly reviewed this K-beauty cult classic for its remarkable hydration and barrier-repair properties. The 96% snail mucin concentration helps heal, plump, and restore radiance to dehydrated and sensitive skin types without heavy texture.",
-    source: "Doctorly (YouTube)",
+    source: "Doctorly & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=76GA2FR9nAg",
-    manufacturerUrl: "https://www.cosrx.com",
+        manufacturerUrl: "https://www.cosrx.com",
     amazonUrl: "https://www.amazon.com/dp/B00PBX3L7K?tag=glowskincar0c-20",
   },
   {
@@ -679,8 +699,12 @@ export const productDatabase: Product[] = [
     bestFor: ["acne", "rosacea", "redness", "hyperpigmentation", "midrange"],
     whyRecommended:
       "Dr. Dray recommends this azelaic acid booster for its dual action against acne and rosacea. Azelaic acid is one of the few ingredients that addresses both redness and dark spots simultaneously — making this a standout pick for combination-concern skin.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Jenny Liu (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=4By-S9xY4h8",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=4By-S9xY4h8" },
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=pxEfSEj0ssE" },
+    ],
   },
   {
     id: "naturium-mandelic-acid",
@@ -815,8 +839,12 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "redness", "rosacea", "dehydration", "dry", "midrange"],
     whyRecommended:
       "Dr. Dray calls this one of her most repurchased products, featuring it in her top skincare products of 2024 and 2025. A go-to for soothing damaged, sensitive, and post-procedure skin with a lightweight gel texture.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Whitney Bowe (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
+      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+    ],
     manufacturerUrl:
       "https://www.laroche-posay.us/our-products/body/body-lotion/cicaplast-gel-b5-skin-protectant-3337875865302.html",
     // No ASIN in spec; omitting amazonUrl
@@ -897,7 +925,7 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "rosacea", "redness", "budget", "normal"],
     whyRecommended:
       "Dr. Dray consistently recommends Vanicream products for highly reactive skin. This daily moisturizer is formulated without fragrance, dyes, parabens, or preservatives that commonly trigger flares in rosacea and contact dermatitis, making it one of the safest choices for sensitive skin.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Karen Locke (YouTube)",
     manufacturerUrl: "https://www.vanicream.com",
     amazonUrl: "https://www.amazon.com/dp/B09TPXNKJG?tag=glowskincar0c-20",
   },
@@ -911,9 +939,13 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "combination", "dry", "midrange"],
     whyRecommended:
       "Doctorly reviewed Kiehl's Ultra Facial Cream as a classic, well-rounded moisturizer for normal to dry skin. Its unique glacial glycoprotein and squalane combination delivers 24-hour hydration with a comfortable, non-greasy texture that works well under makeup.",
-    source: "Doctorly (YouTube)",
+    source: "Doctorly & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=h19mTItzLrE",
-    manufacturerUrl: "https://www.kiehls.com",
+    sourceLinks: [
+      { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=hHfcGTA7A70" },
+    ],
+        manufacturerUrl: "https://www.kiehls.com",
   },
   {
     id: "abib-ectoin-panthenol-moisturizer",
@@ -1144,8 +1176,12 @@ export const productDatabase: Product[] = [
     bestFor: ["aging", "wrinkles", "acne", "budget", "retinoid_beginner", "texture"],
     whyRecommended:
       "Dr. Dray recommends The Ordinary's retinol range as affordable, effective OTC retinoids. The squalane base keeps the formula moisturizing and tolerable. Effective for mild acne, texture improvement, and early anti-aging. Apply at night only.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Karen Locke (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=o2CjoLldFCg",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
+      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
+    ],
     manufacturerUrl: "https://theordinary.com/en-us/retinol-1-in-squalane-serum-100441.html",
     amazonUrl: "https://www.amazon.com/dp/B0DQ6496LC?tag=glowskincar0c-20",
     pmOnly: true,
@@ -1192,8 +1228,12 @@ export const productDatabase: Product[] = [
     bestFor: ["acne", "texture", "pores", "budget", "retinoid_new", "retinoid_beginner"],
     whyRecommended:
       "Dr. Dray recommends CeraVe Resurfacing Retinol as an excellent entry-level retinoid. Encapsulated retinol minimizes irritation during the adjustment phase, while niacinamide and ceramides simultaneously soothe and protect the barrier. Apply at night only. Start slowly.",
-    source: "Dr. Dray (YouTube)",
+    source: "Dr. Dray & Dr. Muneeb Shah (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
+      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
+    ],
     amazonUrl: "https://www.amazon.com/dp/B07VWSN95S?tag=glowskincar0c-20",
     pmOnly: true,
   },
@@ -1221,8 +1261,12 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "retinoid_new", "retinoid_beginner", "budget"],
     whyRecommended:
       "Dr. Jenny Liu recommended this RoC moisturizer-retinol hybrid for dry skin beginners. By combining retinol with hyaluronic acid and ceramides in a rich moisturizing base, it counters the dryness commonly experienced when starting retinoids. Apply at night only.",
-    source: "Dr. Jenny Liu (YouTube)",
+    source: "Dr. Jenny Liu & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=bruzUMMO_LU",
+    sourceLinks: [
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=bruzUMMO_LU" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=lda4RL8QO8g" },
+    ],
     amazonUrl: "https://www.amazon.com/dp/B07GTWMD1W?tag=glowskincar0c-20",
     pmOnly: true,
   },
