@@ -3,6 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from "@/components/ui/dialog";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
   Sun,
   Moon,
   RotateCcw,
@@ -16,12 +26,13 @@ import {
   Bookmark,
   BookmarkCheck,
   BookOpen,
+  RefreshCw,
 } from "lucide-react";
 import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers, RoutineItem } from "@/lib/skincare-data";
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth-context";
-import { saveRoutine } from "@/lib/firestore";
+import { saveRoutine, saveDiscardedProduct } from "@/lib/firestore";
 import { useHashLocation } from "wouter/use-hash-location";
 
 interface ResultsProps {
@@ -30,113 +41,322 @@ interface ResultsProps {
   onRetake: () => void;
 }
 
-function ProductCard({ step, product, index, essential }: { step: RoutineStep; product: Product; index: number; essential: boolean }) {
-  const [expanded, setExpanded] = useState(false);
+const REJECTION_REASONS = [
+  "Didn't work for me",
+  "Had a bad reaction",
+  "Too expensive",
+  "Don't like the texture/feel",
+  "Already tried it",
+] as const;
+
+type RejectionReason = typeof REJECTION_REASONS[number];
+
+interface TryAnotherDialogProps {
+  open: boolean;
+  onClose: () => void;
+  product: Product;
+  onSubmit: (reason: RejectionReason, customReason: string) => Promise<void>;
+}
+
+function TryAnotherDialog({ open, onClose, product, onSubmit }: TryAnotherDialogProps) {
+  const [reason, setReason] = useState<RejectionReason | "">("");
+  const [customReason, setCustomReason] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = useCallback(async () => {
+    if (!reason) {
+      setError("Please select a reason.");
+      return;
+    }
+    setSubmitting(true);
+    setError(null);
+    try {
+      await onSubmit(reason as RejectionReason, customReason.trim());
+      // Reset form
+      setReason("");
+      setCustomReason("");
+      onClose();
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  }, [reason, customReason, onSubmit, onClose]);
+
+  const handleOpenChange = (open: boolean) => {
+    if (!open) {
+      setReason("");
+      setCustomReason("");
+      setError(null);
+      onClose();
+    }
+  };
 
   return (
-    <Card className="overflow-hidden border-card-border" data-testid={`card-product-${product.id}`}>
-      <CardContent className="p-4">
-        <div className="flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-            <span className="text-xs font-bold text-primary">{index + 1}</span>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogContent className="max-w-sm mx-auto">
+        <DialogHeader>
+          <DialogTitle className="text-sm font-semibold">
+            Why isn't this product right for you?
+          </DialogTitle>
+          <p className="text-xs text-muted-foreground mt-1">
+            {product.brand} {product.name}
+          </p>
+        </DialogHeader>
+
+        <div className="py-2">
+          <RadioGroup
+            value={reason}
+            onValueChange={(v) => {
+              setReason(v as RejectionReason);
+              setError(null);
+            }}
+            className="space-y-2"
+          >
+            {REJECTION_REASONS.map((r) => (
+              <div key={r} className="flex items-center space-x-2">
+                <RadioGroupItem
+                  value={r}
+                  id={`reason-${r}`}
+                  data-testid={`radio-reason-${r.replace(/\s+/g, "-").toLowerCase()}`}
+                />
+                <Label
+                  htmlFor={`reason-${r}`}
+                  className="text-sm font-normal cursor-pointer"
+                >
+                  {r}
+                </Label>
+              </div>
+            ))}
+          </RadioGroup>
+
+          <div className="mt-4">
+            <Label htmlFor="custom-reason" className="text-xs text-muted-foreground mb-1.5 block">
+              Other reason (optional)
+            </Label>
+            <Textarea
+              id="custom-reason"
+              placeholder="Tell us more..."
+              value={customReason}
+              onChange={(e) => setCustomReason(e.target.value)}
+              className="text-sm resize-none h-16"
+              data-testid="textarea-custom-reason"
+            />
           </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-0.5">
-              <span className="text-xs font-medium text-primary uppercase tracking-wide">
-                {step.label}
-              </span>
-              <Badge
-                variant={essential ? "default" : "outline"}
-                className={cn(
-                  "text-[10px] px-1.5 py-0",
-                  essential
-                    ? "bg-primary/15 text-primary border-0 hover:bg-primary/15"
-                    : "text-muted-foreground border-muted-foreground/30"
-                )}
-              >
-                {essential ? "Essential" : "Recommended"}
-              </Badge>
-            </div>
-            <h3 className="text-sm font-semibold text-foreground">
-              {product.brand} {product.name}
-            </h3>
-            <p className="text-xs text-muted-foreground mt-0.5">{step.description}</p>
 
-            <div className="flex items-center gap-2 mt-2 flex-wrap">
-              <Badge variant="secondary" className="text-xs">
-                {product.price}
-              </Badge>
-              {product.pmOnly && (
-                <Badge variant="outline" className="text-xs gap-1 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
-                  <MoonStar className="w-3 h-3" />
-                  PM Only
+          {error && (
+            <p className="text-xs text-destructive mt-2" data-testid="rejection-error">
+              {error}
+            </p>
+          )}
+        </div>
+
+        <DialogFooter className="gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={onClose}
+            disabled={submitting}
+            data-testid="button-cancel-rejection"
+          >
+            Cancel
+          </Button>
+          <Button
+            size="sm"
+            onClick={handleSubmit}
+            disabled={submitting || !reason}
+            data-testid="button-submit-rejection"
+          >
+            {submitting ? "Submitting…" : "Submit"}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function ProductCard({
+  step,
+  product,
+  alternatives,
+  index,
+  essential,
+  onDiscard,
+}: {
+  step: RoutineStep;
+  product: Product;
+  alternatives: Product[];
+  index: number;
+  essential: boolean;
+  onDiscard: (product: Product, reason: RejectionReason, customReason: string) => Promise<void>;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState<Product>(product);
+  const [remainingAlts, setRemainingAlts] = useState<Product[]>(alternatives);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [noMoreAlts, setNoMoreAlts] = useState(false);
+
+  const handleSubmitRejection = useCallback(
+    async (reason: RejectionReason, customReason: string) => {
+      // Notify parent to save to Firestore
+      await onDiscard(currentProduct, reason, customReason);
+
+      // Swap to next alternative
+      if (remainingAlts.length > 0) {
+        const [next, ...rest] = remainingAlts;
+        setCurrentProduct(next);
+        setRemainingAlts(rest);
+        setExpanded(false);
+        setNoMoreAlts(false);
+      } else {
+        setNoMoreAlts(true);
+      }
+    },
+    [currentProduct, remainingAlts, onDiscard]
+  );
+
+  if (noMoreAlts) {
+    return (
+      <Card className="overflow-hidden border-card-border opacity-60" data-testid={`card-product-${product.id}`}>
+        <CardContent className="p-4">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center shrink-0">
+              <span className="text-xs font-bold text-muted-foreground">{index + 1}</span>
+            </div>
+            <div className="flex-1">
+              <span className="text-xs font-medium text-primary uppercase tracking-wide">{step.label}</span>
+              <p className="text-xs text-muted-foreground mt-1">
+                No more alternatives available for this step.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <>
+      <Card className="overflow-hidden border-card-border" data-testid={`card-product-${currentProduct.id}`}>
+        <CardContent className="p-4">
+          <div className="flex items-start gap-3">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <span className="text-xs font-bold text-primary">{index + 1}</span>
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="text-xs font-medium text-primary uppercase tracking-wide">
+                  {step.label}
+                </span>
+                <Badge
+                  variant={essential ? "default" : "outline"}
+                  className={cn(
+                    "text-[10px] px-1.5 py-0",
+                    essential
+                      ? "bg-primary/15 text-primary border-0 hover:bg-primary/15"
+                      : "text-muted-foreground border-muted-foreground/30"
+                  )}
+                >
+                  {essential ? "Essential" : "Recommended"}
                 </Badge>
-              )}
-              <button
-                onClick={() => setExpanded(!expanded)}
-                className="flex items-center gap-1 text-xs text-primary hover:underline"
-                data-testid={`button-expand-${product.id}`}
-              >
-                {expanded ? "Less" : "Why this product"}
-                {expanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
-              </button>
-            </div>
+              </div>
+              <h3 className="text-sm font-semibold text-foreground">
+                {currentProduct.brand} {currentProduct.name}
+              </h3>
+              <p className="text-xs text-muted-foreground mt-0.5">{step.description}</p>
 
-            {expanded && (
-              <div className="mt-3 pt-3 border-t border-card-border space-y-2 animate-in slide-in-from-top-2 duration-200">
-                <p className="text-xs text-foreground leading-relaxed">
-                  {product.whyRecommended}
-                </p>
-                <div>
-                  <span className="text-xs font-medium text-muted-foreground">Key Ingredients:</span>
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {product.keyIngredients.map((ingredient) => (
-                      <Badge key={ingredient} variant="outline" className="text-xs">
-                        {ingredient}
-                      </Badge>
-                    ))}
+              <div className="flex items-center gap-2 mt-2 flex-wrap">
+                <Badge variant="secondary" className="text-xs">
+                  {currentProduct.price}
+                </Badge>
+                {currentProduct.pmOnly && (
+                  <Badge variant="outline" className="text-xs gap-1 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
+                    <MoonStar className="w-3 h-3" />
+                    PM Only
+                  </Badge>
+                )}
+                <button
+                  onClick={() => setExpanded(!expanded)}
+                  className="flex items-center gap-1 text-xs text-primary hover:underline"
+                  data-testid={`button-expand-${currentProduct.id}`}
+                >
+                  {expanded ? "Less" : "Why this product"}
+                  {expanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                </button>
+                <button
+                  onClick={() => setDialogOpen(true)}
+                  className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary hover:underline"
+                  data-testid={`button-try-another-${currentProduct.id}`}
+                >
+                  <RefreshCw className="w-3 h-3" />
+                  Try another
+                </button>
+              </div>
+
+              {expanded && (
+                <div className="mt-3 pt-3 border-t border-card-border space-y-2 animate-in slide-in-from-top-2 duration-200">
+                  <p className="text-xs text-foreground leading-relaxed">
+                    {currentProduct.whyRecommended}
+                  </p>
+                  <div>
+                    <span className="text-xs font-medium text-muted-foreground">Key Ingredients:</span>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {currentProduct.keyIngredients.map((ingredient) => (
+                        <Badge key={ingredient} variant="outline" className="text-xs">
+                          {ingredient}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground italic">
+                    Source:{" "}
+                    {currentProduct.sourceUrl ? (
+                      <a href={currentProduct.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                        {currentProduct.source}
+                      </a>
+                    ) : currentProduct.source}
+                  </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {currentProduct.amazonUrl && (
+                      <a
+                        href={currentProduct.amazonUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+                        data-testid={`link-buy-${currentProduct.id}`}
+                      >
+                        <ShoppingCart className="w-3 h-3" />
+                        Buy on Amazon
+                      </a>
+                    )}
+                    {currentProduct.manufacturerUrl && (
+                      <a
+                        href={currentProduct.manufacturerUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium border border-card-border px-3 py-1.5 rounded-lg hover:bg-muted/50 transition-colors"
+                        data-testid={`link-manufacturer-${currentProduct.id}`}
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        {currentProduct.brand} Website
+                      </a>
+                    )}
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground italic">
-                  Source:{" "}
-                  {product.sourceUrl ? (
-                    <a href={product.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      {product.source}
-                    </a>
-                  ) : product.source}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {product.amazonUrl && (
-                    <a
-                      href={product.amazonUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
-                      data-testid={`link-buy-${product.id}`}
-                    >
-                      <ShoppingCart className="w-3 h-3" />
-                      Buy on Amazon
-                    </a>
-                  )}
-                  {product.manufacturerUrl && (
-                    <a
-                      href={product.manufacturerUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium border border-card-border px-3 py-1.5 rounded-lg hover:bg-muted/50 transition-colors"
-                      data-testid={`link-manufacturer-${product.id}`}
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      {product.brand} Website
-                    </a>
-                  )}
-                </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+
+      <TryAnotherDialog
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        product={currentProduct}
+        onSubmit={handleSubmitRejection}
+      />
+    </>
   );
 }
 
@@ -304,6 +524,7 @@ function SaveRoutineSection({
 }
 
 export function Results({ recommendation, answers, onRetake }: ResultsProps) {
+  const { user } = useAuth();
   const { amRoutine, pmRoutine, skinProfile, tips } = recommendation;
 
   const baumannDescriptions: Record<string, string> = {
@@ -321,6 +542,21 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
     .split("")
     .map(letter => baumannDescriptions[letter] || letter)
     .join(", ");
+
+  const handleDiscard = useCallback(
+    async (product: Product, reason: string, customReason: string) => {
+      if (!user) return; // silent if not signed in
+      await saveDiscardedProduct(user.uid, {
+        productId: product.id,
+        productName: product.name,
+        productBrand: product.brand,
+        category: product.category,
+        reason,
+        customReason: customReason || undefined,
+      });
+    },
+    [user]
+  );
 
   return (
     <div className="min-h-screen pb-12">
@@ -369,13 +605,29 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
 
             <TabsContent value="am" className="mt-4 space-y-3">
               {amRoutine.map((item, i) => (
-                <ProductCard key={`am-${item.product.id}-${i}`} step={item.step} product={item.product} index={i} essential={item.essential} />
+                <ProductCard
+                  key={`am-${item.product.id}-${i}`}
+                  step={item.step}
+                  product={item.product}
+                  alternatives={item.alternatives}
+                  index={i}
+                  essential={item.essential}
+                  onDiscard={handleDiscard}
+                />
               ))}
             </TabsContent>
 
             <TabsContent value="pm" className="mt-4 space-y-3">
               {pmRoutine.map((item, i) => (
-                <ProductCard key={`pm-${item.product.id}-${i}`} step={item.step} product={item.product} index={i} essential={item.essential} />
+                <ProductCard
+                  key={`pm-${item.product.id}-${i}`}
+                  step={item.step}
+                  product={item.product}
+                  alternatives={item.alternatives}
+                  index={i}
+                  essential={item.essential}
+                  onDiscard={handleDiscard}
+                />
               ))}
             </TabsContent>
           </Tabs>

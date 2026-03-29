@@ -1,9 +1,17 @@
 import { useEffect, useState, useCallback } from "react";
 import { useAuth } from "@/lib/auth-context";
-import { getUserRoutines, deleteRoutine, type SavedRoutine } from "@/lib/firestore";
+import {
+  getUserRoutines,
+  deleteRoutine,
+  getUserDiscardedProducts,
+  removeDiscardedProduct,
+  type SavedRoutine,
+  type DiscardedProduct,
+} from "@/lib/firestore";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Sun,
   Moon,
@@ -16,6 +24,8 @@ import {
   MoonStar,
   ShoppingCart,
   ExternalLink,
+  XCircle,
+  Undo2,
 } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
 import type { Timestamp } from "firebase/firestore";
@@ -231,12 +241,85 @@ function RoutineCard({
   );
 }
 
+function DiscardedProductCard({
+  item,
+  onUndo,
+}: {
+  item: DiscardedProduct;
+  onUndo: (id: string) => void;
+}) {
+  const [undoing, setUndoing] = useState(false);
+
+  const handleUndo = useCallback(async () => {
+    if (undoing) return;
+    setUndoing(true);
+    try {
+      await removeDiscardedProduct(item.id);
+      onUndo(item.id);
+    } catch {
+      setUndoing(false);
+    }
+  }, [item.id, onUndo, undoing]);
+
+  return (
+    <Card
+      className="overflow-hidden border-card-border"
+      data-testid={`card-discarded-${item.id}`}
+    >
+      <CardContent className="p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap mb-1">
+              <h3 className="text-sm font-medium text-foreground">
+                {item.productBrand} {item.productName}
+              </h3>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <Badge variant="outline" className="text-[10px] capitalize">
+                {item.category}
+              </Badge>
+              <span className="text-xs text-muted-foreground">{item.reason}</span>
+            </div>
+            {item.customReason && (
+              <p className="text-xs text-muted-foreground mt-1 italic">
+                "{item.customReason}"
+              </p>
+            )}
+            <p className="text-[11px] text-muted-foreground mt-1.5">
+              Discarded {formatDate(item.discardedAt)}
+            </p>
+          </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="gap-1.5 text-xs shrink-0 text-muted-foreground hover:text-foreground"
+            onClick={handleUndo}
+            disabled={undoing}
+            data-testid={`button-undo-discard-${item.id}`}
+            aria-label="Undo discard"
+          >
+            {undoing ? (
+              <Loader2 className="w-3.5 h-3.5 animate-spin" />
+            ) : (
+              <Undo2 className="w-3.5 h-3.5" />
+            )}
+            Undo
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function MyRoutines() {
   const { user, loading: authLoading } = useAuth();
   const [, navigate] = useHashLocation();
   const [routines, setRoutines] = useState<SavedRoutine[]>([]);
+  const [discarded, setDiscarded] = useState<DiscardedProduct[]>([]);
   const [loading, setLoading] = useState(false);
+  const [discardedLoading, setDiscardedLoading] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [discardedError, setDiscardedError] = useState<string | null>(null);
 
   // Redirect if not signed in (after auth loads)
   useEffect(() => {
@@ -256,8 +339,23 @@ export default function MyRoutines() {
       .finally(() => setLoading(false));
   }, [user]);
 
-  const handleDelete = useCallback((id: string) => {
+  // Fetch discarded products
+  useEffect(() => {
+    if (!user) return;
+    setDiscardedLoading(true);
+    setDiscardedError(null);
+    getUserDiscardedProducts(user.uid)
+      .then((data) => setDiscarded(data))
+      .catch(() => setDiscardedError("Failed to load discarded products. Please try again."))
+      .finally(() => setDiscardedLoading(false));
+  }, [user]);
+
+  const handleDeleteRoutine = useCallback((id: string) => {
     setRoutines((prev) => prev.filter((r) => r.id !== id));
+  }, []);
+
+  const handleUndoDiscard = useCallback((id: string) => {
+    setDiscarded((prev) => prev.filter((d) => d.id !== id));
   }, []);
 
   if (authLoading) {
@@ -293,51 +391,112 @@ export default function MyRoutines() {
           </Button>
         </div>
 
-        {/* Loading state */}
-        {loading && (
-          <div className="flex items-center justify-center py-16" data-testid="routines-loading">
-            <Loader2 className="w-6 h-6 animate-spin text-primary" />
-          </div>
-        )}
+        <Tabs defaultValue="saved" className="w-full">
+          <TabsList className="w-full">
+            <TabsTrigger value="saved" className="flex-1 gap-1.5" data-testid="tab-saved-routines">
+              <BookOpen className="w-3.5 h-3.5" />
+              Saved Routines
+              {routines.length > 0 && (
+                <Badge variant="secondary" className="text-[10px] h-4 px-1.5 ml-0.5">
+                  {routines.length}
+                </Badge>
+              )}
+            </TabsTrigger>
+            <TabsTrigger value="discarded" className="flex-1 gap-1.5" data-testid="tab-discarded-products">
+              <XCircle className="w-3.5 h-3.5" />
+              Discarded Products
+              {discarded.length > 0 && (
+                <Badge variant="secondary" className="text-[10px] h-4 px-1.5 ml-0.5">
+                  {discarded.length}
+                </Badge>
+              )}
+            </TabsTrigger>
+          </TabsList>
 
-        {/* Error state */}
-        {fetchError && (
-          <div
-            className="p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-sm text-destructive"
-            data-testid="routines-error"
-          >
-            {fetchError}
-          </div>
-        )}
+          {/* Saved Routines Tab */}
+          <TabsContent value="saved" className="mt-4">
+            {loading && (
+              <div className="flex items-center justify-center py-16" data-testid="routines-loading">
+                <Loader2 className="w-6 h-6 animate-spin text-primary" />
+              </div>
+            )}
 
-        {/* Empty state */}
-        {!loading && !fetchError && routines.length === 0 && (
-          <div className="text-center py-16" data-testid="routines-empty">
-            <BookOpen className="w-10 h-10 text-muted-foreground/40 mx-auto mb-3" />
-            <h2 className="text-sm font-medium text-foreground mb-1">No saved routines yet</h2>
-            <p className="text-xs text-muted-foreground mb-5">
-              Take the quiz and save your personalized skincare routine to see it here.
-            </p>
-            <Button
-              size="sm"
-              onClick={() => navigate("/")}
-              className="gap-2"
-              data-testid="button-start-quiz-empty"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              Take the Quiz
-            </Button>
-          </div>
-        )}
+            {fetchError && (
+              <div
+                className="p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-sm text-destructive"
+                data-testid="routines-error"
+              >
+                {fetchError}
+              </div>
+            )}
 
-        {/* Routines list */}
-        {!loading && !fetchError && routines.length > 0 && (
-          <div className="space-y-3" data-testid="routines-list">
-            {routines.map((routine) => (
-              <RoutineCard key={routine.id} routine={routine} onDelete={handleDelete} />
-            ))}
-          </div>
-        )}
+            {!loading && !fetchError && routines.length === 0 && (
+              <div className="text-center py-16" data-testid="routines-empty">
+                <BookOpen className="w-10 h-10 text-muted-foreground/40 mx-auto mb-3" />
+                <h2 className="text-sm font-medium text-foreground mb-1">No saved routines yet</h2>
+                <p className="text-xs text-muted-foreground mb-5">
+                  Take the quiz and save your personalized skincare routine to see it here.
+                </p>
+                <Button
+                  size="sm"
+                  onClick={() => navigate("/")}
+                  className="gap-2"
+                  data-testid="button-start-quiz-empty"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  Take the Quiz
+                </Button>
+              </div>
+            )}
+
+            {!loading && !fetchError && routines.length > 0 && (
+              <div className="space-y-3" data-testid="routines-list">
+                {routines.map((routine) => (
+                  <RoutineCard key={routine.id} routine={routine} onDelete={handleDeleteRoutine} />
+                ))}
+              </div>
+            )}
+          </TabsContent>
+
+          {/* Discarded Products Tab */}
+          <TabsContent value="discarded" className="mt-4">
+            {discardedLoading && (
+              <div className="flex items-center justify-center py-16" data-testid="discarded-loading">
+                <Loader2 className="w-6 h-6 animate-spin text-primary" />
+              </div>
+            )}
+
+            {discardedError && (
+              <div
+                className="p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-sm text-destructive"
+                data-testid="discarded-error"
+              >
+                {discardedError}
+              </div>
+            )}
+
+            {!discardedLoading && !discardedError && discarded.length === 0 && (
+              <div className="text-center py-16" data-testid="discarded-empty">
+                <XCircle className="w-10 h-10 text-muted-foreground/40 mx-auto mb-3" />
+                <h2 className="text-sm font-medium text-foreground mb-1">No discarded products</h2>
+                <p className="text-xs text-muted-foreground mb-5">
+                  Products you skip using "Try another" will appear here so you can undo if needed.
+                </p>
+              </div>
+            )}
+
+            {!discardedLoading && !discardedError && discarded.length > 0 && (
+              <div className="space-y-3" data-testid="discarded-list">
+                <p className="text-xs text-muted-foreground mb-2">
+                  Products you've skipped. Tap Undo to restore them to consideration.
+                </p>
+                {discarded.map((item) => (
+                  <DiscardedProductCard key={item.id} item={item} onUndo={handleUndoDiscard} />
+                ))}
+              </div>
+            )}
+          </TabsContent>
+        </Tabs>
       </main>
     </div>
   );

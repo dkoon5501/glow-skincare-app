@@ -360,6 +360,75 @@ export const productDatabase: Product[] = [
     manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-foaming-oil-cleanser",
     // No ASIN in spec; omitting amazonUrl
   },
+  {
+    id: "neutrogena-ultra-gentle-cleanser",
+    name: "Ultra Gentle Daily Cleanser",
+    brand: "Neutrogena",
+    category: "cleanser",
+    price: "$11.99",
+    keyIngredients: ["Glycerin", "Dextran", "Fragrance-free"],
+    bestFor: ["sensitive", "redness", "rosacea", "normal", "budget"],
+    whyRecommended:
+      "Dermatologist-tested and fragrance-free, Neutrogena Ultra Gentle cleanses without disrupting the skin barrier. Dr. Daniel Sugai recommends it as a reliable daily cleanser for sensitive and rosacea-prone skin that needs effective but non-irritating cleansing.",
+    source: "Dr. Daniel Sugai (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=VxG9rE4seIs",
+    manufacturerUrl: "https://www.neutrogena.com",
+  },
+  {
+    id: "anua-heartleaf-cleansing-oil",
+    name: "Heartleaf Pore Control Cleansing Oil",
+    brand: "Anua",
+    category: "cleanser",
+    price: "$22.00",
+    keyIngredients: ["Heartleaf Extract", "Olive Oil", "Jojoba Oil"],
+    bestFor: ["oily", "acne", "sensitive", "breakouts"],
+    whyRecommended:
+      "A K-beauty cleansing oil ideal for the first step of a double cleanse. Dr. Dray reviewed this for its heartleaf extract that helps control excess sebum and soothe acne-prone skin while effectively dissolving sunscreen and makeup without irritation.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=fXJUKo2UFNk",
+    manufacturerUrl: "https://anua.us",
+  },
+  {
+    id: "celimax-dual-barrier-cleansing-balm",
+    name: "Dual Barrier Purifying Cleansing Balm",
+    brand: "CELIMAX",
+    category: "cleanser",
+    price: "$28.00",
+    keyIngredients: ["Noni Extract", "Ceramides", "Shea Butter"],
+    bestFor: ["sensitive", "acne", "dry", "combination"],
+    whyRecommended:
+      "Dr. Sam Ellis reviewed this K-beauty cleansing balm for its dual-barrier technology that thoroughly removes impurities while reinforcing the skin barrier — especially beneficial for sensitive or acne-prone skin that often gets stripped by traditional cleansers.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=F2kaMrrqfxo",
+  },
+  {
+    id: "eucerin-radiant-tone-cleansing-gel",
+    name: "Radiant Tone Cleansing Gel",
+    brand: "Eucerin",
+    category: "cleanser",
+    price: "$19.00",
+    keyIngredients: ["Thiamidol", "Glycerin", "Panthenol"],
+    bestFor: ["dullness", "hyperpigmentation", "dry", "budget"],
+    whyRecommended:
+      "Dr. Dray reviewed Eucerin's Thiamidol-based cleansing gel for its brightening benefits for hyperpigmentation and dullness. Gentle enough for dry skin while actively addressing uneven skin tone with clinically tested Thiamidol.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=cAmXcVA7Lwk",
+    manufacturerUrl: "https://www.eucerinus.com",
+  },
+  {
+    id: "vanicream-gentle-facial-cleanser",
+    name: "Gentle Facial Cleanser",
+    brand: "Vanicream",
+    category: "cleanser",
+    price: "$9.00",
+    keyIngredients: ["Glycerin", "PEG-free formula", "Dye-free"],
+    bestFor: ["sensitive", "rosacea", "redness", "dry", "budget"],
+    whyRecommended:
+      "Dr. Dray is a strong advocate for Vanicream products for sensitive and reactive skin. This fragrance-free, dye-free, and preservative-free formula is one of the most hypoallergenic cleansers available — ideal for rosacea, eczema, and skin that reacts to almost everything.",
+    source: "Dr. Dray (YouTube)",
+    manufacturerUrl: "https://www.vanicream.com",
+    amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=glowskincar0c-20",
+  },
 
   // ─────────────────────────────────────────────
   // SERUMS — AM-SAFE
@@ -443,6 +512,65 @@ export const productDatabase: Product[] = [
     // No ASIN in spec; omitting amazonUrl
   },
 
+  {
+    id: "instanatural-vitamin-c-serum",
+    name: "Vitamin C Serum with Hyaluronic Acid",
+    brand: "InstaNatural",
+    category: "serum",
+    price: "$20.00",
+    keyIngredients: ["20% Vitamin C", "Hyaluronic Acid", "Ferulic Acid"],
+    bestFor: ["dullness", "budget", "dark_spots", "aging"],
+    whyRecommended:
+      "An accessible vitamin C serum combining a 20% vitamin C blend with ferulic acid and hyaluronic acid. Dr. Sam Ellis includes affordable vitamin C serums like this in budget-conscious routines for brightening and antioxidant protection throughout the day.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
+  },
+  {
+    id: "timeless-vitamin-c-ferulic",
+    name: "20% Vitamin C + E Ferulic Acid Serum",
+    brand: "Timeless",
+    category: "serum",
+    price: "$26.00",
+    keyIngredients: ["20% L-Ascorbic Acid", "Vitamin E", "Ferulic Acid"],
+    bestFor: ["aging", "dullness", "hyperpigmentation", "midrange"],
+    whyRecommended:
+      "Dr. Sam Ellis recommended this as a budget alternative to SkinCeuticals CE Ferulic. With 20% L-ascorbic acid plus the same synergistic ferulic acid pairing, it delivers potent antioxidant protection and brightening at a fraction of the luxury price.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
+    manufacturerUrl: "https://www.timelessha.com",
+    amazonUrl: "https://www.amazon.com/dp/B0036BI56G?tag=glowskincar0c-20",
+  },
+  {
+    id: "cosrx-snail-96-mucin",
+    name: "Advanced Snail 96 Mucin Power Essence",
+    brand: "COSRX",
+    category: "serum",
+    price: "$25.00",
+    keyIngredients: ["96% Snail Secretion Filtrate", "Sodium Hyaluronate", "Betaine"],
+    bestFor: ["dehydration", "dry", "sensitive", "dullness", "budget"],
+    whyRecommended:
+      "Doctorly reviewed this K-beauty cult classic for its remarkable hydration and barrier-repair properties. The 96% snail mucin concentration helps heal, plump, and restore radiance to dehydrated and sensitive skin types without heavy texture.",
+    source: "Doctorly (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=76GA2FR9nAg",
+    manufacturerUrl: "https://www.cosrx.com",
+    amazonUrl: "https://www.amazon.com/dp/B00PBX3L7K?tag=glowskincar0c-20",
+  },
+  {
+    id: "truskin-vitamin-c-serum",
+    name: "Vitamin C Facial Serum",
+    brand: "TruSkin",
+    category: "serum",
+    price: "$22.00",
+    keyIngredients: ["Vitamin C", "Hyaluronic Acid", "Vitamin E", "Retinol"],
+    bestFor: ["aging", "dullness", "budget", "dark_spots"],
+    whyRecommended:
+      "Dr. Sam Ellis featured TruSkin Vitamin C as a value-oriented brightening serum for those seeking antioxidant protection and dark spot reduction on a budget. Its combination of vitamin C, E, and hyaluronic acid targets multiple aging concerns simultaneously.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
+    manufacturerUrl: "https://www.truskin.com",
+    amazonUrl: "https://www.amazon.com/dp/B01M4MCUAF?tag=glowskincar0c-20",
+  },
+
   // ─────────────────────────────────────────────
   // SERUMS — PM-ONLY (retinol-containing)
   // ─────────────────────────────────────────────
@@ -482,6 +610,125 @@ export const productDatabase: Product[] = [
     manufacturerUrl:
       "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
     amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
+  },
+  {
+    id: "ordinary-glycolic-acid-toner",
+    name: "Glycolic Acid 7% Toning Solution",
+    brand: "The Ordinary",
+    category: "exfoliant",
+    price: "$9.50",
+    keyIngredients: ["7% Glycolic Acid", "Aloe Vera", "Ginseng Extract"],
+    bestFor: ["texture", "dullness", "hyperpigmentation", "budget", "oily"],
+    whyRecommended:
+      "Dr. Muneeb Shah and Dr. Dray both recommend The Ordinary Glycolic Acid Toner as the most affordable effective AHA exfoliant on the market. It smooths texture, brightens dullness, and fades hyperpigmentation at a price point available to everyone.",
+    source: "Dr. Muneeb Shah (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=IyxTc0iZ6V8",
+    manufacturerUrl: "https://theordinary.com",
+    amazonUrl: "https://www.amazon.com/dp/B07FLQDTS9?tag=glowskincar0c-20",
+  },
+  {
+    id: "inkey-list-pha-toner",
+    name: "PHA Gentle Exfoliating Toner",
+    brand: "The Inkey List",
+    category: "exfoliant",
+    price: "$15.00",
+    keyIngredients: ["PHA (Polyhydroxy Acid)", "Hyaluronic Acid", "Aloe Vera"],
+    bestFor: ["sensitive", "redness", "rosacea", "texture", "budget"],
+    whyRecommended:
+      "Dr. Dray reviewed this as the gentlest chemical exfoliant option for sensitive skin. PHA is a large-molecule AHA that exfoliates only on the surface, making it ideal for reactive skin, rosacea, and beginners who need exfoliation without irritation.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=wHzh_WxIbEc",
+  },
+  {
+    id: "paulas-choice-azelaic-acid",
+    name: "10% Azelaic Acid Booster",
+    brand: "Paula's Choice",
+    category: "exfoliant",
+    price: "$39.00",
+    keyIngredients: ["10% Azelaic Acid", "Salicylic Acid", "Green Tea Extract"],
+    bestFor: ["acne", "rosacea", "redness", "hyperpigmentation", "midrange"],
+    whyRecommended:
+      "Dr. Dray recommends this azelaic acid booster for its dual action against acne and rosacea. Azelaic acid is one of the few ingredients that addresses both redness and dark spots simultaneously — making this a standout pick for combination-concern skin.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=4By-S9xY4h8",
+  },
+  {
+    id: "naturium-mandelic-acid",
+    name: "Mandelic Topical Acid 12%",
+    brand: "Naturium",
+    category: "exfoliant",
+    price: "$20.00",
+    keyIngredients: ["12% Mandelic Acid (AHA)", "Niacinamide", "Licorice Root Extract"],
+    bestFor: ["acne", "dark_spots", "texture", "budget"],
+    whyRecommended:
+      "Dr. Jenny Liu highlighted Naturium's mandelic acid as a gentler AHA option thanks to mandelic acid's larger molecular size compared to glycolic acid. Effective for fading dark spots and smoothing texture while being more tolerable than traditional AHAs.",
+    source: "Dr. Jenny Liu (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=pxEfSEj0ssE",
+  },
+  {
+    id: "neostrata-bionic-face-cream",
+    name: "Bionic Face Cream",
+    brand: "NeoStrata",
+    category: "exfoliant",
+    price: "$50.00",
+    keyIngredients: ["PHA (Gluconolactone)", "Lactobionic Acid", "Ceramides"],
+    bestFor: ["aging", "dry", "sensitive", "mature", "premium"],
+    whyRecommended:
+      "Dr. Dray featured NeoStrata Bionic Face Cream for mature and sensitive skin. PHA-based exfoliation is exceptionally gentle and also acts as a humectant, making this a rare exfoliant that simultaneously moisturizes and improves texture without sensitizing the skin.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=wHzh_WxIbEc",
+  },
+  {
+    id: "glow-recipe-strawberry-bha-aha",
+    name: "Strawberry Smooth BHA + AHA Salicylic Serum",
+    brand: "Glow Recipe",
+    category: "exfoliant",
+    price: "$42.00",
+    keyIngredients: ["Salicylic Acid (BHA)", "AHA Complex", "Strawberry Extract"],
+    bestFor: ["pores", "texture", "oily", "combination", "midrange"],
+    whyRecommended:
+      "Dr. Jenny Liu reviewed this dual-action exfoliant for its BHA + AHA combination that targets both surface texture and inside pores. Ideal for oily and combination skin types dealing with enlarged pores and congestion who want a more elegant, serum-like texture.",
+    source: "Dr. Jenny Liu (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=pxEfSEj0ssE",
+  },
+  {
+    id: "drunk-elephant-babyfacial",
+    name: "T.L.C. Sukari Babyfacial",
+    brand: "Drunk Elephant",
+    category: "exfoliant",
+    price: "$80.00",
+    keyIngredients: ["AHA Complex (Glycolic, Tartaric, Lactic, Citric)", "2% BHA", "Marula Oil"],
+    bestFor: ["dullness", "texture", "aging", "premium"],
+    whyRecommended:
+      "Dr. Jenny Liu featured this high-dose AHA+BHA weekly mask for its ability to dramatically resurface and brighten. As a once-weekly treatment, it delivers professional-grade exfoliation at home. Best for experienced exfoliant users seeking maximum radiance and anti-aging results.",
+    source: "Dr. Jenny Liu (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=pxEfSEj0ssE",
+  },
+  {
+    id: "anua-azelaic-acid-serum",
+    name: "Azelaic Acid 10% Serum",
+    brand: "Anua",
+    category: "exfoliant",
+    price: "$25.00",
+    keyIngredients: ["10% Azelaic Acid", "Niacinamide", "Heartleaf Extract"],
+    bestFor: ["acne", "rosacea", "redness", "budget"],
+    whyRecommended:
+      "Doctorly reviewed this K-beauty azelaic acid serum for its calming and anti-acne properties. Anua's version combines azelaic acid with their signature heartleaf extract for added soothing benefits — ideal for acne and rosacea-prone skin on a budget.",
+    source: "Doctorly (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=fjIGAFmBgRE",
+  },
+  {
+    id: "glytone-exfoliating-serum",
+    name: "Exfoliating Serum 3 with Azelaic + Glycolic",
+    brand: "Glytone",
+    category: "exfoliant",
+    price: "$60.00",
+    keyIngredients: ["Glycolic Acid", "Azelaic Acid", "Kojic Acid"],
+    bestFor: ["dark_spots", "hyperpigmentation", "aging", "premium"],
+    whyRecommended:
+      "Dr. Dray highlights Glytone's medical-grade formulas as among the most clinically effective OTC options for hyperpigmentation and aging. This combination of glycolic acid, azelaic acid, and kojic acid targets dark spots through multiple simultaneous mechanisms for faster, more visible results.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=HwHR69TMpFc",
   },
 
   // ─────────────────────────────────────────────
@@ -565,6 +812,73 @@ export const productDatabase: Product[] = [
       "https://www.neutrogena.com/products/skincare/neutrogena-hydro-boost-water-gel-with-hyaluronic-acid/6811047",
     amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
   },
+  {
+    id: "first-aid-beauty-ultra-repair-cream",
+    name: "Ultra Repair Cream",
+    brand: "First Aid Beauty",
+    category: "moisturizer",
+    price: "$34.00",
+    keyIngredients: ["Colloidal Oatmeal", "Shea Butter", "Ceramides"],
+    bestFor: ["dry", "sensitive", "dehydration", "midrange", "redness"],
+    whyRecommended:
+      "Dr. Sam Ellis frequently recommends First Aid Beauty Ultra Repair Cream for very dry and sensitive skin. The colloidal oatmeal provides FDA-recognized skin protectant benefits, while shea butter and ceramides deliver intense, long-lasting moisture without clogging pores.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=iGBIxwOxfWU",
+  },
+  {
+    id: "aestura-atobarrier-365-cream",
+    name: "AtoBarrier 365 Cream",
+    brand: "Aestura",
+    category: "moisturizer",
+    price: "$30.00",
+    keyIngredients: ["Ceramides", "Niacinamide", "Panthenol"],
+    bestFor: ["dry", "sensitive", "dehydration", "redness"],
+    whyRecommended:
+      "Dr. Dray featured this K-beauty barrier cream for its impressive ceramide-rich formula designed to restore moisture to very dry and sensitive skin. Its 365-day barrier support positioning reflects its gentle, redness-reducing formula that works for year-round use.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=oyJRxD9YQnE",
+  },
+  {
+    id: "vanicream-daily-facial-moisturizer",
+    name: "Daily Facial Moisturizer",
+    brand: "Vanicream",
+    category: "moisturizer",
+    price: "$16.00",
+    keyIngredients: ["Glycerin", "Dimethicone", "PEG-free formula"],
+    bestFor: ["sensitive", "rosacea", "redness", "budget", "normal"],
+    whyRecommended:
+      "Dr. Dray consistently recommends Vanicream products for highly reactive skin. This daily moisturizer is formulated without fragrance, dyes, parabens, or preservatives that commonly trigger flares in rosacea and contact dermatitis, making it one of the safest choices for sensitive skin.",
+    source: "Dr. Dray (YouTube)",
+    manufacturerUrl: "https://www.vanicream.com",
+    amazonUrl: "https://www.amazon.com/dp/B09TPXNKJG?tag=glowskincar0c-20",
+  },
+  {
+    id: "kiehls-ultra-facial-cream",
+    name: "Ultra Facial Cream",
+    brand: "Kiehl's",
+    category: "moisturizer",
+    price: "$35.00",
+    keyIngredients: ["Glacial Glycoprotein", "Squalane", "Imperata Cylindrica Root Extract"],
+    bestFor: ["normal", "combination", "dry", "midrange"],
+    whyRecommended:
+      "Doctorly reviewed Kiehl's Ultra Facial Cream as a classic, well-rounded moisturizer for normal to dry skin. Its unique glacial glycoprotein and squalane combination delivers 24-hour hydration with a comfortable, non-greasy texture that works well under makeup.",
+    source: "Doctorly (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=h19mTItzLrE",
+    manufacturerUrl: "https://www.kiehls.com",
+  },
+  {
+    id: "abib-ectoin-panthenol-moisturizer",
+    name: "Ectoin Panthenol 11% Moisturizer",
+    brand: "Abib",
+    category: "moisturizer",
+    price: "$25.00",
+    keyIngredients: ["11% Panthenol (Vitamin B5)", "Ectoin", "Ceramides"],
+    bestFor: ["sensitive", "redness", "rosacea", "dehydration"],
+    whyRecommended:
+      "Dr. Dray featured this K-beauty moisturizer for sensitive and redness-prone skin. Ectoin is a stress-protection molecule that helps shield skin from environmental damage and inflammation, paired with high-dose panthenol for maximum barrier repair and calming.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=oyJRxD9YQnE",
+  },
 
   // ─────────────────────────────────────────────
   // SUNSCREENS
@@ -630,6 +944,85 @@ export const productDatabase: Product[] = [
     manufacturerUrl:
       "https://www.cerave.com/skincare/moisturizers/am-facial-moisturizing-lotion-with-sunscreen",
     amazonUrl: "https://www.amazon.com/dp/B00F97FHAW?tag=glowskincar0c-20",
+  },
+  {
+    id: "supergoop-unseen-sunscreen-spf40",
+    name: "Unseen Sunscreen SPF 40",
+    brand: "Supergoop!",
+    category: "sunscreen",
+    price: "$38.00",
+    keyIngredients: ["Meadowfoam Seed Oil", "Red Algae", "Chemical SPF Filters"],
+    bestFor: ["oily", "combination", "normal", "midrange", "pores"],
+    whyRecommended:
+      "Dr. Sam Ellis recommends Supergoop! Unseen Sunscreen for its weightless, invisible, primer-like finish that works for oily and combination skin. It wears beautifully under makeup, has no white cast, and provides SPF 40 broad-spectrum protection — making it one of the most wearable daily sunscreens available.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
+  },
+  {
+    id: "eucerin-radiant-tone-spf30",
+    name: "Radiant Tone Daily Face Lotion SPF 30",
+    brand: "Eucerin",
+    category: "sunscreen",
+    price: "$35.00",
+    keyIngredients: ["Thiamidol", "SPF 30 Filters", "Niacinamide"],
+    bestFor: ["hyperpigmentation", "dark_spots", "combination"],
+    whyRecommended:
+      "Doctorly reviewed this tinted daily SPF as an excellent choice for hyperpigmentation. Eucerin's clinically proven Thiamidol molecule targets melanin overproduction at the source while providing SPF 30 daily protection — a dual-purpose product for uneven skin tone.",
+    source: "Doctorly (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
+  },
+  {
+    id: "drmtlgy-tinted-moisturizer-spf46",
+    name: "Universal Tinted Moisturizer SPF 46",
+    brand: "DRMTLGY",
+    category: "sunscreen",
+    price: "$40.00",
+    keyIngredients: ["SPF 46 Broad Spectrum", "Universal Tint", "Hyaluronic Acid"],
+    bestFor: ["normal", "combination", "oily", "midrange"],
+    whyRecommended:
+      "Doctorly reviewed DRMTLGY Universal Tinted Moisturizer for its versatile hybrid formula that provides light coverage and SPF 46 protection. The universal tint adapts to a wide range of skin tones, making it a practical 3-in-1 SPF, moisturizer, and tint.",
+    source: "Doctorly (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
+    amazonUrl: "https://www.amazon.com/dp/B07NV8YLBT?tag=glowskincar0c-20",
+  },
+  {
+    id: "naturium-dew-glow-spf50",
+    name: "Dew-Glow Moisturizer SPF 50",
+    brand: "Naturium",
+    category: "sunscreen",
+    price: "$25.00",
+    keyIngredients: ["SPF 50 Broad Spectrum", "Hyaluronic Acid", "Niacinamide"],
+    bestFor: ["dry", "dehydration", "budget", "dullness"],
+    whyRecommended:
+      "Doctorly featured Naturium's Dew-Glow SPF 50 for its dewy finish and hydrating formula that suits dry and dehydrated skin types. Unusually, it provides SPF 50 protection at a budget-friendly price point with a glow-enhancing formula rather than a matte finish.",
+    source: "Doctorly (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
+  },
+  {
+    id: "colorescience-sunforgettable-spf50",
+    name: "Sunforgettable Face Shield Flex SPF 50",
+    brand: "Colorescience",
+    category: "sunscreen",
+    price: "$52.00",
+    keyIngredients: ["Zinc Oxide (Mineral)", "Titanium Dioxide", "Flex-Ready Technology"],
+    bestFor: ["sensitive", "rosacea", "premium", "redness"],
+    whyRecommended:
+      "Dr. Dray recommends Colorescience for the most reactive sensitive skin. This 100% mineral sunscreen with tint is specifically formulated for rosacea and reactive skin, providing both coverage and calming SPF 50 protection without chemical UV filters that can trigger flares.",
+    source: "Dr. Dray (YouTube)",
+    manufacturerUrl: "https://www.colorescience.com",
+  },
+  {
+    id: "beauty-of-joseon-daily-tinted-spf40",
+    name: "Daily Tinted Fluid SPF 40",
+    brand: "Beauty of Joseon",
+    category: "sunscreen",
+    price: "$20.00",
+    keyIngredients: ["SPF 40 PA++++", "Niacinamide", "Rice Bran Extract"],
+    bestFor: ["normal", "combination", "budget", "dullness"],
+    whyRecommended:
+      "Dr. Dray reviewed this K-beauty tinted SPF for its elegant texture, budget price, and brightening effect. Beauty of Joseon's SPF lineup is widely praised for its lightweight feel and glow-enhancing properties — making daily sunscreen application a pleasure rather than a chore.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=YW05mDjpwnw",
   },
 
   // ─────────────────────────────────────────────
@@ -699,6 +1092,94 @@ export const productDatabase: Product[] = [
     amazonUrl: "https://www.amazon.com/dp/B00L5O31VK?tag=glowskincar0c-20",
     pmOnly: true,
   },
+  {
+    id: "neutrogena-rapid-wrinkle-repair-retinol",
+    name: "Rapid Wrinkle Repair Retinol Serum",
+    brand: "Neutrogena",
+    category: "treatment",
+    price: "$22.99",
+    keyIngredients: ["Accelerated Retinol SA", "Glucose Complex", "Hyaluronic Acid"],
+    bestFor: ["aging", "wrinkles", "retinoid_beginner", "budget", "dark_spots"],
+    whyRecommended:
+      "Dr. Dray recommends Neutrogena Rapid Wrinkle Repair as one of the best accessible OTC retinol serums for beginners focused on anti-aging. Its proprietary Accelerated Retinol SA formula is designed for faster efficacy with minimized irritation. Apply at night only.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
+    manufacturerUrl: "https://www.neutrogena.com",
+    amazonUrl: "https://www.amazon.com/dp/B002RL8FBY?tag=glowskincar0c-20",
+    pmOnly: true,
+  },
+  {
+    id: "cerave-resurfacing-retinol-serum",
+    name: "Resurfacing Retinol Serum",
+    brand: "CeraVe",
+    category: "treatment",
+    price: "$19.99",
+    keyIngredients: ["Encapsulated Retinol", "Niacinamide", "Ceramides"],
+    bestFor: ["acne", "texture", "pores", "budget", "retinoid_new", "retinoid_beginner"],
+    whyRecommended:
+      "Dr. Dray recommends CeraVe Resurfacing Retinol as an excellent entry-level retinoid. Encapsulated retinol minimizes irritation during the adjustment phase, while niacinamide and ceramides simultaneously soothe and protect the barrier. Apply at night only. Start slowly.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
+    amazonUrl: "https://www.amazon.com/dp/B07VWSN95S?tag=glowskincar0c-20",
+    pmOnly: true,
+  },
+  {
+    id: "naturium-retinol-complex-cream",
+    name: "Retinol Complex Cream",
+    brand: "Naturium",
+    category: "treatment",
+    price: "$25.00",
+    keyIngredients: ["Retinol", "Peptides", "Squalane"],
+    bestFor: ["sensitive", "retinoid_beginner", "budget"],
+    whyRecommended:
+      "Dr. Sam Ellis featured Naturium Retinol Complex Cream as a well-tolerated beginner retinoid cream. The cream format buffers the retinol, reducing irritation for sensitive skin types new to retinoids. A reliable, affordable option to start the retinol journey. Apply at night only.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=SBylLqyy6pw",
+    pmOnly: true,
+  },
+  {
+    id: "roc-retinol-max-hydration",
+    name: "Retinol Correxion Max Hydration Moisturizer",
+    brand: "RoC",
+    category: "treatment",
+    price: "$30.00",
+    keyIngredients: ["Retinol", "Hyaluronic Acid", "Ceramides"],
+    bestFor: ["dry", "retinoid_new", "retinoid_beginner", "budget"],
+    whyRecommended:
+      "Dr. Jenny Liu recommended this RoC moisturizer-retinol hybrid for dry skin beginners. By combining retinol with hyaluronic acid and ceramides in a rich moisturizing base, it counters the dryness commonly experienced when starting retinoids. Apply at night only.",
+    source: "Dr. Jenny Liu (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=bruzUMMO_LU",
+    amazonUrl: "https://www.amazon.com/dp/B07GTWMD1W?tag=glowskincar0c-20",
+    pmOnly: true,
+  },
+  {
+    id: "loreal-revitalift-retinol-night-cream",
+    name: "Revitalift Pressed Night Cream with Retinol",
+    brand: "L'Oreal",
+    category: "treatment",
+    price: "$40.00",
+    keyIngredients: ["Pro-Retinol", "Hyaluronic Acid", "Vitamin C"],
+    bestFor: ["aging", "combination", "retinoid_beginner", "midrange"],
+    whyRecommended:
+      "Dr. Jenny Liu recommended L'Oreal Revitalift as a mid-range combination retinol night cream for beginners focused on anti-aging. It pairs pro-retinol with vitamin C and hyaluronic acid for comprehensive overnight renewal. Apply at night only.",
+    source: "Dr. Jenny Liu (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=bruzUMMO_LU",
+    pmOnly: true,
+  },
+  {
+    id: "first-aid-beauty-retinol-serum",
+    name: "0.3% Retinol Complex Serum",
+    brand: "First Aid Beauty",
+    category: "treatment",
+    price: "$60.00",
+    keyIngredients: ["0.3% Pure Retinol", "Colloidal Oat", "Peptides"],
+    bestFor: ["sensitive", "aging", "retinoid_beginner", "midrange", "premium"],
+    whyRecommended:
+      "Dr. Sam Ellis featured First Aid Beauty's retinol serum for sensitive skin types who want anti-aging benefits without harsh irritation. The colloidal oat base provides soothing properties while peptides support collagen, making this ideal for sensitive beginners concerned about aging. Apply at night only.",
+    source: "Dr. Sam Ellis (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=SBylLqyy6pw",
+    pmOnly: true,
+  },
 ];
 
 // AM/PM routine step templates
@@ -719,6 +1200,8 @@ export interface RoutineItem {
   /** Whether this step is essential (cleanser, moisturizer, sunscreen) or
    *  recommended based on the user's specific concerns (serum, treatment, exfoliant). */
   essential: boolean;
+  /** 2nd and 3rd best-scoring products for this category (excluding the primary) */
+  alternatives: Product[];
 }
 
 export interface RecommendedRoutine {
@@ -733,7 +1216,66 @@ export interface RecommendedRoutine {
   tips: string[];
 }
 
-export function generateRecommendation(answers: QuizAnswers): RecommendedRoutine {
+/**
+ * Returns the top N products for a category, filtered by exclusions.
+ * @param category - product category to filter
+ * @param count - number of products to return (default 3)
+ * @param amSafeOnly - exclude pmOnly products
+ * @param excludedIds - product IDs to exclude (score set to -Infinity)
+ */
+export function getTopProducts(
+  answers: QuizAnswers,
+  category: Product["category"],
+  count = 3,
+  amSafeOnly = false,
+  excludedIds: string[] = []
+): Product[] {
+  // Collect all tags from answers
+  const allTags: string[] = [];
+  for (const [_key, value] of Object.entries(answers)) {
+    if (Array.isArray(value)) {
+      value.forEach(v => {
+        const q = quizQuestions.find(q => q.options.some(o => o.id === v));
+        const opt = q?.options.find(o => o.id === v);
+        if (opt) allTags.push(...opt.tags);
+      });
+    } else {
+      const q = quizQuestions.find(q => q.options.some(o => o.id === value));
+      const opt = q?.options.find(o => o.id === value);
+      if (opt) allTags.push(...opt.tags);
+    }
+  }
+  const skinType = allTags.find(t => ["oily", "dry", "combination", "normal"].includes(t)) || "normal";
+  const isSensitive = allTags.includes("sensitive") || allTags.includes("moderate_sensitivity");
+  const primaryConcernTag = allTags.find(t => ["acne", "aging", "hyperpigmentation", "dehydration", "redness", "texture"].includes(t)) || "general";
+
+  function scoreP(product: Product): number {
+    if (excludedIds.includes(product.id)) return -Infinity;
+    let score = 0;
+    for (const tag of allTags) {
+      if (product.bestFor.includes(tag)) score += 2;
+    }
+    if (product.bestFor.includes(skinType)) score += 3;
+    if (product.bestFor.includes(primaryConcernTag)) score += 4;
+    if (isSensitive && product.bestFor.includes("oily") && !product.bestFor.includes("sensitive")) score -= 2;
+    if (allTags.includes("budget") && product.bestFor.includes("budget")) score += 2;
+    if (allTags.includes("premium") && product.bestFor.includes("premium")) score += 2;
+    if (allTags.includes("midrange") && product.bestFor.includes("midrange")) score += 1;
+    return score;
+  }
+
+  let candidates = productDatabase.filter(p => p.category === category);
+  if (amSafeOnly) candidates = candidates.filter(p => !p.pmOnly);
+
+  const scored = candidates
+    .map(p => ({ product: p, score: scoreP(p) }))
+    .filter(x => x.score !== -Infinity)
+    .sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, count).map(x => x.product);
+}
+
+export function generateRecommendation(answers: QuizAnswers, excludedProductIds: string[] = []): RecommendedRoutine {
   // Collect all tags from answers
   const allTags: string[] = [];
   for (const [_key, value] of Object.entries(answers)) {
@@ -776,6 +1318,8 @@ export function generateRecommendation(answers: QuizAnswers): RecommendedRoutine
 
   // Score products based on tag match
   function scoreProduct(product: Product): number {
+    // Excluded products get -Infinity so they never win
+    if (excludedProductIds.includes(product.id)) return -Infinity;
     let score = 0;
     for (const tag of allTags) {
       if (product.bestFor.includes(tag)) score += 2;
@@ -806,9 +1350,24 @@ export function generateRecommendation(answers: QuizAnswers): RecommendedRoutine
     if (amSafeOnly) {
       candidates = candidates.filter(p => !p.pmOnly);
     }
-    const scored = candidates.map(p => ({ product: p, score: scoreProduct(p) }));
-    scored.sort((a, b) => b.score - a.score);
+    const scored = candidates
+      .map(p => ({ product: p, score: scoreProduct(p) }))
+      .filter(x => x.score !== -Infinity)
+      .sort((a, b) => b.score - a.score);
     return scored[0]?.product || candidates[0];
+  }
+
+  /**
+   * Get top N products for a category (excludes excluded IDs and the primary product).
+   */
+  function getAlternatives(category: Product["category"], primaryId: string, amSafeOnly = false, count = 2): Product[] {
+    let candidates = productDatabase.filter(p => p.category === category);
+    if (amSafeOnly) candidates = candidates.filter(p => !p.pmOnly);
+    const scored = candidates
+      .map(p => ({ product: p, score: scoreProduct(p) }))
+      .filter(x => x.score !== -Infinity && x.product.id !== primaryId)
+      .sort((a, b) => b.score - a.score);
+    return scored.slice(0, count).map(x => x.product);
   }
 
   // Build routines
@@ -831,41 +1390,47 @@ export function generateRecommendation(answers: QuizAnswers): RecommendedRoutine
   const hasConcernForSerum = allTags.some(t =>
     ["acne", "aging", "wrinkles", "hyperpigmentation", "dark_spots", "dullness", "dehydration", "oily", "pores"].includes(t)
   );
-  const hasConcernForTreatment = allTags.some(t =>
-    ["acne", "aging", "wrinkles", "breakouts", "texture"].includes(t)
-  );
+
+  // Pre-compute alternatives for each primary product
+  const cleanserAlts = getAlternatives("cleanser", cleanser.id);
+  const moisturizerAlts = getAlternatives("moisturizer", moisturizer.id);
+  const sunscreenAlts = getAlternatives("sunscreen", sunscreen.id);
+  const amSerumAlts = getAlternatives("serum", amSerum.id, true);
+  const pmSerumAlts = getAlternatives("serum", pmSerum.id);
+  const treatmentAlts = getAlternatives("treatment", treatment.id);
+  const exfoliantAlts = exfoliant ? getAlternatives("exfoliant", exfoliant.id) : [];
 
   // AM routine: cleanser (essential) → serum (recommended if concerns) → moisturizer (essential) → sunscreen (essential)
   const amRoutine: RoutineItem[] = [
-    { step: routineSteps[0], product: cleanser, essential: true },
+    { step: routineSteps[0], product: cleanser, essential: true, alternatives: cleanserAlts },
   ];
 
   if (hasConcernForSerum) {
-    amRoutine.push({ step: routineSteps[2], product: amSerum, essential: false });
+    amRoutine.push({ step: routineSteps[2], product: amSerum, essential: false, alternatives: amSerumAlts });
   }
 
-  amRoutine.push({ step: routineSteps[4], product: moisturizer, essential: true });
-  amRoutine.push({ step: routineSteps[5], product: sunscreen, essential: true });
+  amRoutine.push({ step: routineSteps[4], product: moisturizer, essential: true, alternatives: moisturizerAlts });
+  amRoutine.push({ step: routineSteps[5], product: sunscreen, essential: true, alternatives: sunscreenAlts });
 
   // PM routine: cleanser (essential) → [exfoliant] → [treatment OR serum] → moisturizer (essential)
   const pmRoutine: RoutineItem[] = [
-    { step: routineSteps[0], product: cleanser, essential: true },
+    { step: routineSteps[0], product: cleanser, essential: true, alternatives: cleanserAlts },
   ];
 
   if (exfoliant) {
-    pmRoutine.push({ step: routineSteps[1], product: exfoliant, essential: false });
+    pmRoutine.push({ step: routineSteps[1], product: exfoliant, essential: false, alternatives: exfoliantAlts });
   }
 
   // PM active: retinoid treatment for aging/acne, serum for other concerns, skip if no concerns
   if (allTags.includes("aging") || allTags.includes("wrinkles")) {
-    pmRoutine.push({ step: routineSteps[3], product: treatment, essential: false });
+    pmRoutine.push({ step: routineSteps[3], product: treatment, essential: false, alternatives: treatmentAlts });
   } else if (allTags.includes("acne") || allTags.includes("breakouts")) {
-    pmRoutine.push({ step: routineSteps[3], product: treatment, essential: false });
+    pmRoutine.push({ step: routineSteps[3], product: treatment, essential: false, alternatives: treatmentAlts });
   } else if (hasConcernForSerum) {
-    pmRoutine.push({ step: routineSteps[2], product: pmSerum, essential: false });
+    pmRoutine.push({ step: routineSteps[2], product: pmSerum, essential: false, alternatives: pmSerumAlts });
   }
 
-  pmRoutine.push({ step: routineSteps[4], product: moisturizer, essential: true });
+  pmRoutine.push({ step: routineSteps[4], product: moisturizer, essential: true, alternatives: moisturizerAlts });
 
   // Generate tips
   const tips: string[] = [];
