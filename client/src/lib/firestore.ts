@@ -44,6 +44,7 @@ export interface SerializedRecommendation {
       amazonUrl?: string;
       pmOnly?: boolean;
     };
+    essential: boolean;
   }>;
   pmRoutine: Array<{
     step: { step: number; label: string; time: string; category: string; description: string };
@@ -62,6 +63,7 @@ export interface SerializedRecommendation {
       amazonUrl?: string;
       pmOnly?: boolean;
     };
+    essential: boolean;
   }>;
   tips: string[];
 }
@@ -104,6 +106,7 @@ function serializeRecommendation(recommendation: RecommendedRoutine): Serialized
         description: item.step.description,
       },
       product: serializeProduct(item.product) as SerializedRecommendation["amRoutine"][0]["product"],
+      essential: item.essential,
     })),
     pmRoutine: recommendation.pmRoutine.map((item) => ({
       step: {
@@ -114,6 +117,7 @@ function serializeRecommendation(recommendation: RecommendedRoutine): Serialized
         description: item.step.description,
       },
       product: serializeProduct(item.product) as SerializedRecommendation["pmRoutine"][0]["product"],
+      essential: item.essential,
     })),
     tips: recommendation.tips,
   };

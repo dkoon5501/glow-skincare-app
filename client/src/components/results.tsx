@@ -17,7 +17,7 @@ import {
   BookmarkCheck,
   BookOpen,
 } from "lucide-react";
-import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers } from "@/lib/skincare-data";
+import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers, RoutineItem } from "@/lib/skincare-data";
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth-context";
@@ -30,7 +30,7 @@ interface ResultsProps {
   onRetake: () => void;
 }
 
-function ProductCard({ step, product, index }: { step: RoutineStep; product: Product; index: number }) {
+function ProductCard({ step, product, index, essential }: { step: RoutineStep; product: Product; index: number; essential: boolean }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -45,6 +45,17 @@ function ProductCard({ step, product, index }: { step: RoutineStep; product: Pro
               <span className="text-xs font-medium text-primary uppercase tracking-wide">
                 {step.label}
               </span>
+              <Badge
+                variant={essential ? "default" : "outline"}
+                className={cn(
+                  "text-[10px] px-1.5 py-0",
+                  essential
+                    ? "bg-primary/15 text-primary border-0 hover:bg-primary/15"
+                    : "text-muted-foreground border-muted-foreground/30"
+                )}
+              >
+                {essential ? "Essential" : "Recommended"}
+              </Badge>
             </div>
             <h3 className="text-sm font-semibold text-foreground">
               {product.brand} {product.name}
@@ -358,13 +369,13 @@ export function Results({ recommendation, answers, onRetake }: ResultsProps) {
 
             <TabsContent value="am" className="mt-4 space-y-3">
               {amRoutine.map((item, i) => (
-                <ProductCard key={`am-${item.product.id}-${i}`} step={item.step} product={item.product} index={i} />
+                <ProductCard key={`am-${item.product.id}-${i}`} step={item.step} product={item.product} index={i} essential={item.essential} />
               ))}
             </TabsContent>
 
             <TabsContent value="pm" className="mt-4 space-y-3">
               {pmRoutine.map((item, i) => (
-                <ProductCard key={`pm-${item.product.id}-${i}`} step={item.step} product={item.product} index={i} />
+                <ProductCard key={`pm-${item.product.id}-${i}`} step={item.step} product={item.product} index={i} essential={item.essential} />
               ))}
             </TabsContent>
           </Tabs>

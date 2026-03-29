@@ -713,9 +713,17 @@ export const routineSteps: RoutineStep[] = [
 
 export type QuizAnswers = Record<string, string | string[]>;
 
+export interface RoutineItem {
+  step: RoutineStep;
+  product: Product;
+  /** Whether this step is essential (cleanser, moisturizer, sunscreen) or
+   *  recommended based on the user's specific concerns (serum, treatment, exfoliant). */
+  essential: boolean;
+}
+
 export interface RecommendedRoutine {
-  amRoutine: { step: RoutineStep; product: Product }[];
-  pmRoutine: { step: RoutineStep; product: Product }[];
+  amRoutine: RoutineItem[];
+  pmRoutine: RoutineItem[];
   skinProfile: {
     type: string;
     sensitivity: string;
@@ -819,33 +827,45 @@ export function generateRecommendation(answers: QuizAnswers): RecommendedRoutine
   const needsExfoliant = allTags.some(t => ["acne", "texture", "pores", "oily"].includes(t));
   const exfoliant = needsExfoliant ? getBestProduct("exfoliant") : null;
 
-  // AM routine: cleanser → AM-safe serum → moisturizer → sunscreen
-  const amRoutine: { step: RoutineStep; product: Product }[] = [
-    { step: routineSteps[0], product: cleanser },
-    { step: routineSteps[2], product: amSerum },
-    { step: routineSteps[4], product: moisturizer },
-    { step: routineSteps[5], product: sunscreen }
+  // Determine which optional steps are warranted by the user's concerns
+  const hasConcernForSerum = allTags.some(t =>
+    ["acne", "aging", "wrinkles", "hyperpigmentation", "dark_spots", "dullness", "dehydration", "oily", "pores"].includes(t)
+  );
+  const hasConcernForTreatment = allTags.some(t =>
+    ["acne", "aging", "wrinkles", "breakouts", "texture"].includes(t)
+  );
+
+  // AM routine: cleanser (essential) → serum (recommended if concerns) → moisturizer (essential) → sunscreen (essential)
+  const amRoutine: RoutineItem[] = [
+    { step: routineSteps[0], product: cleanser, essential: true },
   ];
 
-  // PM routine: cleanser → [exfoliant] → treatment OR serum → moisturizer
-  const pmRoutine: { step: RoutineStep; product: Product }[] = [
-    { step: routineSteps[0], product: cleanser },
+  if (hasConcernForSerum) {
+    amRoutine.push({ step: routineSteps[2], product: amSerum, essential: false });
+  }
+
+  amRoutine.push({ step: routineSteps[4], product: moisturizer, essential: true });
+  amRoutine.push({ step: routineSteps[5], product: sunscreen, essential: true });
+
+  // PM routine: cleanser (essential) → [exfoliant] → [treatment OR serum] → moisturizer (essential)
+  const pmRoutine: RoutineItem[] = [
+    { step: routineSteps[0], product: cleanser, essential: true },
   ];
 
   if (exfoliant) {
-    pmRoutine.push({ step: routineSteps[1], product: exfoliant });
+    pmRoutine.push({ step: routineSteps[1], product: exfoliant, essential: false });
   }
 
-  // PM active: use retinoid treatment for aging/acne concerns, otherwise PM serum
+  // PM active: retinoid treatment for aging/acne, serum for other concerns, skip if no concerns
   if (allTags.includes("aging") || allTags.includes("wrinkles")) {
-    pmRoutine.push({ step: routineSteps[3], product: treatment });
+    pmRoutine.push({ step: routineSteps[3], product: treatment, essential: false });
   } else if (allTags.includes("acne") || allTags.includes("breakouts")) {
-    pmRoutine.push({ step: routineSteps[3], product: treatment });
-  } else {
-    pmRoutine.push({ step: routineSteps[2], product: pmSerum });
+    pmRoutine.push({ step: routineSteps[3], product: treatment, essential: false });
+  } else if (hasConcernForSerum) {
+    pmRoutine.push({ step: routineSteps[2], product: pmSerum, essential: false });
   }
 
-  pmRoutine.push({ step: routineSteps[4], product: moisturizer });
+  pmRoutine.push({ step: routineSteps[4], product: moisturizer, essential: true });
 
   // Generate tips
   const tips: string[] = [];
