@@ -29,6 +29,8 @@ export interface Product {
   whyRecommended: string;
   source: string;
   sourceUrl?: string;
+  /** Multiple source links when a product is recommended by more than one dermatologist */
+  sourceLinks?: { name: string; url: string }[];
   manufacturerUrl?: string;
   amazonUrl?: string;
   /** If true, this product contains photosensitizing ingredients (retinol, retinoids)
@@ -326,6 +328,10 @@ export const productDatabase: Product[] = [
       "Clinically tested on sensitive skin with niacinamide to control oil and calm inflammation. Dr. Muneeb Shah, Dr. Daniel Sugai, and Dr. Alexis Stephens all recommend this cleanser for oily and sensitive skin types.",
     source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=6JjijIeEsZM",
+    sourceLinks: [
+      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=lgR4ZOXdRko" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
+    ],
     manufacturerUrl:
       "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-purifying-foaming-facial-cleanser-tolerianefoamingfacialwash.html",
     // No Amazon ASIN available for this specific SKU in the spec
@@ -586,6 +592,10 @@ export const productDatabase: Product[] = [
       "Potent retinol paired with niacinamide for soothing. Recommended for those transitioning to retinol who also have sensitive skin concerns. Apply at night only — retinol degrades in sunlight and increases photosensitivity.",
     source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=6JjijIeEsZM",
+    sourceLinks: [
+      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=6JjijIeEsZM" },
+    ],
     manufacturerUrl:
       "https://www.laroche-posay.us/our-products/face/face-serum/retinol-b3-pure-retinol-serum-3337875694469.html",
     amazonUrl: "https://www.amazon.com/dp/B07Z9Y4M3C?tag=glowskincar0c-20",
@@ -607,6 +617,10 @@ export const productDatabase: Product[] = [
       "Dr. Shereene Idriss and Dr. Daniel Sugai both recommend this iconic chemical exfoliant. It works inside the pore to unclog congestion, smooth texture, and reduce breakouts — consistently ranked as one of the most effective OTC BHA exfoliants.",
     source: "Dr. Shereene Idriss & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=3-MoLqxNFtY",
+    sourceLinks: [
+      { name: "Dr. Shereene Idriss", url: "https://shopmy.us/collections/23674" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=YJxARaLMSpc" },
+    ],
     manufacturerUrl:
       "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
     amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
@@ -746,6 +760,10 @@ export const productDatabase: Product[] = [
       "Dr. Alexis Stephens and Dr. Karen Locke both recommend this lightweight yet effective barrier repair moisturizer. Its prebiotic formula supports the skin microbiome. Dr. Locke featured it in her complete acne routines for dry skin.",
     source: "Dr. Alexis Stephens & Dr. Karen Locke / The Budget Dermatologist (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=APC16_cpYyk",
+    sourceLinks: [
+      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=APC16_cpYyk" },
+      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
+    ],
     manufacturerUrl:
       "https://www.laroche-posay.us/our-products/face/face-moisturizer/toleriane-double-repair-face-moisturizer-tolerianedoublerepair.html",
     amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20",
@@ -808,6 +826,10 @@ export const productDatabase: Product[] = [
       "A multi-derm consensus pick. Dr. Muneeb Shah and Dr. Daniel Sugai have both recommended this oil-free gel moisturizer for oily and combination skin. Absorbs instantly, providing deep hydration without heaviness — ideal under sunscreen.",
     source: "Dr. Muneeb Shah & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=XYr2_QlQiyA",
+    sourceLinks: [
+      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=XYr2_QlQiyA" },
+    ],
     manufacturerUrl:
       "https://www.neutrogena.com/products/skincare/neutrogena-hydro-boost-water-gel-with-hyaluronic-acid/6811047",
     amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
@@ -895,6 +917,10 @@ export const productDatabase: Product[] = [
       "Dr. Sam Ellis and Dr. Daniel Sugai both call this the #1 dermatologist-recommended sunscreen brand. Dr. Sugai gave it 4.5/5 stars in a dedicated video review, praising its niacinamide, sheer zinc formula, and no white cast.",
     source: "Dr. Sam Ellis & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
+    sourceLinks: [
+      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
+    ],
     manufacturerUrl: "https://eltamd.com/products/uv-clear-broad-spectrum-spf-46",
     amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20",
   },
@@ -1040,6 +1066,10 @@ export const productDatabase: Product[] = [
       "The only FDA-approved OTC retinoid for acne. Dr. Dray is a long-time advocate, making it a top pick in her most-purchased skincare of 2025 list. Dr. Muneeb Shah also recommends adapalene as the best-evidenced OTC retinoid for acne. Apply at night only. Start 2–3× per week.",
     source: "Dr. Dray & Dr. Muneeb Shah (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
+      { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
+    ],
     manufacturerUrl: "https://differin.com/shop/differin-gel/3029949.html",
     amazonUrl: "https://www.amazon.com/dp/B07V2BRPVS?tag=glowskincar0c-20",
     pmOnly: true,
@@ -1056,6 +1086,10 @@ export const productDatabase: Product[] = [
       "Dr. Karen Locke (The Budget Dermatologist) and Dr. Sam Ellis both recommend Medik8 Crystal Retinal. Dr. Ellis featured it in a video on how to make retinoids work better, demonstrating usage of Crystal Retinal's graduated strengths. Retinaldehyde is one step closer to retinoic acid than retinol — faster results with less irritation. Apply at night only.",
     source: "Dr. Karen Locke / The Budget Dermatologist & Dr. Sam Ellis (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=xE2ljf69hBc",
+    sourceLinks: [
+      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
+      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
+    ],
     manufacturerUrl: "https://us.medik8.com/products/crystal-retinal",
     // No ASIN in spec; omitting amazonUrl
     pmOnly: true,

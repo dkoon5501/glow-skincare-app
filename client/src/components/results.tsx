@@ -311,7 +311,16 @@ function ProductCard({
                   </div>
                   <p className="text-xs text-muted-foreground italic">
                     Source:{" "}
-                    {currentProduct.sourceUrl ? (
+                    {currentProduct.sourceLinks && currentProduct.sourceLinks.length > 0 ? (
+                      currentProduct.sourceLinks.map((link, i) => (
+                        <span key={link.url}>
+                          {i > 0 && ", "}
+                          <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                            {link.name}
+                          </a>
+                        </span>
+                      ))
+                    ) : currentProduct.sourceUrl ? (
                       <a href={currentProduct.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                         {currentProduct.source}
                       </a>

@@ -37,6 +37,7 @@ export interface SerializedProduct {
   whyRecommended: string;
   source: string;
   sourceUrl?: string;
+  sourceLinks?: { name: string; url: string }[];
   manufacturerUrl?: string;
   amazonUrl?: string;
   pmOnly?: boolean;
@@ -93,6 +94,7 @@ function serializeProduct(product: import("./skincare-data").Product): Serialize
     whyRecommended: product.whyRecommended,
     source: product.source,
     sourceUrl: product.sourceUrl,
+    sourceLinks: product.sourceLinks,
     manufacturerUrl: product.manufacturerUrl,
     amazonUrl: product.amazonUrl,
     pmOnly: product.pmOnly,
