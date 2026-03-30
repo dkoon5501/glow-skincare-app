@@ -277,7 +277,7 @@ function ProductCard({
                       : "text-muted-foreground border-muted-foreground/30"
                   )}
                 >
-                  {essential ? "Essential" : "Recommended"}
+                  {essential ? "Recommended" : "Optional"}
                 </Badge>
               </div>
               <h3 className="text-sm font-semibold text-foreground">
@@ -762,6 +762,22 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
               ))}
             </TabsContent>
           </Tabs>
+        </div>
+
+        {/* Label explanation */}
+        <div className="mt-6 flex gap-4 items-start p-4 rounded-xl bg-muted/40 border border-card-border">
+          <div className="flex-1">
+            <div className="flex items-center gap-1.5 mb-1">
+              <Badge variant="default" className="text-[10px] px-1.5 py-0 bg-primary/15 text-primary border-0 hover:bg-primary/15">Recommended</Badge>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">Core steps for your skin type. Cleanser, moisturizer, and sunscreen form the foundation of any good routine.</p>
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-1.5 mb-1">
+              <Badge variant="outline" className="text-[10px] px-1.5 py-0 text-muted-foreground border-muted-foreground/30">Optional</Badge>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">Targeted additions based on your specific concerns. Add these when you're ready, but don't feel pressured to use them all.</p>
+          </div>
         </div>
 
         {/* Save Routine Section — hide on shared views */}
