@@ -586,8 +586,8 @@ export const productDatabase: Product[] = [
     keyIngredients: ["96% Snail Secretion Filtrate", "Sodium Hyaluronate", "Betaine"],
     bestFor: ["dehydration", "dry", "sensitive", "dullness", "budget"],
     whyRecommended:
-      "Doctorly reviewed this K-beauty cult classic for its remarkable hydration and barrier-repair properties. The 96% snail mucin concentration helps heal, plump, and restore radiance to dehydrated and sensitive skin types without heavy texture.",
-    source: "Doctorly & Dr. Dray (YouTube)",
+      "Dr. Shah and Dr. Maxfield reviewed this K-beauty cult classic for its remarkable hydration and barrier-repair properties. The 96% snail mucin concentration helps heal, plump, and restore radiance to dehydrated and sensitive skin types without heavy texture.",
+    source: "Dr. Shah/Dr. Maxfield & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=76GA2FR9nAg",
         manufacturerUrl: "https://www.cosrx.com",
     amazonUrl: "https://www.amazon.com/dp/B00PBX3L7K?tag=glowskincar0c-20",
@@ -767,8 +767,8 @@ export const productDatabase: Product[] = [
     keyIngredients: ["10% Azelaic Acid", "Niacinamide", "Heartleaf Extract"],
     bestFor: ["acne", "rosacea", "redness", "budget"],
     whyRecommended:
-      "Doctorly reviewed this K-beauty azelaic acid serum for its calming and anti-acne properties. Anua's version combines azelaic acid with their signature heartleaf extract for added soothing benefits — ideal for acne and rosacea-prone skin on a budget.",
-    source: "Doctorly (YouTube)",
+      "Dr. Shah and Dr. Maxfield reviewed this K-beauty azelaic acid serum for its calming and anti-acne properties. Anua's version combines azelaic acid with their signature heartleaf extract for added soothing benefits — ideal for acne and rosacea-prone skin on a budget.",
+    source: "Dr. Shah/Dr. Maxfield (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fjIGAFmBgRE",
   },
   {
@@ -938,11 +938,11 @@ export const productDatabase: Product[] = [
     keyIngredients: ["Glacial Glycoprotein", "Squalane", "Imperata Cylindrica Root Extract"],
     bestFor: ["normal", "combination", "dry", "midrange"],
     whyRecommended:
-      "Doctorly reviewed Kiehl's Ultra Facial Cream as a classic, well-rounded moisturizer for normal to dry skin. Its unique glacial glycoprotein and squalane combination delivers 24-hour hydration with a comfortable, non-greasy texture that works well under makeup.",
-    source: "Doctorly & Dr. Daniel Sugai (YouTube)",
+      "Dr. Shah and Dr. Maxfield reviewed Kiehl's Ultra Facial Cream as a classic, well-rounded moisturizer for normal to dry skin. Its unique glacial glycoprotein and squalane combination delivers 24-hour hydration with a comfortable, non-greasy texture that works well under makeup.",
+    source: "Dr. Shah/Dr. Maxfield & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=h19mTItzLrE",
     sourceLinks: [
-      { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
+      { name: "Dr. Shah/Dr. Maxfield", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=hHfcGTA7A70" },
     ],
         manufacturerUrl: "https://www.kiehls.com",
@@ -1061,8 +1061,8 @@ export const productDatabase: Product[] = [
     keyIngredients: ["Thiamidol", "SPF 30 Filters", "Niacinamide"],
     bestFor: ["hyperpigmentation", "dark_spots", "combination"],
     whyRecommended:
-      "Doctorly reviewed this tinted daily SPF as an excellent choice for hyperpigmentation. Eucerin's clinically proven Thiamidol molecule targets melanin overproduction at the source while providing SPF 30 daily protection — a dual-purpose product for uneven skin tone.",
-    source: "Doctorly (YouTube)",
+      "Dr. Shah and Dr. Maxfield reviewed this tinted daily SPF as an excellent choice for hyperpigmentation. Eucerin's clinically proven Thiamidol molecule targets melanin overproduction at the source while providing SPF 30 daily protection — a dual-purpose product for uneven skin tone.",
+    source: "Dr. Shah/Dr. Maxfield (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
   },
   {
@@ -1074,11 +1074,11 @@ export const productDatabase: Product[] = [
     keyIngredients: ["SPF 46 Broad Spectrum", "Universal Tint", "Hyaluronic Acid"],
     bestFor: ["normal", "combination", "oily", "midrange"],
     whyRecommended:
-      "Doctorly reviewed DRMTLGY Universal Tinted Moisturizer for its versatile hybrid formula that provides light coverage and SPF 46 protection. The universal tint adapts to a wide range of skin tones, making it a practical 3-in-1 SPF, moisturizer, and tint.",
-    source: "Doctorly & Dr. Neera Nathan (YouTube/Instagram)",
+      "Dr. Shah and Dr. Maxfield reviewed DRMTLGY Universal Tinted Moisturizer for its versatile hybrid formula that provides light coverage and SPF 46 protection. The universal tint adapts to a wide range of skin tones, making it a practical 3-in-1 SPF, moisturizer, and tint.",
+    source: "Dr. Shah/Dr. Maxfield & Dr. Neera Nathan (YouTube/Instagram)",
     sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
     sourceLinks: [
-      { name: "Doctorly", url: "https://www.youtube.com/watch?v=WKN8W7Os9fY" },
+      { name: "Dr. Shah/Dr. Maxfield", url: "https://www.youtube.com/watch?v=WKN8W7Os9fY" },
       { name: "Dr. Neera Nathan", url: "https://www.instagram.com/reel/DLI5IIpBQDf/" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B07NV8YLBT?tag=glowskincar0c-20",
@@ -1092,8 +1092,8 @@ export const productDatabase: Product[] = [
     keyIngredients: ["SPF 50 Broad Spectrum", "Hyaluronic Acid", "Niacinamide"],
     bestFor: ["dry", "dehydration", "budget", "dullness"],
     whyRecommended:
-      "Doctorly featured Naturium's Dew-Glow SPF 50 for its dewy finish and hydrating formula that suits dry and dehydrated skin types. Unusually, it provides SPF 50 protection at a budget-friendly price point with a glow-enhancing formula rather than a matte finish.",
-    source: "Doctorly (YouTube)",
+      "Dr. Shah and Dr. Maxfield featured Naturium's Dew-Glow SPF 50 for its dewy finish and hydrating formula that suits dry and dehydrated skin types. Unusually, it provides SPF 50 protection at a budget-friendly price point with a glow-enhancing formula rather than a matte finish.",
+    source: "Dr. Shah/Dr. Maxfield (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
   },
   {

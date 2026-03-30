@@ -78,15 +78,16 @@ const HOW_IT_WORKS = [
 ];
 
 const DERMATOLOGISTS = [
-  { name: "Dr. Muneeb Shah / Doctorly", stat: "3.5M YouTube", url: "https://www.youtube.com/@Doctorly", platform: "YouTube" },
+  { name: "Dr. Muneeb Shah (Doctorly)", stat: "3.5M YouTube", url: "https://www.youtube.com/@Doctorly", platform: "YouTube" },
+  { name: "Dr. Daniel Maxfield (Doctorly)", stat: "3.5M YouTube", url: "https://www.youtube.com/@Doctorly", platform: "YouTube" },
   { name: "Dr. Dray", stat: "2.6M YouTube", url: "https://www.youtube.com/@DrDrayzday", platform: "YouTube" },
   { name: "Dr. Sam Ellis", stat: "807K YouTube", url: "https://www.youtube.com/@drsamellis", platform: "YouTube" },
-  { name: "Dr. Karen Locke", stat: "712K YouTube", url: "https://www.youtube.com/@TheBudgetDermatologist", platform: "YouTube" },
-  { name: "Dr. Daniel Sugai", stat: "708K YouTube", url: "https://www.youtube.com/@DrDanielSugai", platform: "YouTube" },
+  { name: "Dr. Karen Locke (The Budget Dermatologist)", stat: "712K YouTube", url: "https://www.youtube.com/@TheBudgetDermatologist", platform: "YouTube" },
+  { name: "Dr. Daniel Sugai", stat: "708K YouTube", url: "https://www.youtube.com/c/DrDanielSugai", platform: "YouTube" },
   { name: "Dr. Alexis Stephens", stat: "578K YouTube", url: "https://www.youtube.com/@dralexisstephens", platform: "YouTube" },
   { name: "Dr. Azadeh Shirazi", stat: "283K Instagram", url: "https://www.instagram.com/skinbydrazi/", platform: "Instagram" },
   { name: "Dr. Whitney Bowe", stat: "200K Instagram", url: "https://www.instagram.com/drwhitneybowe/", platform: "Instagram" },
-  { name: "Dr. Jenny Liu", stat: "YouTube & Instagram", url: "https://www.youtube.com/@derm.talk", platform: "YouTube" },
+  { name: "Dr. Jenny Liu", stat: "YouTube & Instagram", url: "https://www.youtube.com/@dr.jennyliu", platform: "YouTube" },
   { name: "Dr. Joyce Park", stat: "499K Instagram", url: "https://www.instagram.com/teawithmd/", platform: "Instagram" },
   { name: "Dr. Neera Nathan", stat: "1M Instagram", url: "https://www.instagram.com/drneera/", platform: "Instagram" },
   { name: "Dr. Dustin Portela", stat: "YouTube & Instagram", url: "https://www.instagram.com/drdustinportela/", platform: "Instagram" },
