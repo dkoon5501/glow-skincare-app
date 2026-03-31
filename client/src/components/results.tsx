@@ -326,6 +326,34 @@ function ProductCard({
                 </button>
               </div>
 
+              {/* Purchase links — always visible */}
+              <div className="flex flex-wrap gap-2 mt-3">
+                {currentProduct.amazonUrl && (
+                  <a
+                    href={currentProduct.amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+                    data-testid={`link-buy-${currentProduct.id}`}
+                  >
+                    <ShoppingCart className="w-3 h-3" />
+                    Buy on Amazon
+                  </a>
+                )}
+                {currentProduct.manufacturerUrl && (
+                  <a
+                    href={currentProduct.manufacturerUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium border border-card-border px-3 py-1.5 rounded-lg hover:bg-muted/50 transition-colors"
+                    data-testid={`link-manufacturer-${currentProduct.id}`}
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    {currentProduct.brand} Website
+                  </a>
+                )}
+              </div>
+
               {expanded && (
                 <div className="mt-3 pt-3 border-t border-card-border space-y-2 animate-in slide-in-from-top-2 duration-200">
                   <p className="text-xs text-foreground leading-relaxed">
@@ -358,32 +386,6 @@ function ProductCard({
                       </a>
                     ) : currentProduct.source}
                   </p>
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {currentProduct.amazonUrl && (
-                      <a
-                        href={currentProduct.amazonUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
-                        data-testid={`link-buy-${currentProduct.id}`}
-                      >
-                        <ShoppingCart className="w-3 h-3" />
-                        Buy on Amazon
-                      </a>
-                    )}
-                    {currentProduct.manufacturerUrl && (
-                      <a
-                        href={currentProduct.manufacturerUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium border border-card-border px-3 py-1.5 rounded-lg hover:bg-muted/50 transition-colors"
-                        data-testid={`link-manufacturer-${currentProduct.id}`}
-                      >
-                        <ExternalLink className="w-3 h-3" />
-                        {currentProduct.brand} Website
-                      </a>
-                    )}
-                  </div>
                 </div>
               )}
             </div>
