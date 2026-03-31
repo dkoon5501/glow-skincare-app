@@ -28,26 +28,25 @@ function GlowLogo({ size = 28 }: { size?: number }) {
       aria-label="Glow logo"
       role="img"
     >
-      {/* Outer ring — faintest */}
+      {/* Outer ring — bold */}
       <circle
         cx="16"
         cy="16"
-        r="14.5"
+        r="13.5"
         stroke="currentColor"
-        strokeWidth="1"
-        opacity="0.25"
+        strokeWidth="3"
       />
-      {/* Middle ring */}
+      {/* Middle ring — muted */}
       <circle
         cx="16"
         cy="16"
-        r="9.5"
+        r="8.5"
         stroke="currentColor"
-        strokeWidth="1.25"
-        opacity="0.55"
+        strokeWidth="2.5"
+        opacity="0.5"
       />
-      {/* Inner filled circle — the "glow core" */}
-      <circle cx="16" cy="16" r="4" fill="currentColor" />
+      {/* Inner filled circle */}
+      <circle cx="16" cy="16" r="3.5" fill="currentColor" />
     </svg>
   );
 }

@@ -38,9 +38,9 @@ export function Header() {
           aria-label="Go to home"
         >
           <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.5" className="text-primary" />
-            <circle cx="16" cy="16" r="8" stroke="currentColor" strokeWidth="1.5" className="text-primary" opacity="0.6" />
-            <circle cx="16" cy="16" r="3" fill="currentColor" className="text-primary" />
+            <circle cx="16" cy="16" r="13.5" stroke="currentColor" strokeWidth="3" className="text-primary" />
+            <circle cx="16" cy="16" r="8.5" stroke="currentColor" strokeWidth="2.5" className="text-primary" opacity="0.5" />
+            <circle cx="16" cy="16" r="3.5" fill="currentColor" className="text-primary" />
           </svg>
           <span className="text-sm font-semibold tracking-tight">Glow</span>
         </button>
