@@ -11,7 +11,6 @@ import {
   ShoppingBag,
   CheckCircle2,
   ArrowRight,
-  ExternalLink,
 } from "lucide-react";
 
 interface LandingProps {
@@ -77,50 +76,49 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const DERMATOLOGISTS = [
-  { name: "Dr. Muneeb Shah (Doctorly)", stat: "3.5M YouTube", url: "https://www.youtube.com/@Doctorly", platform: "YouTube" },
-  { name: "Dr. Daniel Maxfield (Doctorly)", stat: "3.5M YouTube", url: "https://www.youtube.com/@Doctorly", platform: "YouTube" },
-  { name: "Dr. Dray", stat: "2.6M YouTube", url: "https://www.youtube.com/@DrDrayzday", platform: "YouTube" },
-  { name: "Dr. Sam Ellis", stat: "807K YouTube", url: "https://www.youtube.com/@drsamellis", platform: "YouTube" },
-  { name: "Dr. Karen Locke (The Budget Dermatologist)", stat: "712K YouTube", url: "https://www.youtube.com/@TheBudgetDermatologist", platform: "YouTube" },
-  { name: "Dr. Daniel Sugai", stat: "708K YouTube", url: "https://www.youtube.com/c/DrDanielSugai", platform: "YouTube" },
-  { name: "Dr. Alexis Stephens", stat: "578K YouTube", url: "https://www.youtube.com/@dralexisstephens", platform: "YouTube" },
-  { name: "Dr. Azadeh Shirazi", stat: "283K Instagram", url: "https://www.instagram.com/skinbydrazi/", platform: "Instagram" },
-  { name: "Dr. Whitney Bowe", stat: "200K Instagram", url: "https://www.instagram.com/drwhitneybowe/", platform: "Instagram" },
-  { name: "Dr. Jenny Liu", stat: "YouTube & Instagram", url: "https://www.youtube.com/@dr.jennyliu", platform: "YouTube" },
-  { name: "Dr. Joyce Park", stat: "499K Instagram", url: "https://www.instagram.com/teawithmd/", platform: "Instagram" },
-  { name: "Dr. Neera Nathan", stat: "1M Instagram", url: "https://www.instagram.com/drneera/", platform: "Instagram" },
-  { name: "Dr. Dustin Portela", stat: "YouTube & Instagram", url: "https://www.instagram.com/drdustinportela/", platform: "Instagram" },
-  { name: "Dr. Lindsey Zubritsky", stat: "2M Instagram", url: "https://www.instagram.com/dermguru/", platform: "Instagram" },
-];
-
-const STATS = [
-  { value: "Dozens of", label: "Curated Products" },
-  { value: "Board-Certified", label: "Dermatologist Sources" },
-  { value: "Every", label: "Category Covered" },
-  { value: "Linked", label: "Video Sources" },
-];
-
-const DIFFERENTIATORS = [
+const METHODOLOGY_STEPS = [
   {
-    title: "Evidence-Based Sources",
+    title: "Skin Profiling",
     description:
-      "We don't guess. Every product links to the dermatologist who recommended it.",
+      "We classify your skin using the Baumann Skin Type System — a peer-reviewed, clinically validated framework that maps your skin across 4 dimensions: hydration, sensitivity, pigmentation, and aging. This produces one of 16 distinct skin types, giving us a precise starting point.",
   },
   {
-    title: "Personalized, Not Generic",
+    title: "Evidence Mapping",
     description:
-      "Your Baumann Skin Type code drives recommendations tailored to your exact profile.",
+      "Our product database is built exclusively from publicly available recommendations made by board-certified dermatologists on YouTube and Instagram. We catalog which products they discuss, for which skin concerns, and link directly to the original source so you can verify every recommendation.",
+  },
+  {
+    title: "Concern-Weighted Matching",
+    description:
+      "Your quiz answers generate a weighted profile. Our algorithm scores every product in the database against your specific combination of skin type, primary concern, sensitivity level, retinoid experience, and budget — then ranks them. Products endorsed by multiple dermatologists score higher.",
   },
   {
     title: "Essential vs Recommended",
     description:
-      "We tell you what you actually need vs what's optional. No unnecessary 12-step routines.",
+      "Not everyone needs a 10-step routine. We separate essential steps (cleanser, moisturizer, sunscreen) from targeted additions (serums, treatments, exfoliants) that only appear when your profile warrants them. We'd rather under-recommend than overwhelm.",
+  },
+];
+
+const DIFFERENTIATORS = [
+  {
+    title: "Traceable Sources",
+    description:
+      "Every product links to the specific video or post where a board-certified dermatologist discussed it. No anonymous 'expert picks.'",
+  },
+  {
+    title: "Multi-Source Consensus",
+    description:
+      "Products endorsed by multiple dermatologists rank higher in our algorithm. Consensus matters more than any single opinion.",
+  },
+  {
+    title: "Adapts to You",
+    description:
+      "Reject a product that didn't work? We surface the next best match and remember your preferences.",
   },
   {
     title: "Free & Transparent",
     description:
-      "No paywalls, no data collection. Just honest skincare guidance.",
+      "No paywalls, no data harvesting. We earn a small commission on Amazon purchases — that's it.",
   },
 ];
 
@@ -131,11 +129,11 @@ const FAQS = [
   },
   {
     q: "How are products selected?",
-    a: "Every product in our database has been specifically recommended by at least one board-certified dermatologist on their YouTube channel or Instagram. We source from leading dermatologists with millions of combined followers.",
+    a: "We catalog product recommendations made publicly by board-certified dermatologists on YouTube and Instagram. Every product in our database links to the original video or post where it was discussed, so you can verify the source yourself.",
   },
   {
     q: "Why should I trust these recommendations?",
-    a: "Our sources are board-certified dermatologists — medical doctors who specialize in skin. Each product links directly to the video where they recommended it so you can verify yourself.",
+    a: "Our sources are board-certified dermatologists — medical doctors with specialized training in skin. We don't make the recommendations ourselves; we surface what dermatologists have already publicly endorsed, matched to your specific skin profile.",
   },
   {
     q: "What is a Baumann Skin Type?",
@@ -160,7 +158,7 @@ export function Landing({ onStart }: LandingProps) {
         <div className="mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 border border-primary/15 px-3.5 py-1.5 rounded-full">
             <CheckCircle2 className="w-3 h-3" />
-            Science-Backed Skincare
+            Dermatologist-Guided Skincare
           </span>
         </div>
 
@@ -169,12 +167,12 @@ export function Landing({ onStart }: LandingProps) {
           className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight max-w-2xl mb-5"
           data-testid="text-hero-title"
         >
-          Your Science-Backed
+          Your Dermatologist-Guided
           <br className="hidden sm:block" /> Skincare Routine
         </h1>
 
         <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-          Answer 8 evidence-based questions. Get a personalized AM &amp; PM
+          Answer 8 quick questions. Get a personalized AM &amp; PM
           routine with specific products recommended by top dermatologists.
         </p>
 
@@ -238,71 +236,45 @@ export function Landing({ onStart }: LandingProps) {
         </div>
       </section>
 
-      {/* ─── 3. TRUST SIGNALS / SOCIAL PROOF ────────────────────────── */}
+      {/* ─── 3. OUR METHODOLOGY ─────────────────────────────────────── */}
       <section
         className="px-6 py-16 md:py-20"
-        aria-labelledby="trust-heading"
+        aria-labelledby="methodology-heading"
       >
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-12">
             <h2
-              id="trust-heading"
+              id="methodology-heading"
               className="text-xl font-bold text-foreground tracking-tight mb-3"
             >
-              Backed by dermatologist expertise
+              How Our Algorithm Works
             </h2>
             <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
-              Every product recommendation links directly to the YouTube video
-              or Instagram post where a board-certified dermatologist endorsed it.
+              We don't just list popular products. Glow uses a structured, evidence-mapped
+              approach to match you with the right routine for your skin.
             </p>
           </div>
 
-          {/* Derm list — scrollable container showing ~4 at a time */}
-          <div className="relative mb-12">
-            <div className="max-h-[280px] overflow-y-auto rounded-xl border border-card-border bg-card scrollbar-thin">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 divide-y sm:divide-y-0">
-                {DERMATOLOGISTS.map(({ name, stat, url, platform }) => (
-                  <a
-                    key={name}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 hover:bg-accent/50 transition-colors"
-                    data-testid={`card-derm-${name.replace(/\s+/g, "-").toLowerCase()}`}
-                  >
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <span className="text-primary text-xs font-bold">
-                        {name.charAt(4).toUpperCase()}
-                      </span>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-foreground truncate">{name}</p>
-                      <p className="text-xs text-muted-foreground">{stat}</p>
-                    </div>
-                    <ExternalLink className="w-3.5 h-3.5 text-muted-foreground shrink-0" />
-                  </a>
-                ))}
-              </div>
-            </div>
-            {/* Fade hint at bottom to indicate scrollability */}
-            <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-card to-transparent rounded-b-xl pointer-events-none" />
-          </div>
-
-          {/* Stats bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {STATS.map(({ value, label }) => (
+          <div className="space-y-6">
+            {METHODOLOGY_STEPS.map((step, i) => (
               <div
-                key={label}
-                className="flex flex-col items-center text-center p-5 rounded-xl bg-primary/5 border border-primary/10"
-                data-testid={`stat-${label.replace(/\s+/g, "-").toLowerCase()}`}
+                key={step.title}
+                className="flex gap-4 items-start"
+                data-testid={`methodology-step-${i}`}
               >
-                <span className="text-2xl font-bold text-primary">{value}</span>
-                <span className="text-xs text-muted-foreground mt-1">{label}</span>
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-xs font-bold text-primary">{i + 1}</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-1">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* ─── 4. WHAT MAKES GLOW DIFFERENT ────────────────────────────── */}
       <section
@@ -382,7 +354,7 @@ export function Landing({ onStart }: LandingProps) {
             Ready to find your perfect routine?
           </h2>
           <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-            Join thousands of people who've discovered their science-backed
+            Join thousands of people who've discovered their dermatologist-guided
             skincare routine — in under 2 minutes, completely free.
           </p>
           <Button
@@ -413,7 +385,7 @@ export function Landing({ onStart }: LandingProps) {
                 </span>
               </div>
               <p className="text-xs text-muted-foreground max-w-xs text-center sm:text-left">
-                Science-backed skincare, personalized to you.
+                Dermatologist-guided skincare, personalized to you.
               </p>
             </div>
 
@@ -468,6 +440,10 @@ export function Landing({ onStart }: LandingProps) {
               Glow participates in the Amazon Services LLC Associates Program. We
               may earn a small commission on qualifying purchases at no extra cost
               to you. This does not influence our recommendations.
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Glow is not affiliated with or endorsed by any dermatologist
+              referenced in our product database.
             </p>
           </div>
         </div>
