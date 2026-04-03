@@ -300,7 +300,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Alexis Stephens, Dr. Daniel Sugai, Dr. Dray & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=OeNJbShiOOw",
     sourceLinks: [
-      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
+      { name: "CeraVe Hydrating Facial Cleanser", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=VxG9rE4seIs" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
@@ -340,9 +340,9 @@ export const productDatabase: Product[] = [
     source: "Dr. Muneeb Shah, Dr. Daniel Sugai & Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=6JjijIeEsZM",
     sourceLinks: [
-      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=lgR4ZOXdRko" },
+      { name: "Toleriane Purifying Foaming Facial Cleanser", url: "https://www.youtube.com/watch?v=lgR4ZOXdRko" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
-      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
+      { name: "Toleriane Double Repair Face Moisturizer", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
     ],
     dermVerified: true,
   },
@@ -374,7 +374,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Karen Locke & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=iZc8UWcq5dY",
     sourceLinks: [
-      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=OTlliSx7dQU" },
+      { name: "Hydrating Foaming Oil Cleanser", url: "https://www.youtube.com/watch?v=OTlliSx7dQU" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
     ],
     // No ASIN in spec; omitting amazonUrl
@@ -485,7 +485,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Muneeb Shah & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=IyxTc0iZ6V8",
     sourceLinks: [
-      { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
+      { name: "Neutrogena Hydro Boost Hyaluronic Acid Water Gel with Signature Fragrance 1.7 Oz", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=glowskincar0c-20",
@@ -504,7 +504,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Karen Locke & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=OTlliSx7dQU",
     sourceLinks: [
-      { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
+      { name: "Glow Maker Vitamin C Serum", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
     // No ASIN in spec; omitting amazonUrl
@@ -646,7 +646,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Azadeh Shirazi, Dr. Daniel Sugai & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=3-MoLqxNFtY",
     sourceLinks: [
-      { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
+      { name: "SKIN PERFECTING 2% BHA Liquid Exfoliant", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=YJxARaLMSpc" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=4By-S9xY4h8" },
     ],
@@ -828,7 +828,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=SvB_EaH29wQ" },
       { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
-      { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
+      { name: "Mela B3 Dark Spot Serum With Melasyl™ + Niacinamide", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
     dermVerified: true,
@@ -882,7 +882,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=XYr2_QlQiyA" },
-      { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
+      { name: "Toleriane Hydrating Gentle Face Cleanser", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
     dermVerified: true,
@@ -946,7 +946,7 @@ export const productDatabase: Product[] = [
     source: "Doctorly & Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=h19mTItzLrE",
     sourceLinks: [
-      { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
+      { name: "Ultra Facial Cream with Squalane", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=hHfcGTA7A70" },
     ],
     dermVerified: true,
@@ -982,7 +982,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Sam Ellis, Dr. Daniel Sugai & Dr. Muneeb Shah (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
     sourceLinks: [
-      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
+      { name: "EltaMD UV Daily Broad-Spectrum SPF 40 Tinted", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
     ],
@@ -1017,8 +1017,8 @@ export const productDatabase: Product[] = [
     source: "Dr. Daniel Sugai & Dr. Joyce Park (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=hHfcGTA7A70",
     sourceLinks: [
-      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
-      { name: "Dr. Joyce Park", url: "https://www.youtube.com/watch?v=Max9p5NGANI" },
+      { name: "ISDIN Eryfotona Actinica Ultralight Emulsion Broad Spectrum SPF 50+", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
+      { name: "EltaMD UV Clear Tinted Broad-Spectrum SPF 46", url: "https://www.youtube.com/watch?v=Max9p5NGANI" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=glowskincar0c-20",
     dermVerified: true,
@@ -1051,7 +1051,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Sam Ellis & Dr. Azadeh Shirazi (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
     sourceLinks: [
-      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
+      { name: "Mineral Mattescreen SPF 40", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
       { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=Rpx_pSJNP1A" },
     ],
     dermVerified: true,
@@ -1083,7 +1083,7 @@ export const productDatabase: Product[] = [
     source: "Doctorly & Dr. Neera Nathan (YouTube/Instagram)",
     sourceUrl: "https://www.youtube.com/watch?v=WKN8W7Os9fY",
     sourceLinks: [
-      { name: "Doctorly", url: "https://www.youtube.com/watch?v=WKN8W7Os9fY" },
+      { name: "Universal Tinted Moisturizer SPF 46", url: "https://www.youtube.com/watch?v=WKN8W7Os9fY" },
       { name: "Dr. Neera Nathan", url: "https://www.instagram.com/reel/DLI5IIpBQDf/" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B07NV8YLBT?tag=glowskincar0c-20",
@@ -1168,7 +1168,7 @@ export const productDatabase: Product[] = [
     sourceUrl: "https://www.youtube.com/watch?v=xE2ljf69hBc",
     sourceLinks: [
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
-      { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
+      { name: "UV Clear Broad-Spectrum SPF 46", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
     ],
     // No ASIN in spec; omitting amazonUrl
     pmOnly: true,
@@ -1275,7 +1275,7 @@ export const productDatabase: Product[] = [
     sourceUrl: "https://www.youtube.com/watch?v=bruzUMMO_LU",
     sourceLinks: [
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=bruzUMMO_LU" },
-      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=lda4RL8QO8g" },
+      { name: "Differin Adapalene Gel 0.1% Acne Treatment", url: "https://www.youtube.com/watch?v=lda4RL8QO8g" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B07GTWMD1W?tag=glowskincar0c-20",
     pmOnly: true,
@@ -1405,7 +1405,7 @@ export const productDatabase: Product[] = [
     whyRecommended: "Popular moisturizer from La Roche-Posay with Ceramide-3 — well-suited for dehydration, redness, sensitive skin.",
     source: "Dr. Dustin Portela (YouTube)",
     sourceLinks: [
-      { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
+      { name: "Anthelios Ultra-Light Sunscreen Fluid SPF 60", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B07L1PHS1S?tag=glowskincar0c-20",
     dermVerified: true,
@@ -1575,7 +1575,7 @@ export const productDatabase: Product[] = [
     source: "Dr. Mara Weinstein & Dr. Andrea Suarez & Dr. Jenny Liu (YouTube)",
     sourceLinks: [
       { name: "Dr. Mara Weinstein", url: "https://www.youtube.com/watch?v=GgJ3kp9mpVc" },
-      { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=SjSmmopv0JE" },
+      { name: "Neutrogena Oil-Free Acne Wash", url: "https://www.youtube.com/watch?v=SjSmmopv0JE" },
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=aVjrWDlQ2vU" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B000YJ2SLG?tag=glowskincar0c-20",
@@ -2914,7 +2914,7 @@ export const productDatabase: Product[] = [
     whyRecommended: "Popular moisturizer from Aveeno with Prebiotic oat — well-suited for dehydration, dry, sensitive skin.",
     source: "Dr. Andrea Suarez (YouTube)",
     sourceLinks: [
-      { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=YhRYqGqIYPg" },
+      { name: "Aveeno Calm + Restore Oat Gel Moisturizer", url: "https://www.youtube.com/watch?v=YhRYqGqIYPg" },
     ],
     dermVerified: true,
   },
