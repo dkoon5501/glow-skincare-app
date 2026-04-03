@@ -1327,7 +1327,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "the-ordinary-the-ordinary-hyaluronic-acid-2-b5-with-ceramide",
-    name: "The Ordinary Hyaluronic Acid 2% + B5 with Ceramides Multi-Depth Hydration Serum",
+    name: "Hyaluronic Acid 2% + B5 with Ceramides Multi-Depth Hydration Serum",
     brand: "The Ordinary",
     category: "serum",
     price: "~$9-10",
@@ -1340,7 +1340,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "the-ordinary-the-ordinary-glycolic-acid-7-exfoliating-toner",
-    name: "The Ordinary Glycolic Acid 7% Exfoliating Toner",
+    name: "Glycolic Acid 7% Exfoliating Toner",
     brand: "The Ordinary",
     category: "toner",
     price: "~$13",
@@ -1352,7 +1352,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "the-ordinary-the-ordinary-azelaic-acid-suspension-10",
-    name: "The Ordinary Azelaic Acid Suspension 10%",
+    name: "Azelaic Acid Suspension 10%",
     brand: "The Ordinary",
     category: "treatment",
     price: "~$12",
@@ -1368,7 +1368,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "the-ordinary-the-ordinary-natural-moisturizing-factors-ha",
-    name: "The Ordinary Natural Moisturizing Factors + HA",
+    name: "Natural Moisturizing Factors + HA",
     brand: "The Ordinary",
     category: "moisturizer",
     price: "~$8-10",
@@ -1380,7 +1380,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "the-ordinary-the-ordinary-multi-peptide-ha-serum-buffet",
-    name: "The Ordinary Multi-Peptide + HA Serum (Buffet)",
+    name: "Multi-Peptide + HA Serum (Buffet)",
     brand: "The Ordinary",
     category: "serum",
     price: "~$15-16",
@@ -1412,7 +1412,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "la-roche-posay-la-roche-posay-toleriane-purifying-foaming-fa",
-    name: "La Roche-Posay Toleriane Purifying Foaming Facial Cleanser",
+    name: "Toleriane Purifying Foaming Facial Cleanser",
     brand: "La Roche-Posay",
     category: "cleanser",
     price: "~$15-20",
@@ -1428,7 +1428,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "la-roche-posay-la-roche-posay-toleriane-hydrating-gentle-fac",
-    name: "La Roche-Posay Toleriane Hydrating Gentle Face Cleanser",
+    name: "Toleriane Hydrating Gentle Face Cleanser",
     brand: "La Roche-Posay",
     category: "cleanser",
     price: "~$15-20",
@@ -1444,7 +1444,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "la-roche-posay-la-roche-posay-anthelios-ultra-light-fluid-br",
-    name: "La Roche-Posay Anthelios Ultra-Light Fluid Broad Spectrum SPF 50",
+    name: "Anthelios Ultra-Light Fluid Broad Spectrum SPF 50",
     brand: "La Roche-Posay",
     category: "sunscreen",
     price: "~$30-40",
@@ -1460,7 +1460,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "la-roche-posay-la-roche-posay-hyalu-b5-pure-hyaluronic-acid-",
-    name: "La Roche-Posay Hyalu B5 Pure Hyaluronic Acid Serum",
+    name: "Hyalu B5 Pure Hyaluronic Acid Serum",
     brand: "La Roche-Posay",
     category: "serum",
     price: "~$40-50",
@@ -1476,7 +1476,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "la-roche-posay-la-roche-posay-mela-b3-dark-spot-serum-with-m",
-    name: "La Roche-Posay Mela B3 Dark Spot Serum with Melasyl & Niacinamide",
+    name: "Mela B3 Dark Spot Serum with Melasyl & Niacinamide",
     brand: "La Roche-Posay",
     category: "serum",
     price: "~$40-50",
@@ -1505,7 +1505,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cerave-cerave-foaming-facial-cleanser",
-    name: "CeraVe Foaming Facial Cleanser",
+    name: "Foaming Facial Cleanser",
     brand: "CeraVe",
     category: "cleanser",
     price: "~$15-16",
@@ -1523,7 +1523,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cerave-cerave-pm-facial-moisturizing-lotion",
-    name: "CeraVe PM Facial Moisturizing Lotion",
+    name: "PM Facial Moisturizing Lotion",
     brand: "CeraVe",
     category: "moisturizer",
     price: "~$14-15",
@@ -1536,7 +1536,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cerave-cerave-skin-renewing-night-cream",
-    name: "CeraVe Skin Renewing Night Cream",
+    name: "Skin Renewing Night Cream",
     brand: "CeraVe",
     category: "moisturizer",
     price: "~$13-15",
@@ -1552,7 +1552,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cerave-cerave-renewing-sa-cleanser",
-    name: "CeraVe Renewing SA Cleanser",
+    name: "Renewing SA Cleanser",
     brand: "CeraVe",
     category: "exfoliant",
     price: "~$8-10",
@@ -1565,7 +1565,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cerave-cerave-moisturizing-cream",
-    name: "CeraVe Moisturizing Cream",
+    name: "Moisturizing Cream",
     brand: "CeraVe",
     category: "moisturizer",
     price: "~$17-19",
@@ -1583,7 +1583,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cerave-cerave-resurfacing-retinol-serum",
-    name: "CeraVe Resurfacing Retinol Serum",
+    name: "Resurfacing Retinol Serum",
     brand: "CeraVe",
     category: "serum",
     price: "~$20-25",
@@ -2328,7 +2328,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "neutrogena-neutrogena-hydro-boost-face-wash-fragrance-free-h",
-    name: "Neutrogena Hydro Boost Face Wash, Fragrance Free, Hydrating Facial Cleanser",
+    name: "Hydro Boost Face Wash, Fragrance Free, Hydrating Facial Cleanser",
     brand: "Neutrogena",
     category: "cleanser",
     price: "~$6-10",
@@ -2343,7 +2343,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "neutrogena-neutrogena-oil-free-acne-wash-with-salicylic-acid",
-    name: "Neutrogena Oil-Free Acne Wash with Salicylic Acid",
+    name: "Oil-Free Acne Wash with Salicylic Acid",
     brand: "Neutrogena",
     category: "cleanser",
     price: "~$8-12",
@@ -2359,7 +2359,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "neutrogena-neutrogena-rapid-wrinkle-repair-retinol-regenerat",
-    name: "Neutrogena Rapid Wrinkle Repair Retinol Regenerating Cream",
+    name: "Rapid Wrinkle Repair Retinol Regenerating Cream",
     brand: "Neutrogena",
     category: "treatment",
     price: "~$20-30",
@@ -2372,7 +2372,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "neutrogena-neutrogena-hydro-boost-night-pressed-serum",
-    name: "Neutrogena Hydro Boost Night Pressed Serum",
+    name: "Hydro Boost Night Pressed Serum",
     brand: "Neutrogena",
     category: "serum",
     price: "~$10-15",
@@ -2387,7 +2387,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "neutrogena-neutrogena-ultra-sheer-dry-touch-sunscreen-spf-70",
-    name: "Neutrogena Ultra Sheer Dry-Touch Sunscreen SPF 70",
+    name: "Ultra Sheer Dry-Touch Sunscreen SPF 70",
     brand: "Neutrogena",
     category: "sunscreen",
     price: "~$10-15",
@@ -2414,7 +2414,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-daily-facial-cleanser",
-    name: "Cetaphil Daily Facial Cleanser",
+    name: "Daily Facial Cleanser",
     brand: "Cetaphil",
     category: "cleanser",
     price: "~$10-15",
@@ -2429,7 +2429,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-hydrating-foaming-cream-cleanser",
-    name: "Cetaphil Hydrating Foaming Cream Cleanser",
+    name: "Hydrating Foaming Cream Cleanser",
     brand: "Cetaphil",
     category: "cleanser",
     price: "~$12-18",
@@ -2444,7 +2444,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-rich-hydrating-night-cream",
-    name: "Cetaphil Rich Hydrating Night Cream",
+    name: "Rich Hydrating Night Cream",
     brand: "Cetaphil",
     category: "moisturizer",
     price: "~$15-20",
@@ -2456,7 +2456,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-daily-oil-free-hydrating-lotion",
-    name: "Cetaphil Daily Oil-Free Hydrating Lotion",
+    name: "Daily Oil-Free Hydrating Lotion",
     brand: "Cetaphil",
     category: "moisturizer",
     price: "~$12-18",
@@ -2471,7 +2471,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-redness-relieving-night-moisturizer",
-    name: "Cetaphil Redness Relieving Night Moisturizer",
+    name: "Redness Relieving Night Moisturizer",
     brand: "Cetaphil",
     category: "moisturizer",
     price: "~$15-20",
@@ -2483,7 +2483,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-gentle-clear-mattifying-acne-moisturizer",
-    name: "Cetaphil Gentle Clear Mattifying Acne Moisturizer",
+    name: "Gentle Clear Mattifying Acne Moisturizer",
     brand: "Cetaphil",
     category: "moisturizer",
     price: "~$12-18",
@@ -2516,7 +2516,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-uv-clear-tinted-broad-spectrum-spf-46",
-    name: "EltaMD UV Clear Tinted Broad-Spectrum SPF 46",
+    name: "UV Clear Tinted Broad-Spectrum SPF 46",
     brand: "EltaMD",
     category: "sunscreen",
     price: "~$37-47",
@@ -2534,7 +2534,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-uv-daily-broad-spectrum-spf-40",
-    name: "EltaMD UV Daily Broad-Spectrum SPF 40",
+    name: "UV Daily Broad-Spectrum SPF 40",
     brand: "EltaMD",
     category: "sunscreen",
     price: "~$34-41",
@@ -2551,7 +2551,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-uv-daily-tinted-broad-spectrum-spf-40",
-    name: "EltaMD UV Daily Tinted Broad-Spectrum SPF 40",
+    name: "UV Daily Tinted Broad-Spectrum SPF 40",
     brand: "EltaMD",
     category: "sunscreen",
     price: "~$43",
@@ -2568,7 +2568,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-am-restore-moisturizer",
-    name: "EltaMD AM Restore Moisturizer",
+    name: "AM Restore Moisturizer",
     brand: "EltaMD",
     category: "moisturizer",
     price: "~$48",
@@ -2580,7 +2580,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-pm-restore-moisturizer",
-    name: "EltaMD PM Restore Moisturizer",
+    name: "PM Restore Moisturizer",
     brand: "EltaMD",
     category: "moisturizer",
     price: "~$48",
@@ -2592,7 +2592,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-skin-recovery-amino-acid-foaming-cleanser",
-    name: "EltaMD Skin Recovery Amino Acid Foaming Cleanser",
+    name: "Skin Recovery Amino Acid Foaming Cleanser",
     brand: "EltaMD",
     category: "cleanser",
     price: "~$35",
@@ -2604,7 +2604,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "eltamd-eltamd-uv-skin-recovery-broad-spectrum-spf-50",
-    name: "EltaMD UV Skin Recovery Broad Spectrum SPF 50",
+    name: "UV Skin Recovery Broad Spectrum SPF 50",
     brand: "EltaMD",
     category: "sunscreen",
     price: "~$50",
@@ -2633,7 +2633,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "vanicream-vanicream-gentle-facial-cleanser-with-pump-dispens",
-    name: "Vanicream Gentle Facial Cleanser with Pump Dispenser",
+    name: "Gentle Facial Cleanser with Pump Dispenser",
     brand: "Vanicream",
     category: "cleanser",
     price: "~$9-14",
@@ -2651,7 +2651,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "vanicream-vanicream-moisturizing-skin-cream",
-    name: "Vanicream Moisturizing Skin Cream",
+    name: "Moisturizing Skin Cream",
     brand: "Vanicream",
     category: "moisturizer",
     price: "~$13-16",
@@ -2664,7 +2664,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "vanicream-vanicream-vitamin-c-serum",
-    name: "Vanicream Vitamin C Serum",
+    name: "Vitamin C Serum",
     brand: "Vanicream",
     category: "serum",
     price: "~$17-20",
@@ -2681,7 +2681,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "vanicream-vanicream-facial-moisturizer-broad-spectrum-spf-30",
-    name: "Vanicream Facial Moisturizer Broad Spectrum SPF 30",
+    name: "Facial Moisturizer Broad Spectrum SPF 30",
     brand: "Vanicream",
     category: "sunscreen",
     price: "~$14-17",
@@ -2694,7 +2694,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "vanicream-vanicream-z-bar",
-    name: "Vanicream Z-Bar",
+    name: "Z-Bar",
     brand: "Vanicream",
     category: "cleanser",
     price: "~$5-8",
@@ -3009,7 +3009,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "differin-differin-acne-treatment-gel-30-day-supply-0-1-adapa",
-    name: "Differin Acne Treatment Gel, 30 Day Supply, 0.1% Adapalene, 15g Pump",
+    name: "Acne Treatment Gel, 30 Day Supply, 0.1% Adapalene, 15g Pump",
     brand: "Differin",
     category: "treatment",
     price: "~$12-15",
@@ -3026,7 +3026,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "differin-differin-daily-deep-cleanser-5-benzoyl-peroxide-4-o",
-    name: "Differin Daily Deep Cleanser, 5% Benzoyl Peroxide, 4 oz",
+    name: "Daily Deep Cleanser, 5% Benzoyl Peroxide, 4 oz",
     brand: "Differin",
     category: "cleanser",
     price: "~$9-12",
@@ -3039,7 +3039,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "differin-differin-resurfacing-acne-scar-gel",
-    name: "Differin Resurfacing Acne Scar Gel",
+    name: "Resurfacing Acne Scar Gel",
     brand: "Differin",
     category: "treatment",
     price: "~$18-22",
@@ -3055,7 +3055,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "differin-differin-oil-absorbing-moisturizer-with-spf-30-4-oz",
-    name: "Differin Oil Absorbing Moisturizer with SPF 30, 4 oz",
+    name: "Oil Absorbing Moisturizer with SPF 30, 4 oz",
     brand: "Differin",
     category: "moisturizer",
     price: "~$11-15",
@@ -3068,7 +3068,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "differin-differin-daily-oil-free-hydrating-cleanser-6-oz",
-    name: "Differin Daily Oil-Free Hydrating Cleanser, 6 oz",
+    name: "Daily Oil-Free Hydrating Cleanser, 6 oz",
     brand: "Differin",
     category: "cleanser",
     price: "~$14-18",
