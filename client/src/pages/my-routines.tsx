@@ -31,6 +31,19 @@ import {
 import { shareResults } from "@/lib/share-utils";
 import { useHashLocation } from "wouter/use-hash-location";
 import type { Timestamp } from "firebase/firestore";
+import { productDatabase } from "@/lib/skincare-data";
+
+// Look up live product data for fields that may be missing from old saved routines
+function enrichProduct(saved: SavedRoutine["recommendation"]["amRoutine"][0]["product"]) {
+  const live = productDatabase.find((p) => p.id === saved.id);
+  return {
+    ...saved,
+    amazonUrl: saved.amazonUrl || live?.amazonUrl,
+    sourceUrl: saved.sourceUrl || live?.sourceUrl,
+    sourceLinks: (saved.sourceLinks && saved.sourceLinks.length > 0) ? saved.sourceLinks : live?.sourceLinks,
+    source: saved.source || live?.source || "",
+  };
+}
 
 function formatDate(ts: Timestamp): string {
   try {
@@ -64,7 +77,9 @@ function RoutineProductList({
         {icon}
         <span className="text-xs font-semibold text-foreground">{label} Routine</span>
       </div>
-      {items.map((item, i) => (
+      {items.map((item, i) => {
+        const enriched = enrichProduct(item.product);
+        return (
         <div
           key={`${item.product.id}-${i}`}
           className="flex items-start gap-2 py-2 border-b border-border/40 last:border-0"
@@ -92,9 +107,9 @@ function RoutineProductList({
             </div>
             <p className="text-[11px] text-muted-foreground mt-0.5">{item.step.label}</p>
             <div className="flex gap-2 mt-1 flex-wrap">
-              {item.product.amazonUrl && (
+              {enriched.amazonUrl && (
                 <a
-                  href={item.product.amazonUrl}
+                  href={enriched.amazonUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[10px] text-primary hover:underline"
@@ -103,8 +118,8 @@ function RoutineProductList({
                   Amazon
                 </a>
               )}
-              {item.product.sourceLinks && item.product.sourceLinks.length > 0 ? (
-                item.product.sourceLinks.map((link, li) => (
+              {enriched.sourceLinks && enriched.sourceLinks.length > 0 ? (
+                enriched.sourceLinks.map((link, li) => (
                   <a
                     key={link.url || li}
                     href={link.url}
@@ -115,22 +130,23 @@ function RoutineProductList({
                     {link.name}
                   </a>
                 ))
-              ) : item.product.sourceUrl ? (
+              ) : enriched.sourceUrl ? (
                 <a
-                  href={item.product.sourceUrl}
+                  href={enriched.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-primary hover:underline"
                 >
-                  {item.product.source}
+                  {enriched.source}
                 </a>
-              ) : item.product.source && item.product.source !== "Dermatologist-recommended" ? (
-                <span className="text-[10px] text-muted-foreground italic">{item.product.source}</span>
+              ) : enriched.source && enriched.source !== "Dermatologist-recommended" ? (
+                <span className="text-[10px] text-muted-foreground italic">{enriched.source}</span>
               ) : null}
             </div>
           </div>
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
