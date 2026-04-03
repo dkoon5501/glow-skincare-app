@@ -538,10 +538,10 @@ function SaveRoutineSection({
   );
 }
 
-function ShareButton({ answers, skinProfile, recommendation }: { answers: QuizAnswers; skinProfile: { type: string; sensitivity: string; primaryConcern: string; baumannCode: string }; recommendation: RecommendedRoutine }) {
-  const [status, setStatus] = useState<"idle" | "copied" | "shared" | "saving" | "saved" | "failed">("idle");
+function ShareButton({ answers, skinProfile }: { answers: QuizAnswers; skinProfile: { type: string; baumannCode: string } }) {
+  const [status, setStatus] = useState<"idle" | "copied" | "shared" | "failed">("idle");
 
-  const handleShareLink = useCallback(async () => {
+  const handleShare = useCallback(async () => {
     const result = await shareResults(answers, skinProfile);
     setStatus(result);
     if (result === "copied") {
@@ -549,61 +549,21 @@ function ShareButton({ answers, skinProfile, recommendation }: { answers: QuizAn
     }
   }, [answers, skinProfile]);
 
-  const handleShareImage = useCallback(async () => {
-    setStatus("saving");
-    try {
-      const { generateQuizCard, shareCardImage } = await import("@/lib/share-card");
-      const blob = await generateQuizCard({
-        baumannCode: skinProfile.baumannCode,
-        skinType: skinProfile.type,
-        sensitivity: skinProfile.sensitivity,
-        primaryConcern: skinProfile.primaryConcern,
-        amProducts: recommendation.amRoutine.map((r) => ({ name: r.product.name, brand: r.product.brand, category: r.product.category })),
-        pmProducts: recommendation.pmRoutine.map((r) => ({ name: r.product.name, brand: r.product.brand, category: r.product.category })),
-      });
-      const result = await shareCardImage(blob, "My Glow Skincare Routine");
-      setStatus(result === "shared" ? "shared" : "saved");
-      setTimeout(() => setStatus("idle"), 2500);
-    } catch {
-      setStatus("failed");
-      setTimeout(() => setStatus("idle"), 2500);
-    }
-  }, [skinProfile, recommendation]);
-
   return (
-    <div className="flex gap-2">
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={handleShareLink}
-        className="gap-1.5 rounded-full text-xs"
-        data-testid="button-share-results"
-      >
-        {status === "copied" ? (
-          <><Check className="w-3.5 h-3.5" /> Copied</>
-        ) : (
-          <><Share2 className="w-3.5 h-3.5" /> Share Link</>
-        )}
-      </Button>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={handleShareImage}
-        className="gap-1.5 rounded-full text-xs"
-        data-testid="button-share-image"
-        disabled={status === "saving"}
-      >
-        {status === "saving" ? (
-          <>Generating...</>
-        ) : status === "saved" ? (
-          <><Check className="w-3.5 h-3.5" /> Saved</>
-        ) : status === "shared" ? (
-          <><Check className="w-3.5 h-3.5" /> Shared</>
-        ) : (
-          <><ImageIcon className="w-3.5 h-3.5" /> Share Card</>
-        )}
-      </Button>
-    </div>
+    <Button
+      variant="outline"
+      onClick={handleShare}
+      className="gap-2 rounded-full"
+      data-testid="button-share-results"
+    >
+      {status === "copied" ? (
+        <><Check className="w-4 h-4" /> Link Copied</>
+      ) : status === "shared" ? (
+        <><Check className="w-4 h-4" /> Shared</>
+      ) : (
+        <><Share2 className="w-4 h-4" /> Share Results</>
+      )}
+    </Button>
   );
 }
 
@@ -743,7 +703,7 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
         <div className="mt-6" data-testid="routine-tabs">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold text-foreground">Your Routine</h2>
-            <ShareButton answers={answers} skinProfile={skinProfile} recommendation={recommendation} />
+            <ShareButton answers={answers} skinProfile={skinProfile} />
           </div>
 
           <Tabs defaultValue="am">

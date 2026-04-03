@@ -484,31 +484,6 @@ export default function RateMyRoutine() {
             </Card>
           )}
 
-          {/* Share card */}
-          <Button
-            variant="outline"
-            className="w-full gap-2"
-            onClick={async () => {
-              const { generateRateCard, shareCardImage } = await import("@/lib/share-card");
-              const blob = await generateRateCard({
-                overallScore: evaluation.overallScore,
-                baumannCode: selectedRoutine.skinProfile.baumannCode,
-                ratings: evaluation.ratings.map((r) => ({
-                  brand: r.userProduct.brand,
-                  name: r.userProduct.name,
-                  category: r.userProduct.category,
-                  score: r.score,
-                  verdict: r.verdict,
-                })),
-                missingSteps: evaluation.missingSteps.length,
-              });
-              await shareCardImage(blob, "My Routine Score from Glow");
-            }}
-            data-testid="button-share-rate-card"
-          >
-            Share My Score
-          </Button>
-
           <div className="flex gap-3 pt-2">
             <Button variant="outline" className="flex-1" onClick={handleReset}>Rate Another Routine</Button>
             <Button className="flex-1" onClick={() => (window.location.hash = "#/")}>Build My Routine</Button>
