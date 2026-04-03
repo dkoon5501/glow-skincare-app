@@ -176,39 +176,29 @@ export function Landing({ onStart }: LandingProps) {
           routine with specific products recommended by top dermatologists.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-3">
-          <Button
-            size="lg"
-            onClick={onStart}
-            className="gap-2 px-8 h-12 rounded-full text-sm font-semibold shadow-sm"
-            data-testid="button-start-quiz-hero"
-          >
-            Take the Free Skin Quiz
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-
-          <button
-            onClick={() => { window.location.hash = '#/rate-my-routine'; }}
-            className="inline-flex items-center gap-2 px-6 h-12 rounded-full text-sm font-semibold border border-primary/30 text-primary hover:bg-primary/5 transition-colors"
-            data-testid="button-rate-routine-hero"
-          >
-            Rate My Routine
-            <Star className="w-4 h-4" />
-          </button>
-        </div>
-
+        <Button
+          size="lg"
+          onClick={onStart}
+          className="gap-2 px-8 h-12 rounded-full text-sm font-semibold shadow-sm"
+          data-testid="button-start-quiz-hero"
+        >
+          Take the Free Skin Quiz
+          <ArrowRight className="w-4 h-4" />
+        </Button>
         <p className="mt-4 text-xs text-muted-foreground">
           2 minutes&nbsp;•&nbsp;No account required&nbsp;•&nbsp;100% free
         </p>
-        <p className="text-xs text-muted-foreground">
-          Rate My Routine requires a saved skin type&nbsp;•&nbsp;
-          <button
-            onClick={onStart}
-            className="text-primary hover:underline"
-          >
-            Take the quiz
-          </button>
-          &nbsp;and sign in to get started
+
+        <button
+          onClick={() => { window.location.hash = '#/rate-my-routine'; }}
+          className="mt-6 inline-flex items-center gap-2 px-6 h-11 rounded-full text-sm font-semibold border border-primary/30 text-primary hover:bg-primary/5 transition-colors"
+          data-testid="button-rate-routine-hero"
+        >
+          Rate My Routine
+          <Star className="w-4 h-4" />
+        </button>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Requires a saved skin type&nbsp;•&nbsp;Take the quiz &amp; sign in to get started
         </p>
       </section>
 
