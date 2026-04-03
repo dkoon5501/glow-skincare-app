@@ -127,7 +127,7 @@ function scoreUserIngredients(ingredients: string[], baumannCode: string): { goo
 }
 
 function getBestForCategory(category: Product["category"], baumannCode: string, amSafe = false): Product | null {
-  let candidates = productDatabase.filter((p) => p.category === category);
+  let candidates = productDatabase.filter((p) => p.category === category && p.dermVerified !== false);
   if (amSafe) candidates = candidates.filter((p) => !p.pmOnly);
   if (candidates.length === 0) return null;
 
