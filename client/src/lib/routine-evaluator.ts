@@ -17,13 +17,20 @@ export interface ProductRating {
   suggestion?: {
     product: Product;
     reason: string;
+    alternatives?: Product[];
   };
+}
+
+export interface MissingStep {
+  message: string;
+  category: Product["category"];
+  suggestedProducts: Product[];
 }
 
 export interface RoutineEvaluation {
   overallScore: number;
   ratings: ProductRating[];
-  missingSteps: string[];
+  missingSteps: MissingStep[];
   tips: string[];
 }
 
@@ -186,17 +193,25 @@ export function evaluateRoutine(
       explanation = `We don't have this product in our database yet. Add key ingredients for a more detailed analysis.`;
     }
 
-    // Check if we have a significantly better option
+    // Check if we have a significantly better option — include alternatives for "try another"
     const amSafe = up.timeOfDay === "AM";
-    const bestInCategory = getBestForCategory(up.category, baumannCode, amSafe);
-    if (bestInCategory && (!dbMatch || bestInCategory.id !== dbMatch.id)) {
+    const topInCategory = productDatabase
+      .filter((p) => p.category === up.category && p.dermVerified !== false && (!amSafe || !p.pmOnly))
+      .map((p) => ({ product: p, score: scoreDatabaseProduct(p, baumannCode) }))
+      .filter((x) => !dbMatch || x.product.id !== dbMatch.id)
+      .sort((a, b) => b.score - a.score);
+
+    const bestInCategory = topInCategory[0]?.product || null;
+    if (bestInCategory) {
       const bestScore = scoreDatabaseProduct(bestInCategory, baumannCode);
       const currentDbScore = dbMatch ? scoreDatabaseProduct(dbMatch, baumannCode) : 0;
       if (bestScore - currentDbScore >= 3 && score <= 7) {
         const bestTags = tags.filter((t) => bestInCategory.bestFor.includes(t));
+        const alternatives = topInCategory.slice(0, 3).map((x) => x.product);
         suggestion = {
           product: bestInCategory,
           reason: `Better match for your ${baumannCode} skin type${bestTags.length > 0 ? ` — specifically formulated for ${bestTags.join(", ")} concerns` : ""}`,
+          alternatives,
         };
       }
     }
@@ -207,27 +222,57 @@ export function evaluateRoutine(
     ratings.push({ userProduct: up, score, verdict, explanation, suggestion });
   }
 
-  // Check for missing essential steps
-  const missingSteps: string[] = [];
+  // Check for missing essential steps — with product suggestions
+  const missingSteps: MissingStep[] = [];
   const hasAM = userProducts.some((p) => p.timeOfDay === "AM" || p.timeOfDay === "BOTH");
   const hasPM = userProducts.some((p) => p.timeOfDay === "PM" || p.timeOfDay === "BOTH");
   const categories = userProducts.map((p) => p.category);
 
+  function getTopForCategory(cat: Product["category"], amSafe = false, count = 3): Product[] {
+    let candidates = productDatabase.filter((p) => p.category === cat && p.dermVerified !== false);
+    if (amSafe) candidates = candidates.filter((p) => !p.pmOnly);
+    return candidates
+      .map((p) => ({ product: p, score: scoreDatabaseProduct(p, baumannCode) }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, count)
+      .map((x) => x.product);
+  }
+
   if (!categories.includes("cleanser")) {
-    missingSteps.push("A cleanser is the foundation of any routine — consider adding one for both AM and PM.");
+    missingSteps.push({
+      message: "A cleanser is the foundation of any routine — consider adding one for both AM and PM.",
+      category: "cleanser",
+      suggestedProducts: getTopForCategory("cleanser"),
+    });
   }
   if (!categories.includes("moisturizer")) {
-    missingSteps.push("Every skin type benefits from a moisturizer, even oily skin. Look for one matched to your type.");
+    missingSteps.push({
+      message: "Every skin type benefits from a moisturizer, even oily skin. Look for one matched to your type.",
+      category: "moisturizer",
+      suggestedProducts: getTopForCategory("moisturizer"),
+    });
   }
   if (hasAM && !categories.includes("sunscreen")) {
-    missingSteps.push("Sunscreen is the single most important step for preventing aging and hyperpigmentation. Add one to your AM routine.");
+    missingSteps.push({
+      message: "Sunscreen is the single most important step for preventing aging and hyperpigmentation. Add one to your AM routine.",
+      category: "sunscreen",
+      suggestedProducts: getTopForCategory("sunscreen", true),
+    });
   }
 
   if (baumannCode[2] === "P" && !categories.includes("serum") && !userProducts.some((p) => p.keyIngredients.some((i) => normalize(i).includes("vitamin c") || normalize(i).includes("niacinamide")))) {
-    missingSteps.push("For pigmentation-prone skin, a vitamin C or niacinamide serum can make a significant difference.");
+    missingSteps.push({
+      message: "For pigmentation-prone skin, a vitamin C or niacinamide serum can make a significant difference.",
+      category: "serum",
+      suggestedProducts: getTopForCategory("serum", true),
+    });
   }
   if (baumannCode[3] === "W" && !categories.includes("treatment") && !userProducts.some((p) => p.keyIngredients.some((i) => normalize(i).includes("retinol") || normalize(i).includes("retinoid") || normalize(i).includes("retinal")))) {
-    missingSteps.push("For wrinkle-prone skin, a retinoid in your PM routine is the gold standard for prevention and repair.");
+    missingSteps.push({
+      message: "For wrinkle-prone skin, a retinoid in your PM routine is the gold standard for prevention and repair.",
+      category: "treatment",
+      suggestedProducts: getTopForCategory("treatment"),
+    });
   }
 
   // Tips

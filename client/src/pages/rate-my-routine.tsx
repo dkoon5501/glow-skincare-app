@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { getUserRoutines, type SavedRoutine } from "@/lib/firestore";
 import { productDatabase, type Product } from "@/lib/skincare-data";
-import { evaluateRoutine, type UserProduct, type RoutineEvaluation, type ProductRating } from "@/lib/routine-evaluator";
+import { evaluateRoutine, type UserProduct, type RoutineEvaluation, type ProductRating, type MissingStep } from "@/lib/routine-evaluator";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +24,7 @@ import {
   Lightbulb,
   ArrowLeft,
   Star,
+  RefreshCw,
 } from "lucide-react";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "@/lib/firebase";
@@ -178,6 +179,94 @@ function VerdictBadge({ verdict }: { verdict: ProductRating["verdict"] }) {
   };
   const labels = { great: "Great Fit", good: "Good Fit", fair: "Fair", poor: "Poor Match" };
   return <Badge variant="outline" className={`text-xs ${styles[verdict]}`}>{labels[verdict]}</Badge>;
+}
+
+// ── Suggestion card with "try another" ──
+function SuggestionCard({ suggestion }: { suggestion: NonNullable<ProductRating["suggestion"]> }) {
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const alternatives = suggestion.alternatives || [suggestion.product];
+  const current = alternatives[currentIdx] || suggestion.product;
+  const hasMore = alternatives.length > 1;
+
+  return (
+    <div className="bg-primary/5 border border-primary/10 rounded-lg p-3 space-y-2">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-medium text-primary flex items-center gap-1">
+          <CheckCircle2 className="w-3 h-3" /> Better match for your skin
+        </p>
+        {hasMore && (
+          <button
+            onClick={() => setCurrentIdx((currentIdx + 1) % alternatives.length)}
+            className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+          >
+            <RefreshCw className="w-3 h-3" /> Try another
+          </button>
+        )}
+      </div>
+      <div className="flex items-center justify-between gap-2">
+        <div className="min-w-0">
+          <p className="text-xs font-medium text-foreground truncate">{current.brand} {current.name}</p>
+          <p className="text-xs text-muted-foreground">{current.price}</p>
+        </div>
+        {current.amazonUrl && (
+          <a href={current.amazonUrl} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0">
+            <ShoppingCart className="w-3 h-3" /> Amazon
+          </a>
+        )}
+      </div>
+      <p className="text-xs text-muted-foreground">{suggestion.reason}</p>
+      {hasMore && (
+        <p className="text-xs text-muted-foreground/60">{currentIdx + 1} of {alternatives.length} suggestions</p>
+      )}
+    </div>
+  );
+}
+
+// ── Missing step card with product suggestions ──
+function MissingStepCard({ step }: { step: MissingStep }) {
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const products = step.suggestedProducts;
+  const current = products[currentIdx];
+  const hasMore = products.length > 1;
+
+  return (
+    <Card className="p-4 space-y-3">
+      <p className="text-xs text-muted-foreground leading-relaxed">· {step.message}</p>
+      {current && (
+        <div className="bg-primary/5 border border-primary/10 rounded-lg p-3 space-y-2">
+          <div className="flex items-center justify-between">
+            <p className="text-xs font-medium text-primary flex items-center gap-1">
+              <CheckCircle2 className="w-3 h-3" /> Recommended for your skin type
+            </p>
+            {hasMore && (
+              <button
+                onClick={() => setCurrentIdx((currentIdx + 1) % products.length)}
+                className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                <RefreshCw className="w-3 h-3" /> Try another
+              </button>
+            )}
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-foreground truncate">{current.brand} {current.name}</p>
+              <p className="text-xs text-muted-foreground">{current.price}</p>
+            </div>
+            {current.amazonUrl && (
+              <a href={current.amazonUrl} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0">
+                <ShoppingCart className="w-3 h-3" /> Amazon
+              </a>
+            )}
+          </div>
+          {hasMore && (
+            <p className="text-xs text-muted-foreground/60">{currentIdx + 1} of {products.length} suggestions</p>
+          )}
+        </div>
+      )}
+    </Card>
+  );
 }
 
 export default function RateMyRoutine() {
@@ -435,40 +524,21 @@ export default function RateMyRoutine() {
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">{rating.explanation}</p>
                 {rating.suggestion && (
-                  <div className="bg-primary/5 border border-primary/10 rounded-lg p-3 space-y-2">
-                    <p className="text-xs font-medium text-primary flex items-center gap-1">
-                      <CheckCircle2 className="w-3 h-3" /> Better match for your skin
-                    </p>
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="min-w-0">
-                        <p className="text-xs font-medium text-foreground truncate">{rating.suggestion.product.brand} {rating.suggestion.product.name}</p>
-                        <p className="text-xs text-muted-foreground">{rating.suggestion.product.price}</p>
-                      </div>
-                      {rating.suggestion.product.amazonUrl && (
-                        <a href={rating.suggestion.product.amazonUrl} target="_blank" rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0">
-                          <ShoppingCart className="w-3 h-3" /> Amazon
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-xs text-muted-foreground">{rating.suggestion.reason}</p>
-                  </div>
+                  <SuggestionCard suggestion={rating.suggestion} />
                 )}
               </Card>
             ))}
           </div>
 
           {evaluation.missingSteps.length > 0 && (
-            <Card className="p-4 space-y-2">
+            <div className="space-y-3">
               <h2 className="text-sm font-semibold text-foreground flex items-center gap-1.5">
                 <AlertTriangle className="w-4 h-4 text-amber-500" /> Missing Steps
               </h2>
-              <ul className="space-y-1.5">
-                {evaluation.missingSteps.map((ms, i) => (
-                  <li key={i} className="text-xs text-muted-foreground leading-relaxed">· {ms}</li>
-                ))}
-              </ul>
-            </Card>
+              {evaluation.missingSteps.map((ms, i) => (
+                <MissingStepCard key={i} step={ms} />
+              ))}
+            </div>
           )}
 
           {evaluation.tips.length > 0 && (
