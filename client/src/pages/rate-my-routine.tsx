@@ -729,21 +729,6 @@ export default function RateMyRoutine() {
                 )}
               </div>
 
-              {/* Category (optional pre-filter) */}
-              <Select
-                value={entry.category}
-                onValueChange={(v) => handleCategoryChange(entry.id, v)}
-              >
-                <SelectTrigger className="text-xs">
-                  <SelectValue placeholder="Category (optional filter)" />
-                </SelectTrigger>
-                <SelectContent>
-                  {CATEGORIES.map((c) => (
-                    <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
               {/* Brand — autocomplete, must select from database */}
               <AutocompleteInput
                 placeholder="Search brand..."
