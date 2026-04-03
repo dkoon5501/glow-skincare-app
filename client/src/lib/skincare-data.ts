@@ -803,12 +803,12 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "normal", "combination", "redness", "rosacea", "midrange"],
     whyRecommended:
       "Dr. Alexis Stephens and Dr. Karen Locke both recommend this lightweight yet effective barrier repair moisturizer. Its prebiotic formula supports the skin microbiome. Dr. Locke featured it in her complete acne routines for dry skin.",
-    source: "Dr. Alexis Stephens, Dr. Karen Locke & Dr. Whitney Bowe (YouTube)",
+    source: "Dr. Alexis Stephens, Dr. Karen Locke & Dr. Jenny Liu (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=APC16_cpYyk",
     sourceLinks: [
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=APC16_cpYyk" },
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
-      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20",
     dermVerified: true,
@@ -823,11 +823,11 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "dehydration", "sensitive", "budget", "normal"],
     whyRecommended:
       "A derm consensus pick. Dr. Daniel Sugai features it as the gold standard for dry and eczema-prone skin, praising its patented MVE delivery technology for 24-hour continuous hydration and barrier restoration.",
-    source: "Dr. Daniel Sugai, Dr. Whitney Bowe & Dr. Dustin Portela (YouTube)",
+    source: "Dr. Daniel Sugai, Dr. Jenny Liu & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=SvB_EaH29wQ",
     sourceLinks: [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=SvB_EaH29wQ" },
-      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
@@ -843,11 +843,11 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "redness", "rosacea", "dehydration", "dry", "midrange"],
     whyRecommended:
       "Dr. Dray calls this one of her most repurchased products, featuring it in her top skincare products of 2024 and 2025. A go-to for soothing damaged, sensitive, and post-procedure skin with a lightweight gel texture.",
-    source: "Dr. Dray & Dr. Whitney Bowe (YouTube)",
+    source: "Dr. Dray & Dr. Jenny Liu (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
-      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
     // No ASIN in spec; omitting amazonUrl
     dermVerified: true,
@@ -911,11 +911,11 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "sensitive", "dehydration", "redness"],
     whyRecommended:
       "Dr. Dray featured this K-beauty barrier cream for its impressive ceramide-rich formula designed to restore moisture to very dry and sensitive skin. Its 365-day barrier support positioning reflects its gentle, redness-reducing formula that works for year-round use.",
-    source: "Dr. Dray & Dr. Whitney Bowe (YouTube)",
+    source: "Dr. Dray & Dr. Jenny Liu (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=oyJRxD9YQnE",
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=oyJRxD9YQnE" },
-      { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
     dermVerified: true,
   },
