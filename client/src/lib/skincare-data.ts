@@ -3088,6 +3088,23 @@ export const routineSteps: RoutineStep[] = [
   { step: 3, label: "Serum", time: "BOTH", category: "serum", description: "Targeted actives that address your specific concerns." },
   { step: 4, label: "Treatment", time: "PM", category: "treatment", description: "Retinoid or targeted treatment applied at night for best absorption." },
   { step: 5, label: "Moisturizer", time: "BOTH", category: "moisturizer", description: "Lock in hydration and support your skin barrier." },
+  {
+    id: "embryolisse-lait-creme-concentre",
+    name: "Lait-Crème Concentré",
+    brand: "Embryolisse",
+    category: "moisturizer",
+    price: "~$16-28",
+    keyIngredients: ["Shea Butter", "Soy Proteins", "Aloe Vera", "Beeswax", "Stearic Acid", "Vitamin E"],
+    bestFor: ["dry", "normal", "sensitive", "dehydration", "hyperpigmentation", "midrange"],
+    whyRecommended: "Cult-favorite French moisturizer with shea butter and soy proteins that hydrate while imparting a subtle brightening effect. Works as a moisturizer, primer, and gentle makeup remover.",
+    source: "Dr. Dray (YouTube)",
+    sourceUrl: "https://www.youtube.com/watch?v=kxZ17nxjbdI",
+    sourceLinks: [
+      { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=kxZ17nxjbdI" },
+    ],
+    amazonUrl: "https://www.amazon.com/dp/B003TBOPG2?tag=glowskincar0c-20",
+    dermVerified: true,
+  },
   { step: 6, label: "Sunscreen", time: "AM", category: "sunscreen", description: "The #1 anti-aging product. Apply every morning, rain or shine." }
 ];
 
