@@ -112,10 +112,10 @@ function RoutineProductList({
                   href={enriched.amazonUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[10px] text-primary hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
                 >
-                  <ShoppingCart className="w-2.5 h-2.5" />
-                  Amazon
+                  <ShoppingCart className="w-3 h-3" />
+                  Buy on Amazon
                 </a>
               )}
               {enriched.sourceLinks && enriched.sourceLinks.length > 0 ? (
