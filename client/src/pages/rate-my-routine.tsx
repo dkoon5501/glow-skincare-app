@@ -521,12 +521,40 @@ export default function RateMyRoutine() {
             <div className="flex justify-center mb-3">
               <ScoreRing score={evaluation.overallScore} size={130} />
             </div>
-            <p className="text-sm text-muted-foreground">
-              {evaluation.overallScore >= 8 ? "Your routine is a great match for your skin type."
-                : evaluation.overallScore >= 6 ? "Solid routine with room for a few improvements."
-                : evaluation.overallScore >= 4 ? "Some products could be better matched to your skin."
-                : "Your routine needs significant adjustments for your skin type."}
-            </p>
+            {(() => {
+              const bc = selectedRoutine.skinProfile.baumannCode;
+              const greatCount = evaluation.ratings.filter((r) => r.verdict === "great").length;
+              const poorCount = evaluation.ratings.filter((r) => r.verdict === "poor").length;
+              const total = evaluation.ratings.length;
+              const missingCount = evaluation.missingSteps.length;
+              const suggestionCount = evaluation.ratings.filter((r) => r.suggestion).length;
+
+              if (evaluation.overallScore >= 8) {
+                return (
+                  <p className="text-sm text-muted-foreground">
+                    {greatCount} of {total} products are strong matches for your {bc} skin type.{missingCount > 0 ? ` Adding ${missingCount === 1 ? "a" : missingCount} missing step${missingCount > 1 ? "s" : ""} could push your score even higher.` : " Your routine is well-aligned with your skin's needs."}
+                  </p>
+                );
+              } else if (evaluation.overallScore >= 6) {
+                return (
+                  <p className="text-sm text-muted-foreground">
+                    Your routine covers the basics well for {bc} skin, but {suggestionCount > 0 ? `${suggestionCount} product${suggestionCount > 1 ? "s" : ""} could be better matched to your profile` : "some steps aren't fully optimized"}.{missingCount > 0 ? ` You're also missing ${missingCount} key step${missingCount > 1 ? "s" : ""}.` : ""}
+                  </p>
+                );
+              } else if (evaluation.overallScore >= 4) {
+                return (
+                  <p className="text-sm text-muted-foreground">
+                    {poorCount > 0 ? `${poorCount} product${poorCount > 1 ? "s don't" : " doesn't"} align with your ${bc} skin type.` : `Most products aren't specifically formulated for your ${bc} profile.`} Swapping a few key items could make a real difference in how your skin responds.{missingCount > 0 ? ` Plus, you're missing ${missingCount} essential step${missingCount > 1 ? "s" : ""}.` : ""}
+                  </p>
+                );
+              } else {
+                return (
+                  <p className="text-sm text-muted-foreground">
+                    Most of your current products aren't designed for {bc} skin. {poorCount} of {total} scored poorly, meaning they may not address your {selectedRoutine.skinProfile.primaryConcern.toLowerCase()} concerns effectively. See below for better-matched alternatives.
+                  </p>
+                );
+              }
+            })()}
             <Badge variant="outline" className="mt-2 text-xs">{selectedRoutine.skinProfile.baumannCode} Skin Type</Badge>
           </Card>
 
