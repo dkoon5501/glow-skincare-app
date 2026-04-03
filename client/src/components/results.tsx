@@ -39,7 +39,7 @@ import { useState, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ProductImage } from "@/components/product-image";
 import { shareResults } from "@/lib/share-utils";
-import { singleAddToCartUrl, multiAddToCartUrl } from "@/lib/amazon-cart";
+
 import { SEED_UPVOTES } from "@/lib/seed-upvotes";
 import { useAuth } from "@/lib/auth-context";
 import { saveRoutine, saveDiscardedProduct, toggleUpvote, getUpvoteCounts, getUserUpvotes } from "@/lib/firestore";
@@ -332,7 +332,7 @@ function ProductCard({
               <div className="flex flex-wrap gap-2 mt-3">
                 {currentProduct.amazonUrl && (
                   <a
-                    href={singleAddToCartUrl(currentProduct.amazonUrl)}
+                    href={currentProduct.amazonUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
@@ -777,29 +777,6 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
         {!isSharedView && (
           <SaveRoutineSection recommendation={recommendation} answers={answers} />
         )}
-
-        {/* Save Routine to Amazon */}
-        {(() => {
-          const allUrls = [...amRoutine, ...pmRoutine]
-            .map((r) => r.product.amazonUrl)
-            .filter((u): u is string => !!u);
-          const cartUrl = multiAddToCartUrl(allUrls);
-          if (!cartUrl) return null;
-          const count = allUrls.length;
-          const total = amRoutine.length + pmRoutine.length;
-          return (
-            <a
-              href={cartUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-[#FF9900] hover:bg-[#e88b00] text-white font-semibold text-sm transition-colors shadow-sm"
-              data-testid="button-save-routine-amazon"
-            >
-              <ShoppingCart className="w-4 h-4" />
-              Save Routine to Amazon{count < total ? ` (${count} of ${total} products)` : ""}
-            </a>
-          );
-        })()}
 
         {/* Pro Tips */}
         <Card className="mt-6" data-testid="card-tips">
