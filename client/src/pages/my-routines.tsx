@@ -23,7 +23,6 @@ import {
   Loader2,
   MoonStar,
   ShoppingCart,
-  ExternalLink,
   XCircle,
   Undo2,
 } from "lucide-react";
@@ -101,17 +100,7 @@ function RoutineProductList({
                   Amazon
                 </a>
               )}
-              {item.product.manufacturerUrl && (
-                <a
-                  href={item.product.manufacturerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-foreground hover:underline"
-                >
-                  <ExternalLink className="w-2.5 h-2.5" />
-                  {item.product.brand}
-                </a>
-              )}
+
             </div>
           </div>
         </div>

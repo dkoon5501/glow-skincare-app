@@ -340,18 +340,7 @@ function ProductCard({
                     Buy on Amazon
                   </a>
                 )}
-                {currentProduct.manufacturerUrl && (
-                  <a
-                    href={currentProduct.manufacturerUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium border border-card-border px-3 py-1.5 rounded-lg hover:bg-muted/50 transition-colors"
-                    data-testid={`link-manufacturer-${currentProduct.id}`}
-                  >
-                    <ExternalLink className="w-3 h-3" />
-                    {currentProduct.brand} Website
-                  </a>
-                )}
+
               </div>
 
               {expanded && (

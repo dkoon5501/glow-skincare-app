@@ -31,7 +31,6 @@ export interface Product {
   sourceUrl?: string;
   /** Multiple source links when a product is recommended by more than one dermatologist */
   sourceLinks?: { name: string; url: string }[];
-  manufacturerUrl?: string;
   amazonUrl?: string;
   /** If true, this product contains photosensitizing ingredients (retinol, retinoids)
    *  and must ONLY be used in PM routines. Retinoids degrade in sunlight and increase
@@ -304,7 +303,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-    manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-facial-cleanser",
     amazonUrl: "https://www.amazon.com/dp/B01MSSDEPK?tag=glowskincar0c-20",
   },
   {
@@ -323,7 +321,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
     ],
-    manufacturerUrl: "https://www.cerave.com/skincare/cleansers/foaming-facial-cleanser",
     amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=glowskincar0c-20",
   },
   {
@@ -343,9 +340,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
     ],
-        manufacturerUrl:
-      "https://www.laroche-posay.us/our-products/face/face-wash/toleriane-purifying-foaming-facial-cleanser-tolerianefoamingfacialwash.html",
-    // No Amazon ASIN available for this specific SKU in the spec
   },
   {
     id: "cetaphil-daily-facial-cleanser",
@@ -359,7 +353,6 @@ export const productDatabase: Product[] = [
       "A gel cleanser that turns into a low-lather foam — ideal for oily to combination skin. Dr. Daniel Sugai recommends the Cetaphil Daily Facial Cleanser for its gentle yet effective cleansing for oily and combination skin types.",
     source: "Dr. Daniel Sugai & Dr. Sam Ellis (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=VxG9rE4seIs",
-        manufacturerUrl: "https://www.cetaphil.com/us/cleansers/daily-facial-cleanser/302993927985.html",
     // No ASIN listed in spec for this product
   },
   {
@@ -378,7 +371,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=OTlliSx7dQU" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
     ],
-    manufacturerUrl: "https://www.cerave.com/skincare/cleansers/hydrating-foaming-oil-cleanser",
     // No ASIN in spec; omitting amazonUrl
   },
   {
@@ -393,7 +385,6 @@ export const productDatabase: Product[] = [
       "Dermatologist-tested and fragrance-free, Neutrogena Ultra Gentle cleanses without disrupting the skin barrier. Dr. Daniel Sugai recommends it as a reliable daily cleanser for sensitive and rosacea-prone skin that needs effective but non-irritating cleansing.",
     source: "Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=VxG9rE4seIs",
-    manufacturerUrl: "https://www.neutrogena.com",
   },
   {
     id: "anua-heartleaf-cleansing-oil",
@@ -407,7 +398,6 @@ export const productDatabase: Product[] = [
       "A K-beauty cleansing oil ideal for the first step of a double cleanse. Dr. Dray reviewed this for its heartleaf extract that helps control excess sebum and soothe acne-prone skin while effectively dissolving sunscreen and makeup without irritation.",
     source: "Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fXJUKo2UFNk",
-    manufacturerUrl: "https://anua.us",
   },
   {
     id: "celimax-dual-barrier-cleansing-balm",
@@ -434,7 +424,6 @@ export const productDatabase: Product[] = [
       "Dr. Dray reviewed Eucerin's Thiamidol-based cleansing gel for its brightening benefits for hyperpigmentation and dullness. Gentle enough for dry skin while actively addressing uneven skin tone with clinically tested Thiamidol.",
     source: "Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=cAmXcVA7Lwk",
-    manufacturerUrl: "https://www.eucerinus.com",
   },
   {
     id: "vanicream-gentle-facial-cleanser",
@@ -447,7 +436,6 @@ export const productDatabase: Product[] = [
     whyRecommended:
       "Dr. Dray is a strong advocate for Vanicream products for sensitive and reactive skin. This fragrance-free, dye-free, and preservative-free formula is one of the most hypoallergenic cleansers available — ideal for rosacea, eczema, and skin that reacts to almost everything.",
     source: "Dr. Dray & Dr. Karen Locke (YouTube)",
-    manufacturerUrl: "https://www.vanicream.com",
     amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=glowskincar0c-20",
   },
 
@@ -470,9 +458,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=1kLLEyFeZq8" },
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
     ],
-        manufacturerUrl:
-      "https://www.skinceuticals.com/skincare/vitamin-c-serums/c-e-ferulic-with-15-l-ascorbic-acid/S17.html",
-    // No Amazon listing for SkinCeuticals CE Ferulic per spec
   },
   {
     id: "ordinary-niacinamide",
@@ -490,7 +475,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    manufacturerUrl: "https://theordinary.com/en-us/niacinamide-10-zinc-1-serum-100436.html",
     amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=glowskincar0c-20",
   },
   {
@@ -509,7 +493,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    manufacturerUrl: "https://maelove.com/products/the-glow-maker",
     // No ASIN in spec; omitting amazonUrl
   },
   {
@@ -524,8 +507,6 @@ export const productDatabase: Product[] = [
       "Dr. Sam Ellis recommends The Ordinary's HA serum as a reliable, affordable hydration booster. Multi-molecular hyaluronic acid hydrates at surface and deeper skin levels; B5 soothes and supports barrier repair.",
     source: "Dr. Sam Ellis & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=iGBIxwOxfWU",
-        manufacturerUrl:
-      "https://theordinary.com/en-us/hyaluronic-acid-2-b5-serum-with-ceramides-100637.html",
     amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=glowskincar0c-20",
   },
   {
@@ -540,8 +521,6 @@ export const productDatabase: Product[] = [
       "Dr. Dray reviewed this as a compelling and affordable drugstore vitamin C serum, praising its 15% ascorbic acid formula, novel collagen-stimulating micropeptide, and good tolerance compared to typical vitamin C irritants.",
     source: "Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=FLnu9Q8OzHE",
-    manufacturerUrl:
-      "https://www.neutrogena.com/products/skincare/neutrogena-collagen-bank-vitamin-c-serum/",
     // No ASIN in spec; omitting amazonUrl
   },
 
@@ -574,7 +553,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=L2SLL8a6qxA" },
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=APC16_cpYyk" },
     ],
-    manufacturerUrl: "https://www.timelessha.com",
     amazonUrl: "https://www.amazon.com/dp/B0036BI56G?tag=glowskincar0c-20",
   },
   {
@@ -589,7 +567,6 @@ export const productDatabase: Product[] = [
       "Doctorly reviewed this K-beauty cult classic for its remarkable hydration and barrier-repair properties. The 96% snail mucin concentration helps heal, plump, and restore radiance to dehydrated and sensitive skin types without heavy texture.",
     source: "Doctorly & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=76GA2FR9nAg",
-        manufacturerUrl: "https://www.cosrx.com",
     amazonUrl: "https://www.amazon.com/dp/B00PBX3L7K?tag=glowskincar0c-20",
   },
   {
@@ -604,7 +581,6 @@ export const productDatabase: Product[] = [
       "Dr. Sam Ellis featured TruSkin Vitamin C as a value-oriented brightening serum for those seeking antioxidant protection and dark spot reduction on a budget. Its combination of vitamin C, E, and hyaluronic acid targets multiple aging concerns simultaneously.",
     source: "Dr. Sam Ellis (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
-    manufacturerUrl: "https://www.truskin.com",
     amazonUrl: "https://www.amazon.com/dp/B01M4MCUAF?tag=glowskincar0c-20",
   },
 
@@ -627,8 +603,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=6JjijIeEsZM" },
     ],
-    manufacturerUrl:
-      "https://www.laroche-posay.us/our-products/face/face-serum/retinol-b3-pure-retinol-serum-3337875694469.html",
     amazonUrl: "https://www.amazon.com/dp/B07Z9Y4M3C?tag=glowskincar0c-20",
     pmOnly: true,
   },
@@ -653,8 +627,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=YJxARaLMSpc" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=4By-S9xY4h8" },
     ],
-        manufacturerUrl:
-      "https://www.paulaschoice.com/skin-perfecting-2pct-bha-liquid-exfoliant/201-2010.html",
     amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
   },
   {
@@ -673,7 +645,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
       { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
     ],
-    manufacturerUrl: "https://theordinary.com",
     amazonUrl: "https://www.amazon.com/dp/B07FLQDTS9?tag=glowskincar0c-20",
   },
   {
@@ -805,8 +776,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
       { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
-        manufacturerUrl:
-      "https://www.laroche-posay.us/our-products/face/face-moisturizer/toleriane-double-repair-face-moisturizer-tolerianedoublerepair.html",
     amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20",
   },
   {
@@ -826,7 +795,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-    manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/moisturizing-cream",
     amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
   },
   {
@@ -845,8 +813,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
       { name: "Dr. Whitney Bowe", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
-    manufacturerUrl:
-      "https://www.laroche-posay.us/our-products/body/body-lotion/cicaplast-gel-b5-skin-protectant-3337875865302.html",
     // No ASIN in spec; omitting amazonUrl
   },
   {
@@ -861,7 +827,6 @@ export const productDatabase: Product[] = [
       "Dr. Alexis Stephens recommends CeraVe PM as her go-to lightweight moisturizer for normal skin, praising its niacinamide content for calming and barrier support overnight. The oil-free formula won't clog pores.",
     source: "Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=APC16_cpYyk",
-    manufacturerUrl: "https://www.cerave.com/skincare/moisturizers/pm-facial-moisturizing-lotion",
     // No ASIN listed for CeraVe PM Lotion in spec
   },
   {
@@ -881,8 +846,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=XYr2_QlQiyA" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-        manufacturerUrl:
-      "https://www.neutrogena.com/products/skincare/neutrogena-hydro-boost-water-gel-with-hyaluronic-acid/6811047",
     amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
   },
   {
@@ -926,7 +889,6 @@ export const productDatabase: Product[] = [
     whyRecommended:
       "Dr. Dray consistently recommends Vanicream products for highly reactive skin. This daily moisturizer is formulated without fragrance, dyes, parabens, or preservatives that commonly trigger flares in rosacea and contact dermatitis, making it one of the safest choices for sensitive skin.",
     source: "Dr. Dray & Dr. Karen Locke (YouTube)",
-    manufacturerUrl: "https://www.vanicream.com",
     amazonUrl: "https://www.amazon.com/dp/B09TPXNKJG?tag=glowskincar0c-20",
   },
   {
@@ -945,7 +907,6 @@ export const productDatabase: Product[] = [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=hHfcGTA7A70" },
     ],
-        manufacturerUrl: "https://www.kiehls.com",
   },
   {
     id: "abib-ectoin-panthenol-moisturizer",
@@ -981,7 +942,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
     ],
-        manufacturerUrl: "https://eltamd.com/products/uv-clear-broad-spectrum-spf-46",
     amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20",
   },
   {
@@ -996,8 +956,6 @@ export const productDatabase: Product[] = [
       "Dr. Daniel Sugai recommends this for oily and acne-prone patients. Its oil-absorbing silica and dry-touch finish keep the face matte without clogging pores, and SPF 60 provides robust protection for high sun-exposure days.",
     source: "Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=NK6ThY5Pt74",
-    manufacturerUrl:
-      "https://www.laroche-posay.us/our-products/sun/face-sunscreen/anthelios-clear-skin-oil-free-sunscreen-spf-60-antheliosclearskin.html",
     amazonUrl: "https://www.amazon.com/dp/B07YZRFH5C?tag=glowskincar0c-20",
   },
   {
@@ -1016,7 +974,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
       { name: "Dr. Joyce Park", url: "https://www.youtube.com/watch?v=Max9p5NGANI" },
     ],
-    manufacturerUrl: "https://www.isdin.com/us/p/ageless-34-fl-oz/3431",
     amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=glowskincar0c-20",
   },
   {
@@ -1031,8 +988,6 @@ export const productDatabase: Product[] = [
       "Dr. Daniel Sugai recommends this two-in-one moisturizer + SPF 30 for those who prefer a simplified morning routine. The ceramide and niacinamide formula supports barrier repair while delivering daily broad-spectrum sun protection at a drugstore price.",
     source: "Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=NK6ThY5Pt74",
-    manufacturerUrl:
-      "https://www.cerave.com/skincare/moisturizers/am-facial-moisturizing-lotion-with-sunscreen",
     amazonUrl: "https://www.amazon.com/dp/B00F97FHAW?tag=glowskincar0c-20",
   },
   {
@@ -1107,7 +1062,6 @@ export const productDatabase: Product[] = [
     whyRecommended:
       "Dr. Dray recommends Colorescience for the most reactive sensitive skin. This 100% mineral sunscreen with tint is specifically formulated for rosacea and reactive skin, providing both coverage and calming SPF 50 protection without chemical UV filters that can trigger flares.",
     source: "Dr. Dray (YouTube)",
-    manufacturerUrl: "https://www.colorescience.com",
   },
   {
     id: "beauty-of-joseon-daily-tinted-spf40",
@@ -1142,7 +1096,6 @@ export const productDatabase: Product[] = [
       "The only FDA-approved OTC retinoid for acne. Dr. Dray is a long-time advocate, making it a top pick in her most-purchased skincare of 2025 list. Dr. Muneeb Shah also recommends adapalene as the best-evidenced OTC retinoid for acne. Apply at night only. Start 2–3× per week.",
     source: "Dr. Dray, Dr. Muneeb Shah & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
-            manufacturerUrl: "https://differin.com/shop/differin-gel/3029949.html",
     amazonUrl: "https://www.amazon.com/dp/B07V2BRPVS?tag=glowskincar0c-20",
     pmOnly: true,
   },
@@ -1162,7 +1115,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
     ],
-    manufacturerUrl: "https://us.medik8.com/products/crystal-retinal",
     // No ASIN in spec; omitting amazonUrl
     pmOnly: true,
   },
@@ -1182,7 +1134,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
     ],
-    manufacturerUrl: "https://theordinary.com/en-us/retinol-1-in-squalane-serum-100441.html",
     amazonUrl: "https://www.amazon.com/dp/B0DQ6496LC?tag=glowskincar0c-20",
     pmOnly: true,
   },
@@ -1198,7 +1149,6 @@ export const productDatabase: Product[] = [
       "Dr. Alexis Stephens references Paula's Choice as a strong clinical retinol option for experienced users. This high-strength formula combines 1% retinol with collagen-promoting peptides for advanced anti-aging results. Apply at night only.",
     source: "Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=evzPfPeGp8k",
-    manufacturerUrl: "https://www.paulaschoice.com/clinical-1pct-retinol-treatment/801.html",
     amazonUrl: "https://www.amazon.com/dp/B00L5O31VK?tag=glowskincar0c-20",
     pmOnly: true,
   },
@@ -1214,7 +1164,6 @@ export const productDatabase: Product[] = [
       "Dr. Dray recommends Neutrogena Rapid Wrinkle Repair as one of the best accessible OTC retinol serums for beginners focused on anti-aging. Its proprietary Accelerated Retinol SA formula is designed for faster efficacy with minimized irritation. Apply at night only.",
     source: "Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
-    manufacturerUrl: "https://www.neutrogena.com",
     amazonUrl: "https://www.amazon.com/dp/B002RL8FBY?tag=glowskincar0c-20",
     pmOnly: true,
   },
@@ -1333,7 +1282,6 @@ export const productDatabase: Product[] = [
     bestFor: ["hyperpigmentation", "texture", "budget"],
     whyRecommended: "Popular toner from The Ordinary with Glycolic Acid 7% — well-suited for hyperpigmentation, texture, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=The+Ordinary+The+Ordinary+Glycolic+Acid+7%+Exfoliating+Toner&tag=glowskincar0c-20",
   },
   {
     id: "the-ordinary-the-ordinary-azelaic-acid-suspension-10",
@@ -1345,7 +1293,6 @@ export const productDatabase: Product[] = [
     bestFor: ["redness", "budget", "acne"],
     whyRecommended: "Popular treatment from The Ordinary with Azelaic Acid 10% — well-suited for redness, acne, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=The+Ordinary+The+Ordinary+Azelaic+Acid+Suspension+10%&tag=glowskincar0c-20",
   },
   {
     id: "the-ordinary-the-ordinary-natural-moisturizing-factors-ha",
@@ -1357,7 +1304,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "dry"],
     whyRecommended: "Popular moisturizer from The Ordinary with Amino acids — well-suited for dehydration, dry, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=The+Ordinary+The+Ordinary+Natural+Moisturizing+Factors+++HA&tag=glowskincar0c-20",
   },
   {
     id: "the-ordinary-the-ordinary-multi-peptide-ha-serum-buffet",
@@ -1369,7 +1315,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "midrange", "aging"],
     whyRecommended: "Popular serum from The Ordinary with Multiple peptides — well-suited for dry, aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=The+Ordinary+The+Ordinary+Multi-Peptide+++HA+Serum+(Buffet)&tag=glowskincar0c-20",
   },
   {
     id: "la-roche-posay-la-roche-posay-toleriane-double-repair-face-m",
@@ -1574,7 +1519,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "oily", "texture", "acne"],
     whyRecommended: "Popular cleanser from Paula's Choice with Salicylic Acid — well-suited for oily, texture, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Paula's+Choice+CLEAR+Pore+Normalizing+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "paula-s-choice-clinical-1-retinol-treatment",
@@ -1586,7 +1530,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular treatment from Paula's Choice with Retinol 1% — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Paula's+Choice+CLINICAL+1%+Retinol+Treatment&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -1599,7 +1542,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "dehydration", "oily", "combination", "aging"],
     whyRecommended: "Popular sunscreen from Paula's Choice with Antioxidants — well-suited for dehydration, oily, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Paula's+Choice+RESIST+Youth-Extending+Daily+Hydrating+Fluid+SPF+50&tag=glowskincar0c-20",
   },
   {
     id: "paula-s-choice-10-niacinamide-booster",
@@ -1611,7 +1553,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular serum from Paula's Choice with Niacinamide 10% — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Paula's+Choice+10%+Niacinamide+Booster&tag=glowskincar0c-20",
   },
   {
     id: "good-molecules-discoloration-correcting-serum",
@@ -1635,7 +1576,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "dry"],
     whyRecommended: "Popular serum from Good Molecules with hyaluronic acid — well-suited for dehydration, dry, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Good+Molecules+Hyaluronic+Acid+Serum&tag=glowskincar0c-20",
   },
   {
     id: "good-molecules-niacinamide-brightening-toner",
@@ -1647,7 +1587,6 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "budget", "hyperpigmentation", "combination", "texture"],
     whyRecommended: "Popular toner from Good Molecules with niacinamide — well-suited for oily, hyperpigmentation, texture skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Good+Molecules+Niacinamide+Brightening+Toner&tag=glowskincar0c-20",
   },
   {
     id: "good-molecules-lightweight-daily-moisturizer",
@@ -1659,7 +1598,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "dry", "normal"],
     whyRecommended: "Popular moisturizer from Good Molecules with ceramides — well-suited for dehydration, dry, normal skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Good+Molecules+Lightweight+Daily+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "good-molecules-niacinamide-serum",
@@ -1671,7 +1609,6 @@ export const productDatabase: Product[] = [
     bestFor: ["texture", "budget", "acne"],
     whyRecommended: "Popular serum from Good Molecules with niacinamide — well-suited for texture, acne, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Good+Molecules+Niacinamide+Serum&tag=glowskincar0c-20",
   },
   {
     id: "cosrx-low-ph-good-morning-gel-cleanser",
@@ -1695,7 +1632,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "oily", "hyperpigmentation", "texture", "acne"],
     whyRecommended: "Popular serum from COSRX with 15% Niacinamide — well-suited for oily, hyperpigmentation, texture skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=COSRX+Niacinamide+15+Serum&tag=glowskincar0c-20",
   },
   {
     id: "cosrx-hyaluronic-acid-3-serum",
@@ -1707,7 +1643,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "dry"],
     whyRecommended: "Popular serum from COSRX with Multiple Hyaluronic Acids — well-suited for dehydration, dry, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=COSRX+Hyaluronic+Acid+3+Serum&tag=glowskincar0c-20",
   },
   {
     id: "cosrx-retinol-0-1-cream",
@@ -1719,7 +1654,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "texture", "aging"],
     whyRecommended: "Popular treatment from COSRX with 0.1% Retinol — well-suited for texture, aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=COSRX+Retinol+0.1+Cream&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -1732,7 +1666,6 @@ export const productDatabase: Product[] = [
     bestFor: ["hyperpigmentation", "midrange"],
     whyRecommended: "Popular serum from COSRX with Alpha-Arbutin — well-suited for hyperpigmentation, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=COSRX+Alpha-Arbutin+2%+Discoloration+Care+Serum&tag=glowskincar0c-20",
   },
   {
     id: "beauty-of-joseon-relief-sun-rice-probiotics-spf50",
@@ -1816,7 +1749,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "midrange", "dry", "acne"],
     whyRecommended: "Popular moisturizer from Versed with Ceramides — well-suited for sensitive, dry, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Daily+Recovery+Rich+Barrier+Cream&tag=glowskincar0c-20",
   },
   {
     id: "versed-skin-soothe-hydrating-milky-toner",
@@ -1828,7 +1760,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "midrange", "dry", "dehydration"],
     whyRecommended: "Popular toner from Versed with Coconut water — well-suited for sensitive, dry, dehydration skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Skin+Soothe+Hydrating+Milky+Toner&tag=glowskincar0c-20",
   },
   {
     id: "versed-weekend-glow-brightening-serum",
@@ -1840,7 +1771,6 @@ export const productDatabase: Product[] = [
     bestFor: ["hyperpigmentation", "texture", "budget"],
     whyRecommended: "Popular serum from Versed with Vitamin C — well-suited for hyperpigmentation, texture, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Weekend+Glow+Brightening+Serum&tag=glowskincar0c-20",
   },
   {
     id: "versed-good-defense-daily-sunscreen-spf-50-pa",
@@ -1852,7 +1782,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "midrange", "dry"],
     whyRecommended: "Popular sunscreen from Versed with Avobenzone — well-suited for sensitive, dry, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Good+Defense+Daily+Sunscreen+SPF+50+PA++++&tag=glowskincar0c-20",
   },
   {
     id: "versed-skin-soak-moisture-cream",
@@ -1864,7 +1793,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "dry", "normal"],
     whyRecommended: "Popular moisturizer from Versed with Squalane — well-suited for dehydration, dry, normal skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Skin+Soak+Moisture+Cream&tag=glowskincar0c-20",
   },
   {
     id: "versed-day-dissolve-cleansing-balm",
@@ -1876,7 +1804,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "normal"],
     whyRecommended: "Popular cleanser from Versed with Eucalyptus oil — well-suited for normal, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Day+Dissolve+Cleansing+Balm&tag=glowskincar0c-20",
   },
   {
     id: "versed-water-rush-intensive-hydrating-serum",
@@ -1888,7 +1815,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "dehydration", "sensitive", "dry", "acne"],
     whyRecommended: "Popular serum from Versed with Hyaluronic acid (multi-weight) — well-suited for sensitive, dry, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Versed+Water+Rush+Intensive+Hydrating+Serum&tag=glowskincar0c-20",
   },
   {
     id: "kiehl-s-ultra-facial-cream-with-squalane",
@@ -1912,7 +1838,6 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "premium", "dehydration", "dry", "aging"],
     whyRecommended: "Popular serum from Kiehl's with Squalane — well-suited for dehydration, dry, normal skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Kiehl's+Midnight+Recovery+Concentrate+Moisturizing+Face+Oil+Serum&tag=glowskincar0c-20",
   },
   {
     id: "kiehl-s-micro-dose-anti-aging-retinol-serum-with-ceramides-a",
@@ -1924,7 +1849,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "sensitive", "texture", "aging"],
     whyRecommended: "Popular serum from Kiehl's with Pure Retinol — well-suited for sensitive, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Kiehl's+Micro-Dose+Anti-Aging+Retinol+Serum+with+Ceramides+and+Peptide&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -1937,7 +1861,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular serum from Kiehl's with 12.5% Vitamin C — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Kiehl's+Powerful-Strength+Vitamin+C+Serum&tag=glowskincar0c-20",
   },
   {
     id: "kiehl-s-ultra-facial-cleanser",
@@ -1949,7 +1872,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "oily", "midrange", "combination"],
     whyRecommended: "Popular cleanser from Kiehl's with Apricot Seed Powder — well-suited for sensitive, oily, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Kiehl's+Ultra+Facial+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "kiehl-s-better-screen-uv-serum-spf-50-facial-sunscreen-with-",
@@ -1961,7 +1883,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "normal"],
     whyRecommended: "Popular sunscreen from Kiehl's with Collagen Peptide — well-suited for normal, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Kiehl's+Better+Screen™+UV+Serum+SPF+50++Facial+Sunscreen+with+Collagen+Peptide&tag=glowskincar0c-20",
   },
   {
     id: "kiehl-s-clearly-corrective-dark-spot-serum",
@@ -1973,7 +1894,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "hyperpigmentation", "aging"],
     whyRecommended: "Popular serum from Kiehl's with Activated Vitamin C — well-suited for hyperpigmentation, aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Kiehl's+Clearly+Corrective+Dark+Spot+Serum&tag=glowskincar0c-20",
   },
   {
     id: "first-aid-beauty-ultra-repair-cream-intense-hydration",
@@ -1985,7 +1905,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "dehydration", "sensitive", "redness", "dry"],
     whyRecommended: "Popular moisturizer from First Aid Beauty with Colloidal Oatmeal — well-suited for dehydration, redness, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+Ultra+Repair+Cream+Intense+Hydration&tag=glowskincar0c-20",
   },
   {
     id: "first-aid-beauty-ultra-gentle-cream-to-foam-face-cleanser",
@@ -1997,7 +1916,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "midrange", "dry", "normal"],
     whyRecommended: "Popular cleanser from First Aid Beauty with Colloidal Oatmeal — well-suited for sensitive, dry, normal skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+Ultra+Gentle+Cream-to-Foam+Face+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "first-aid-beauty-facial-radiance-pads-with-glycolic-lactic-a",
@@ -2009,7 +1927,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "texture", "normal", "combination"],
     whyRecommended: "Popular exfoliant from First Aid Beauty with Glycolic Acid — well-suited for texture, normal, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+Facial+Radiance+Pads+with+Glycolic+++Lactic+Acids&tag=glowskincar0c-20",
   },
   {
     id: "first-aid-beauty-ultra-repair-face-moisturizer",
@@ -2021,7 +1938,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "dehydration", "sensitive", "redness", "dry"],
     whyRecommended: "Popular moisturizer from First Aid Beauty with Colloidal Oatmeal — well-suited for dehydration, redness, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+Ultra+Repair+Face+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "first-aid-beauty-0-3-retinol-complex-serum-with-peptides",
@@ -2033,7 +1949,6 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "premium", "dry", "aging", "texture"],
     whyRecommended: "Popular serum from First Aid Beauty with 0.3% Retinol — well-suited for dry, texture, normal skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+0.3%+Retinol+Complex+Serum+with+Peptides&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -2046,7 +1961,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "sensitive", "dry"],
     whyRecommended: "Popular sunscreen from First Aid Beauty with Colloidal Oatmeal — well-suited for dehydration, dry, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+Hydrating+Sunscreen+Milk+Broad+Spectrum+SPF+45&tag=glowskincar0c-20",
   },
   {
     id: "first-aid-beauty-ultra-repair-firming-night-cream-with-collo",
@@ -2058,7 +1972,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "sensitive", "dry", "aging"],
     whyRecommended: "Popular moisturizer from First Aid Beauty with Colloidal Oatmeal — well-suited for sensitive, dry, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=First+Aid+Beauty+Ultra+Repair+Firming+Night+Cream+with+Colloidal+Oatmeal+++Niacinamide&tag=glowskincar0c-20",
   },
   {
     id: "hero-cosmetics-rescue-balm-post-blemish-recovery-cream",
@@ -2227,7 +2140,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "budget", "dry", "dehydration"],
     whyRecommended: "Popular cleanser from Neutrogena with Hyaluronic acid — well-suited for sensitive, dry, dehydration skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Neutrogena+Neutrogena+Hydro+Boost+Face+Wash,+Fragrance+Free,+Hydrating+Facial+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "neutrogena-neutrogena-oil-free-acne-wash-with-salicylic-acid",
@@ -2251,7 +2163,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "aging"],
     whyRecommended: "Popular treatment from Neutrogena with Retinol — well-suited for aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Neutrogena+Neutrogena+Rapid+Wrinkle+Repair+Retinol+Regenerating+Cream&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -2264,7 +2175,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "budget", "normal", "dehydration"],
     whyRecommended: "Popular serum from Neutrogena with Hyaluronic acid — well-suited for dry, normal, dehydration skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Neutrogena+Neutrogena+Hydro+Boost+Night+Pressed+Serum&tag=glowskincar0c-20",
   },
   {
     id: "neutrogena-neutrogena-ultra-sheer-dry-touch-sunscreen-spf-70",
@@ -2276,7 +2186,6 @@ export const productDatabase: Product[] = [
     bestFor: ["budget", "normal"],
     whyRecommended: "Popular sunscreen from Neutrogena with Avobenzone — well-suited for normal, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Neutrogena+Neutrogena+Ultra+Sheer+Dry-Touch+Sunscreen+SPF+70&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-gentle-skin-cleanser",
@@ -2288,7 +2197,6 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "budget", "sensitive", "redness", "dry"],
     whyRecommended: "Popular cleanser from Cetaphil with Glycerin — well-suited for sensitive, redness, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Gentle+Skin+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-daily-facial-cleanser",
@@ -2300,7 +2208,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "budget"],
     whyRecommended: "Popular cleanser from Cetaphil with Glycerin — well-suited for sensitive, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Daily+Facial+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-hydrating-foaming-cream-cleanser",
@@ -2312,7 +2219,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "sensitive", "dry"],
     whyRecommended: "Popular cleanser from Cetaphil with Hyaluronic acid — well-suited for dehydration, dry, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Hydrating+Foaming+Cream+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-rich-hydrating-night-cream",
@@ -2324,7 +2230,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "dehydration", "sensitive", "dry", "aging"],
     whyRecommended: "Popular moisturizer from Cetaphil with Glycerin — well-suited for dehydration, dry, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Rich+Hydrating+Night+Cream&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-daily-oil-free-hydrating-lotion",
@@ -2336,7 +2241,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "normal", "dehydration", "oily", "sensitive"],
     whyRecommended: "Popular moisturizer from Cetaphil with Hyaluronic acid — well-suited for sensitive, oily, normal skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Daily+Oil-Free+Hydrating+Lotion&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-redness-relieving-night-moisturizer",
@@ -2348,7 +2252,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "redness", "midrange"],
     whyRecommended: "Popular moisturizer from Cetaphil with Feverfew — well-suited for sensitive, redness, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Redness+Relieving+Night+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "cetaphil-cetaphil-gentle-clear-mattifying-acne-moisturizer",
@@ -2360,7 +2263,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "oily", "midrange", "acne"],
     whyRecommended: "Popular moisturizer from Cetaphil with Silicates — well-suited for sensitive, oily, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Cetaphil+Cetaphil+Gentle+Clear+Mattifying+Acne+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "eltamd-eltamd-uv-clear-broad-spectrum-spf-46",
@@ -2420,7 +2322,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "sensitive", "redness", "hyperpigmentation"],
     whyRecommended: "Popular moisturizer from EltaMD with Hyaluronic Acid — well-suited for sensitive, redness, hyperpigmentation skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=EltaMD+EltaMD+AM+Restore+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "eltamd-eltamd-pm-restore-moisturizer",
@@ -2432,7 +2333,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "sensitive", "dry", "aging"],
     whyRecommended: "Popular moisturizer from EltaMD with Niacinamide — well-suited for sensitive, dry, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=EltaMD+EltaMD+PM+Restore+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "eltamd-eltamd-skin-recovery-amino-acid-foaming-cleanser",
@@ -2444,7 +2344,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "midrange"],
     whyRecommended: "Popular cleanser from EltaMD with Amino Acids — well-suited for sensitive, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=EltaMD+EltaMD+Skin+Recovery+Amino+Acid+Foaming+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "eltamd-eltamd-uv-skin-recovery-broad-spectrum-spf-50",
@@ -2456,7 +2355,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "sensitive"],
     whyRecommended: "Popular sunscreen from EltaMD with Zinc Oxide — well-suited for sensitive, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=EltaMD+EltaMD+UV+Skin+Recovery+Broad+Spectrum+SPF+50&tag=glowskincar0c-20",
   },
   {
     id: "vanicream-vanicream-daily-facial-moisturizer-with-ceramides-",
@@ -2552,7 +2450,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "aging"],
     whyRecommended: "Popular moisturizer from Drunk Elephant with Peptides — well-suited for dehydration, aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Drunk+Elephant+Protini+Polypeptide+Firming+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "drunk-elephant-c-firma-fresh-vitamin-c-day-serum",
@@ -2564,7 +2461,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular serum from Drunk Elephant with 15% L-ascorbic acid — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Drunk+Elephant+C-Firma+Fresh+Vitamin-C+Day+Serum&tag=glowskincar0c-20",
   },
   {
     id: "drunk-elephant-b-hydra-intensive-hydration-serum",
@@ -2576,7 +2472,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "sensitive"],
     whyRecommended: "Popular serum from Drunk Elephant with Hyaluronic acid — well-suited for dehydration, sensitive, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Drunk+Elephant+B-Hydra+Intensive+Hydration+Serum&tag=glowskincar0c-20",
   },
   {
     id: "drunk-elephant-a-passioni-retinol-cream",
@@ -2588,7 +2483,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "sensitive", "texture", "aging"],
     whyRecommended: "Popular treatment from Drunk Elephant with Retinol — well-suited for sensitive, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Drunk+Elephant+A-Passioni+Retinol+Cream&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -2601,7 +2495,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "normal"],
     whyRecommended: "Popular cleanser from Drunk Elephant with Marula oil — well-suited for normal, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Drunk+Elephant+Beste+No.9+Jelly+Cleanser&tag=glowskincar0c-20",
   },
   {
     id: "drunk-elephant-virgin-marula-luxury-face-oil",
@@ -2613,7 +2506,6 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "dry"],
     whyRecommended: "Popular treatment from Drunk Elephant with Squalane from marula oil — well-suited for dehydration, dry, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Drunk+Elephant+Virgin+Marula+Luxury+Face+Oil&tag=glowskincar0c-20",
   },
   {
     id: "olay-regenerist-micro-sculpting-cream-moisturizer-fragrance-",
@@ -2650,7 +2542,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "texture", "aging"],
     whyRecommended: "Popular serum from Olay with Niacinamide — well-suited for dehydration, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Olay+Super+Serum&tag=glowskincar0c-20",
   },
   {
     id: "olay-regenerist-collagen-peptide-24-moisturizer",
@@ -2662,7 +2553,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "aging"],
     whyRecommended: "Popular moisturizer from Olay with Collagen peptide — well-suited for dehydration, aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Olay+Regenerist+Collagen+Peptide+24+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "olay-retinol-24-night-serum",
@@ -2674,7 +2564,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular serum from Olay with Retinol — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Olay+Retinol+24+Night+Serum&tag=glowskincar0c-20",
     pmOnly: true,
   },
   {
@@ -2687,7 +2576,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "aging"],
     whyRecommended: "Popular moisturizer from Olay with Niacinamide — well-suited for dehydration, aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Olay+Super+Cream+with+SPF+30&tag=glowskincar0c-20",
   },
   {
     id: "olay-total-effects-7-in-1-anti-aging-moisturizer-with-spf",
@@ -2711,7 +2599,6 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "sensitive", "dry"],
     whyRecommended: "Popular moisturizer from Aveeno with Prebiotic oat — well-suited for dehydration, dry, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Aveeno+Daily+Moisturizing+Face+Cream+with+Prebiotic+Oat&tag=glowskincar0c-20",
   },
   {
     id: "aveeno-daily-moisturizing-face-lotion-with-prebiotic-oat",
@@ -2723,7 +2610,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "normal", "dehydration", "dry", "sensitive"],
     whyRecommended: "Popular moisturizer from Aveeno with Prebiotic oat — well-suited for dry, dehydration, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Aveeno+Daily+Moisturizing+Face+Lotion+with+Prebiotic+Oat&tag=glowskincar0c-20",
   },
   {
     id: "aveeno-daily-moisturizing-facial-cleanser-with-soothing-oat",
@@ -2735,7 +2621,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "budget", "dry"],
     whyRecommended: "Popular cleanser from Aveeno with Soothing oat — well-suited for sensitive, dry, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Aveeno+Daily+Moisturizing+Facial+Cleanser+with+Soothing+Oat&tag=glowskincar0c-20",
   },
   {
     id: "aveeno-calm-restore-oat-gel-moisturizer",
@@ -2747,7 +2632,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "redness", "midrange", "dry"],
     whyRecommended: "Popular moisturizer from Aveeno with Prebiotic oat — well-suited for sensitive, redness, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Aveeno+Calm+++Restore+Oat+Gel+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "aveeno-positively-radiant-daily-moisturizer-spf-15",
@@ -2759,7 +2643,6 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular moisturizer from Aveeno with Total Soy Complex — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Aveeno+Positively+Radiant+Daily+Moisturizer+SPF+15&tag=glowskincar0c-20",
   },
   {
     id: "aveeno-ultra-calming-daily-moisturizer",
@@ -2771,7 +2654,6 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "redness", "midrange"],
     whyRecommended: "Popular moisturizer from Aveeno with Feverfew — well-suited for sensitive, redness, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/s?k=Aveeno+Ultra-Calming+Daily+Moisturizer&tag=glowskincar0c-20",
   },
   {
     id: "differin-differin-acne-treatment-gel-90-day-supply-0-1-adapa",
