@@ -25,7 +25,10 @@ import {
   ShoppingCart,
   XCircle,
   Undo2,
+  Share2,
+  Check,
 } from "lucide-react";
+import { shareResults } from "@/lib/share-utils";
 import { useHashLocation } from "wouter/use-hash-location";
 import type { Timestamp } from "firebase/firestore";
 
@@ -100,12 +103,63 @@ function RoutineProductList({
                   Amazon
                 </a>
               )}
-
+              {item.product.sourceLinks && item.product.sourceLinks.length > 0 ? (
+                item.product.sourceLinks.map((link, li) => (
+                  <a
+                    key={link.url || li}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-primary hover:underline"
+                  >
+                    {link.name}
+                  </a>
+                ))
+              ) : item.product.sourceUrl ? (
+                <a
+                  href={item.product.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-primary hover:underline"
+                >
+                  {item.product.source}
+                </a>
+              ) : item.product.source && item.product.source !== "Dermatologist-recommended" ? (
+                <span className="text-[10px] text-muted-foreground italic">{item.product.source}</span>
+              ) : null}
             </div>
           </div>
         </div>
       ))}
     </div>
+  );
+}
+
+function ShareRoutineButton({ routine }: { routine: SavedRoutine }) {
+  const [status, setStatus] = useState<"idle" | "copied" | "shared">("idle");
+
+  const handleShare = async () => {
+    const result = await shareResults(routine.answers, routine.skinProfile);
+    setStatus(result === "failed" ? "idle" : result);
+    if (result === "copied") {
+      setTimeout(() => setStatus("idle"), 2500);
+    }
+  };
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      className="w-7 h-7 text-muted-foreground hover:text-primary"
+      onClick={handleShare}
+      aria-label="Share routine"
+    >
+      {status === "copied" || status === "shared" ? (
+        <Check className="w-3.5 h-3.5 text-primary" />
+      ) : (
+        <Share2 className="w-3.5 h-3.5" />
+      )}
+    </Button>
   );
 }
 
@@ -178,6 +232,7 @@ function RoutineCard({
           </div>
 
           <div className="flex items-center gap-1 shrink-0">
+            <ShareRoutineButton routine={routine} />
             <Button
               variant="ghost"
               size="icon"
