@@ -223,8 +223,7 @@ function ProductDetail({ product }: { product: Product }) {
 }
 
 // ── Suggestion card with "try another" ──
-function SuggestionCard({ suggestion }: { suggestion: NonNullable<ProductRating["suggestion"]> }) {
-  const [currentIdx, setCurrentIdx] = useState(0);
+function SuggestionCard({ suggestion, currentIdx, onChangeIdx }: { suggestion: NonNullable<ProductRating["suggestion"]>; currentIdx: number; onChangeIdx: (idx: number) => void }) {
   const alternatives = suggestion.alternatives || [suggestion.product];
   const current = alternatives[currentIdx] || suggestion.product;
   const hasMore = alternatives.length > 1;
@@ -237,7 +236,7 @@ function SuggestionCard({ suggestion }: { suggestion: NonNullable<ProductRating[
         </p>
         {hasMore && (
           <button
-            onClick={() => setCurrentIdx((currentIdx + 1) % alternatives.length)}
+            onClick={() => onChangeIdx((currentIdx + 1) % alternatives.length)}
             className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
           >
             <RefreshCw className="w-3 h-3" /> Try another
@@ -254,8 +253,7 @@ function SuggestionCard({ suggestion }: { suggestion: NonNullable<ProductRating[
 }
 
 // ── Missing step card with product suggestions ──
-function MissingStepCard({ step }: { step: MissingStep }) {
-  const [currentIdx, setCurrentIdx] = useState(0);
+function MissingStepCard({ step, currentIdx, onChangeIdx }: { step: MissingStep; currentIdx: number; onChangeIdx: (idx: number) => void }) {
   const products = step.suggestedProducts;
   const current = products[currentIdx];
   const hasMore = products.length > 1;
@@ -271,7 +269,7 @@ function MissingStepCard({ step }: { step: MissingStep }) {
             </p>
             {hasMore && (
               <button
-                onClick={() => setCurrentIdx((currentIdx + 1) % products.length)}
+                onClick={() => onChangeIdx((currentIdx + 1) % products.length)}
                 className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
               >
                 <RefreshCw className="w-3 h-3" /> Try another
@@ -297,6 +295,11 @@ export default function RateMyRoutine() {
   const [evaluation, setEvaluation] = useState<RoutineEvaluation | null>(null);
   const [step, setStep] = useState<"pickSkin" | "input" | "results">("pickSkin");
   const [nextId, setNextId] = useState(2);
+
+  // Track which suggestion index is selected for each rating and missing step
+  const [suggestionIdxMap, setSuggestionIdxMap] = useState<Record<string, number>>({});
+  const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   // Brand filter state per entry
   const [brandFilters, setBrandFilters] = useState<Record<number, string[]>>({});
@@ -543,7 +546,11 @@ export default function RateMyRoutine() {
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">{rating.explanation}</p>
                 {rating.suggestion && (
-                  <SuggestionCard suggestion={rating.suggestion} />
+                  <SuggestionCard
+                    suggestion={rating.suggestion}
+                    currentIdx={suggestionIdxMap[`rating-${i}`] || 0}
+                    onChangeIdx={(idx) => setSuggestionIdxMap((m) => ({ ...m, [`rating-${i}`]: idx }))}
+                  />
                 )}
               </Card>
             ))}
@@ -555,7 +562,12 @@ export default function RateMyRoutine() {
                 <AlertTriangle className="w-4 h-4 text-amber-500" /> Missing Steps
               </h2>
               {evaluation.missingSteps.map((ms, i) => (
-                <MissingStepCard key={i} step={ms} />
+                <MissingStepCard
+                  key={i}
+                  step={ms}
+                  currentIdx={suggestionIdxMap[`missing-${i}`] || 0}
+                  onChangeIdx={(idx) => setSuggestionIdxMap((m) => ({ ...m, [`missing-${i}`]: idx }))}
+                />
               ))}
             </div>
           )}
@@ -575,7 +587,63 @@ export default function RateMyRoutine() {
 
           <div className="flex gap-3 pt-2">
             <Button variant="outline" className="flex-1" onClick={handleReset}>Rate Another Routine</Button>
-            <Button className="flex-1" onClick={() => (window.location.hash = "#/")}>Build My Routine</Button>
+            <Button
+              className="flex-1"
+              disabled={saving || saved}
+              onClick={async () => {
+                if (!user || !evaluation || !selectedRoutine) return;
+                setSaving(true);
+                try {
+                  // Collect all currently displayed suggestions
+                  const suggestedProducts: { product: Product; source: string }[] = [];
+
+                  // From ratings (better match suggestions)
+                  evaluation.ratings.forEach((r, i) => {
+                    if (r.suggestion?.alternatives) {
+                      const idx = suggestionIdxMap[`rating-${i}`] || 0;
+                      const prod = r.suggestion.alternatives[idx] || r.suggestion.product;
+                      suggestedProducts.push({ product: prod, source: "better-match" });
+                    } else if (r.suggestion) {
+                      suggestedProducts.push({ product: r.suggestion.product, source: "better-match" });
+                    }
+                  });
+
+                  // From missing steps
+                  evaluation.missingSteps.forEach((ms, i) => {
+                    const idx = suggestionIdxMap[`missing-${i}`] || 0;
+                    const prod = ms.suggestedProducts[idx];
+                    if (prod) {
+                      suggestedProducts.push({ product: prod, source: "missing-step" });
+                    }
+                  });
+
+                  // Save to Firestore
+                  const { addDoc, collection, Timestamp } = await import("firebase/firestore");
+                  const { db } = await import("@/lib/firebase");
+                  await addDoc(collection(db, "savedSuggestions"), {
+                    userId: user.uid,
+                    baumannCode: selectedRoutine.skinProfile.baumannCode,
+                    products: suggestedProducts.map((sp) => ({
+                      id: sp.product.id,
+                      name: sp.product.name,
+                      brand: sp.product.brand,
+                      category: sp.product.category,
+                      price: sp.product.price,
+                      amazonUrl: sp.product.amazonUrl || null,
+                      source: sp.source,
+                    })),
+                    createdAt: Timestamp.now(),
+                  });
+                  setSaved(true);
+                } catch (e) {
+                  console.error("Failed to save suggestions", e);
+                } finally {
+                  setSaving(false);
+                }
+              }}
+            >
+              {saved ? "Routine Saved" : saving ? "Saving..." : "Save Suggested Routine"}
+            </Button>
           </div>
         </div>
       </div>
