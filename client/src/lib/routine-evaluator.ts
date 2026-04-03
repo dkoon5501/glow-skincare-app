@@ -166,31 +166,43 @@ export function evaluateRoutine(
       score = Math.max(1, Math.min(10, Math.round((prodScore / Math.max(maxPossible, 1)) * 10)));
 
       const matchingTags = tags.filter((t) => dbMatch.bestFor.includes(t));
-      if (matchingTags.length > 0) {
-        explanation = `This product is well-suited for ${matchingTags.join(", ")} skin concerns. ${dbMatch.whyRecommended}`;
+      const missingTags = tags.filter((t) => !dbMatch.bestFor.includes(t));
+
+      // Build a specific, concise explanation
+      const skinLabel = baumannCode[0] === "O" ? "oily" : "dry";
+      const catLabel = up.category;
+
+      if (score >= 8) {
+        explanation = `Strong match for your ${baumannCode} skin type. This ${catLabel} targets ${matchingTags.slice(0, 3).join(", ")} concerns, which aligns well with your profile.`;
+      } else if (score >= 6) {
+        explanation = `Good fit overall — it addresses ${matchingTags.slice(0, 2).join(" and ")} concerns.${missingTags.length > 0 ? ` However, it doesn't specifically target ${missingTags.slice(0, 2).join(" or ")} needs in your profile.` : ""}`;
+      } else if (score >= 4) {
+        if (matchingTags.length > 0) {
+          explanation = `This ${catLabel} partially fits your skin — it helps with ${matchingTags.join(", ")}, but doesn't address your ${missingTags.slice(0, 2).join(" or ")} needs. A more targeted product could make a noticeable difference.`;
+        } else {
+          explanation = `This ${catLabel} isn't specifically designed for ${skinLabel} or ${baumannCode[1] === "S" ? "sensitive" : "resistant"} skin. It may work, but a product formulated for your profile would be more effective.`;
+        }
       } else {
-        explanation = `This product is a decent choice for its category, though it may not specifically target your ${tags.join("/")} profile.`;
+        explanation = `This ${catLabel} may not be the best choice for your ${baumannCode} skin type. It doesn't target your key concerns (${tags.slice(0, 3).join(", ")}), and a better-matched product could improve your results significantly.`;
       }
     } else if (up.keyIngredients.length > 0) {
       // Unknown product but we have ingredients to evaluate
       const ingResult = scoreUserIngredients(up.keyIngredients, baumannCode);
       score = ingResult.score;
 
-      const parts: string[] = [];
-      if (ingResult.good.length > 0) {
-        parts.push(`${ingResult.good.join(", ")} ${ingResult.good.length === 1 ? "is" : "are"} great for your skin type`);
+      if (ingResult.good.length > 0 && ingResult.bad.length > 0) {
+        explanation = `Mixed fit — ${ingResult.good.join(", ")} ${ingResult.good.length === 1 ? "works" : "work"} well for your skin, but ${ingResult.bad.join(", ")} may cause issues for your ${baumannCode} type. Consider swapping for something without the problematic ingredients.`;
+      } else if (ingResult.good.length > 0) {
+        explanation = `Good ingredient match — ${ingResult.good.join(", ")} ${ingResult.good.length === 1 ? "is" : "are"} well-suited for your ${baumannCode} skin type. No red flags in the formula.`;
+      } else if (ingResult.bad.length > 0) {
+        explanation = `Contains ${ingResult.bad.join(", ")}, which ${ingResult.bad.length === 1 ? "isn't" : "aren't"} ideal for your ${baumannCode} skin. This could lead to irritation or reduced effectiveness.`;
+      } else {
+        explanation = `We couldn't identify strong matches or conflicts based on the listed ingredients. The product may work fine, but we can't confirm it's optimized for your skin type.`;
       }
-      if (ingResult.bad.length > 0) {
-        parts.push(`${ingResult.bad.join(", ")} may not be ideal for your ${baumannCode} skin`);
-      }
-      if (parts.length === 0) {
-        parts.push("We couldn't find strong matches or conflicts with your skin type based on the ingredients listed");
-      }
-      explanation = parts.join(". ") + ".";
     } else {
       // Unknown product, no ingredients — generic assessment
       score = 5;
-      explanation = `We don't have this product in our database yet. Add key ingredients for a more detailed analysis.`;
+      explanation = `We don't have this product in our database yet. Without ingredient data, we can't assess how well it matches your ${baumannCode} skin type.`;
     }
 
     // Check if we have a significantly better option — include alternatives for "try another"
