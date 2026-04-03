@@ -11,6 +11,7 @@ import {
   ShoppingBag,
   CheckCircle2,
   ArrowRight,
+  Star,
 } from "lucide-react";
 
 interface LandingProps {
@@ -231,6 +232,39 @@ export function Landing({ onStart }: LandingProps) {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 2b. RATE MY ROUTINE CTA ──────────────────────────────────── */}
+      <section
+        className="px-6 py-12 md:py-14"
+        aria-labelledby="rate-my-routine-heading"
+      >
+        <div className="max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-6 p-6 rounded-2xl bg-card border border-card-border">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+              <Star className="w-6 h-6 text-primary" />
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <h2
+                id="rate-my-routine-heading"
+                className="text-base font-semibold text-foreground mb-1"
+              >
+                Already have a routine?
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                See how your current products match your skin type — get a personalized scorecard with ingredient analysis and better-fit suggestions.
+              </p>
+            </div>
+            <a
+              href="/#/rate-my-routine"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity shrink-0"
+              data-testid="cta-rate-my-routine"
+            >
+              Rate My Routine
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>

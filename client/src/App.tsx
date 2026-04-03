@@ -10,6 +10,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import MyRoutines from "@/pages/my-routines";
 import SharedResults from "@/pages/shared-results";
+import RateMyRoutine from "@/pages/rate-my-routine";
 
 function AppRouter() {
   return (
@@ -19,6 +20,7 @@ function AppRouter() {
         <Route path="/" component={Home} />
         <Route path="/my-routines" component={MyRoutines} />
         <Route path="/r/:encoded" component={SharedResults} />
+        <Route path="/rate-my-routine" component={RateMyRoutine} />
         <Route component={NotFound} />
       </Switch>
     </>

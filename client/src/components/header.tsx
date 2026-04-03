@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogIn, BookOpen, LogOut, ChevronDown } from "lucide-react";
+import { LogIn, BookOpen, LogOut, ChevronDown, Star } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
 
 export function Header() {
@@ -82,6 +82,14 @@ export function Header() {
               >
                 <BookOpen className="w-4 h-4" />
                 My Routines
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => navigate("/rate-my-routine")}
+                className="gap-2 cursor-pointer"
+                data-testid="header-rate-my-routine-link"
+              >
+                <Star className="w-4 h-4" />
+                Rate My Routine
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem
