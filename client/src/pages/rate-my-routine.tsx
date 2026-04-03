@@ -409,7 +409,7 @@ export default function RateMyRoutine() {
         brand: result.external.brand,
         productId: "",
         productName: `${result.external.brand} — ${result.external.name}`,
-        category: "",
+        category: result.external.category || "",
         external: {
           ingredients: result.external.ingredients,
           ingredientsRaw: result.external.ingredientsRaw,
