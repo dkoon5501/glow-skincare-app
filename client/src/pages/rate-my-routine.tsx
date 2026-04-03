@@ -25,6 +25,7 @@ import {
   ArrowLeft,
   Star,
   RefreshCw,
+  ExternalLink,
 } from "lucide-react";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "@/lib/firebase";
@@ -181,6 +182,46 @@ function VerdictBadge({ verdict }: { verdict: ProductRating["verdict"] }) {
   return <Badge variant="outline" className={`text-xs ${styles[verdict]}`}>{labels[verdict]}</Badge>;
 }
 
+// ── Product detail block (reused in suggestion + missing step cards) ──
+function ProductDetail({ product }: { product: Product }) {
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between gap-2">
+        <div className="min-w-0">
+          <p className="text-xs font-medium text-foreground truncate">{product.brand} {product.name}</p>
+          <p className="text-xs text-muted-foreground">{product.price}</p>
+        </div>
+        {product.amazonUrl && (
+          <a href={product.amazonUrl} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0">
+            <ShoppingCart className="w-3 h-3" /> Amazon
+          </a>
+        )}
+      </div>
+      <p className="text-xs text-muted-foreground leading-relaxed">{product.whyRecommended}</p>
+      <p className="text-xs text-muted-foreground italic">
+        Source:{" "}
+        {product.sourceLinks && product.sourceLinks.length > 0 ? (
+          product.sourceLinks.map((link, i) => (
+            <span key={link.url}>
+              {i > 0 && ", "}
+              <a href={link.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                {link.name}
+              </a>
+            </span>
+          ))
+        ) : product.sourceUrl ? (
+          <a href={product.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+            {product.source}
+          </a>
+        ) : product.source !== "Dermatologist-recommended" ? (
+          product.source
+        ) : null}
+      </p>
+    </div>
+  );
+}
+
 // ── Suggestion card with "try another" ──
 function SuggestionCard({ suggestion }: { suggestion: NonNullable<ProductRating["suggestion"]> }) {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -203,18 +244,7 @@ function SuggestionCard({ suggestion }: { suggestion: NonNullable<ProductRating[
           </button>
         )}
       </div>
-      <div className="flex items-center justify-between gap-2">
-        <div className="min-w-0">
-          <p className="text-xs font-medium text-foreground truncate">{current.brand} {current.name}</p>
-          <p className="text-xs text-muted-foreground">{current.price}</p>
-        </div>
-        {current.amazonUrl && (
-          <a href={current.amazonUrl} target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0">
-            <ShoppingCart className="w-3 h-3" /> Amazon
-          </a>
-        )}
-      </div>
+      <ProductDetail product={current} />
       <p className="text-xs text-muted-foreground">{suggestion.reason}</p>
       {hasMore && (
         <p className="text-xs text-muted-foreground/60">{currentIdx + 1} of {alternatives.length} suggestions</p>
@@ -248,18 +278,7 @@ function MissingStepCard({ step }: { step: MissingStep }) {
               </button>
             )}
           </div>
-          <div className="flex items-center justify-between gap-2">
-            <div className="min-w-0">
-              <p className="text-xs font-medium text-foreground truncate">{current.brand} {current.name}</p>
-              <p className="text-xs text-muted-foreground">{current.price}</p>
-            </div>
-            {current.amazonUrl && (
-              <a href={current.amazonUrl} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity shrink-0">
-                <ShoppingCart className="w-3 h-3" /> Amazon
-              </a>
-            )}
-          </div>
+          <ProductDetail product={current} />
           {hasMore && (
             <p className="text-xs text-muted-foreground/60">{currentIdx + 1} of {products.length} suggestions</p>
           )}
