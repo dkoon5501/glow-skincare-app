@@ -3,6 +3,7 @@ import { useAuth } from "@/lib/auth-context";
 import { getUserRoutines, type SavedRoutine } from "@/lib/firestore";
 import { productDatabase, type Product } from "@/lib/skincare-data";
 import { evaluateRoutine, type UserProduct, type RoutineEvaluation, type ProductRating, type MissingStep } from "@/lib/routine-evaluator";
+import { searchProducts, type OBFProduct } from "@/lib/open-beauty-facts";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -60,11 +61,17 @@ interface ProductEntry {
   category: Product["category"] | "";
   brand: string;
   productId: string; // selected product ID from database
+  productName: string; // display name (for both local and external)
   timeOfDay: "AM" | "PM" | "BOTH" | "";
+  /** If product came from Open Beauty Facts instead of our database */
+  external?: {
+    ingredients: string[];
+    ingredientsRaw: string;
+  };
 }
 
 function emptyEntry(id: number): ProductEntry {
-  return { id, category: "", brand: "", productId: "", timeOfDay: "" };
+  return { id, category: "", brand: "", productId: "", productName: "", timeOfDay: "" };
 }
 
 // ── Autocomplete dropdown ──
@@ -301,9 +308,9 @@ export default function RateMyRoutine() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
 
-  // Brand filter state per entry
-  const [brandFilters, setBrandFilters] = useState<Record<number, string[]>>({});
-  const [productFilters, setProductFilters] = useState<Record<number, { id: string; label: string }[]>>({});
+  // Unified search results per entry
+  const [searchResults, setSearchResults] = useState<Record<number, { label: string; local?: Product; external?: OBFProduct }[]>>({});
+  const [searchTimers, setSearchTimers] = useState<Record<number, ReturnType<typeof setTimeout>>>({});
 
   useEffect(() => {
     if (!user) return;
@@ -345,101 +352,101 @@ export default function RateMyRoutine() {
     setProducts(products.map((p) => (p.id === id ? { ...p, ...updates } : p)));
   }
 
-  // When user types in brand field — filter known brands
-  function handleBrandType(entryId: number, query: string) {
-    if (query.length < 1) {
-      setBrandFilters((prev) => ({ ...prev, [entryId]: [] }));
+  // Unified search: local database first, then Open Beauty Facts
+  function handleSearch(entryId: number, query: string) {
+    // Clear previous timer
+    if (searchTimers[entryId]) clearTimeout(searchTimers[entryId]);
+
+    if (query.length < 2) {
+      setSearchResults((prev) => ({ ...prev, [entryId]: [] }));
       return;
     }
-    const entry = products.find((p) => p.id === entryId);
-    const category = entry?.category || undefined;
-    // Get brands that have products in the selected category
-    const relevantBrands = category
-      ? [...new Set(productDatabase.filter((p) => p.category === category).map((p) => p.brand))].sort()
-      : KNOWN_BRANDS;
-    const matches = relevantBrands.filter((b) => b.toLowerCase().includes(query.toLowerCase()));
-    setBrandFilters((prev) => ({ ...prev, [entryId]: matches }));
+
+    // Immediately show local matches
+    const q = query.toLowerCase();
+    const localMatches = productDatabase
+      .filter((p) => {
+        const full = `${p.brand} ${p.name}`.toLowerCase();
+        return full.includes(q) || p.brand.toLowerCase().includes(q) || p.name.toLowerCase().includes(q);
+      })
+      .slice(0, 8)
+      .map((p) => ({ label: `${p.brand} — ${p.name}`, local: p }));
+
+    setSearchResults((prev) => ({ ...prev, [entryId]: localMatches }));
+
+    // Debounced external search
+    const timer = setTimeout(async () => {
+      const external = await searchProducts(query);
+      const externalMatches = external
+        .filter((ep) => {
+          // Don't show external results that duplicate local results
+          const key = `${ep.brand.toLowerCase()}|${ep.name.toLowerCase()}`;
+          return !localMatches.some((lm) => lm.local && `${lm.local.brand.toLowerCase()}|${lm.local.name.toLowerCase()}` === key);
+        })
+        .slice(0, 7)
+        .map((ep) => ({ label: `${ep.brand} — ${ep.name}`, external: ep }));
+
+      setSearchResults((prev) => ({
+        ...prev,
+        [entryId]: [...(prev[entryId]?.filter((r) => r.local) || []), ...externalMatches],
+      }));
+    }, 400);
+
+    setSearchTimers((prev) => ({ ...prev, [entryId]: timer }));
   }
 
-  function handleBrandSelect(entryId: number, brand: string) {
-    updateEntry(entryId, { brand, productId: "" });
-    setBrandFilters((prev) => ({ ...prev, [entryId]: [] }));
-    // Pre-populate product suggestions for this brand
-    const entry = products.find((p) => p.id === entryId);
-    const prods = getProductsForBrand(brand, entry?.category || undefined);
-    setProductFilters((prev) => ({
-      ...prev,
-      [entryId]: prods.map((p) => ({ id: p.id, label: p.name })),
-    }));
-  }
-
-  function handleBrandClear(entryId: number) {
-    updateEntry(entryId, { brand: "", productId: "" });
-    setProductFilters((prev) => ({ ...prev, [entryId]: [] }));
-  }
-
-  // When user types in product field — filter products for selected brand
-  function handleProductType(entryId: number, query: string) {
-    const entry = products.find((p) => p.id === entryId);
-    if (!entry?.brand) return;
-    const prods = getProductsForBrand(entry.brand, entry.category || undefined);
-    const matches = query.length < 1
-      ? prods
-      : prods.filter((p) => p.name.toLowerCase().includes(query.toLowerCase()));
-    setProductFilters((prev) => ({
-      ...prev,
-      [entryId]: matches.map((p) => ({ id: p.id, label: p.name })),
-    }));
-  }
-
-  function handleProductSelect(entryId: number, productName: string) {
-    const entry = products.find((p) => p.id === entryId);
-    const prod = productDatabase.find(
-      (p) => p.brand === entry?.brand && p.name === productName
-    );
-    if (prod) {
-      updateEntry(entryId, { productId: prod.id, category: prod.category as ProductEntry["category"] });
+  function handleSelectResult(entryId: number, result: { label: string; local?: Product; external?: OBFProduct }) {
+    if (result.local) {
+      updateEntry(entryId, {
+        brand: result.local.brand,
+        productId: result.local.id,
+        productName: `${result.local.brand} — ${result.local.name}`,
+        category: result.local.category as ProductEntry["category"],
+        external: undefined,
+      });
+    } else if (result.external) {
+      updateEntry(entryId, {
+        brand: result.external.brand,
+        productId: "",
+        productName: `${result.external.brand} — ${result.external.name}`,
+        category: "",
+        external: {
+          ingredients: result.external.ingredients,
+          ingredientsRaw: result.external.ingredientsRaw,
+        },
+      });
     }
+    setSearchResults((prev) => ({ ...prev, [entryId]: [] }));
   }
 
-  function handleProductClear(entryId: number) {
-    updateEntry(entryId, { productId: "" });
-  }
-
-  // When category changes, clear brand and product if they don't match
-  function handleCategoryChange(entryId: number, category: string) {
-    const entry = products.find((p) => p.id === entryId);
-    const brandStillValid = entry?.brand
-      ? productDatabase.some((p) => p.brand === entry.brand && p.category === category)
-      : true;
-    updateEntry(entryId, {
-      category: category as ProductEntry["category"],
-      brand: brandStillValid ? entry?.brand || "" : "",
-      productId: brandStillValid ? entry?.productId || "" : "",
-    });
-  }
-
-  function getSelectedProductName(entryId: number): string {
-    const entry = products.find((p) => p.id === entryId);
-    if (!entry?.productId) return "";
-    const prod = productDatabase.find((p) => p.id === entry.productId);
-    return prod?.name || "";
+  function handleClearProduct(entryId: number) {
+    updateEntry(entryId, { brand: "", productId: "", productName: "", category: "", external: undefined });
   }
 
   function isFormValid(): boolean {
-    return products.every((p) => p.productId && p.timeOfDay);
+    return products.every((p) => (p.productId || p.external) && p.timeOfDay);
   }
 
   function handleEvaluate() {
     if (!selectedRoutine || !isFormValid()) return;
 
     const userProducts: UserProduct[] = products.map((p) => {
-      const prod = productDatabase.find((db) => db.id === p.productId)!;
+      if (p.productId) {
+        const prod = productDatabase.find((db) => db.id === p.productId)!;
+        return {
+          category: prod.category,
+          brand: prod.brand,
+          name: prod.name,
+          keyIngredients: prod.keyIngredients,
+          timeOfDay: p.timeOfDay as "AM" | "PM" | "BOTH",
+        };
+      }
+      // External product from Open Beauty Facts
       return {
-        category: prod.category,
-        brand: prod.brand,
-        name: prod.name,
-        keyIngredients: prod.keyIngredients,
+        category: (p.category || "moisturizer") as Product["category"],
+        brand: p.brand,
+        name: p.productName.replace(`${p.brand} — `, ""),
+        keyIngredients: p.external?.ingredients || [],
         timeOfDay: p.timeOfDay as "AM" | "PM" | "BOTH",
       };
     });
@@ -729,26 +736,21 @@ export default function RateMyRoutine() {
                 )}
               </div>
 
-              {/* Brand — autocomplete, must select from database */}
+              {/* Unified product search — searches local DB first, then Open Beauty Facts */}
               <AutocompleteInput
-                placeholder="Search brand..."
-                value={entry.brand}
-                suggestions={brandFilters[entry.id] || []}
-                onType={(q) => handleBrandType(entry.id, q)}
-                onSelect={(b) => handleBrandSelect(entry.id, b)}
-                onClear={() => handleBrandClear(entry.id)}
+                placeholder="Search any skincare product..."
+                value={entry.productName}
+                suggestions={(searchResults[entry.id] || []).map((r) => r.local ? `✓ ${r.label}` : r.label)}
+                onType={(q) => handleSearch(entry.id, q)}
+                onSelect={(label) => {
+                  const cleanLabel = label.startsWith("✓ ") ? label.slice(2) : label;
+                  const result = (searchResults[entry.id] || []).find((r) => r.label === cleanLabel || `✓ ${r.label}` === label);
+                  if (result) handleSelectResult(entry.id, result);
+                }}
+                onClear={() => handleClearProduct(entry.id)}
               />
-
-              {/* Product — autocomplete, must select from database, only after brand selected */}
-              {entry.brand && (
-                <AutocompleteInput
-                  placeholder="Search product..."
-                  value={getSelectedProductName(entry.id)}
-                  suggestions={(productFilters[entry.id] || []).map((p) => p.label)}
-                  onType={(q) => handleProductType(entry.id, q)}
-                  onSelect={(name) => handleProductSelect(entry.id, name)}
-                  onClear={() => handleProductClear(entry.id)}
-                />
+              {entry.external && (
+                <p className="text-[10px] text-muted-foreground -mt-1">Product found via Open Beauty Facts — scored by ingredient analysis</p>
               )}
 
               {/* Time of day */}
