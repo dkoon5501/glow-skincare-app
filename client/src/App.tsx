@@ -11,13 +11,17 @@ import Home from "@/pages/home";
 import MyRoutines from "@/pages/my-routines";
 import SharedResults from "@/pages/shared-results";
 import RateMyRoutine from "@/pages/rate-my-routine";
+import MainLanding from "@/pages/main-landing";
+import VitaHome from "@/pages/vita-home";
 
 function AppRouter() {
   return (
     <>
       <Header />
       <Switch>
-        <Route path="/" component={Home} />
+        <Route path="/" component={MainLanding} />
+        <Route path="/glow" component={Home} />
+        <Route path="/vita" component={VitaHome} />
         <Route path="/my-routines" component={MyRoutines} />
         <Route path="/r/:encoded" component={SharedResults} />
         <Route path="/rate-my-routine" component={RateMyRoutine} />

@@ -508,7 +508,7 @@ export default function RateMyRoutine() {
           <p className="text-sm text-muted-foreground">
             We need your skin type to rate your routine. Take the 2-minute quiz to get your Baumann Skin Type.
           </p>
-          <Button onClick={() => (window.location.hash = "#/")} className="w-full">Take the Skin Quiz</Button>
+          <Button onClick={() => (window.location.hash = "#/glow")} className="w-full">Take the Skin Quiz</Button>
         </Card>
       </div>
     );
