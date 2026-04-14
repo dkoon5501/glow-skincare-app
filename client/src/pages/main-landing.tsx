@@ -13,7 +13,7 @@ export default function MainLanding() {
 
         <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-12 leading-relaxed">
           Personalized skincare and vitamin routines guided by board-certified
-          dermatologists and licensed pharmacists. Free, evidence-based, no account required.
+          dermatologists and pharmacists. Free, evidence-based, no account required.
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4 w-full max-w-xl">

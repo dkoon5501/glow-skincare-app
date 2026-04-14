@@ -43,6 +43,8 @@ export function Header() {
             <circle cx="16" cy="16" r="3.5" fill="currentColor" className="text-primary" />
           </svg>
           <span className="text-sm font-semibold tracking-tight">Glow</span>
+          <span className="text-xs text-muted-foreground">&</span>
+          <span className="text-sm font-semibold tracking-tight">Vita</span>
         </button>
 
         {/* Right side */}
