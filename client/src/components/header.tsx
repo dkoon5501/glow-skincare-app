@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogIn, BookOpen, LogOut, ChevronDown, Star } from "lucide-react";
+import { LogIn, BookOpen, LogOut, ChevronDown, Star, Pill } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
 
 export function Header() {
@@ -44,6 +44,7 @@ export function Header() {
           </svg>
           <span className="text-sm font-semibold tracking-tight">Glow</span>
           <span className="text-xs text-muted-foreground">&</span>
+          <Pill className="w-4 h-4 text-primary" />
           <span className="text-sm font-semibold tracking-tight">Vita</span>
         </button>
 
