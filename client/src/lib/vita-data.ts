@@ -1,5 +1,5 @@
 /**
- * Vita — Pharmacist-Guided Vitamin Routine Builder
+ * Vita — Expert-Guided Vitamin Routine Builder
  * Health assessment quiz + supplement recommendation algorithm.
  */
 
@@ -175,7 +175,7 @@ export const vitaQuestions: VitaQuestion[] = [
 
 // ── Supplement database ──
 // Temporary database until Fullscript API is connected.
-// All recommendations are evidence-based and pharmacist-reviewed.
+// All recommendations are evidence-based and expert-reviewed.
 
 export const supplementDatabase: Supplement[] = [
   // ── Vitamin D ──
@@ -243,7 +243,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["heart", "cognitive", "vegan", "vegetarian"],
     whyRecommended: "Plant-based omega-3 from algae — same DHA/EPA as fish oil without the fish. Ideal for vegans and vegetarians who need essential fatty acids.",
     timing: "with_food",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     verified: true,
   },
   // ── Magnesium ──
@@ -310,7 +310,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["gut", "digestive", "immunity", "budget"],
     whyRecommended: "The most clinically studied probiotic strain in the world (LGG). Evidence-backed for digestive health, immune support, and antibiotic recovery.",
     timing: "morning",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B000VDY3EI?tag=buildmyroutine-20",
     verified: true,
   },
@@ -345,7 +345,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["immunity", "beauty", "active", "standard", "budget"],
     whyRecommended: "Essential antioxidant for immune function, collagen synthesis, and iron absorption. 1000mg is a solid daily dose for most adults, especially during cold season.",
     timing: "morning",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B003G4BP5G?tag=buildmyroutine-20",
     verified: true,
   },
@@ -396,9 +396,9 @@ export const supplementDatabase: Supplement[] = [
     price: "~$6-10",
     keyIngredients: ["Ferrous Sulfate"],
     bestFor: ["iron_deficiency", "female", "energy", "budget"],
-    whyRecommended: "Standard iron replacement for diagnosed deficiency. Take with vitamin C and away from calcium, coffee, and tea for best absorption. Pharmacist tip: ferrous sulfate is the best-absorbed over-the-counter form.",
+    whyRecommended: "Standard iron replacement for diagnosed deficiency. Take with vitamin C and away from calcium, coffee, and tea for best absorption. Expert tip: ferrous sulfate is the best-absorbed over-the-counter form.",
     timing: "morning",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B001F1GO2Y?tag=buildmyroutine-20",
     verified: true,
   },
@@ -415,7 +415,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["immunity", "male", "active", "beauty"],
     whyRecommended: "Picolinate form is one of the best-absorbed zinc forms. Supports immune function, skin health, and testosterone production in men. Especially important for active individuals who lose zinc through sweat.",
     timing: "with_food",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B000FGWDTC?tag=buildmyroutine-20",
     verified: true,
   },
@@ -450,7 +450,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["pregnant", "female"],
     whyRecommended: "Methylated folate (not folic acid) for optimal neural tube development, plus choline and iron — two nutrients most prenatals under-dose. Thorne is third-party tested for purity.",
     timing: "with_food",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B000FGWDM8?tag=buildmyroutine-20",
     verified: true,
   },
@@ -467,7 +467,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["joint", "joint_pain", "active", "60+"],
     whyRecommended: "Comprehensive joint support with glucosamine, chondroitin, and MSM. MSM provides anti-inflammatory benefits while glucosamine and chondroitin support cartilage repair.",
     timing: "with_food",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B00DW3U0DS?tag=buildmyroutine-20",
     verified: true,
   },
@@ -484,7 +484,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["gut", "digestive", "heart"],
     whyRecommended: "Soluble prebiotic fiber that dissolves completely in water with no taste or grit. Feeds beneficial gut bacteria and supports regularity. Most adults only get half the recommended daily fiber.",
     timing: "anytime",
-    source: "Evidence-based (pharmacist-reviewed)",
+    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B001G7QVFO?tag=buildmyroutine-20",
     verified: true,
   },
@@ -634,7 +634,7 @@ export function generateVitaRoutine(answers: VitaAnswers): VitaRoutine {
     }
   }
 
-  // Generate pharmacist warnings
+  // Generate expert warnings
   const warnings: string[] = [];
 
   // Drug-nutrient interactions

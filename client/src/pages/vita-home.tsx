@@ -46,7 +46,7 @@ const VITA_HOW_IT_WORKS = [
     icon: Sun,
     step: "03",
     title: "Your Routine",
-    description: "Morning, with food, and evening — each supplement scheduled when your body best absorbs it, plus pharmacist interaction warnings.",
+    description: "Morning, with food, and evening — each supplement scheduled when your body best absorbs it, plus expert interaction warnings.",
   },
 ];
 
@@ -57,7 +57,7 @@ const VITA_METHODOLOGY = [
   },
   {
     title: "Evidence-Based Matching",
-    description: "Every supplement in our database is selected based on peer-reviewed clinical evidence and pharmacist review. We don't include supplements with weak or conflicting evidence — only those with consistent, reproducible support.",
+    description: "Every supplement in our database is selected based on peer-reviewed clinical evidence and expert review. We don't include supplements with weak or conflicting evidence — only those with consistent, reproducible support.",
   },
   {
     title: "Absorption Timing",
@@ -65,13 +65,13 @@ const VITA_METHODOLOGY = [
   },
   {
     title: "Interaction Screening",
-    description: "Our pharmacist-reviewed database flags known supplement-supplement and supplement-medication interactions. If your profile includes medications or conditions that warrant caution, we surface those warnings directly in your routine.",
+    description: "Our expert-reviewed database flags known supplement-supplement and supplement-medication interactions. If your profile includes medications or conditions that warrant caution, we surface those warnings directly in your routine.",
   },
 ];
 
 const VITA_DIFFERENTIATORS = [
   {
-    title: "Pharmacist-Reviewed",
+    title: "Expert-Reviewed",
     description: "Every recommendation in our database has been reviewed against clinical pharmacology literature — not assembled by an algorithm alone.",
   },
   {
@@ -95,7 +95,7 @@ const VITA_FAQS = [
   },
   {
     q: "How are supplements selected?",
-    a: "Every supplement in our database is selected based on peer-reviewed evidence and pharmacist review. We only include supplements with consistent clinical support for the health goals they address.",
+    a: "Every supplement in our database is selected based on peer-reviewed evidence and expert review. We only include supplements with consistent clinical support for the health goals they address.",
   },
   {
     q: "What is provider pricing?",
@@ -103,7 +103,7 @@ const VITA_FAQS = [
   },
   {
     q: "Can I take these supplements with my medications?",
-    a: "Vita flags known supplement-medication interactions based on pharmacist review. However, these recommendations are informational only. Always consult your physician or pharmacist before starting any new supplement, especially if you take prescription medications.",
+    a: "Vita flags known supplement-medication interactions based on expert review. However, these recommendations are informational only. Always consult your physician or pharmacist before starting any new supplement, especially if you take prescription medications.",
   },
   {
     q: "Do I need an account?",
@@ -127,12 +127,12 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
         <div className="mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 border border-primary/15 px-3.5 py-1.5 rounded-full">
             <Pill className="w-3 h-3" />
-            Pharmacist-Guided Supplements
+            Expert-Guided Supplements
           </span>
         </div>
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-tight max-w-2xl mb-5">
-          Your Pharmacist-Guided
+          Your Expert-Guided
           <br className="hidden sm:block" /> Vitamin Routine
         </h1>
 
@@ -247,7 +247,7 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-xl font-bold text-foreground tracking-tight mb-4">Ready to build your vitamin routine?</h2>
           <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-            Pharmacist-reviewed, evidence-based, and personalized to your health profile — in under 2 minutes, completely free.
+            Expert-reviewed, evidence-based, and personalized to your health profile — in under 2 minutes, completely free.
           </p>
           <Button
             size="lg"
@@ -455,7 +455,7 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
               ))}
             </div>
           </div>
-          {s.source && s.source !== "Evidence-based (pharmacist-reviewed)" && (
+          {s.source && s.source !== "Evidence-based (expert-reviewed)" && (
             <p className="text-xs text-muted-foreground italic">
               Source:{" "}
               {s.sourceUrl ? (
@@ -465,8 +465,8 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
               ) : s.source}
             </p>
           )}
-          {s.source === "Evidence-based (pharmacist-reviewed)" && (
-            <p className="text-xs text-muted-foreground italic">Pharmacist-reviewed, evidence-based recommendation</p>
+          {s.source === "Evidence-based (expert-reviewed)" && (
+            <p className="text-xs text-muted-foreground italic">Expert-reviewed, evidence-based recommendation</p>
           )}
         </div>
       )}
@@ -499,7 +499,7 @@ function VitaResults({ routine, onRetake }: { routine: VitaRoutine; onRetake: ()
             <CardContent className="p-4 space-y-2">
               <h2 className="text-sm font-semibold text-foreground flex items-center gap-1.5">
                 <AlertTriangle className="w-4 h-4 text-amber-500" />
-                Pharmacist Notes
+                Expert Notes
               </h2>
               {routine.warnings.map((w, i) => (
                 <p key={i} className="text-xs text-muted-foreground leading-relaxed">&bull; {w}</p>

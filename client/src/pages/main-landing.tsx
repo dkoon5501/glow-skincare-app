@@ -22,7 +22,7 @@ const heroSlides = [
     id: "vita",
     label: "Supplements",
     headline: "Vitamins chosen\nfor your body,\nnot the shelf.",
-    sub: "Pharmacist-curated supplement routines tailored to your health goals and lifestyle.",
+    sub: "Expert-guided supplement routines tailored to your health goals and lifestyle.",
     cta: "Build My Vitamin Routine",
     href: "#/vita",
     badge: "Vita",
@@ -30,7 +30,7 @@ const heroSlides = [
     // Unsplash: person holding supplements, healthy lifestyle
     image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1400&q=85&fit=crop",
     accent: "from-teal-950/80 via-teal-900/60 to-transparent",
-    pill: "Pharmacist-guided",
+    pill: "Expert-guided",
   },
 ];
 
@@ -316,7 +316,7 @@ export default function MainLanding() {
                 Supplements matched to your body and goals.
               </h2>
               <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
-                Answer 7 questions about your health and lifestyle. Get a pharmacist-reviewed routine with timing built in.
+                Answer 7 questions about your health and lifestyle. Get an expert-reviewed routine with timing built in.
               </p>
             </>
           )}
