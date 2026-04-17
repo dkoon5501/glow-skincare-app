@@ -38,8 +38,8 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
             aria-hidden="true"
             className="absolute right-0 top-0 h-full w-3/4 object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
         </div>
         <div className="relative flex flex-col items-center justify-center px-4 py-16 text-center max-w-2xl mx-auto min-h-[70vh]">
         <div className="mb-6">

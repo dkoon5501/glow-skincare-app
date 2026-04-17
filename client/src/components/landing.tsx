@@ -162,9 +162,9 @@ export function Landing({ onStart }: LandingProps) {
             aria-hidden="true"
             className="absolute right-0 top-0 h-full w-3/4 object-cover object-right"
           />
-          {/* Strong left fade so text stays readable */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+          {/* Left fade keeps text readable, right side shows image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
         </div>
 
         {/* Badge */}
