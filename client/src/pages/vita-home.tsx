@@ -15,7 +15,6 @@ import {
   ArrowLeft,
   Sun,
   Moon,
-  ShoppingCart,
   AlertTriangle,
   Pill,
   CheckCircle2,
@@ -423,17 +422,6 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
           <ExternalLink className="w-3 h-3" />
           Buy with Provider Discount
         </a>
-        {s.amazonUrl && (
-          <a
-            href={s.amazonUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium border border-border bg-background text-foreground px-3 py-1.5 rounded-lg hover:bg-muted transition-colors"
-          >
-            <ShoppingCart className="w-3 h-3" />
-            Buy on Amazon
-          </a>
-        )}
       </div>
 
       {/* Expand for details */}
