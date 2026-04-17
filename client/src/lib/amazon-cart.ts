@@ -3,7 +3,7 @@
  * Uses Amazon's cart API to add products directly to cart with affiliate tag.
  */
 
-const AFFILIATE_TAG = "glowskincar0c-20";
+const AFFILIATE_TAG = "buildmyroutine-20";
 
 /**
  * Extract ASIN from an Amazon product URL.

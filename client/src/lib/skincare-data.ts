@@ -305,7 +305,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fXJUKo2UFNk" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01MSSDEPK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01MSSDEPK?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -324,7 +324,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -447,7 +447,7 @@ export const productDatabase: Product[] = [
     whyRecommended:
       "Dr. Dray is a strong advocate for Vanicream products for sensitive and reactive skin. This fragrance-free, dye-free, and preservative-free formula is one of the most hypoallergenic cleansers available — ideal for rosacea, eczema, and skin that reacts to almost everything.",
     source: "Dr. Dray & Dr. Karen Locke (YouTube)",
-    amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=buildmyroutine-20",
     dermVerified: true,
   },
 
@@ -488,7 +488,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01MDTVZTZ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -522,7 +522,7 @@ export const productDatabase: Product[] = [
       "Dr. Sam Ellis recommends The Ordinary's HA serum as a reliable, affordable hydration booster. Multi-molecular hyaluronic acid hydrates at surface and deeper skin levels; B5 soothes and supports barrier repair.",
     source: "Dr. Sam Ellis & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=iGBIxwOxfWU",
-    amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -553,7 +553,7 @@ export const productDatabase: Product[] = [
       "An accessible vitamin C serum combining a 20% vitamin C blend with ferulic acid and hyaluronic acid. Dr. Sam Ellis includes affordable vitamin C serums like this in budget-conscious routines for brightening and antioxidant protection throughout the day.",
     source: "Dr. Sam Ellis (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
-    amazonUrl: "https://www.amazon.com/dp/B0CF47F6PD?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0CF47F6PD?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -572,7 +572,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=L2SLL8a6qxA" },
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=APC16_cpYyk" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0036BI56G?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0036BI56G?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -587,7 +587,7 @@ export const productDatabase: Product[] = [
       "Doctorly reviewed this K-beauty cult classic for its remarkable hydration and barrier-repair properties. The 96% snail mucin concentration helps heal, plump, and restore radiance to dehydrated and sensitive skin types without heavy texture.",
     source: "Doctorly & Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=76GA2FR9nAg",
-    amazonUrl: "https://www.amazon.com/dp/B00PBX3L7K?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00PBX3L7K?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -602,7 +602,7 @@ export const productDatabase: Product[] = [
       "Dr. Sam Ellis featured TruSkin Vitamin C as a value-oriented brightening serum for those seeking antioxidant protection and dark spot reduction on a budget. Its combination of vitamin C, E, and hyaluronic acid targets multiple aging concerns simultaneously.",
     source: "Dr. Sam Ellis (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=L2SLL8a6qxA",
-    amazonUrl: "https://www.amazon.com/dp/B01M4MCUAF?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01M4MCUAF?tag=buildmyroutine-20",
     dermVerified: true,
   },
 
@@ -625,7 +625,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Muneeb Shah (Doctorly)", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=6JjijIeEsZM" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07Z9Y4M3C?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07Z9Y4M3C?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -650,7 +650,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=YJxARaLMSpc" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=4By-S9xY4h8" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -669,7 +669,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=IyxTc0iZ6V8" },
       { name: "Dr. Azadeh Shirazi", url: "https://www.youtube.com/watch?v=RWmWuDwJJEw" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07FLQDTS9?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07FLQDTS9?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -684,7 +684,7 @@ export const productDatabase: Product[] = [
       "Dr. Dray reviewed this as the gentlest chemical exfoliant option for sensitive skin. PHA is a large-molecule AHA that exfoliates only on the surface, making it ideal for reactive skin, rosacea, and beginners who need exfoliation without irritation.",
     source: "Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=wHzh_WxIbEc",
-    amazonUrl: "https://www.amazon.com/dp/B0BJ7JKRWY?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0BJ7JKRWY?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -810,7 +810,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=UG5G-muIxVU" },
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01NCWV3KM?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -830,7 +830,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00TTD9BRC?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -884,7 +884,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=XYr2_QlQiyA" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -930,7 +930,7 @@ export const productDatabase: Product[] = [
     whyRecommended:
       "Dr. Dray consistently recommends Vanicream products for highly reactive skin. This daily moisturizer is formulated without fragrance, dyes, parabens, or preservatives that commonly trigger flares in rosacea and contact dermatitis, making it one of the safest choices for sensitive skin.",
     source: "Dr. Dray & Dr. Karen Locke (YouTube)",
-    amazonUrl: "https://www.amazon.com/dp/B09TPXNKJG?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B09TPXNKJG?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -986,7 +986,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1001,7 +1001,7 @@ export const productDatabase: Product[] = [
       "Dr. Daniel Sugai recommends this for oily and acne-prone patients. Its oil-absorbing silica and dry-touch finish keep the face matte without clogging pores, and SPF 60 provides robust protection for high sun-exposure days.",
     source: "Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=NK6ThY5Pt74",
-    amazonUrl: "https://www.amazon.com/dp/B07YZRFH5C?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07YZRFH5C?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1020,7 +1020,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=Max9p5NGANI" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0CV85FYPJ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1035,7 +1035,7 @@ export const productDatabase: Product[] = [
       "Dr. Daniel Sugai recommends this two-in-one moisturizer + SPF 30 for those who prefer a simplified morning routine. The ceramide and niacinamide formula supports barrier repair while delivering daily broad-spectrum sun protection at a drugstore price.",
     source: "Dr. Daniel Sugai (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=NK6ThY5Pt74",
-    amazonUrl: "https://www.amazon.com/dp/B00F97FHAW?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00F97FHAW?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1086,7 +1086,7 @@ export const productDatabase: Product[] = [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=WKN8W7Os9fY" },
       { name: "Dr. Neera Nathan", url: "https://www.instagram.com/reel/DLI5IIpBQDf/" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07NV8YLBT?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07NV8YLBT?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1150,7 +1150,7 @@ export const productDatabase: Product[] = [
       "The only FDA-approved OTC retinoid for acne. Dr. Dray is a long-time advocate, making it a top pick in her most-purchased skincare of 2025 list. Dr. Muneeb Shah also recommends adapalene as the best-evidenced OTC retinoid for acne. Apply at night only. Start 2–3× per week.",
     source: "Dr. Dray, Dr. Muneeb Shah & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
-    amazonUrl: "https://www.amazon.com/dp/B07V2BRPVS?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07V2BRPVS?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -1190,7 +1190,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
       { name: "Dr. Karen Locke", url: "https://www.youtube.com/watch?v=iZc8UWcq5dY" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0DQ6496LC?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0DQ6496LC?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -1206,7 +1206,7 @@ export const productDatabase: Product[] = [
       "Dr. Alexis Stephens references Paula's Choice as a strong clinical retinol option for experienced users. This high-strength formula combines 1% retinol with collagen-promoting peptides for advanced anti-aging results. Apply at night only.",
     source: "Dr. Alexis Stephens (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=evzPfPeGp8k",
-    amazonUrl: "https://www.amazon.com/dp/B00L5O31VK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00L5O31VK?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -1222,7 +1222,7 @@ export const productDatabase: Product[] = [
       "Dr. Dray recommends Neutrogena Rapid Wrinkle Repair as one of the best accessible OTC retinol serums for beginners focused on anti-aging. Its proprietary Accelerated Retinol SA formula is designed for faster efficacy with minimized irritation. Apply at night only.",
     source: "Dr. Dray (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=ZmTQAMXjeys",
-    amazonUrl: "https://www.amazon.com/dp/B002RL8FBY?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B002RL8FBY?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -1242,7 +1242,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07VWSN95S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07VWSN95S?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -1277,7 +1277,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=bruzUMMO_LU" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=lda4RL8QO8g" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07GTWMD1W?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07GTWMD1W?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -1322,7 +1322,7 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "texture", "budget", "acne"],
     whyRecommended: "Popular serum from The Ordinary with Niacinamide 10% — well-suited for oily, texture, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01MYEZPC8?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1335,7 +1335,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "dry"],
     whyRecommended: "Popular serum from The Ordinary with Hyaluronic Acid 2% — well-suited for dehydration, dry, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B071914GGL?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B071914GGL?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1407,7 +1407,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07L1PHS1S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07L1PHS1S?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1423,7 +1423,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00KGSXZW2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00KGSXZW2?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1439,7 +1439,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07L1PHTTR?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07L1PHTTR?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1455,7 +1455,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B08GDDZPBQ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08GDDZPBQ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1471,7 +1471,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07D8Y9V6T?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07D8Y9V6T?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1487,7 +1487,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0B3J5ZJ5Z?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0B3J5ZJ5Z?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1500,7 +1500,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "normal", "dehydration", "dry", "sensitive"],
     whyRecommended: "Popular cleanser from CeraVe with Hyaluronic Acid — well-suited for dry, dehydration, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1518,7 +1518,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Shah and Dr. Maxfield", url: "https://www.youtube.com/watch?v=7v5vkOfGVWM" },
       { name: "Corey L. Hart, MD, FAAD", url: "https://www.vogue.com/article/cerave-cleanser-for-your-skin-type" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B08CQ9T6KN?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08CQ9T6KN?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1531,7 +1531,7 @@ export const productDatabase: Product[] = [
     bestFor: ["normal", "oily", "budget", "sensitive", "redness", "combination", "acne"],
     whyRecommended: "Popular moisturizer from CeraVe with Hyaluronic Acid — well-suited for normal, oily, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B00365DABC?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00365DABC?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1547,7 +1547,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=aVjrWDlQ2vU" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07L1PHSY9?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07L1PHSY9?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1560,7 +1560,7 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "texture", "budget", "acne"],
     whyRecommended: "Popular exfoliant from CeraVe with Salicylic Acid — well-suited for oily, texture, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07L8RHC9R?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07L8RHC9R?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1578,7 +1578,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=SjSmmopv0JE" },
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=aVjrWDlQ2vU" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B000YJ2SLG?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000YJ2SLG?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1591,7 +1591,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "hyperpigmentation", "aging", "texture", "acne"],
     whyRecommended: "Popular serum from CeraVe with Retinol — well-suited for hyperpigmentation, texture, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B08CQ9T6KN?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08CQ9T6KN?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: false,
   },
@@ -1605,7 +1605,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "oily", "combination", "texture", "acne"],
     whyRecommended: "Popular exfoliant from Paula's Choice with Salicylic Acid (BHA) 2% — well-suited for oily, texture, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1618,7 +1618,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "redness", "hyperpigmentation", "acne"],
     whyRecommended: "Popular serum from Paula's Choice with Azelaic Acid 10% — well-suited for redness, hyperpigmentation, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07D8DBS7S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07D8DBS7S?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1631,7 +1631,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "oily", "texture", "combination"],
     whyRecommended: "Popular toner from Paula's Choice with Niacinamide — well-suited for oily, texture, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B00949CTQQ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00949CTQQ?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1693,7 +1693,7 @@ export const productDatabase: Product[] = [
     bestFor: ["hyperpigmentation", "midrange"],
     whyRecommended: "Popular serum from Good Molecules with tranexamic acid — well-suited for hyperpigmentation, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B08CFV5Y1X?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08CFV5Y1X?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1754,7 +1754,7 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "budget", "sensitive", "combination", "acne"],
     whyRecommended: "Popular cleanser from COSRX with Tea Tree Oil — well-suited for sensitive, oily, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07D6KPH1P?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07D6KPH1P?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1816,7 +1816,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "sensitive"],
     whyRecommended: "Popular sunscreen from Beauty of Joseon with Rice extract — well-suited for dehydration, sensitive, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0CWSX5J7S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0CWSX5J7S?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1829,7 +1829,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "dry", "combination"],
     whyRecommended: "Popular moisturizer from Beauty of Joseon with Rice bran water — well-suited for dehydration, dry, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0C2J8G5P2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0C2J8G5P2?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1842,7 +1842,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "oily", "texture", "acne"],
     whyRecommended: "Popular serum from Beauty of Joseon with Propolis — well-suited for oily, texture, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0C7K8L4M3?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0C7K8L4M3?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1855,7 +1855,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "hyperpigmentation", "texture"],
     whyRecommended: "Popular serum from Beauty of Joseon with Rice bran water — well-suited for hyperpigmentation, texture, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0C5F3H2J1?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0C5F3H2J1?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1868,7 +1868,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "midrange", "dry", "combination"],
     whyRecommended: "Popular toner from Beauty of Joseon with Rice milk — well-suited for dehydration, dry, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0D4R6T9V2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0D4R6T9V2?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1881,7 +1881,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "midrange"],
     whyRecommended: "Popular cleanser from Beauty of Joseon with Rice extract — well-suited for dry, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0B9X4Y7Z0?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0B9X4Y7Z0?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1978,7 +1978,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "normal", "dehydration", "sensitive", "dry", "combination"],
     whyRecommended: "Popular moisturizer from Kiehl's with Squalane (4.5%) — well-suited for normal, dehydration, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B004JVSGWU?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B004JVSGWU?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2110,7 +2110,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=Y2Hqgyt9ZVk" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0DZ3XZBS1?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0DZ3XZBS1?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2160,7 +2160,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "redness", "budget", "acne"],
     whyRecommended: "Popular treatment from Hero Cosmetics with panthenol — well-suited for dry, redness, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B09C3R5Q5K?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B09C3R5Q5K?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2173,7 +2173,7 @@ export const productDatabase: Product[] = [
     bestFor: ["oily", "midrange", "redness", "acne"],
     whyRecommended: "Popular sunscreen from Hero Cosmetics with zinc oxide — well-suited for oily, redness, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0C3F7VJ7P?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0C3F7VJ7P?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2186,7 +2186,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "oily", "texture", "acne"],
     whyRecommended: "Popular exfoliant from Hero Cosmetics with BHA (salicylic acid 2%) — well-suited for oily, texture, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0D2K7L5N3?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0D2K7L5N3?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2199,7 +2199,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "acne"],
     whyRecommended: "Popular treatment from Hero Cosmetics with salicylic acid 2% — well-suited for acne, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0C5H6K7M2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0C5H6K7M2?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2212,7 +2212,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "oily", "midrange", "acne"],
     whyRecommended: "Popular moisturizer from Hero Cosmetics with prebiotic sugar complex — well-suited for dehydration, oily, acne skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0B5K7L5N4?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0B5K7L5N4?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2225,7 +2225,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "dry", "aging", "texture"],
     whyRecommended: "Popular moisturizer from Tatcha with Hyaluronic Acid — well-suited for dehydration, texture, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2241,7 +2241,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Chris Tomassian", url: "https://www.tiktok.com/@dr.tomassian/video/6956410222114082054" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2254,7 +2254,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "redness", "sensitive"],
     whyRecommended: "Popular treatment from Tatcha with Japanese indigo — well-suited for dehydration, redness, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2267,7 +2267,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "aging"],
     whyRecommended: "Popular moisturizer from Tatcha with Silk — well-suited for aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: false,
   },
@@ -2281,7 +2281,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "aging"],
     whyRecommended: "Popular treatment from Tatcha with Hadasei-3 — well-suited for dehydration, aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2294,7 +2294,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "texture", "aging"],
     whyRecommended: "Popular serum from Tatcha with Silk peptides — well-suited for texture, aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2307,7 +2307,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration"],
     whyRecommended: "Popular cleanser from Tatcha with Camellia oil — well-suited for dehydration, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2323,7 +2323,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=Mw22-BSE1Og" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00NR1YQHM?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2354,7 +2354,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=Mw22-BSE1Og" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00UOL8CC8?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00UOL8CC8?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2511,7 +2511,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
       { name: "Dr. Dustin Portela", url: "https://shopmy.us/shop/208skindoc" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2529,7 +2529,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
       { name: "Dr. Dustin Portela", url: "https://shopmy.us/shop/208skindoc" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00J5KDCO2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00J5KDCO2?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2546,7 +2546,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Sam Ellis", url: "https://www.tiktok.com/@drsamanthaellis/video/7592810226009591053" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fx5NZHyhxe8" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00464EC1E?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00464EC1E?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2563,7 +2563,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Sam Ellis", url: "https://www.tiktok.com/@drsamanthaellis/video/7592810226009591053" },
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=fx5NZHyhxe8" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00ZPWR0N8?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00ZPWR0N8?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2628,7 +2628,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "sensitive", "dry"],
     whyRecommended: "Popular moisturizer from Vanicream with hyaluronic acid — well-suited for dehydration, dry, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B08BW46XXK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08BW46XXK?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2646,7 +2646,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. David Kim", url: "https://www.tiktok.com/@drdavidkim/video/7234299527132400938" },
       { name: "Dr. Daniel Sugai", url: "https://www.instagram.com/reel/DRyDiQuD12C/?hl=en" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00QY1XZ4W?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2659,7 +2659,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "budget", "sensitive", "redness", "dry"],
     whyRecommended: "Popular moisturizer from Vanicream with petrolatum — well-suited for dehydration, redness, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B000NSDVN2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000NSDVN2?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2676,7 +2676,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=sssp0zRiwvc" },
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=HxdiDEzlEBg" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0B9J5G5K3?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0B9J5G5K3?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2689,7 +2689,7 @@ export const productDatabase: Product[] = [
     bestFor: ["sensitive", "midrange", "dry"],
     whyRecommended: "Popular sunscreen from Vanicream with non-nano zinc oxide — well-suited for sensitive, dry, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07V5L1Q5S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07V5L1Q5S?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2706,7 +2706,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=AqGDyvuPOto" },
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=HxdiDEzlEBg" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B08BW46XXK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08BW46XXK?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2719,7 +2719,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "texture", "acne"],
     whyRecommended: "Popular serum from Drunk Elephant with Glycolic acid — well-suited for texture, acne, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B00L3LDDD6?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00L3LDDD6?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2762,7 +2762,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=V7yqlyaemsc" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01B9OEDKS?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01B9OEDKS?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2791,7 +2791,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=V7yqlyaemsc" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B076639783?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B076639783?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2816,7 +2816,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "aging"],
     whyRecommended: "Popular moisturizer from Olay with Niacinamide — well-suited for aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0011DNXC2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0011DNXC2?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2829,7 +2829,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "hyperpigmentation", "texture", "aging"],
     whyRecommended: "Popular moisturizer from Olay with Retinol complex — well-suited for hyperpigmentation, texture, aging skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07XQBY5QQ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07XQBY5QQ?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: false,
   },
@@ -2875,7 +2875,7 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=wfiy6VTCFQE" },
     ],
     pmOnly: true,
-    amazonUrl: "https://www.amazon.com/dp/B07Z182JNK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07Z182JNK?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2900,7 +2900,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "texture", "aging"],
     whyRecommended: "Popular moisturizer from Olay with VitaNiacin Complex II (niacinamide — well-suited for texture, aging, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B007M81B4M?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B007M81B4M?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -3003,7 +3003,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=P3UqZ49PJ4U" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07ZTMXJVK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07ZTMXJVK?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -3020,7 +3020,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=P3UqZ49PJ4U" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07L1PHSY9?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07L1PHSY9?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -3034,7 +3034,7 @@ export const productDatabase: Product[] = [
     bestFor: ["budget", "acne"],
     whyRecommended: "Popular cleanser from Differin with Benzoyl Peroxide 5% — well-suited for acne, budget skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07HKVBRCF?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07HKVBRCF?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -3050,7 +3050,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=OWxLRaJK3y4" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B08L5Y6Z3K?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08L5Y6Z3K?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3063,7 +3063,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dehydration", "oily", "budget", "combination", "acne"],
     whyRecommended: "Popular moisturizer from Differin with Avobenzone 3% — well-suited for dehydration, oily, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07ZTN5N1V?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07ZTN5N1V?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -3076,7 +3076,7 @@ export const productDatabase: Product[] = [
     bestFor: ["midrange", "dehydration", "oily", "combination", "acne"],
     whyRecommended: "Popular cleanser from Differin with 5% Polyhydroxy Acids (PHAs) — well-suited for dehydration, oily, combination skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B08P3K1N6S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B08P3K1N6S?tag=buildmyroutine-20",
     dermVerified: false,
   },
 ];
@@ -3102,7 +3102,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=kxZ17nxjbdI" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B003TBOPG2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B003TBOPG2?tag=buildmyroutine-20",
     dermVerified: true,
   },
   // ── Additional derm-endorsed products (verified ASINs) ──
@@ -3120,7 +3120,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01LEJ5MSK?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01LEJ5MSK?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3137,7 +3137,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B003YMJJB4?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B003YMJJB4?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3154,7 +3154,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07TZHFLLR?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07TZHFLLR?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3171,7 +3171,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B074G3B2P3?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B074G3B2P3?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3188,7 +3188,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=kxZ17nxjbdI" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B002XZIB3G?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B002XZIB3G?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3205,7 +3205,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0BHFDB6DC?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0BHFDB6DC?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -3223,7 +3223,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0DQ1JP3BG?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0DQ1JP3BG?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3240,7 +3240,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01MXKTAAH?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01MXKTAAH?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3257,7 +3257,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B008Y1MR2W?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B008Y1MR2W?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3274,7 +3274,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=ri800kR_bd4" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B01N7JLH7E?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B01N7JLH7E?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3291,7 +3291,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=NYPXIPXOo0k" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B072KDLLNG?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B072KDLLNG?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3308,7 +3308,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0BXFXDGFJ?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0BXFXDGFJ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3325,7 +3325,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Doctorly", url: "https://www.reddit.com/r/SkincareAddicts/comments/1054q2l/" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07YP3SX3S?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07YP3SX3S?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -3343,7 +3343,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Doctorly", url: "https://www.youtube.com/watch?v=h19mTItzLrE" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0DCVDDC4B?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0DCVDDC4B?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3360,7 +3360,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=NYPXIPXOo0k" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B09QD43D35?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B09QD43D35?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3377,7 +3377,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B07YBNDF5H?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07YBNDF5H?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3394,7 +3394,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=_2wVke1WKII" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B0BXP4YXQG?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0BXP4YXQG?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3411,7 +3411,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B09HR1YWHG?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B09HR1YWHG?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -3428,7 +3428,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B09ZY4Y6KB?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B09ZY4Y6KB?tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: true,
   },
@@ -3446,7 +3446,7 @@ export const routineSteps: RoutineStep[] = [
     sourceLinks: [
       { name: "Dr. Dray", url: "https://www.youtube.com/watch?v=ZmTQAMXjeys" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B000TTPZQ0?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000TTPZQ0?tag=buildmyroutine-20",
     dermVerified: true,
   },
   { step: 6, label: "Sunscreen", time: "AM", category: "sunscreen", description: "The #1 anti-aging product. Apply every morning, rain or shine." }

@@ -193,7 +193,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "morning",
     source: "Dr. Rhonda Patrick",
     sourceUrl: "https://www.youtube.com/watch?v=74F22bjBmqE",
-    amazonUrl: "https://www.amazon.com/dp/B004GW4ON8?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B004GW4ON8?tag=buildmyroutine-20",
     verified: true,
   },
   {
@@ -210,7 +210,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "morning",
     source: "Dr. Andrew Huberman",
     sourceUrl: "https://www.youtube.com/watch?v=XDr1sCNKUNA",
-    amazonUrl: "https://www.amazon.com/dp/B0797P4GZL?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B0797P4GZL?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Omega-3 ──
@@ -228,7 +228,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "with_food",
     source: "Dr. Rhonda Patrick",
     sourceUrl: "https://www.youtube.com/watch?v=BmBpkvAwotw",
-    amazonUrl: "https://www.amazon.com/dp/B002CQU564?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B002CQU564?tag=buildmyroutine-20",
     verified: true,
   },
   {
@@ -261,7 +261,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "evening",
     source: "Dr. Andrew Huberman",
     sourceUrl: "https://www.youtube.com/watch?v=XDr1sCNKUNA",
-    amazonUrl: "https://www.amazon.com/dp/B000OQ2DL4?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000OQ2DL4?tag=buildmyroutine-20",
     verified: true,
   },
   {
@@ -278,7 +278,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "evening",
     source: "Dr. Andrew Huberman",
     sourceUrl: "https://www.youtube.com/watch?v=E7W4OQfJBMc",
-    amazonUrl: "https://www.amazon.com/dp/B000BREVM2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000BREVM2?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Probiotics ──
@@ -311,7 +311,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "The most clinically studied probiotic strain in the world (LGG). Evidence-backed for digestive health, immune support, and antibiotic recovery.",
     timing: "morning",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B000VDY3EI?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000VDY3EI?tag=buildmyroutine-20",
     verified: true,
   },
   // ── B Vitamins ──
@@ -329,7 +329,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "morning",
     source: "Dr. Rhonda Patrick",
     sourceUrl: "https://www.youtube.com/watch?v=74F22bjBmqE",
-    amazonUrl: "https://www.amazon.com/dp/B000URIBEY?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000URIBEY?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Vitamin C ──
@@ -346,7 +346,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "Essential antioxidant for immune function, collagen synthesis, and iron absorption. 1000mg is a solid daily dose for most adults, especially during cold season.",
     timing: "morning",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B003G4BP5G?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B003G4BP5G?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Collagen ──
@@ -364,7 +364,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "morning",
     source: "Dr. Rhonda Patrick",
     sourceUrl: "https://www.youtube.com/watch?v=BmBpkvAwotw",
-    amazonUrl: "https://www.amazon.com/dp/B00K6JUG4K?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00K6JUG4K?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Sleep ──
@@ -382,7 +382,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "evening",
     source: "Dr. Andrew Huberman",
     sourceUrl: "https://www.youtube.com/watch?v=E7W4OQfJBMc",
-    amazonUrl: "https://www.amazon.com/dp/B07BB2LHT2?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B07BB2LHT2?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Iron ──
@@ -399,7 +399,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "Standard iron replacement for diagnosed deficiency. Take with vitamin C and away from calcium, coffee, and tea for best absorption. Pharmacist tip: ferrous sulfate is the best-absorbed over-the-counter form.",
     timing: "morning",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B001F1GO2Y?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B001F1GO2Y?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Zinc ──
@@ -416,7 +416,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "Picolinate form is one of the best-absorbed zinc forms. Supports immune function, skin health, and testosterone production in men. Especially important for active individuals who lose zinc through sweat.",
     timing: "with_food",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B000FGWDTC?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000FGWDTC?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Adaptogens ──
@@ -434,7 +434,7 @@ export const supplementDatabase: Supplement[] = [
     timing: "evening",
     source: "Dr. Andrew Huberman",
     sourceUrl: "https://www.youtube.com/watch?v=nVZI3FgS4LE",
-    amazonUrl: "https://www.amazon.com/dp/B06WRS2VBR?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B06WRS2VBR?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Prenatal ──
@@ -451,7 +451,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "Methylated folate (not folic acid) for optimal neural tube development, plus choline and iron — two nutrients most prenatals under-dose. Thorne is third-party tested for purity.",
     timing: "with_food",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B000FGWDM8?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B000FGWDM8?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Joint ──
@@ -468,7 +468,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "Comprehensive joint support with glucosamine, chondroitin, and MSM. MSM provides anti-inflammatory benefits while glucosamine and chondroitin support cartilage repair.",
     timing: "with_food",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B00DW3U0DS?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B00DW3U0DS?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Fiber ──
@@ -485,7 +485,7 @@ export const supplementDatabase: Supplement[] = [
     whyRecommended: "Soluble prebiotic fiber that dissolves completely in water with no taste or grit. Feeds beneficial gut bacteria and supports regularity. Most adults only get half the recommended daily fiber.",
     timing: "anytime",
     source: "Evidence-based (pharmacist-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B001G7QVFO?tag=glowskincar0c-20",
+    amazonUrl: "https://www.amazon.com/dp/B001G7QVFO?tag=buildmyroutine-20",
     verified: true,
   },
 ];
