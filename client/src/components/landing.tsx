@@ -151,22 +151,10 @@ export function Landing({ onStart }: LandingProps) {
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────── */}
       <section
-        className="relative flex flex-col items-center justify-center text-center px-6 pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden"
+        className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-24 md:pt-28 md:pb-32"
         aria-labelledby="hero-headline"
       >
-        {/* Right-side background image — fades into background on left */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=1400&q=80&fit=crop&crop=right"
-            alt=""
-            aria-hidden="true"
-            className="absolute right-0 top-0 h-full w-3/4 object-cover object-right"
-          />
-          {/* Left fade keeps text readable, right side shows image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent" />
-        </div>
-        {/* Content sits above image */}
-        <div className="relative z-10 flex flex-col items-center w-full">
+        <div>
 
         {/* Badge */}
         <div className="mb-6">
@@ -214,7 +202,7 @@ export function Landing({ onStart }: LandingProps) {
         <p className="mt-2 text-xs text-muted-foreground">
           Requires a saved skin type&nbsp;•&nbsp;Take the quiz &amp; sign in to get started
         </p>
-        </div>{/* end z-10 content wrapper */}
+        </div>
       </section>
 
       {/* ─── 2. HOW IT WORKS ─────────────────────────────────────────── */}
