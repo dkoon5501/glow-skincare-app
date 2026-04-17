@@ -1,25 +1,6 @@
 {
   "vitamin_d": [
     {
-      "expertName": "NIH Office of Dietary Supplements",
-      "expertCredentials": "",
-      "affiliation": "National Institutes of Health",
-      "evidenceLevel": "high",
-      "expertType": "institution",
-      "stanceLabel": "supportive",
-      "recommendationType": "routinely_recommended",
-      "recommendationStrength": "strong",
-      "keyQuote": "AAP recommendation: 10 mcg (400 IU)/day vitamin D supplements for breastfed infants until weaned to ≥1,000 mL/day fortified formula/milk.",
-      "population": [
-        "infants",
-        "breastfed_infants"
-      ],
-      "sourceTitle": "Vitamin D — Health Professional Fact Sheet",
-      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
-      "publisher": "NIH Office of Dietary Supplements",
-      "publishDate": "2026-04-17"
-    },
-    {
       "expertName": "Michael F. Holick",
       "expertCredentials": "MD, PhD",
       "affiliation": "Boston University School of Medicine",
@@ -39,23 +20,22 @@
       "publishDate": "2025-01-08"
     },
     {
-      "expertName": "American Academy of Pediatrics",
+      "expertName": "NIH Office of Dietary Supplements",
       "expertCredentials": "",
-      "affiliation": "American Academy of Pediatrics",
+      "affiliation": "National Institutes of Health",
       "evidenceLevel": "high",
       "expertType": "institution",
       "stanceLabel": "supportive",
       "recommendationType": "routinely_recommended",
-      "recommendationStrength": "strong",
-      "keyQuote": "The American Academy of Pediatrics now recommends that all babies receive 400 IU of vitamin D per day starting soon after birth.",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Endocrine Society: Recommends routine supplementation for...adults ≥75 years, but not healthy adults 19–74.",
       "population": [
-        "infants",
-        "breastfed_infants"
+        "older_adults_75+"
       ],
-      "sourceTitle": "Vitamin D, Iron, and Zinc Supplementation — AAP Policy",
-      "sourceUrl": "https://publications.aap.org/aapbooks/monograph/794/chapter/16750729/Vitamin-D-Iron-and-Zinc-Supplementation-Baby-Early",
-      "publisher": "American Academy of Pediatrics",
-      "publishDate": "2020-06-01"
+      "sourceTitle": "Vitamin D — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-17"
     },
     {
       "expertName": "Harvard Health Publishing",
@@ -183,8 +163,7 @@
         "general_adults",
         "older_adults_75+",
         "pre_diabetics",
-        "pregnancy",
-        "children"
+        "pregnancy"
       ],
       "sourceTitle": "Endocrine Society Recommends Healthy Adults Under 75 Not Take Vitamin D Beyond IOM RDA",
       "sourceUrl": "https://www.endocrine.org/news-and-advocacy/news-room/2024/endocrine-society-recommends-healthy-adults-take-the-recommended-daily-allowance-of-vitamin-d",
@@ -478,25 +457,6 @@
       "sourceUrl": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
       "publisher": "NIH Office of Dietary Supplements",
       "publishDate": "2026-04-16"
-    },
-    {
-      "expertName": "American Academy of Pediatrics",
-      "expertCredentials": "",
-      "affiliation": "American Academy of Pediatrics",
-      "evidenceLevel": "high",
-      "expertType": "institution",
-      "stanceLabel": "supportive",
-      "recommendationType": "routinely_recommended",
-      "recommendationStrength": "strong",
-      "keyQuote": "AAP recommends 1 mg/kg daily iron supplementation for exclusively or primarily breastfed full-term infants from age 4 months until the infants begin eating iron-containing complementary foods.",
-      "population": [
-        "breastfed_infants",
-        "infants"
-      ],
-      "sourceTitle": "Vitamin D, Iron, and Zinc Supplementation — AAP Policy",
-      "sourceUrl": "https://publications.aap.org/aapbooks/monograph/794/chapter/16750729/Vitamin-D-Iron-and-Zinc-Supplementation-Baby-Early",
-      "publisher": "American Academy of Pediatrics",
-      "publishDate": "2020-06-01"
     },
     {
       "expertName": "American College of Obstetricians and Gynecologists",
@@ -1042,8 +1002,7 @@
       "recommendationStrength": "moderate",
       "keyQuote": "Meta-analyses indicate that the use of any of a few species and strains of probiotics might reduce the risk of AAD by 51%.",
       "population": [
-        "general_adults",
-        "children"
+        "general_adults"
       ],
       "sourceTitle": "Probiotics — Health Professional Fact Sheet",
       "sourceUrl": "https://ods.od.nih.gov/factsheets/Probiotics-HealthProfessional/",
@@ -1608,8 +1567,7 @@
       "recommendationStrength": "moderate",
       "keyQuote": "Meta-analyses indicate that the use of any of a few species and strains of probiotics might reduce the risk of AAD by 51%.",
       "population": [
-        "general_adults",
-        "children"
+        "general_adults"
       ],
       "sourceTitle": "Probiotics — Health Professional Fact Sheet",
       "sourceUrl": "https://ods.od.nih.gov/factsheets/Probiotics-HealthProfessional/",
@@ -1748,25 +1706,6 @@
       "sourceUrl": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
       "publisher": "NIH Office of Dietary Supplements",
       "publishDate": "2026-04-16"
-    },
-    {
-      "expertName": "American Academy of Pediatrics",
-      "expertCredentials": "",
-      "affiliation": "American Academy of Pediatrics",
-      "evidenceLevel": "high",
-      "expertType": "institution",
-      "stanceLabel": "supportive",
-      "recommendationType": "routinely_recommended",
-      "recommendationStrength": "strong",
-      "keyQuote": "AAP recommends 1 mg/kg daily iron supplementation for exclusively or primarily breastfed full-term infants from age 4 months until the infants begin eating iron-containing complementary foods.",
-      "population": [
-        "breastfed_infants",
-        "infants"
-      ],
-      "sourceTitle": "Vitamin D, Iron, and Zinc Supplementation — AAP Policy",
-      "sourceUrl": "https://publications.aap.org/aapbooks/monograph/794/chapter/16750729/Vitamin-D-Iron-and-Zinc-Supplementation-Baby-Early",
-      "publisher": "American Academy of Pediatrics",
-      "publishDate": "2020-06-01"
     }
   ]
 }

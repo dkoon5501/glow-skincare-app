@@ -456,19 +456,6 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
               ))}
             </div>
           </div>
-          {s.source && s.source !== "Evidence-based (expert-reviewed)" && (
-            <p className="text-xs text-muted-foreground italic">
-              Source:{" "}
-              {s.sourceUrl ? (
-                <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  {s.source}
-                </a>
-              ) : s.source}
-            </p>
-          )}
-          {s.source === "Evidence-based (expert-reviewed)" && (
-            <p className="text-xs text-muted-foreground italic">Expert-reviewed, evidence-based recommendation</p>
-          )}
           <ExpertSourcesPanel nutrient={s.category} />
         </div>
       )}

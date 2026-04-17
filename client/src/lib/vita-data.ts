@@ -48,7 +48,9 @@ export interface Supplement {
   bestFor: string[];
   whyRecommended: string;
   timing: "morning" | "evening" | "with_food" | "anytime";
-  source: string;
+  /** @deprecated legacy single-source label. Expert attribution now lives in expert-index.json */
+  source?: string;
+  /** @deprecated legacy single-source URL. Expert attribution now lives in expert-index.json */
   sourceUrl?: string;
   fullscriptId?: string; // for future Fullscript API integration
   amazonUrl?: string; // temporary until Fullscript API is connected
@@ -66,13 +68,7 @@ export type SupplementCategory =
   | "iron"
   | "zinc"
   | "vitamin_c"
-  | "collagen"
-  | "adaptogen"
-  | "sleep"
-  | "joint"
   | "prenatal"
-  | "protein"
-  | "fiber"
   | "specialty";
 
 // ── Quiz questions ──
@@ -191,8 +187,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["vit_d_deficiency", "immunity", "joint", "low_sun", "sedentary"],
     whyRecommended: "The most common deficiency worldwide. D3 is the bioavailable form, and 5000 IU is the standard correction dose recommended by most practitioners for adults with low levels.",
     timing: "morning",
-    source: "Dr. Rhonda Patrick",
-    sourceUrl: "https://www.youtube.com/watch?v=74F22bjBmqE",
     amazonUrl: "https://www.amazon.com/dp/B004GW4ON8?tag=buildmyroutine-20",
     verified: true,
   },
@@ -208,8 +202,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["vit_d_deficiency", "joint", "heart", "low_sun", "60+"],
     whyRecommended: "D3 paired with K2 ensures calcium is directed to bones, not arteries. Liquid form allows flexible dosing. Thorne is a practitioner-grade brand with third-party testing.",
     timing: "morning",
-    source: "Dr. Andrew Huberman",
-    sourceUrl: "https://www.youtube.com/watch?v=XDr1sCNKUNA",
     amazonUrl: "https://www.amazon.com/dp/B0797P4GZL?tag=buildmyroutine-20",
     verified: true,
   },
@@ -226,8 +218,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["heart", "cognitive", "joint", "energy", "active"],
     whyRecommended: "High-concentration EPA+DHA in triglyceride form for superior absorption. Nordic Naturals is the #1 selling omega-3 brand in the US and meets strict purity standards.",
     timing: "with_food",
-    source: "Dr. Rhonda Patrick",
-    sourceUrl: "https://www.youtube.com/watch?v=BmBpkvAwotw",
     amazonUrl: "https://www.amazon.com/dp/B002CQU564?tag=buildmyroutine-20",
     verified: true,
   },
@@ -243,7 +233,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["heart", "cognitive", "vegan", "vegetarian"],
     whyRecommended: "Plant-based omega-3 from algae — same DHA/EPA as fish oil without the fish. Ideal for vegans and vegetarians who need essential fatty acids.",
     timing: "with_food",
-    source: "Evidence-based (expert-reviewed)",
     verified: true,
   },
   // ── Magnesium ──
@@ -259,8 +248,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["stress", "sleep", "insomnia", "anxiety", "caffeine"],
     whyRecommended: "Magnesium citrate in powder form for better absorption. Helps with stress, sleep quality, and muscle relaxation. Over 50% of adults are deficient in magnesium.",
     timing: "evening",
-    source: "Dr. Andrew Huberman",
-    sourceUrl: "https://www.youtube.com/watch?v=XDr1sCNKUNA",
     amazonUrl: "https://www.amazon.com/dp/B000OQ2DL4?tag=buildmyroutine-20",
     verified: true,
   },
@@ -276,8 +263,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["sleep", "insomnia", "stress", "anxiety", "active", "fitness"],
     whyRecommended: "Glycinate form is the most bioavailable and least likely to cause GI distress. Crosses the blood-brain barrier, making it superior for sleep and anxiety support.",
     timing: "evening",
-    source: "Dr. Andrew Huberman",
-    sourceUrl: "https://www.youtube.com/watch?v=E7W4OQfJBMc",
     amazonUrl: "https://www.amazon.com/dp/B000BREVM2?tag=buildmyroutine-20",
     verified: true,
   },
@@ -294,8 +279,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["gut", "digestive", "immunity", "beauty"],
     whyRecommended: "Clinically studied 24-strain synbiotic (probiotic + prebiotic) with demonstrated benefits for gut barrier integrity, skin health, and immune function.",
     timing: "morning",
-    source: "Dr. Rhonda Patrick",
-    sourceUrl: "https://www.youtube.com/watch?v=0z03xkwFbw4",
     verified: true,
   },
   {
@@ -310,7 +293,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["gut", "digestive", "immunity", "budget"],
     whyRecommended: "The most clinically studied probiotic strain in the world (LGG). Evidence-backed for digestive health, immune support, and antibiotic recovery.",
     timing: "morning",
-    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B000VDY3EI?tag=buildmyroutine-20",
     verified: true,
   },
@@ -327,8 +309,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["energy", "stress", "anxiety", "vegan", "vegetarian", "caffeine", "alcohol"],
     whyRecommended: "Active methylated B vitamins (methylfolate + methylcobalamin) for people who may have MTHFR variations. Supports energy production, stress response, and neurological health.",
     timing: "morning",
-    source: "Dr. Rhonda Patrick",
-    sourceUrl: "https://www.youtube.com/watch?v=74F22bjBmqE",
     amazonUrl: "https://www.amazon.com/dp/B000URIBEY?tag=buildmyroutine-20",
     verified: true,
   },
@@ -345,34 +325,15 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["immunity", "beauty", "active", "standard", "budget"],
     whyRecommended: "Essential antioxidant for immune function, collagen synthesis, and iron absorption. 1000mg is a solid daily dose for most adults, especially during cold season.",
     timing: "morning",
-    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B003G4BP5G?tag=buildmyroutine-20",
     verified: true,
   },
-  // ── Collagen ──
-  {
-    id: "collagen-vital-proteins",
-    name: "Collagen Peptides Powder",
-    brand: "Vital Proteins",
-    category: "collagen",
-    form: "powder",
-    dosage: "1-2 scoops daily (20g)",
-    price: "~$25-40",
-    keyIngredients: ["Hydrolyzed Bovine Collagen Peptides", "Vitamin C", "Hyaluronic Acid"],
-    bestFor: ["beauty", "joint", "joint_pain", "aging", "fitness"],
-    whyRecommended: "Type I and III collagen peptides support skin elasticity, hair growth, nail strength, and joint cartilage. Adding to coffee or smoothies makes it easy to incorporate daily.",
-    timing: "morning",
-    source: "Dr. Rhonda Patrick",
-    sourceUrl: "https://www.youtube.com/watch?v=BmBpkvAwotw",
-    amazonUrl: "https://www.amazon.com/dp/B00K6JUG4K?tag=buildmyroutine-20",
-    verified: true,
-  },
-  // ── Sleep ──
+  // ── Magnesium (cognitive / sleep) ──
   {
     id: "sleep-magnesium-threonate",
     name: "Magtein Magnesium L-Threonate",
     brand: "NOW Foods",
-    category: "sleep",
+    category: "magnesium",
     form: "capsule",
     dosage: "3 capsules before bed (2000 mg magtein)",
     price: "~$22-30",
@@ -380,8 +341,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["sleep", "insomnia", "cognitive", "anxiety", "stress"],
     whyRecommended: "The only form of magnesium shown to cross the blood-brain barrier effectively. Supports cognitive function during the day and deeper sleep at night.",
     timing: "evening",
-    source: "Dr. Andrew Huberman",
-    sourceUrl: "https://www.youtube.com/watch?v=E7W4OQfJBMc",
     amazonUrl: "https://www.amazon.com/dp/B07BB2LHT2?tag=buildmyroutine-20",
     verified: true,
   },
@@ -398,7 +357,6 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["iron_deficiency", "female", "energy", "budget"],
     whyRecommended: "Standard iron replacement for diagnosed deficiency. Take with vitamin C and away from calcium, coffee, and tea for best absorption. Expert tip: ferrous sulfate is the best-absorbed over-the-counter form.",
     timing: "morning",
-    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B001F1GO2Y?tag=buildmyroutine-20",
     verified: true,
   },
@@ -415,26 +373,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["immunity", "male", "active", "beauty"],
     whyRecommended: "Picolinate form is one of the best-absorbed zinc forms. Supports immune function, skin health, and testosterone production in men. Especially important for active individuals who lose zinc through sweat.",
     timing: "with_food",
-    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B000FGWDTC?tag=buildmyroutine-20",
-    verified: true,
-  },
-  // ── Adaptogens ──
-  {
-    id: "ashwagandha-ksm66",
-    name: "Ashwagandha KSM-66",
-    brand: "Jarrow Formulas",
-    category: "adaptogen",
-    form: "capsule",
-    dosage: "1 capsule daily (300 mg)",
-    price: "~$14-20",
-    keyIngredients: ["Ashwagandha Root Extract (KSM-66)"],
-    bestFor: ["stress", "anxiety", "sleep", "fitness", "active"],
-    whyRecommended: "KSM-66 is the most clinically studied ashwagandha extract. Shown to reduce cortisol by 30%, improve stress resilience, and enhance athletic performance. Look specifically for the KSM-66 branded form.",
-    timing: "evening",
-    source: "Dr. Andrew Huberman",
-    sourceUrl: "https://www.youtube.com/watch?v=nVZI3FgS4LE",
-    amazonUrl: "https://www.amazon.com/dp/B06WRS2VBR?tag=buildmyroutine-20",
     verified: true,
   },
   // ── Prenatal ──
@@ -450,42 +389,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["pregnant", "female"],
     whyRecommended: "Methylated folate (not folic acid) for optimal neural tube development, plus choline and iron — two nutrients most prenatals under-dose. Thorne is third-party tested for purity.",
     timing: "with_food",
-    source: "Evidence-based (expert-reviewed)",
     amazonUrl: "https://www.amazon.com/dp/B000FGWDM8?tag=buildmyroutine-20",
-    verified: true,
-  },
-  // ── Joint ──
-  {
-    id: "joint-move-free-uc2",
-    name: "Move Free Advanced Plus MSM",
-    brand: "Move Free",
-    category: "joint",
-    form: "capsule",
-    dosage: "2 tablets daily",
-    price: "~$18-25",
-    keyIngredients: ["Glucosamine", "Chondroitin", "MSM", "Hyaluronic Acid"],
-    bestFor: ["joint", "joint_pain", "active", "60+"],
-    whyRecommended: "Comprehensive joint support with glucosamine, chondroitin, and MSM. MSM provides anti-inflammatory benefits while glucosamine and chondroitin support cartilage repair.",
-    timing: "with_food",
-    source: "Evidence-based (expert-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B00DW3U0DS?tag=buildmyroutine-20",
-    verified: true,
-  },
-  // ── Fiber ──
-  {
-    id: "fiber-benefiber-powder",
-    name: "Benefiber Original Powder",
-    brand: "Benefiber",
-    category: "fiber",
-    form: "powder",
-    dosage: "2 tsp daily (3g fiber)",
-    price: "~$12-18",
-    keyIngredients: ["Wheat Dextrin"],
-    bestFor: ["gut", "digestive", "heart"],
-    whyRecommended: "Soluble prebiotic fiber that dissolves completely in water with no taste or grit. Feeds beneficial gut bacteria and supports regularity. Most adults only get half the recommended daily fiber.",
-    timing: "anytime",
-    source: "Evidence-based (expert-reviewed)",
-    amazonUrl: "https://www.amazon.com/dp/B001G7QVFO?tag=buildmyroutine-20",
     verified: true,
   },
 ];
@@ -555,11 +459,11 @@ function scoreSupplements(profile: VitaProfile, preference: string): SupplementR
     }
 
     // Age-specific adjustments
-    if (profile.ageRange === "60+" && ["vitamin_d", "omega_3", "joint", "vitamin_b"].includes(supp.category)) {
+    if (profile.ageRange === "60+" && ["vitamin_d", "omega_3", "vitamin_b"].includes(supp.category)) {
       score += 2;
     }
-    if (profile.ageRange === "18-29" && supp.category === "joint") {
-      score -= 2; // less relevant for young adults without joint issues
+    if (profile.ageRange === "18-29" && supp.category === "omega_3") {
+      score -= 1; // deprioritize slightly for young adults without CVD/joint concerns
     }
 
     // Condition-specific must-haves
