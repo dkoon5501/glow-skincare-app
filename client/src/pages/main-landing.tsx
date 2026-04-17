@@ -75,7 +75,7 @@ const vitaFeatures = [
   {
     title: "Provider discount pricing",
     desc: "Access practitioner pricing through Fullscript and Pure Encapsulations — not available on Amazon.",
-    img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&q=80&fit=crop",
+    img: "https://501rx.com/wp-content/uploads/2024/08/Pure-Encapsulations-1200x863.png",
   },
 ];
 
