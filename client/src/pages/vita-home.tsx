@@ -29,7 +29,17 @@ type AppState = "landing" | "quiz" | "results";
 function VitaLanding({ onStart }: { onStart: () => void }) {
   return (
     <div className="min-h-screen bg-background">
-      <section className="flex flex-col items-center justify-center px-4 py-16 text-center max-w-2xl mx-auto min-h-[70vh]">
+      <section className="relative flex flex-col items-center justify-center px-4 py-16 text-center max-w-2xl mx-auto min-h-[70vh] overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <img
+            src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=1400&q=80&fit=crop"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-background/82" />
+        </div>
         <div className="mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 border border-primary/15 px-3.5 py-1.5 rounded-full">
             <Pill className="w-3 h-3" />
@@ -74,6 +84,22 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Photo strip */}
+      <section className="overflow-hidden" aria-hidden="true">
+        <div className="flex h-52 sm:h-64">
+          {[
+            "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&fit=crop",
+            "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=80&fit=crop",
+            "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&q=80&fit=crop",
+            "https://images.unsplash.com/photo-1559181567-c3190bba2e2e?w=600&q=80&fit=crop",
+          ].map((src, i) => (
+            <div key={i} className="flex-1 overflow-hidden">
+              <img src={src} alt="" className="w-full h-full object-cover" />
+            </div>
+          ))}
         </div>
       </section>
     </div>

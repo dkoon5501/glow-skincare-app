@@ -151,9 +151,20 @@ export function Landing({ onStart }: LandingProps) {
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────── */}
       <section
-        className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-24 md:pt-28 md:pb-32"
+        className="relative flex flex-col items-center justify-center text-center px-6 pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden"
         aria-labelledby="hero-headline"
       >
+        {/* Background image */}
+        <div className="absolute inset-0 -z-10">
+          <img
+            src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=1400&q=80&fit=crop"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-background/80" />
+        </div>
+
         {/* Badge */}
         <div className="mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 border border-primary/15 px-3.5 py-1.5 rounded-full">
@@ -244,6 +255,22 @@ export function Landing({ onStart }: LandingProps) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── 2b. LIFESTYLE PHOTO STRIP ────────────────────────────────── */}
+      <section className="overflow-hidden" aria-hidden="true">
+        <div className="flex h-52 sm:h-64">
+          {[
+            "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&q=80&fit=crop",
+            "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&q=80&fit=crop",
+            "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&fit=crop",
+            "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&q=80&fit=crop",
+          ].map((src, i) => (
+            <div key={i} className="flex-1 overflow-hidden">
+              <img src={src} alt="" className="w-full h-full object-cover" />
+            </div>
+          ))}
         </div>
       </section>
 
