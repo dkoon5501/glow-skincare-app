@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   ArrowRight,
   ArrowLeft,
   Sun,
@@ -16,7 +22,94 @@ import {
   ChevronUp,
   UtensilsCrossed,
   ExternalLink,
+  ClipboardList,
+  Sparkles,
+  ShieldCheck,
 } from "lucide-react";
+
+// ── Vita landing data ──
+
+const VITA_HOW_IT_WORKS = [
+  {
+    icon: ClipboardList,
+    step: "01",
+    title: "Health Profile",
+    description: "Answer 7 questions about your age, diet, health goals, lifestyle, and any conditions — so we understand your specific needs.",
+  },
+  {
+    icon: Sparkles,
+    step: "02",
+    title: "Smart Matching",
+    description: "Our algorithm cross-references your profile against evidence-based supplement data to surface what your body actually needs.",
+  },
+  {
+    icon: Sun,
+    step: "03",
+    title: "Your Routine",
+    description: "Morning, with food, and evening — each supplement scheduled when your body best absorbs it, plus pharmacist interaction warnings.",
+  },
+];
+
+const VITA_METHODOLOGY = [
+  {
+    title: "Health Profiling",
+    description: "We assess your profile across diet type, health goals, activity level, age, and existing conditions. Each dimension affects which supplements are relevant — a vegan athlete has fundamentally different needs than a sedentary omnivore.",
+  },
+  {
+    title: "Evidence-Based Matching",
+    description: "Every supplement in our database is selected based on peer-reviewed clinical evidence and pharmacist review. We don't include supplements with weak or conflicting evidence — only those with consistent, reproducible support.",
+  },
+  {
+    title: "Absorption Timing",
+    description: "When you take a supplement matters as much as which one you take. Fat-soluble vitamins (A, D, E, K) are scheduled with meals. Magnesium is placed in the evening. Iron is kept separate from calcium. We build the schedule around absorption science, not convenience.",
+  },
+  {
+    title: "Interaction Screening",
+    description: "Our pharmacist-reviewed database flags known supplement-supplement and supplement-medication interactions. If your profile includes medications or conditions that warrant caution, we surface those warnings directly in your routine.",
+  },
+];
+
+const VITA_DIFFERENTIATORS = [
+  {
+    title: "Pharmacist-Reviewed",
+    description: "Every recommendation in our database has been reviewed against clinical pharmacology literature — not assembled by an algorithm alone.",
+  },
+  {
+    title: "Timed for Absorption",
+    description: "Morning, with food, evening — we schedule each supplement based on how your body actually absorbs it, not just what's convenient.",
+  },
+  {
+    title: "Provider Pricing",
+    description: "Access practitioner-grade supplements through Fullscript and Pure Encapsulations at provider pricing — not available retail.",
+  },
+  {
+    title: "No Upsell",
+    description: "We recommend what your profile needs. We don't inflate routines to increase cart size or push products based on margin.",
+  },
+];
+
+const VITA_FAQS = [
+  {
+    q: "Is Vita really free?",
+    a: "Yes. The quiz and recommendations are always free. We earn a small commission if you purchase through Amazon links, and we offer access to Fullscript and Pure Encapsulations provider pricing at no markup.",
+  },
+  {
+    q: "How are supplements selected?",
+    a: "Every supplement in our database is selected based on peer-reviewed evidence and pharmacist review. We only include supplements with consistent clinical support for the health goals they address.",
+  },
+  {
+    q: "What is provider pricing?",
+    a: "Fullscript and Pure Encapsulations are professional-grade supplement platforms typically available only through licensed practitioners. By registering under our practitioner account, you access the same discounted pricing — without a prescription.",
+  },
+  {
+    q: "Can I take these supplements with my medications?",
+    a: "Vita flags known supplement-medication interactions based on pharmacist review. However, these recommendations are informational only. Always consult your physician or pharmacist before starting any new supplement, especially if you take prescription medications.",
+  },
+  {
+    q: "Do I need an account?",
+    a: "No. You can complete the quiz and get your full routine without signing in. Creating a free account lets you save your routine for future reference.",
+  },
+];
 
 // ── Provider Links ──
 const FULLSCRIPT_URL = "https://us.fullscript.com/welcome/vita1776393547";
@@ -59,26 +152,116 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
           2 minutes&nbsp;&bull;&nbsp;No account required&nbsp;&bull;&nbsp;100% free
         </p>
 
-        {/* How it works */}
-        <div className="mt-16 w-full">
-          <h2 className="text-lg font-bold text-foreground mb-6">How It Works</h2>
-          <div className="grid sm:grid-cols-3 gap-4 text-left">
-            {[
-              { num: "01", title: "Health Profile", desc: "Age, diet, goals, lifestyle, and any conditions — so we understand your needs." },
-              { num: "02", title: "Smart Matching", desc: "Our algorithm matches you with evidence-based supplements for your specific profile." },
-              { num: "03", title: "Your Routine", desc: "Morning, evening, and with-food timing — plus pharmacist warnings about interactions." },
-            ].map((step) => (
-              <Card key={step.num} className="p-4">
-                <span className="text-primary font-bold text-sm">{step.num}</span>
-                <h3 className="font-semibold text-sm text-foreground mt-1">{step.title}</h3>
-                <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{step.desc}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
         </div>
       </section>
 
+      {/* ─── HOW IT WORKS ────────────────────────────────────── */}
+      <section className="bg-accent/30 border-y border-border/60 px-6 py-16 md:py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-xl font-bold text-foreground tracking-tight">How It Works</h2>
+            <p className="mt-2 text-sm text-muted-foreground">From quiz to routine in under 2 minutes.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {VITA_HOW_IT_WORKS.map(({ icon: Icon, step, title, description }) => (
+              <div key={step} className="flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-xs font-semibold text-muted-foreground tracking-widest">STEP {step}</span>
+                </div>
+                <h3 className="text-base font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── HOW OUR ALGORITHM WORKS ───────────────────────────── */}
+      <section className="px-6 py-16 md:py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-xl font-bold text-foreground tracking-tight mb-3">How Our Algorithm Works</h2>
+            <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
+              We don't just list popular supplements. Vita uses a structured, evidence-mapped approach to match you with the right routine for your body.
+            </p>
+          </div>
+          <div className="space-y-6">
+            {VITA_METHODOLOGY.map((step, i) => (
+              <div key={step.title} className="flex gap-4 items-start">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-xs font-bold text-primary">{i + 1}</span>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-1">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WHAT MAKES VITA DIFFERENT ───────────────────────────── */}
+      <section className="bg-accent/30 border-y border-border/60 px-6 py-16 md:py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-xl font-bold text-foreground tracking-tight">What Makes Vita Different</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {VITA_DIFFERENTIATORS.map(({ title, description }) => (
+              <div key={title} className="p-6 rounded-xl bg-card border border-card-border">
+                <h3 className="text-sm font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FAQ ─────────────────────────────────────────────── */}
+      <section className="px-6 py-16 md:py-20">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-xl font-bold text-foreground tracking-tight">Frequently Asked Questions</h2>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {VITA_FAQS.map(({ q, a }, i) => (
+              <AccordionItem key={q} value={`faq-${i}`}>
+                <AccordionTrigger className="text-sm font-medium text-left hover:no-underline hover:text-primary transition-colors py-4">
+                  {q}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
+                  {a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA ──────────────────────────────────────────── */}
+      <section className="px-6 py-16 md:py-20 bg-primary/5 border-t border-primary/10">
+        <div className="max-w-lg mx-auto text-center">
+          <h2 className="text-xl font-bold text-foreground tracking-tight mb-4">Ready to build your vitamin routine?</h2>
+          <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
+            Pharmacist-reviewed, evidence-based, and personalized to your health profile — in under 2 minutes, completely free.
+          </p>
+          <Button
+            size="lg"
+            onClick={onStart}
+            className="gap-2 px-8 h-12 rounded-full text-sm font-semibold shadow-sm"
+          >
+            Build My Vitamin Routine
+            <ArrowRight className="w-4 h-4" />
+          </Button>
+          <p className="mt-4 text-xs text-muted-foreground">
+            2 minutes&nbsp;•&nbsp;No account required&nbsp;•&nbsp;100% free
+          </p>
+        </div>
+      </section>
 
     </div>
   );
