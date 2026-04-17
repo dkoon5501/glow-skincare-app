@@ -15,7 +15,12 @@ import {
   ChevronDown,
   ChevronUp,
   UtensilsCrossed,
+  ExternalLink,
 } from "lucide-react";
+
+// ── Provider Links ──
+const FULLSCRIPT_URL = "https://us.fullscript.com/welcome/vita1776393547";
+const PURE_ENCAPS_URL = "https://patientdirect.pureencapsulationspro.com/patients/sign_up?practice_code=668833";
 
 type AppState = "landing" | "quiz" | "results";
 
@@ -219,20 +224,29 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
 
       <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{reason}</p>
 
-      {/* Purchase link */}
-      {s.amazonUrl && (
-        <div className="mt-3">
+      {/* Purchase links */}
+      <div className="mt-3 flex flex-wrap gap-2">
+        <a
+          href={FULLSCRIPT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+        >
+          <ExternalLink className="w-3 h-3" />
+          Buy with Provider Discount
+        </a>
+        {s.amazonUrl && (
           <a
             href={s.amazonUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-1.5 text-xs font-medium border border-border bg-background text-foreground px-3 py-1.5 rounded-lg hover:bg-muted transition-colors"
           >
             <ShoppingCart className="w-3 h-3" />
             Buy on Amazon
           </a>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Expand for details */}
       <button
@@ -352,13 +366,38 @@ function VitaResults({ routine, onRetake }: { routine: VitaRoutine; onRetake: ()
           </div>
         )}
 
+        {/* Provider Discount Banner */}
+        <Card className="p-4 border-primary/20 bg-primary/5">
+          <h2 className="text-sm font-semibold text-foreground mb-1">Access Provider Pricing</h2>
+          <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+            Register under our practitioner account to purchase supplements at provider-discounted prices through Fullscript or Pure Encapsulations.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <a
+              href={FULLSCRIPT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+            >
+              <ExternalLink className="w-3 h-3" />
+              Register on Fullscript
+            </a>
+            <a
+              href={PURE_ENCAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium border border-primary/30 text-primary bg-background px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-colors"
+            >
+              <ExternalLink className="w-3 h-3" />
+              Register on Pure Encapsulations
+            </a>
+          </div>
+        </Card>
+
         {/* Disclaimer */}
         <Card className="p-4">
           <p className="text-xs text-muted-foreground leading-relaxed">
             <strong className="font-medium">Disclaimer.</strong> These recommendations are for informational purposes only and do not constitute medical advice. Always consult your physician or pharmacist before starting any new supplement regimen, especially if you take prescription medications or have existing health conditions.
-          </p>
-          <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-            <strong className="font-medium">Fullscript integration coming soon.</strong> We're connecting with Fullscript to offer practitioner-grade supplements with better pricing and quality assurance.
           </p>
         </Card>
 
