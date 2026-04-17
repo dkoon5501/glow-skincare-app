@@ -122,7 +122,7 @@ type AppState = "landing" | "quiz" | "results";
 function VitaLanding({ onStart }: { onStart: () => void }) {
   return (
     <div className="min-h-screen bg-background">
-      <section className="flex flex-col items-center justify-center px-4 py-16 text-center max-w-2xl mx-auto min-h-[70vh]">
+      <section className="flex flex-col items-center justify-center px-4 pt-16 pb-12 text-center max-w-2xl mx-auto">
         <div>
         <div className="mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 border border-primary/15 px-3.5 py-1.5 rounded-full">
@@ -156,9 +156,9 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
       </section>
 
       {/* ─── HOW IT WORKS ────────────────────────────────────── */}
-      <section className="bg-accent/30 border-y border-border/60 px-6 py-16 md:py-20">
+      <section className="bg-accent/30 border-y border-border/60 px-6 py-10 md:py-14">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-xl font-bold text-foreground tracking-tight">How It Works</h2>
             <p className="mt-2 text-sm text-muted-foreground">From quiz to routine in under 2 minutes.</p>
           </div>

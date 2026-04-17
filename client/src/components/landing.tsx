@@ -151,7 +151,7 @@ export function Landing({ onStart }: LandingProps) {
 
       {/* ─── 1. HERO ─────────────────────────────────────────────────── */}
       <section
-        className="flex flex-col items-center justify-center text-center px-6 pt-20 pb-24 md:pt-28 md:pb-32"
+        className="flex flex-col items-center justify-center text-center px-6 pt-16 pb-12 md:pt-20 md:pb-16"
         aria-labelledby="hero-headline"
       >
         <div>
@@ -207,7 +207,7 @@ export function Landing({ onStart }: LandingProps) {
 
       {/* ─── 2. HOW IT WORKS ─────────────────────────────────────────── */}
       <section
-        className="bg-accent/30 border-y border-border/60 px-6 py-16 md:py-20"
+        className="bg-accent/30 border-y border-border/60 px-6 py-10 md:py-14"
         aria-labelledby="how-it-works-heading"
       >
         <div className="max-w-4xl mx-auto">
