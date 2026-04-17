@@ -1,0 +1,1772 @@
+{
+  "vitamin_d": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "AAP recommendation: 10 mcg (400 IU)/day vitamin D supplements for breastfed infants until weaned to ≥1,000 mL/day fortified formula/milk.",
+      "population": [
+        "infants",
+        "breastfed_infants"
+      ],
+      "sourceTitle": "Vitamin D — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-17"
+    },
+    {
+      "expertName": "Michael F. Holick",
+      "expertCredentials": "MD, PhD",
+      "affiliation": "Boston University School of Medicine",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "The major cause of the vitamin D deficiency epidemic is the lack of appreciation that sun exposure has been, and continues to be, the major source of the vitamin worldwide.",
+      "population": [
+        "general_adults",
+        "limited_sun_exposure"
+      ],
+      "sourceTitle": "Michael Holick — BU School of Medicine Faculty Profile",
+      "sourceUrl": "https://www.bumc.bu.edu/medicine/profile/michael-holick/",
+      "publisher": "Boston University School of Medicine",
+      "publishDate": "2025-01-08"
+    },
+    {
+      "expertName": "American Academy of Pediatrics",
+      "expertCredentials": "",
+      "affiliation": "American Academy of Pediatrics",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "The American Academy of Pediatrics now recommends that all babies receive 400 IU of vitamin D per day starting soon after birth.",
+      "population": [
+        "infants",
+        "breastfed_infants"
+      ],
+      "sourceTitle": "Vitamin D, Iron, and Zinc Supplementation — AAP Policy",
+      "sourceUrl": "https://publications.aap.org/aapbooks/monograph/794/chapter/16750729/Vitamin-D-Iron-and-Zinc-Supplementation-Baby-Early",
+      "publisher": "American Academy of Pediatrics",
+      "publishDate": "2020-06-01"
+    },
+    {
+      "expertName": "Harvard Health Publishing",
+      "expertCredentials": "",
+      "affiliation": "Harvard Medical School",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "So supplements do make good sense for most adults. The form known as vitamin D3 is usually recommended, but D2 is also effective; for best results, take your vitamin D along with a meal that has some fat.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Supplements: A Scorecard",
+      "sourceUrl": "https://www.health.harvard.edu/healthy-aging-and-longevity/supplements-a-scorecard",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2021-09-22"
+    },
+    {
+      "expertName": "ACOG Committee on Obstetric Practice",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "When vitamin D deficiency is identified during pregnancy, most experts agree that 1,000–2,000 international units per day of vitamin D is safe.",
+      "population": [
+        "pregnancy"
+      ],
+      "sourceTitle": "Vitamin D: Screening and Supplementation During Pregnancy — ACOG Committee Opinion",
+      "sourceUrl": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2011/07/vitamin-d-screening-and-supplementation-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": "2011-07-01"
+    },
+    {
+      "expertName": "Endocrine Society",
+      "expertCredentials": "",
+      "affiliation": "Endocrine Society",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "In the general population ages 75 years and older, we suggest empiric vitamin D supplementation because of the potential to lower the risk of mortality. (2 | ⊕⊕⊕O)",
+      "population": [
+        "older_adults_75+"
+      ],
+      "sourceTitle": "Vitamin D for the Prevention of Disease — Endocrine Society 2024 Clinical Practice Guideline",
+      "sourceUrl": "https://www.endocrine.org/clinical-practice-guidelines/vitamin-d-for-prevention-of-disease",
+      "publisher": "Endocrine Society",
+      "publishDate": "2024-06-03"
+    },
+    {
+      "expertName": "Mayo Clinic",
+      "expertCredentials": "",
+      "affiliation": "Mayo Clinic",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "1,000 to 2,000 IU per day of vitamin D from a supplement is generally safe, should help people achieve an adequate blood level of vitamin D, and may have additional health benefits.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Vitamin D — Mayo Clinic Patient Guide",
+      "sourceUrl": "https://www.mayoclinic.org/drugs-supplements-vitamin-d/art-20363792",
+      "publisher": "Mayo Clinic",
+      "publishDate": "2025-03-21"
+    },
+    {
+      "expertName": "JoAnn E. Manson",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Brigham and Women's Hospital",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "neutral",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Vitamin D and omega-3 fatty acids look promising in observational studies but there's a great need for large-scale randomized trials that assess cause and effect relationships.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Vitamin D and Omega-3 Trial (VITAL) — Brigham and Women's Hospital",
+      "sourceUrl": "https://www.brighamandwomens.org/medicine/endocrinology-diabetes-and-hypertension/advances-newsletters/vitamin-d-and-omega-3-vital-clinical-trial",
+      "publisher": "Brigham and Women's Hospital",
+      "publishDate": ""
+    },
+    {
+      "expertName": "JoAnn E. Manson",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Brigham and Women's Hospital",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "neutral",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "If you're already taking these supplements, we don't find clear reasons for stopping, but we caution against mega-dosing. The safety that we demonstrated for these doses — 2,000 IUs vitamin D, one gram a day of omega-3s — may not apply to much higher doses.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "VITAL Researcher JoAnn Manson Outlines Findings on Vitamin D and Omega-3",
+      "sourceUrl": "https://news.harvard.edu/gazette/story/2018/11/vital-researcher-joann-manson-outlines-findings-on-vitamin-d-omega-3/",
+      "publisher": "Harvard Gazette",
+      "publishDate": "2018-11-27"
+    },
+    {
+      "expertName": "Endocrine Society",
+      "expertCredentials": "",
+      "affiliation": "Endocrine Society",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "We suggest against vitamin D supplements at doses beyond the reference dietary intakes recommended by the IOM in healthy adults under 75 years old.",
+      "population": [
+        "general_adults",
+        "older_adults_75+",
+        "pre_diabetics",
+        "pregnancy",
+        "children"
+      ],
+      "sourceTitle": "Endocrine Society Recommends Healthy Adults Under 75 Not Take Vitamin D Beyond IOM RDA",
+      "sourceUrl": "https://www.endocrine.org/news-and-advocacy/news-room/2024/endocrine-society-recommends-healthy-adults-take-the-recommended-daily-allowance-of-vitamin-d",
+      "publisher": "Endocrine Society",
+      "publishDate": "2024-06-03"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral_to_skeptical",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "The USPSTF concludes that the current evidence is insufficient to assess the balance of benefits and harms of screening for vitamin D deficiency in asymptomatic adults.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Vitamin D, Calcium, or Combined Supplementation for Primary Prevention of Fractures — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vitamin-d-calcium-or-combined-supplementation-for-the-primary-prevention-of-fractures-in-adults-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2018-04-17"
+    },
+    {
+      "expertName": "GrassrootsHealth",
+      "expertCredentials": "",
+      "affiliation": "GrassrootsHealth",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "The body needs at least 4000 IU/day in order to maintain a healthy concentration of 25(OH)D in the blood...most adults should take supplements providing 1000-3000 IU daily.",
+      "population": [
+        "general_adults",
+        "limited_sun_exposure"
+      ],
+      "sourceTitle": "The World's Leading Vitamin D Experts",
+      "sourceUrl": "https://www.grassrootshealth.net/worlds-leading-vitamin-d-experts/",
+      "publisher": "GrassrootsHealth",
+      "publishDate": "2025-01-09"
+    },
+    {
+      "expertName": "GrassrootsHealth",
+      "expertCredentials": "",
+      "affiliation": "GrassrootsHealth",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Experts recommend a level of at least 40-60 ng/ml (100-150 nmol/L), however, some research indicates levels over 60 ng/ml may be beneficial for certain conditions such as autoimmune diseases and cancer.",
+      "population": [
+        "general_adults",
+        "limited_sun_exposure"
+      ],
+      "sourceTitle": "What to Do About Your Vitamin D Level",
+      "sourceUrl": "https://www.grassrootshealth.net/vitamin-d-level/",
+      "publisher": "GrassrootsHealth",
+      "publishDate": "2013-07-18"
+    },
+    {
+      "expertName": "Mark Hyman",
+      "expertCredentials": "MD",
+      "affiliation": "Cleveland Clinic Center for Functional Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "clinician",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Since up to 95% of Americans don't get enough vitamin D, taking a supplement is important. Vitamin D3 is crucial for helping your body use insulin properly, which helps regulate blood sugar levels.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "What Supplements Should I Take? Use Dr. Hyman's Handy Guide",
+      "sourceUrl": "https://drhyman.com/blogs/content/what-supplements-should-i-take-use-dr-hyman-s-handy-guide",
+      "publisher": "drhyman.com",
+      "publishDate": "2024-09-13"
+    },
+    {
+      "expertName": "Rhonda Patrick",
+      "expertCredentials": "PhD",
+      "affiliation": "FoundMyFitness",
+      "evidenceLevel": "medium",
+      "expertType": "public_educator",
+      "stanceLabel": "supportive",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "I personally take 5,000 IUs a day as well. And my levels really hover around 50 nanograms per mil.",
+      "population": [
+        "general_adults",
+        "limited_sun_exposure"
+      ],
+      "sourceTitle": "Dr. Rhonda Patrick: Micronutrients for Health and Longevity",
+      "sourceUrl": "https://www.hubermanlab.com/episode/dr-rhonda-patrick-micronutrients-for-health-and-longevity",
+      "publisher": "Huberman Lab",
+      "publishDate": "2022-05-02"
+    },
+    {
+      "expertName": "Examine.com",
+      "expertCredentials": "",
+      "affiliation": "Examine.com",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Strong evidence for vitamin D supplementation in deficient individuals for bone health and immune function. Moderate evidence for cancer mortality reduction and diabetes prevention.",
+      "population": [
+        "general_adults",
+        "limited_sun_exposure",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Vitamin D Supplement — Examine.com Research Summary",
+      "sourceUrl": "https://examine.com/supplements/vitamin-d/",
+      "publisher": "Examine.com",
+      "publishDate": ""
+    }
+  ],
+  "vitamin_b12": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Vitamin B12 is found only in animal-based foods, so strict vegetarians may need supplements.",
+      "population": [
+        "vegans",
+        "vegetarians"
+      ],
+      "sourceTitle": "Vitamin B12 — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-14"
+    },
+    {
+      "expertName": "CDC National Center on Birth Defects and Developmental Disabilities",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "High folic acid intake can correct the anemia caused by vitamin B12 deficiency, but it cannot prevent the accompanying neurological damage. This makes it important to test for B12 deficiency before increasing folic acid intake.",
+      "population": [
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    },
+    {
+      "expertName": "Pharmacy Times",
+      "expertCredentials": "",
+      "affiliation": "Pharmacy Times",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Vegans/vegetarians: Vitamin B12 supplementation is commonly needed. Older adults or those with malabsorption conditions: Targeted supplementation based on clinical assessment may be required.",
+      "population": [
+        "vegans",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "How to Educate Patients About Safety, Regulation, and Quality of Vitamins and Supplements",
+      "sourceUrl": "https://www.pharmacytimes.com/view/how-to-educate-patients-about-safety-regulation-and-quality-of-vitamins-supplements",
+      "publisher": "Pharmacy Times",
+      "publishDate": "2025-11-25"
+    }
+  ],
+  "folate": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Women of childbearing age should obtain 400 mcg/day folic acid from dietary supplements and/or fortified foods in addition to the folate provided by a varied diet.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folate — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Persons who plan to or could become pregnant: Take a daily supplement containing 0.4 to 0.8 mg (400 to 800 μg) of folic acid. Grade: A.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folic Acid Supplementation to Prevent Neural Tube Defects — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2023-08-01"
+    },
+    {
+      "expertName": "American College of Obstetricians and Gynecologists",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "When you are pregnant you need 600 micrograms of folic acid each day. Because it's hard to get this much folic acid from food alone, you should take a daily prenatal vitamin with at least 400 micrograms starting at least 1 month before pregnancy if possible.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Healthy Eating During Pregnancy — ACOG FAQ",
+      "sourceUrl": "https://www.acog.org/womens-health/faqs/healthy-eating-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": ""
+    },
+    {
+      "expertName": "CDC Division of Nutrition, Physical Activity, and Obesity",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Folic acid is the only form of folate (vitamin B9) shown to help prevent neural tube defects. All women capable of becoming pregnant should get 400 micrograms of folic acid daily.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    },
+    {
+      "expertName": "CDC National Center on Birth Defects and Developmental Disabilities",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Getting 400 mcg of folic acid each day helps prevent some serious birth defects called neural tube defects (NTDs).",
+      "population": [
+        "general_adults",
+        "women_childbearing_age"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    }
+  ],
+  "iron": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "A Cochrane Review showed that daily supplementation with 9 to 90 mg iron reduced the risk of anemia in pregnant women at term by 70% and of iron deficiency at term by 57%.",
+      "population": [
+        "pregnancy"
+      ],
+      "sourceTitle": "Iron — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "American Academy of Pediatrics",
+      "expertCredentials": "",
+      "affiliation": "American Academy of Pediatrics",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "AAP recommends 1 mg/kg daily iron supplementation for exclusively or primarily breastfed full-term infants from age 4 months until the infants begin eating iron-containing complementary foods.",
+      "population": [
+        "breastfed_infants",
+        "infants"
+      ],
+      "sourceTitle": "Vitamin D, Iron, and Zinc Supplementation — AAP Policy",
+      "sourceUrl": "https://publications.aap.org/aapbooks/monograph/794/chapter/16750729/Vitamin-D-Iron-and-Zinc-Supplementation-Baby-Early",
+      "publisher": "American Academy of Pediatrics",
+      "publishDate": "2020-06-01"
+    },
+    {
+      "expertName": "American College of Obstetricians and Gynecologists",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Iron is used by your body to make the extra blood that you and your fetus need during pregnancy. When you are pregnant, you need 27 mg per day. You can get this amount in most prenatal vitamins.",
+      "population": [
+        "pregnancy"
+      ],
+      "sourceTitle": "Healthy Eating During Pregnancy — ACOG FAQ",
+      "sourceUrl": "https://www.acog.org/womens-health/faqs/healthy-eating-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": ""
+    }
+  ],
+  "magnesium": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "The authors of a review on migraine prophylaxis suggested that taking 300 mg magnesium twice a day, either alone or in combination with medication, can prevent migraines.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Magnesium — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-17"
+    },
+    {
+      "expertName": "Mark Hyman",
+      "expertCredentials": "MD",
+      "affiliation": "Cleveland Clinic Center for Functional Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "clinician",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Magnesium powers over 600 enzymatic reactions in the body. So, if you're deficient, these reactions don't work as effectively. For everyday magnesium support and optimizing your blood levels, I recommend magnesium glycinate.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "What Supplements Should I Take? Use Dr. Hyman's Handy Guide",
+      "sourceUrl": "https://drhyman.com/blogs/content/what-supplements-should-i-take-use-dr-hyman-s-handy-guide",
+      "publisher": "drhyman.com",
+      "publishDate": "2024-09-13"
+    },
+    {
+      "expertName": "Andrew Huberman",
+      "expertCredentials": "PhD",
+      "affiliation": "Stanford School of Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "public_educator",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "You might consider taking (30-60 min before bed): 145mg Magnesium Threonate or 200mg Magnesium Bisglycinate.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Toolkit for Sleep — Huberman Lab Newsletter",
+      "sourceUrl": "https://www.hubermanlab.com/newsletter/toolkit-for-sleep",
+      "publisher": "Huberman Lab",
+      "publishDate": "2021-09-20"
+    },
+    {
+      "expertName": "Rhonda Patrick",
+      "expertCredentials": "PhD",
+      "affiliation": "FoundMyFitness",
+      "evidenceLevel": "medium",
+      "expertType": "public_educator",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "I personally like to take around 130 or 135 milligrams [magnesium]. Forms mentioned: magnesium threonate, Citrate, Malate, Bisglycinate.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Dr. Rhonda Patrick: Micronutrients for Health and Longevity",
+      "sourceUrl": "https://www.hubermanlab.com/episode/dr-rhonda-patrick-micronutrients-for-health-and-longevity",
+      "publisher": "Huberman Lab",
+      "publishDate": "2022-05-02"
+    },
+    {
+      "expertName": "Examine.com",
+      "expertCredentials": "",
+      "affiliation": "Examine.com",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Magnesium supplementation has strong evidence for blood pressure reduction, migraine prophylaxis, and improving blood glucose control. Moderate evidence for improving sleep quality (especially in deficient individuals).",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Magnesium Supplement — Examine.com Research Summary",
+      "sourceUrl": "https://examine.com/supplements/magnesium/",
+      "publisher": "Examine.com",
+      "publishDate": ""
+    },
+    {
+      "expertName": "Rhonda Patrick",
+      "expertCredentials": "PhD",
+      "affiliation": "FoundMyFitness",
+      "evidenceLevel": "medium",
+      "expertType": "public_educator",
+      "stanceLabel": "supportive",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "In this clip, Dr. Rhonda Patrick shares her supplement routine including her vitamin D dose, magnesium glycinate for sleep, and the importance of testing 25(OH)D levels regularly.",
+      "population": [
+        "general_adults",
+        "athletes"
+      ],
+      "sourceTitle": "Rhonda Patrick's Supplement Routine — FoundMyFitness",
+      "sourceUrl": "https://www.foundmyfitness.com/episodes/rhonda-patrick-s-exact-supplement-routine-doses-timing-brands-revealed",
+      "publisher": "FoundMyFitness",
+      "publishDate": "2025-10-01"
+    }
+  ],
+  "calcium": [
+    {
+      "expertName": "World Health Organization",
+      "expertCredentials": "",
+      "affiliation": "United Nations",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "In populations with low dietary calcium intake, daily calcium supplementation (1.5 g–2.0 g oral elemental calcium) is recommended for pregnant women to reduce the risk of pre-eclampsia.",
+      "population": [
+        "pregnancy",
+        "pregnancy_low_calcium_intake"
+      ],
+      "sourceTitle": "Calcium Supplementation During Pregnancy for Prevention of Pre-Eclampsia — WHO Recommendation",
+      "sourceUrl": "https://www.who.int/tools/elena/interventions/calcium-pregnancy",
+      "publisher": "World Health Organization",
+      "publishDate": "2023-08-09"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "skeptical",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "The USPSTF recommends against daily supplementation with 400 IU or less of vitamin D and 1000 mg or less of calcium for the primary prevention of fractures in community-dwelling, postmenopausal women.",
+      "population": [
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Vitamin D, Calcium, or Combined Supplementation for Primary Prevention of Fractures — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vitamin-d-calcium-or-combined-supplementation-for-the-primary-prevention-of-fractures-in-adults-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2018-04-17"
+    },
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral_to_skeptical",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "A meta-analysis of 14 RCTs...in 28,935 healthy postmenopausal women found that calcium supplements providing 500 to 2,000 mg/day calcium for 1 to 7 years increased CVD risk by 15% and coronary heart disease risk by 16%.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Calcium — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-15"
+    }
+  ],
+  "zinc": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "weak",
+      "keyQuote": "2024 Cochrane Review concluded that zinc may reduce symptom duration by about 2 days in people who already have a cold, but zinc appears to make little to no difference in preventing colds.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Zinc — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-14"
+    }
+  ],
+  "vitamin_c": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "People who smoke require 35 mg more vitamin C per day than those who do not smoke.",
+      "population": [
+        "smokers"
+      ],
+      "sourceTitle": "Vitamin C — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminC-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    }
+  ],
+  "omega_3": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Fish oil and other LC omega-3 supplements lower triglyceride levels and might reduce the risk of some cardiovascular endpoints, especially among people with low dietary omega-3 intakes. Evidence of a protective effect for omega-3 supplementation is stronger for people with existing coronary heart disease than for healthy individuals.",
+      "population": [
+        "existing_chd",
+        "general_adults"
+      ],
+      "sourceTitle": "Omega-3 Fatty Acids — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "American Heart Association",
+      "expertCredentials": "",
+      "affiliation": "American Heart Association / Circulation",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "We continue to suggest that, in consultation with a physician, omega-3 PUFA supplementation is reasonable for secondary prevention of CHD in patients with a recent CHD event such as a recent MI.",
+      "population": [
+        "existing_chd"
+      ],
+      "sourceTitle": "Omega-3 Polyunsaturated Fatty Acid Supplementation and Cardiovascular Disease — AHA Scientific Advisory",
+      "sourceUrl": "https://www.ahajournals.org/doi/10.1161/cir.0000000000000482",
+      "publisher": "American Heart Association / Circulation",
+      "publishDate": "2017-03-13"
+    },
+    {
+      "expertName": "JoAnn E. Manson",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Brigham and Women's Hospital",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Those who had low fish intake...had a statistically significant reduction in the primary endpoint, compared to placebo. The lower half of the distribution had a 19 percent reduction with treatment and, for heart attack alone, a 40 percent reduction.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Vitamin D and Omega-3 Trial (VITAL) — Brigham and Women's Hospital",
+      "sourceUrl": "https://www.brighamandwomens.org/medicine/endocrinology-diabetes-and-hypertension/advances-newsletters/vitamin-d-and-omega-3-vital-clinical-trial",
+      "publisher": "Brigham and Women's Hospital",
+      "publishDate": ""
+    },
+    {
+      "expertName": "JoAnn E. Manson",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Brigham and Women's Hospital",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Those who had low fish consumption in VITAL were more likely to benefit from marine omega-3s adds to the biological plausibility.",
+      "population": [
+        "general_adults",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "VITAL Researcher JoAnn Manson Outlines Findings on Vitamin D and Omega-3",
+      "sourceUrl": "https://news.harvard.edu/gazette/story/2018/11/vital-researcher-joann-manson-outlines-findings-on-vitamin-d-omega-3/",
+      "publisher": "Harvard Gazette",
+      "publishDate": "2018-11-27"
+    },
+    {
+      "expertName": "JoAnn E. Manson",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Brigham and Women's Hospital",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "This meta-analysis provides the most up-to-date evidence regarding the effects of omega-3 supplementation on risk of multiple CVD outcomes. We found significant protective effects of daily omega-3 supplementation against most CVD outcome risks, and the associations appeared to be in a dose-response manner.",
+      "population": [
+        "general_adults",
+        "existing_chd"
+      ],
+      "sourceTitle": "Major Study Finds Omega-3 Supplements May Reduce Risk of Heart Attack — Harvard Gazette",
+      "sourceUrl": "https://news.harvard.edu/gazette/story/2019/09/major-study-finds-omega-3-supplements-may-reduce-risk-of-heart-attack/",
+      "publisher": "Harvard Gazette",
+      "publishDate": "2019-09-30"
+    },
+    {
+      "expertName": "American Heart Association",
+      "expertCredentials": "",
+      "affiliation": "American Heart Association / Circulation",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Omega-3 fatty acids lower triglyceride levels and increase high-density lipoprotein (ie, good cholesterol) levels. They may also decrease platelet aggregation.",
+      "population": [
+        "hypertriglyceridemia",
+        "existing_chd"
+      ],
+      "sourceTitle": "Fish Oil and Cardiovascular Disease — AHA Scientific Advisory Update",
+      "sourceUrl": "https://www.ahajournals.org/doi/10.1161/circulationaha.114.015176",
+      "publisher": "American Heart Association / Circulation",
+      "publishDate": "2015-12-01"
+    },
+    {
+      "expertName": "American College of Obstetricians and Gynecologists",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Omega-3 fatty acids are important for your baby's brain and eye development. Good sources include fatty fish, walnuts, and fortified foods; a prenatal supplement with DHA is reasonable if dietary intake is low.",
+      "population": [
+        "pregnancy"
+      ],
+      "sourceTitle": "Healthy Eating During Pregnancy — ACOG FAQ",
+      "sourceUrl": "https://www.acog.org/womens-health/faqs/healthy-eating-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": ""
+    },
+    {
+      "expertName": "Cleveland Clinic",
+      "expertCredentials": "",
+      "affiliation": "Cleveland Clinic",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral_to_skeptical",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Eating foods high in omega-3s is a good move for most people. But don't expect them to treat all your health conditions. Work with a doctor to manage health problems and talk to a nutritionist about the best diet for you.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Why Omega-3s Are Good for You — Cleveland Clinic Health Essentials",
+      "sourceUrl": "https://health.clevelandclinic.org/why-omega-3s-are-good-for-you",
+      "publisher": "Cleveland Clinic",
+      "publishDate": "2020-12-22"
+    },
+    {
+      "expertName": "Mark Hyman",
+      "expertCredentials": "MD",
+      "affiliation": "Cleveland Clinic Center for Functional Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "clinician",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Fish oil contains omega-3 fatty acids, which can help reduce inflammation, protect your heart, and support brain health (and even relieve depression). Omega-3s also help your body use insulin more effectively.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "What Supplements Should I Take? Use Dr. Hyman's Handy Guide",
+      "sourceUrl": "https://drhyman.com/blogs/content/what-supplements-should-i-take-use-dr-hyman-s-handy-guide",
+      "publisher": "drhyman.com",
+      "publishDate": "2024-09-13"
+    },
+    {
+      "expertName": "Andrew Huberman",
+      "expertCredentials": "PhD",
+      "affiliation": "Stanford School of Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "public_educator",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "The dosage that physicians prescribed for high triglycerides, for example, is four grams a day. I take four grams a day. I take two grams in the morning, and I take two grams in the evening.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Dr. Rhonda Patrick: Micronutrients for Health and Longevity",
+      "sourceUrl": "https://www.hubermanlab.com/episode/dr-rhonda-patrick-micronutrients-for-health-and-longevity",
+      "publisher": "Huberman Lab",
+      "publishDate": "2022-05-02"
+    },
+    {
+      "expertName": "Rhonda Patrick",
+      "expertCredentials": "PhD",
+      "affiliation": "FoundMyFitness",
+      "evidenceLevel": "medium",
+      "expertType": "public_educator",
+      "stanceLabel": "supportive",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "In this clip, Dr. Rhonda Patrick shares her supplement routine...Why she lowered her omega-3 dose...Her preferred supplement brands and dosing.",
+      "population": [
+        "general_adults",
+        "athletes"
+      ],
+      "sourceTitle": "Rhonda Patrick's Supplement Routine — FoundMyFitness",
+      "sourceUrl": "https://www.foundmyfitness.com/episodes/rhonda-patrick-s-exact-supplement-routine-doses-timing-brands-revealed",
+      "publisher": "FoundMyFitness",
+      "publishDate": "2025-10-01"
+    },
+    {
+      "expertName": "Anna Taylor",
+      "expertCredentials": "MS, RDN, LD",
+      "affiliation": "Cleveland Clinic",
+      "evidenceLevel": "medium",
+      "expertType": "rd_nutritionist",
+      "stanceLabel": "neutral",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "People who eat omega-3s in their diet may have less plaque buildup in their arteries, lowering the risk of heart attack and stroke. Omega-3s lower triglyceride levels and may slightly raise 'good' HDL cholesterol levels.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Why Omega-3s Are Good for You — Cleveland Clinic Health Essentials",
+      "sourceUrl": "https://health.clevelandclinic.org/why-omega-3s-are-good-for-you",
+      "publisher": "Cleveland Clinic",
+      "publishDate": "2020-12-22"
+    }
+  ],
+  "vitamin_e": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "warns_against",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "Results from an additional 1.5 years of follow-up from this trial [SELECT]...showed that the men who had taken the vitamin E had a 17% increased risk of prostate cancer compared to men only taking placebos, a statistically significant difference.",
+      "population": [
+        "general_adults",
+        "smokers"
+      ],
+      "sourceTitle": "Vitamin E — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-15"
+    },
+    {
+      "expertName": "Harvard Health Publishing",
+      "expertCredentials": "",
+      "affiliation": "Harvard Medical School",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "warns_against",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "Do not take antioxidant supplements. One exception: people with moderate or advanced age-related macular degeneration (AMD) benefit from special antioxidant supplements that also contain zinc.",
+      "population": [
+        "general_adults",
+        "smokers"
+      ],
+      "sourceTitle": "Supplements: A Scorecard",
+      "sourceUrl": "https://www.health.harvard.edu/healthy-aging-and-longevity/supplements-a-scorecard",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2021-09-22"
+    }
+  ],
+  "vitamin_a": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "warns_against",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "The Carotene and Retinol Efficacy Trial (CARET)...was ended prematurely after a mean of 4 years, partly because the supplements were unexpectedly found to have increased lung cancer risk by 28% and death from lung cancer by 46%.",
+      "population": [
+        "smokers"
+      ],
+      "sourceTitle": "Vitamin A and Carotenoids — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "warns_against",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "The USPSTF recommends against the use of beta carotene or vitamin E supplements for the prevention of cardiovascular disease or cancer. Grade: D.",
+      "population": [
+        "general_adults",
+        "smokers"
+      ],
+      "sourceTitle": "Vitamin, Mineral, and Multivitamin Supplementation to Prevent CVD and Cancer — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vitamin-supplementation-to-prevent-cvd-and-cancer-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2022-06-21"
+    }
+  ],
+  "probiotics": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Meta-analyses indicate that the use of any of a few species and strains of probiotics might reduce the risk of AAD by 51%.",
+      "population": [
+        "general_adults",
+        "children"
+      ],
+      "sourceTitle": "Probiotics — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Probiotics-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-15"
+    },
+    {
+      "expertName": "Mark Hyman",
+      "expertCredentials": "MD",
+      "affiliation": "Cleveland Clinic Center for Functional Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "clinician",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "weak",
+      "keyQuote": "A healthy gut microbiome...helps keep your whole body in balance. Taking a daily prebiotic and probiotic can support regular digestion, reduce occasional bloating, and help your body absorb nutrients more effectively.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "What Supplements Should I Take? Use Dr. Hyman's Handy Guide",
+      "sourceUrl": "https://drhyman.com/blogs/content/what-supplements-should-i-take-use-dr-hyman-s-handy-guide",
+      "publisher": "drhyman.com",
+      "publishDate": "2024-09-13"
+    }
+  ],
+  "selenium": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "warns_against",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Further investigation in a case-cohort...found an increased risk of high-grade prostate cancer in men with higher baseline selenium status (≥60th percentile of toenail selenium) and recommended that men over age 55 avoid selenium supplementation at doses that exceed recommended dietary intakes.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Selenium — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-17"
+    },
+    {
+      "expertName": "Harvard Health Publishing",
+      "expertCredentials": "",
+      "affiliation": "Harvard Medical School",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "warns_against",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Selenium also appears to increase the risk of diabetes, and earlier studies dashed preliminary hopes that the supplement might protect against heart attacks. Selenium is not for you.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Supplements: A Scorecard",
+      "sourceUrl": "https://www.health.harvard.edu/healthy-aging-and-longevity/supplements-a-scorecard",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2021-09-22"
+    }
+  ],
+  "iodine": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "The American Thyroid Association recommends that women who are planning a pregnancy, currently pregnant, or lactating should supplement their diet with 150 mcg/day iodine in the form of potassium iodide.",
+      "population": [
+        "pregnancy",
+        "lactating"
+      ],
+      "sourceTitle": "Iodine — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "ACOG Committee on Obstetric Practice",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Folic acid, iron, calcium, vitamin D, choline, omega-3 fatty acids, B vitamins, vitamin C, and many other nutrients are all needed to support you and your fetus during pregnancy.",
+      "population": [
+        "pregnancy"
+      ],
+      "sourceTitle": "Vitamin D: Screening and Supplementation During Pregnancy — ACOG Committee Opinion",
+      "sourceUrl": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2011/07/vitamin-d-screening-and-supplementation-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": "2011-07-01"
+    }
+  ],
+  "supplement_regulation": [
+    {
+      "expertName": "FDA Center for Food Safety and Applied Nutrition",
+      "expertCredentials": "",
+      "affiliation": "U.S. Food and Drug Administration",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "Under DSHEA, FDA is not authorized to approve dietary supplements for safety and effectiveness before they are marketed.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Dietary Supplements — FDA Information for Consumers",
+      "sourceUrl": "https://www.fda.gov/food/dietary-supplements",
+      "publisher": "U.S. Food and Drug Administration",
+      "publishDate": ""
+    },
+    {
+      "expertName": "NSF International",
+      "expertCredentials": "",
+      "affiliation": "NSF International",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "NSF is the only independent, third-party testing organization that offers true testing of dietary supplements. NSF does not simply evaluate test data submitted by manufacturers or analyze just a single sample of a product and give it our okay.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Dietary Supplement and Vitamin Certification — NSF International",
+      "sourceUrl": "https://www.nsf.org/consumer-resources/articles/supplement-vitamin-certification",
+      "publisher": "NSF International",
+      "publishDate": "2023-12-25"
+    },
+    {
+      "expertName": "Nutrition.gov",
+      "expertCredentials": "",
+      "affiliation": "USDA National Agricultural Library",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Dietary supplements are not required to be proven safe or effective before they are sold. It's up to manufacturers to ensure their products are safe and that their claims are truthful.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Vitamin and Mineral Supplements — Nutrition.gov",
+      "sourceUrl": "https://www.nutrition.gov/topics/dietary-supplements/vitamin-and-mineral-supplements",
+      "publisher": "USDA National Agricultural Library / NIH",
+      "publishDate": ""
+    },
+    {
+      "expertName": "Pharmacy Times",
+      "expertCredentials": "",
+      "affiliation": "Pharmacy Times",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "strong",
+      "keyQuote": "Purchasing USP Verified products is the best way to help ensure that what's on the label is what's in the bottle.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "A Pharmacist's Guide to Quality Supplements",
+      "sourceUrl": "https://www.pharmacytimes.com/view/a-pharmacist-s-guide-to-quality-supplements",
+      "publisher": "Pharmacy Times",
+      "publishDate": "2024-07-12"
+    }
+  ],
+  "supplement_quality": [
+    {
+      "expertName": "NSF International",
+      "expertCredentials": "",
+      "affiliation": "NSF International",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "NSF certifies products against NSF/ANSI 173, the only American National Standard that establishes requirements for the ingredients in dietary and nutritional supplements.",
+      "population": [
+        "general_adults",
+        "athletes"
+      ],
+      "sourceTitle": "Dietary Supplement and Vitamin Certification — NSF International",
+      "sourceUrl": "https://www.nsf.org/consumer-resources/articles/supplement-vitamin-certification",
+      "publisher": "NSF International",
+      "publishDate": "2023-12-25"
+    },
+    {
+      "expertName": "Harvard Health Publishing",
+      "expertCredentials": "",
+      "affiliation": "Harvard Medical School",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Look for supplements with certification seals from vetted independent third parties.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Start Vetting Your Supplements — Harvard Health",
+      "sourceUrl": "https://www.health.harvard.edu/healthy-aging-and-longevity/start-vetting-your-supplements",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2023-07-01"
+    },
+    {
+      "expertName": "FDA Center for Food Safety and Applied Nutrition",
+      "expertCredentials": "",
+      "affiliation": "U.S. Food and Drug Administration",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Manufacturers must ensure the safety of the products they sell and are prohibited from marketing a product that contains a new dietary ingredient without proper notification to FDA.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Dietary Supplements — FDA Information for Consumers",
+      "sourceUrl": "https://www.fda.gov/food/dietary-supplements",
+      "publisher": "U.S. Food and Drug Administration",
+      "publishDate": ""
+    },
+    {
+      "expertName": "Michael Rashed",
+      "expertCredentials": "MBA",
+      "affiliation": "Pharmacy Times",
+      "evidenceLevel": "medium",
+      "expertType": "pharmacist",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "As the trusted gold standard for verifying the quality of dietary supplements, pharmacists can have peace of mind in recommending products that are USP Verified.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "A Pharmacist's Guide to Quality Supplements",
+      "sourceUrl": "https://www.pharmacytimes.com/view/a-pharmacist-s-guide-to-quality-supplements",
+      "publisher": "Pharmacy Times",
+      "publishDate": "2024-07-12"
+    },
+    {
+      "expertName": "Leena Pradhan-Nabzdyk",
+      "expertCredentials": "PhD",
+      "affiliation": "Pharmacy Times",
+      "evidenceLevel": "medium",
+      "expertType": "pharmacist",
+      "stanceLabel": "neutral",
+      "recommendationType": "safety_caution",
+      "recommendationStrength": "moderate",
+      "keyQuote": "As Pradhan-Nabzdyk stated, the objective is to rebuild consumer trust by 'introducing truth, transparency, and trust to this industry.'",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "How to Educate Patients About Safety, Regulation, and Quality of Vitamins and Supplements",
+      "sourceUrl": "https://www.pharmacytimes.com/view/how-to-educate-patients-about-safety-regulation-and-quality-of-vitamins-supplements",
+      "publisher": "Pharmacy Times",
+      "publishDate": "2025-11-25"
+    }
+  ],
+  "multivitamin": [
+    {
+      "expertName": "Mayo Clinic",
+      "expertCredentials": "",
+      "affiliation": "Harvard Health Publishing",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Prenatal vitamins typically contain higher amounts of folic acid and iron than found in a typical adult multivitamin to support fetal neural tube development and maternal blood volume expansion.",
+      "population": [
+        "pregnancy",
+        "women_childbearing_age"
+      ],
+      "sourceTitle": "Multivitamins: Should You Buy This Insurance? — Harvard Health",
+      "sourceUrl": "https://www.health.harvard.edu/newsletter_article/multivitamins-should-you-buy-this-insurance",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2006-09-01"
+    },
+    {
+      "expertName": "Walter C. Willett",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Harvard T.H. Chan School of Public Health",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "If you're older than 50, B12 may be one of the main reasons to take a multivitamin. With age, a large percentage of people don't produce the stomach acid needed to separate the vitamin from animal protein so it can be absorbed.",
+      "population": [
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Multivitamins: Should You Buy This Insurance? — Harvard Health",
+      "sourceUrl": "https://www.health.harvard.edu/newsletter_article/multivitamins-should-you-buy-this-insurance",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2006-09-01"
+    },
+    {
+      "expertName": "Harvard Health Publishing",
+      "expertCredentials": "",
+      "affiliation": "Harvard Medical School",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral_to_skeptical",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Despite their iconic status, there is no evidence that multivitamins enhance health and well-being or prevent illness.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Supplements: A Scorecard",
+      "sourceUrl": "https://www.health.harvard.edu/healthy-aging-and-longevity/supplements-a-scorecard",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2021-09-22"
+    },
+    {
+      "expertName": "Walter C. Willett",
+      "expertCredentials": "MD, DrPH",
+      "affiliation": "Harvard T.H. Chan School of Public Health",
+      "evidenceLevel": "high",
+      "expertType": "academic_researcher",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "weak",
+      "keyQuote": "Dr. Willett says the problem isn't so much with vitamins, but the way they've been studied. He's still inclined to give daily multivitamins the benefit of the doubt and recommends that people take them — and look for brands that contain lots of vitamin D.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Vitamins: Benefit of the Doubt vs. Doubts About Benefit — Harvard Health",
+      "sourceUrl": "https://www.health.harvard.edu/newsletter_article/vitamins-benefit-of-the-doubt-vs-doubts-about-benefit",
+      "publisher": "Harvard Health Publishing",
+      "publishDate": "2009-04-01"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral_to_skeptical",
+      "recommendationType": "not_routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "The USPSTF concludes that the current evidence is insufficient to assess the balance of benefits and harms of the use of multivitamin supplements for the prevention of cardiovascular disease or cancer in adults.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Vitamin, Mineral, and Multivitamin Supplementation to Prevent CVD and Cancer — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/vitamin-supplementation-to-prevent-cvd-and-cancer-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2022-06-21"
+    },
+    {
+      "expertName": "Nutrition.gov",
+      "expertCredentials": "",
+      "affiliation": "USDA National Agricultural Library",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "weak",
+      "keyQuote": "Dietary supplements are not intended to treat, diagnose, cure, or alleviate the effects of diseases.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Vitamin and Mineral Supplements — Nutrition.gov",
+      "sourceUrl": "https://www.nutrition.gov/topics/dietary-supplements/vitamin-and-mineral-supplements",
+      "publisher": "USDA National Agricultural Library / NIH",
+      "publishDate": ""
+    },
+    {
+      "expertName": "Mark Hyman",
+      "expertCredentials": "MD",
+      "affiliation": "Cleveland Clinic Center for Functional Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "clinician",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Based on my experience, here's where almost everyone should start: high-quality multivitamin, omega-3 fatty acids, vitamin D, magnesium, prebiotic/probiotic.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "What Supplements Should I Take? Use Dr. Hyman's Handy Guide",
+      "sourceUrl": "https://drhyman.com/blogs/content/what-supplements-should-i-take-use-dr-hyman-s-handy-guide",
+      "publisher": "drhyman.com",
+      "publishDate": "2024-09-13"
+    }
+  ],
+  "vitamin_k": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Vitamin K from food and supplements can interfere with anticoagulant medications like warfarin — patients on warfarin should maintain consistent vitamin K intake.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "Vitamin K — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2021-03-29"
+    }
+  ],
+  "vitamin_b": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Vitamin B12 is found only in animal-based foods, so strict vegetarians may need supplements.",
+      "population": [
+        "vegans",
+        "vegetarians"
+      ],
+      "sourceTitle": "Vitamin B12 — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-14"
+    },
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Women of childbearing age should obtain 400 mcg/day folic acid from dietary supplements and/or fortified foods in addition to the folate provided by a varied diet.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folate — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Persons who plan to or could become pregnant: Take a daily supplement containing 0.4 to 0.8 mg (400 to 800 μg) of folic acid. Grade: A.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folic Acid Supplementation to Prevent Neural Tube Defects — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2023-08-01"
+    },
+    {
+      "expertName": "American College of Obstetricians and Gynecologists",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "When you are pregnant you need 600 micrograms of folic acid each day. Because it's hard to get this much folic acid from food alone, you should take a daily prenatal vitamin with at least 400 micrograms starting at least 1 month before pregnancy if possible.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Healthy Eating During Pregnancy — ACOG FAQ",
+      "sourceUrl": "https://www.acog.org/womens-health/faqs/healthy-eating-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": ""
+    },
+    {
+      "expertName": "CDC Division of Nutrition, Physical Activity, and Obesity",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Folic acid is the only form of folate (vitamin B9) shown to help prevent neural tube defects. All women capable of becoming pregnant should get 400 micrograms of folic acid daily.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    },
+    {
+      "expertName": "CDC National Center on Birth Defects and Developmental Disabilities",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "neutral",
+      "recommendationType": "lab_guided",
+      "recommendationStrength": "moderate",
+      "keyQuote": "High folic acid intake can correct the anemia caused by vitamin B12 deficiency, but it cannot prevent the accompanying neurological damage. This makes it important to test for B12 deficiency before increasing folic acid intake.",
+      "population": [
+        "older_adults_50+"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    },
+    {
+      "expertName": "Pharmacy Times",
+      "expertCredentials": "",
+      "affiliation": "Pharmacy Times",
+      "evidenceLevel": "medium",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Vegans/vegetarians: Vitamin B12 supplementation is commonly needed. Older adults or those with malabsorption conditions: Targeted supplementation based on clinical assessment may be required.",
+      "population": [
+        "vegans",
+        "older_adults_50+"
+      ],
+      "sourceTitle": "How to Educate Patients About Safety, Regulation, and Quality of Vitamins and Supplements",
+      "sourceUrl": "https://www.pharmacytimes.com/view/how-to-educate-patients-about-safety-regulation-and-quality-of-vitamins-supplements",
+      "publisher": "Pharmacy Times",
+      "publishDate": "2025-11-25"
+    }
+  ],
+  "probiotic": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "situationally_recommended",
+      "recommendationStrength": "moderate",
+      "keyQuote": "Meta-analyses indicate that the use of any of a few species and strains of probiotics might reduce the risk of AAD by 51%.",
+      "population": [
+        "general_adults",
+        "children"
+      ],
+      "sourceTitle": "Probiotics — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Probiotics-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-15"
+    },
+    {
+      "expertName": "Mark Hyman",
+      "expertCredentials": "MD",
+      "affiliation": "Cleveland Clinic Center for Functional Medicine",
+      "evidenceLevel": "medium",
+      "expertType": "clinician",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "weak",
+      "keyQuote": "A healthy gut microbiome...helps keep your whole body in balance. Taking a daily prebiotic and probiotic can support regular digestion, reduce occasional bloating, and help your body absorb nutrients more effectively.",
+      "population": [
+        "general_adults"
+      ],
+      "sourceTitle": "What Supplements Should I Take? Use Dr. Hyman's Handy Guide",
+      "sourceUrl": "https://drhyman.com/blogs/content/what-supplements-should-i-take-use-dr-hyman-s-handy-guide",
+      "publisher": "drhyman.com",
+      "publishDate": "2024-09-13"
+    }
+  ],
+  "prenatal": [
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Women of childbearing age should obtain 400 mcg/day folic acid from dietary supplements and/or fortified foods in addition to the folate provided by a varied diet.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folate — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "U.S. Preventive Services Task Force",
+      "expertCredentials": "",
+      "affiliation": "U.S. Department of Health and Human Services",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Persons who plan to or could become pregnant: Take a daily supplement containing 0.4 to 0.8 mg (400 to 800 μg) of folic acid. Grade: A.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folic Acid Supplementation to Prevent Neural Tube Defects — USPSTF Final Recommendation",
+      "sourceUrl": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication",
+      "publisher": "U.S. Preventive Services Task Force",
+      "publishDate": "2023-08-01"
+    },
+    {
+      "expertName": "American College of Obstetricians and Gynecologists",
+      "expertCredentials": "",
+      "affiliation": "American College of Obstetricians and Gynecologists",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "When you are pregnant you need 600 micrograms of folic acid each day. Because it's hard to get this much folic acid from food alone, you should take a daily prenatal vitamin with at least 400 micrograms starting at least 1 month before pregnancy if possible.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Healthy Eating During Pregnancy — ACOG FAQ",
+      "sourceUrl": "https://www.acog.org/womens-health/faqs/healthy-eating-during-pregnancy",
+      "publisher": "American College of Obstetricians and Gynecologists",
+      "publishDate": ""
+    },
+    {
+      "expertName": "CDC Division of Nutrition, Physical Activity, and Obesity",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Folic acid is the only form of folate (vitamin B9) shown to help prevent neural tube defects. All women capable of becoming pregnant should get 400 micrograms of folic acid daily.",
+      "population": [
+        "women_childbearing_age",
+        "pregnancy"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    },
+    {
+      "expertName": "CDC National Center on Birth Defects and Developmental Disabilities",
+      "expertCredentials": "",
+      "affiliation": "Centers for Disease Control and Prevention",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "Getting 400 mcg of folic acid each day helps prevent some serious birth defects called neural tube defects (NTDs).",
+      "population": [
+        "general_adults",
+        "women_childbearing_age"
+      ],
+      "sourceTitle": "Folic Acid: Facts for Clinicians — CDC",
+      "sourceUrl": "https://www.cdc.gov/folic-acid/hcp/clinical-overview/index.html",
+      "publisher": "CDC",
+      "publishDate": "2025-05-20"
+    },
+    {
+      "expertName": "NIH Office of Dietary Supplements",
+      "expertCredentials": "",
+      "affiliation": "National Institutes of Health",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "A Cochrane Review showed that daily supplementation with 9 to 90 mg iron reduced the risk of anemia in pregnant women at term by 70% and of iron deficiency at term by 57%.",
+      "population": [
+        "pregnancy"
+      ],
+      "sourceTitle": "Iron — Health Professional Fact Sheet",
+      "sourceUrl": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+      "publisher": "NIH Office of Dietary Supplements",
+      "publishDate": "2026-04-16"
+    },
+    {
+      "expertName": "American Academy of Pediatrics",
+      "expertCredentials": "",
+      "affiliation": "American Academy of Pediatrics",
+      "evidenceLevel": "high",
+      "expertType": "institution",
+      "stanceLabel": "supportive",
+      "recommendationType": "routinely_recommended",
+      "recommendationStrength": "strong",
+      "keyQuote": "AAP recommends 1 mg/kg daily iron supplementation for exclusively or primarily breastfed full-term infants from age 4 months until the infants begin eating iron-containing complementary foods.",
+      "population": [
+        "breastfed_infants",
+        "infants"
+      ],
+      "sourceTitle": "Vitamin D, Iron, and Zinc Supplementation — AAP Policy",
+      "sourceUrl": "https://publications.aap.org/aapbooks/monograph/794/chapter/16750729/Vitamin-D-Iron-and-Zinc-Supplementation-Baby-Early",
+      "publisher": "American Academy of Pediatrics",
+      "publishDate": "2020-06-01"
+    }
+  ]
+}

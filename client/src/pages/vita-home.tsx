@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ExpertSourcesPanel } from "@/components/expert-sources-panel";
 import {
   ArrowRight,
   ArrowLeft,
@@ -468,6 +469,7 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
           {s.source === "Evidence-based (expert-reviewed)" && (
             <p className="text-xs text-muted-foreground italic">Expert-reviewed, evidence-based recommendation</p>
           )}
+          <ExpertSourcesPanel nutrient={s.category} />
         </div>
       )}
     </Card>
