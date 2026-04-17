@@ -8,12 +8,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogIn, BookOpen, LogOut, ChevronDown, Star, Pill } from "lucide-react";
+import { LogIn, BookOpen, LogOut, ChevronDown, Star, Pill, Sparkles } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
 
 export function Header() {
   const { user, loading, signInWithGoogle, signOut } = useAuth();
-  const [, navigate] = useHashLocation();
+  const [location, navigate] = useHashLocation();
 
   const initials = user?.displayName
     ? user.displayName
@@ -29,11 +29,11 @@ export function Header() {
       className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-sm"
       data-testid="site-header"
     >
-      <div className="max-w-2xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
         {/* Logo */}
         <button
           onClick={() => navigate("/")}
-          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity shrink-0"
           data-testid="header-logo"
           aria-label="Go to home"
         >
@@ -42,11 +42,44 @@ export function Header() {
             <circle cx="16" cy="16" r="8.5" stroke="currentColor" strokeWidth="2.5" className="text-primary" opacity="0.5" />
             <circle cx="16" cy="16" r="3.5" fill="currentColor" className="text-primary" />
           </svg>
-          <span className="text-sm font-semibold tracking-tight">Glow</span>
-          <span className="text-xs text-muted-foreground">&</span>
-          <Pill className="w-4 h-4 text-primary" />
-          <span className="text-sm font-semibold tracking-tight">Vita</span>
+          <span className="text-sm font-semibold tracking-tight hidden sm:inline">buildmyroutine</span>
         </button>
+
+        {/* Center nav tabs */}
+        <nav className="flex items-center gap-1 bg-muted/40 rounded-full px-1 py-1 border border-border/40">
+          <button
+            onClick={() => navigate("/")}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              location === "/" || location === ""
+                ? "bg-background shadow-sm text-foreground border border-border/50"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Routines
+          </button>
+          <button
+            onClick={() => navigate("/glow")}
+            className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              location.startsWith("/glow") || location.startsWith("/rate")
+                ? "bg-background shadow-sm text-foreground border border-border/50"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Sparkles className="w-3 h-3" />
+            Glow
+          </button>
+          <button
+            onClick={() => navigate("/vita")}
+            className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              location.startsWith("/vita")
+                ? "bg-background shadow-sm text-foreground border border-border/50"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <Pill className="w-3 h-3" />
+            Vita
+          </button>
+        </nav>
 
         {/* Right side */}
         {loading ? (
