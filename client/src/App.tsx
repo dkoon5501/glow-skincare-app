@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/lib/auth-context";
 import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import MyRoutines from "@/pages/my-routines";
@@ -27,6 +28,7 @@ function AppRouter() {
         <Route path="/rate-my-routine" component={RateMyRoutine} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </>
   );
 }
