@@ -31,17 +31,16 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
     <div className="min-h-screen bg-background">
       <section className="relative min-h-[70vh] overflow-hidden">
         {/* Right-side background image — fades into background on left */}
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=1400&q=80&fit=crop&crop=right"
             alt=""
             aria-hidden="true"
             className="absolute right-0 top-0 h-full w-3/4 object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/60 to-transparent" />
         </div>
-        <div className="relative flex flex-col items-center justify-center px-4 py-16 text-center max-w-2xl mx-auto min-h-[70vh]">
+        <div className="relative z-10 flex flex-col items-center justify-center px-4 py-16 text-center max-w-2xl mx-auto min-h-[70vh]">
         <div className="mb-6">
           <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 border border-primary/15 px-3.5 py-1.5 rounded-full">
             <Pill className="w-3 h-3" />
