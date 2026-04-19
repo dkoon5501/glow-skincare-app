@@ -123,6 +123,48 @@ const VITA_FAQS = [
 const FULLSCRIPT_URL = "https://us.fullscript.com/welcome/vita1776393547";
 const PURE_ENCAPS_URL = "https://patientdirect.pureencapsulationspro.com/patients/sign_up?practice_code=668833";
 
+// Reusable provider discount CTA. Shown on Vita landing and at the top of
+// Vita results — supplements are purchased through one of these two
+// practitioner portals, so we elevate the links out of individual cards.
+function ProviderDiscountCard({ variant = "default" }: { variant?: "default" | "compact" }) {
+  const isCompact = variant === "compact";
+  return (
+    <Card
+      className={`border-primary/20 bg-primary/5 ${isCompact ? "p-4" : "p-5"}`}
+      data-testid="provider-discount-card"
+    >
+      <h2 className={`font-semibold text-foreground mb-1 ${isCompact ? "text-sm" : "text-base"}`}>
+        Access Provider Pricing
+      </h2>
+      <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+        Register under our practitioner account to purchase supplements at provider-discounted prices through Fullscript or Pure Encapsulations.
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <a
+          href={FULLSCRIPT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
+          data-testid="link-fullscript"
+        >
+          <ExternalLink className="w-3 h-3" />
+          Register on Fullscript
+        </a>
+        <a
+          href={PURE_ENCAPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 text-xs font-medium border border-primary/30 text-primary bg-background px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-colors"
+          data-testid="link-pure-encaps"
+        >
+          <ExternalLink className="w-3 h-3" />
+          Register on Pure Encapsulations
+        </a>
+      </div>
+    </Card>
+  );
+}
+
 type AppState = "landing" | "quiz" | "results";
 
 // ── Vita Landing ──
@@ -247,6 +289,13 @@ function VitaLanding({ onStart }: { onStart: () => void }) {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* ─── PROVIDER DISCOUNT ─────────────────────────────────── */}
+      <section className="px-6 py-12 md:py-16">
+        <div className="max-w-lg mx-auto">
+          <ProviderDiscountCard />
         </div>
       </section>
 
@@ -418,19 +467,6 @@ function SupplementCard({ rec }: { rec: SupplementRecommendation }) {
       </div>
 
       <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{reason}</p>
-
-      {/* Purchase links */}
-      <div className="mt-3 flex flex-wrap gap-2">
-        <a
-          href={FULLSCRIPT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
-        >
-          <ExternalLink className="w-3 h-3" />
-          Buy with Provider Discount
-        </a>
-      </div>
 
       {/* Expand for details */}
       <button
@@ -605,6 +641,10 @@ export function VitaResults({
           </p>
         </div>
 
+        {/* Provider Pricing — elevated to the top so users know where to
+            purchase before diving into specific supplements. */}
+        <ProviderDiscountCard />
+
         {/* Warnings */}
         {routine.warnings.length > 0 && (
           <Card className="border-amber-200 bg-amber-50/50 dark:border-amber-800 dark:bg-amber-950/30">
@@ -664,34 +704,6 @@ export function VitaResults({
             </div>
           </div>
         )}
-
-        {/* Provider Discount Banner */}
-        <Card className="p-4 border-primary/20 bg-primary/5">
-          <h2 className="text-sm font-semibold text-foreground mb-1">Access Provider Pricing</h2>
-          <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-            Register under our practitioner account to purchase supplements at provider-discounted prices through Fullscript or Pure Encapsulations.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <a
-              href={FULLSCRIPT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity"
-            >
-              <ExternalLink className="w-3 h-3" />
-              Register on Fullscript
-            </a>
-            <a
-              href={PURE_ENCAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-medium border border-primary/30 text-primary bg-background px-3 py-1.5 rounded-lg hover:bg-primary/5 transition-colors"
-            >
-              <ExternalLink className="w-3 h-3" />
-              Register on Pure Encapsulations
-            </a>
-          </div>
-        </Card>
 
         {/* Tier Explainer — mirrors Glow's placement after product list */}
         <div className="flex flex-col sm:flex-row gap-4 items-start p-4 rounded-xl bg-muted/40 border border-card-border">
