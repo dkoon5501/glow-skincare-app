@@ -5,7 +5,10 @@ import {
   deleteRoutine,
   getUserDiscardedProducts,
   removeDiscardedProduct,
+  getUserVitaRoutines,
+  deleteVitaRoutine,
   type SavedRoutine,
+  type SavedVitaRoutine,
   type DiscardedProduct,
 } from "@/lib/firestore";
 import { Button } from "@/components/ui/button";
@@ -27,8 +30,11 @@ import {
   Undo2,
   Share2,
   Check,
+  Pill,
+  UtensilsCrossed,
 } from "lucide-react";
 import { shareResults } from "@/lib/share-utils";
+import { shareVitaRoutine } from "@/lib/vita-share";
 import { useHashLocation } from "wouter/use-hash-location";
 import type { Timestamp } from "firebase/firestore";
 import { productDatabase } from "@/lib/skincare-data";
@@ -301,6 +307,207 @@ function RoutineCard({
   );
 }
 
+// ── Vita routine display ──
+
+function VitaShareButton({ routine }: { routine: SavedVitaRoutine }) {
+  const [status, setStatus] = useState<"idle" | "copied" | "shared">("idle");
+
+  const handleShare = async () => {
+    const result = await shareVitaRoutine(
+      routine.answers,
+      routine.routine.profile.profileCode,
+    );
+    setStatus(result === "failed" ? "idle" : result);
+    if (result === "copied") setTimeout(() => setStatus("idle"), 2500);
+  };
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      className="w-7 h-7 text-muted-foreground hover:text-primary"
+      onClick={handleShare}
+      aria-label="Share vitamin routine"
+    >
+      {status === "copied" || status === "shared" ? (
+        <Check className="w-3.5 h-3.5 text-primary" />
+      ) : (
+        <Share2 className="w-3.5 h-3.5" />
+      )}
+    </Button>
+  );
+}
+
+function VitaBucket({
+  items,
+  label,
+  icon,
+}: {
+  items: SavedVitaRoutine["routine"]["morning"];
+  label: string;
+  icon: React.ReactNode;
+}) {
+  if (!items || items.length === 0) return null;
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-1.5 mb-2">
+        {icon}
+        <span className="text-xs font-semibold text-foreground">{label}</span>
+      </div>
+      {items.map((item, i) => {
+        const supp = item.supplement as { id?: string; name?: string; brand?: string };
+        return (
+          <div
+            key={`${supp.id || i}`}
+            className="flex items-start gap-2 py-2 border-b border-border/40 last:border-0"
+          >
+            <div className="w-5 h-5 rounded bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+              <span className="text-[10px] font-bold text-primary">{i + 1}</span>
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="text-xs font-medium text-foreground">
+                  {supp.brand ? `${supp.brand} ` : ""}{supp.name || "Supplement"}
+                </span>
+                <Badge
+                  variant={item.priority === "essential" ? "default" : "outline"}
+                  className={`text-[10px] py-0 h-4 capitalize ${
+                    item.priority === "essential"
+                      ? "bg-primary/15 text-primary border-0 hover:bg-primary/15"
+                      : item.priority === "recommended"
+                        ? "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950 dark:text-teal-300"
+                        : "text-muted-foreground border-muted-foreground/30"
+                  }`}
+                >
+                  {item.priority}
+                </Badge>
+              </div>
+              {item.reason && (
+                <p className="text-[11px] text-muted-foreground mt-0.5">{item.reason}</p>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function VitaRoutineCard({
+  routine,
+  onDelete,
+}: {
+  routine: SavedVitaRoutine;
+  onDelete: (id: string) => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+
+  const handleDelete = useCallback(async () => {
+    if (deleting) return;
+    setDeleting(true);
+    try {
+      await deleteVitaRoutine(routine.id);
+      onDelete(routine.id);
+    } catch {
+      setDeleting(false);
+    }
+  }, [routine.id, onDelete, deleting]);
+
+  const profile = routine.routine.profile;
+  const totalSupps =
+    routine.routine.morning.length +
+    routine.routine.evening.length +
+    routine.routine.withFood.length;
+
+  return (
+    <Card className="overflow-hidden border-card-border" data-testid={`vita-routine-card-${routine.id}`}>
+      <CardContent className="p-4">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <Badge variant="secondary" className="text-xs font-bold">
+                {profile.profileCode}
+              </Badge>
+              <Badge variant="outline" className="text-[10px] bg-primary/5 border-primary/30 text-primary">
+                <Pill className="w-2.5 h-2.5 mr-1" />
+                Vita
+              </Badge>
+              <span className="text-xs text-muted-foreground">
+                {totalSupps} supplement{totalSupps !== 1 ? "s" : ""}
+              </span>
+            </div>
+            <div className="mt-1.5 grid grid-cols-2 gap-x-4 gap-y-0.5">
+              <div>
+                <span className="text-[11px] text-muted-foreground">Age: </span>
+                <span className="text-[11px] font-medium text-foreground">{profile.ageRange}</span>
+              </div>
+              <div>
+                <span className="text-[11px] text-muted-foreground">Diet: </span>
+                <span className="text-[11px] font-medium text-foreground capitalize">{profile.dietType}</span>
+              </div>
+            </div>
+            <p className="text-[11px] text-muted-foreground mt-1.5">
+              Saved {formatDate(routine.createdAt)}
+            </p>
+          </div>
+
+          <div className="flex items-center gap-1 shrink-0">
+            <VitaShareButton routine={routine} />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="w-7 h-7 text-muted-foreground hover:text-destructive"
+              onClick={handleDelete}
+              disabled={deleting}
+              data-testid={`button-delete-vita-${routine.id}`}
+              aria-label="Delete vitamin routine"
+            >
+              {deleting ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Trash2 className="w-3.5 h-3.5" />
+              )}
+            </Button>
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="flex items-center gap-1 text-xs text-primary hover:underline py-1 px-1"
+              data-testid={`button-expand-vita-routine-${routine.id}`}
+              aria-expanded={expanded}
+            >
+              {expanded ? (
+                <>Less <ChevronUp className="w-3 h-3" /></>
+              ) : (
+                <>View <ChevronDown className="w-3 h-3" /></>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {expanded && (
+          <div className="mt-4 pt-4 border-t border-card-border space-y-4 animate-in slide-in-from-top-2 duration-200">
+            <VitaBucket
+              items={routine.routine.morning}
+              label="Morning"
+              icon={<Sun className="w-3.5 h-3.5 text-amber-500" />}
+            />
+            <VitaBucket
+              items={routine.routine.withFood}
+              label="With Food"
+              icon={<UtensilsCrossed className="w-3.5 h-3.5 text-primary" />}
+            />
+            <VitaBucket
+              items={routine.routine.evening}
+              label="Evening"
+              icon={<Moon className="w-3.5 h-3.5 text-indigo-400" />}
+            />
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 function DiscardedProductCard({
   item,
   onUndo,
@@ -375,10 +582,13 @@ export default function MyRoutines() {
   const { user, loading: authLoading } = useAuth();
   const [, navigate] = useHashLocation();
   const [routines, setRoutines] = useState<SavedRoutine[]>([]);
+  const [vitaRoutines, setVitaRoutines] = useState<SavedVitaRoutine[]>([]);
   const [discarded, setDiscarded] = useState<DiscardedProduct[]>([]);
   const [loading, setLoading] = useState(false);
+  const [vitaLoading, setVitaLoading] = useState(false);
   const [discardedLoading, setDiscardedLoading] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
+  const [vitaError, setVitaError] = useState<string | null>(null);
   const [discardedError, setDiscardedError] = useState<string | null>(null);
 
   // Redirect if not signed in (after auth loads)
@@ -399,6 +609,17 @@ export default function MyRoutines() {
       .finally(() => setLoading(false));
   }, [user]);
 
+  // Fetch saved Vita routines
+  useEffect(() => {
+    if (!user) return;
+    setVitaLoading(true);
+    setVitaError(null);
+    getUserVitaRoutines(user.uid)
+      .then((data) => setVitaRoutines(data))
+      .catch(() => setVitaError("Failed to load vitamin routines. Please try again."))
+      .finally(() => setVitaLoading(false));
+  }, [user]);
+
   // Fetch discarded products
   useEffect(() => {
     if (!user) return;
@@ -412,6 +633,10 @@ export default function MyRoutines() {
 
   const handleDeleteRoutine = useCallback((id: string) => {
     setRoutines((prev) => prev.filter((r) => r.id !== id));
+  }, []);
+
+  const handleDeleteVita = useCallback((id: string) => {
+    setVitaRoutines((prev) => prev.filter((r) => r.id !== id));
   }, []);
 
   const handleUndoDiscard = useCallback((id: string) => {
@@ -455,16 +680,25 @@ export default function MyRoutines() {
           <TabsList className="w-full">
             <TabsTrigger value="saved" className="flex-1 gap-1.5" data-testid="tab-saved-routines">
               <BookOpen className="w-3.5 h-3.5" />
-              Saved Routines
+              Skincare
               {routines.length > 0 && (
                 <Badge variant="secondary" className="text-[10px] h-4 px-1.5 ml-0.5">
                   {routines.length}
                 </Badge>
               )}
             </TabsTrigger>
+            <TabsTrigger value="vita" className="flex-1 gap-1.5" data-testid="tab-saved-vita">
+              <Pill className="w-3.5 h-3.5" />
+              Vitamins
+              {vitaRoutines.length > 0 && (
+                <Badge variant="secondary" className="text-[10px] h-4 px-1.5 ml-0.5">
+                  {vitaRoutines.length}
+                </Badge>
+              )}
+            </TabsTrigger>
             <TabsTrigger value="discarded" className="flex-1 gap-1.5" data-testid="tab-discarded-products">
               <XCircle className="w-3.5 h-3.5" />
-              Discarded Products
+              Discarded
               {discarded.length > 0 && (
                 <Badge variant="secondary" className="text-[10px] h-4 px-1.5 ml-0.5">
                   {discarded.length}
@@ -513,6 +747,51 @@ export default function MyRoutines() {
               <div className="space-y-3" data-testid="routines-list">
                 {routines.map((routine) => (
                   <RoutineCard key={routine.id} routine={routine} onDelete={handleDeleteRoutine} />
+                ))}
+              </div>
+            )}
+          </TabsContent>
+
+          {/* Saved Vita Routines Tab */}
+          <TabsContent value="vita" className="mt-4">
+            {vitaLoading && (
+              <div className="flex items-center justify-center py-16" data-testid="vita-routines-loading">
+                <Loader2 className="w-6 h-6 animate-spin text-primary" />
+              </div>
+            )}
+
+            {vitaError && (
+              <div
+                className="p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-sm text-destructive"
+                data-testid="vita-routines-error"
+              >
+                {vitaError}
+              </div>
+            )}
+
+            {!vitaLoading && !vitaError && vitaRoutines.length === 0 && (
+              <div className="text-center py-16" data-testid="vita-routines-empty">
+                <Pill className="w-10 h-10 text-muted-foreground/40 mx-auto mb-3" />
+                <h2 className="text-sm font-medium text-foreground mb-1">No saved vitamin routines yet</h2>
+                <p className="text-xs text-muted-foreground mb-5">
+                  Take the Vita quiz and save your personalized vitamin routine to see it here.
+                </p>
+                <Button
+                  size="sm"
+                  onClick={() => navigate("/vita")}
+                  className="gap-2"
+                  data-testid="button-start-vita-quiz-empty"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  Take the Vita Quiz
+                </Button>
+              </div>
+            )}
+
+            {!vitaLoading && !vitaError && vitaRoutines.length > 0 && (
+              <div className="space-y-3" data-testid="vita-routines-list">
+                {vitaRoutines.map((r) => (
+                  <VitaRoutineCard key={r.id} routine={r} onDelete={handleDeleteVita} />
                 ))}
               </div>
             )}

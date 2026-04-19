@@ -11,6 +11,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import MyRoutines from "@/pages/my-routines";
 import SharedResults from "@/pages/shared-results";
+import SharedVitaResults from "@/pages/shared-vita-results";
 import RateMyRoutine from "@/pages/rate-my-routine";
 import MainLanding from "@/pages/main-landing";
 import VitaHome from "@/pages/vita-home";
@@ -25,6 +26,7 @@ function AppRouter() {
         <Route path="/vita" component={VitaHome} />
         <Route path="/my-routines" component={MyRoutines} />
         <Route path="/r/:encoded" component={SharedResults} />
+        <Route path="/v/:encoded" component={SharedVitaResults} />
         <Route path="/rate-my-routine" component={RateMyRoutine} />
         <Route component={NotFound} />
       </Switch>

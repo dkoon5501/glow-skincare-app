@@ -91,8 +91,10 @@ export function decodeAnswers(encoded: string): QuizAnswers | null {
  */
 export function generateShareUrl(answers: QuizAnswers): string {
   const encoded = encodeAnswers(answers);
-  const base = window.location.origin + window.location.pathname;
-  return `${base}#/r/${encoded}`;
+  // Path-based share URL so Netlify redirects / edge function
+  // can serve Glow-specific OG metadata for social crawlers.
+  const base = window.location.origin;
+  return `${base}/r/${encoded}`;
 }
 
 /**

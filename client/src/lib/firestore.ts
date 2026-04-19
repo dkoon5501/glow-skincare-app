@@ -10,6 +10,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 import type { RecommendedRoutine, QuizAnswers } from "./skincare-data";
+import type { VitaAnswers, VitaRoutine } from "./vita-data";
 
 export interface SavedRoutine {
   id: string;
@@ -223,6 +224,91 @@ export async function getUserDiscardedProducts(userId: string): Promise<Discarde
 
 export async function removeDiscardedProduct(docId: string): Promise<void> {
   await deleteDoc(doc(db, "discardedProducts", docId));
+}
+
+// ─────────────────────────────────────────────
+// VITA — SAVED VITAMIN ROUTINES
+// ─────────────────────────────────────────────
+
+/** Serialized Vita routine stored in Firestore. Plain objects only. */
+export interface SerializedVitaRoutine {
+  profile: VitaRoutine["profile"];
+  morning: Array<{
+    supplement: Record<string, unknown>;
+    priority: "essential" | "recommended" | "optional";
+    reason: string;
+  }>;
+  evening: Array<{
+    supplement: Record<string, unknown>;
+    priority: "essential" | "recommended" | "optional";
+    reason: string;
+  }>;
+  withFood: Array<{
+    supplement: Record<string, unknown>;
+    priority: "essential" | "recommended" | "optional";
+    reason: string;
+  }>;
+  warnings: string[];
+}
+
+export interface SavedVitaRoutine {
+  id: string;
+  userId: string;
+  answers: VitaAnswers;
+  routine: SerializedVitaRoutine;
+  createdAt: Timestamp;
+}
+
+function serializeVitaRoutine(routine: VitaRoutine): SerializedVitaRoutine {
+  const serBucket = (bucket: VitaRoutine["morning"]) =>
+    bucket.map((rec) => stripUndefined({
+      supplement: stripUndefined({ ...rec.supplement }) as Record<string, unknown>,
+      priority: rec.priority,
+      reason: rec.reason,
+    })) as SerializedVitaRoutine["morning"];
+
+  return {
+    profile: routine.profile,
+    morning: serBucket(routine.morning),
+    evening: serBucket(routine.evening),
+    withFood: serBucket(routine.withFood),
+    warnings: routine.warnings,
+  };
+}
+
+export async function saveVitaRoutine(
+  userId: string,
+  data: { answers: VitaAnswers; routine: VitaRoutine }
+): Promise<string> {
+  const docRef = await addDoc(collection(db, "vitaRoutines"), {
+    userId,
+    answers: data.answers,
+    routine: serializeVitaRoutine(data.routine),
+    createdAt: Timestamp.now(),
+  });
+  return docRef.id;
+}
+
+export async function getUserVitaRoutines(userId: string): Promise<SavedVitaRoutine[]> {
+  const q = query(
+    collection(db, "vitaRoutines"),
+    where("userId", "==", userId)
+  );
+  const snapshot = await getDocs(q);
+  const items = snapshot.docs.map((docSnap) => ({
+    id: docSnap.id,
+    ...(docSnap.data() as Omit<SavedVitaRoutine, "id">),
+  }));
+  items.sort((a, b) => {
+    const aTime = a.createdAt?.toMillis?.() || 0;
+    const bTime = b.createdAt?.toMillis?.() || 0;
+    return bTime - aTime;
+  });
+  return items;
+}
+
+export async function deleteVitaRoutine(routineId: string): Promise<void> {
+  await deleteDoc(doc(db, "vitaRoutines", routineId));
 }
 
 // ─── Upvotes ─────────────────────────────────────────────
