@@ -35,9 +35,61 @@
       gtag('js', new Date());
       gtag('config', 'G-PTWJNNVB84');
     </script>
+
+    <!-- Language preference restore (must run BEFORE Google Translate script loads) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('bmr-language');
+          if (saved && saved !== 'en') {
+            var host = window.location.hostname;
+            var val = '/en/' + saved;
+            document.cookie = 'googtrans=' + val + '; path=/';
+            if (host.indexOf('.') !== -1) {
+              document.cookie = 'googtrans=' + val + '; path=/; domain=.' + host;
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Google Website Translator -->
+    <style>
+      /* Hide Google's default banner, widget chrome, and all its injected iframes */
+      .goog-te-banner-frame.skiptranslate,
+      .goog-te-gadget,
+      .goog-logo-link,
+      #goog-gt-tt,
+      .goog-te-balloon-frame,
+      div#goog-gt-,
+      iframe.skiptranslate,
+      iframe[class*="VIpgJd-ZVi9od"],
+      .VIpgJd-ZVi9od-ORHb-OEVmcd,
+      .VIpgJd-ZVi9od-l4eHX-hSRGPd,
+      .VIpgJd-yAWNEb-L7lbkb,
+      .skiptranslate { display: none !important; visibility: hidden !important; }
+      /* Force body to top, never offset by the (hidden) banner */
+      body { top: 0 !important; position: static !important; }
+      html { top: 0 !important; }
+      .goog-tooltip, .goog-tooltip:hover { display: none !important; }
+      .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+      #google_translate_element { display: none !important; visibility: hidden; height: 0; }
+    </style>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,es,fr,zh-CN,hi,pt',
+          autoDisplay: false,
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
   </head>
   <body>
     <div id="root"></div>
+    <div id="google_translate_element" aria-hidden="true"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

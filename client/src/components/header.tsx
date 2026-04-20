@@ -10,6 +10,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LogIn, BookOpen, LogOut, ChevronDown, Star, Pill, Sparkles } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
+import { LanguageSelector } from "@/components/language-selector";
 
 export function Header() {
   const { user, loading, signInWithGoogle, signOut } = useAuth();
@@ -82,6 +83,8 @@ export function Header() {
         </nav>
 
         {/* Right side */}
+        <div className="flex items-center gap-1">
+        <LanguageSelector />
         {loading ? (
           <div className="w-8 h-8 rounded-full bg-muted animate-pulse" />
         ) : user ? (
@@ -150,6 +153,7 @@ export function Header() {
             Sign In
           </Button>
         )}
+        </div>
       </div>
     </header>
   );
