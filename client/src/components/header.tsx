@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LogIn, BookOpen, LogOut, ChevronDown, Star, Pill, Sparkles } from "lucide-react";
+import { LogIn, BookOpen, LogOut, ChevronDown, Star, Pill, Sparkles, Compass } from "lucide-react";
 import { useHashLocation } from "wouter/use-hash-location";
 import { LanguageSelector } from "@/components/language-selector";
 
@@ -49,14 +49,15 @@ export function Header() {
         {/* Center nav tabs */}
         <nav className="flex items-center gap-1 bg-muted/40 rounded-full px-1 py-1 border border-border/40">
           <button
-            onClick={() => navigate("/")}
-            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
-              location === "/" || location === ""
+            onClick={() => navigate("/roam")}
+            className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+              location.startsWith("/roam")
                 ? "bg-background shadow-sm text-foreground border border-border/50"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            Routines
+            <Compass className="w-3 h-3" />
+            Roam
           </button>
           <button
             onClick={() => navigate("/glow")}
