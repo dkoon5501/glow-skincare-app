@@ -8,3 +8,7 @@ vite.config.ts.*
 *.db-shm
 *.db-wal
 scripts/netlify-deploy.mjs
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
