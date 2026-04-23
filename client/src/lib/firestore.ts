@@ -11,6 +11,7 @@ import {
 import { db } from "./firebase";
 import type { RecommendedRoutine, QuizAnswers } from "./skincare-data";
 import type { VitaAnswers, VitaRoutine } from "./vita-data";
+import type { RoamAnswers, RoamResult } from "./roam-data";
 
 export interface SavedRoutine {
   id: string;
@@ -375,4 +376,54 @@ export async function getUserUpvotes(userId: string): Promise<Set<string>> {
   );
   const snapshot = await getDocs(q);
   return new Set(snapshot.docs.map(d => d.data().productId as string));
+}
+
+// ─── Roam ──────────────────────────────────────────────────
+
+export interface SavedRoamRoutine {
+  id: string;
+  userId: string;
+  answers: RoamAnswers;
+  results: Array<{ episode: Record<string, unknown>; score: number; isTopPick: boolean }>;
+  createdAt: Timestamp;
+}
+
+export async function saveRoamRoutine(
+  userId: string,
+  data: { answers: RoamAnswers; results: RoamResult[] }
+): Promise<string> {
+  const serializedResults = data.results.map((r) => ({
+    episode: r.episode as unknown as Record<string, unknown>,
+    score: r.score,
+    isTopPick: r.isTopPick,
+  }));
+  const docRef = await addDoc(collection(db, "roamRoutines"), {
+    userId,
+    answers: data.answers,
+    results: serializedResults,
+    createdAt: Timestamp.now(),
+  });
+  return docRef.id;
+}
+
+export async function getUserRoamRoutines(userId: string): Promise<SavedRoamRoutine[]> {
+  const q = query(
+    collection(db, "roamRoutines"),
+    where("userId", "==", userId)
+  );
+  const snapshot = await getDocs(q);
+  const items = snapshot.docs.map((docSnap) => ({
+    id: docSnap.id,
+    ...(docSnap.data() as Omit<SavedRoamRoutine, "id">),
+  }));
+  items.sort((a, b) => {
+    const aTime = a.createdAt?.toMillis?.() || 0;
+    const bTime = b.createdAt?.toMillis?.() || 0;
+    return bTime - aTime;
+  });
+  return items;
+}
+
+export async function deleteRoamRoutine(routineId: string): Promise<void> {
+  await deleteDoc(doc(db, "roamRoutines", routineId));
 }
