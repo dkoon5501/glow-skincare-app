@@ -113,22 +113,28 @@ const vitaFeatures = [
 // ── Social proof ──
 const testimonials = [
   {
+    quote: "Never would have found the Uyuni Salt Flats without Roam. One quiz, one perfect trip.",
+    name: "Alex D.",
+    tag: "Roam user",
+    img: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
     quote: "Finally a skincare routine I actually stick to. Everything is explained and the products don't conflict.",
     name: "Maya R.",
     tag: "Glow user",
-    img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80&fit=crop&face",
+    img: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     quote: "I've tried so many vitamin routines. This is the first one that felt personalized to me, not just a generic stack.",
     name: "Jordan T.",
     tag: "Vita user",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&fit=crop&face",
+    img: "https://randomuser.me/api/portraits/men/52.jpg",
   },
   {
     quote: "The provider discount alone saved me more than I expected. Clean, fast, no upsell.",
     name: "Priya S.",
     tag: "Vita user",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&fit=crop&face",
+    img: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];
 
@@ -250,7 +256,7 @@ export default function MainLanding() {
   const goToSlide = useCallback((i: number) => setActiveSlide(i), []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
 
       {/* ── HERO ── */}
       <section className="relative w-full h-[88vh] min-h-[560px] max-h-[820px] overflow-hidden bg-black">
@@ -511,7 +517,7 @@ export default function MainLanding() {
       <section className="border-t border-border/50 py-16">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-xl font-bold text-foreground text-center mb-8">What people are saying</h2>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {testimonials.map((t) => (
               <TestimonialCard key={t.name} t={t} />
             ))}
