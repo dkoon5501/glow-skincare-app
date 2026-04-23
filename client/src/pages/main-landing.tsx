@@ -1,9 +1,22 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Pill, Star, CheckCircle } from "lucide-react";
+import { ArrowRight, Sparkles, Pill, Star, CheckCircle, Compass } from "lucide-react";
 
 // ── Hero slides ──
 const heroSlides = [
+  {
+    id: "roam",
+    label: "Travel",
+    headline: "Travel picks\ncurated by\ncreators who've been.",
+    sub: "24 creator-vetted destinations from Kara & Nate — matched to your vibe, region, and travel style.",
+    cta: "Find My Travel Pick",
+    href: "#/roam",
+    badge: "Roam",
+    badgeIcon: "compass",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1400&q=85&fit=crop",
+    accent: "from-amber-950/80 via-amber-900/60 to-transparent",
+    pill: "Creator-vetted",
+  },
   {
     id: "glow",
     label: "Skincare",
@@ -43,6 +56,24 @@ const trustItems = [
 ];
 
 // ── Feature rows ──
+const roamFeatures = [
+  {
+    title: "4 questions, 1 perfect pick",
+    desc: "Choose your vibe, region, trip length, and travel style. We surface the Kara & Nate episode that fits your exact situation.",
+    img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80&fit=crop",
+  },
+  {
+    title: "24 creator-vetted destinations",
+    desc: "Every pick has been personally visited and filmed by Kara & Nate — not algorithmically suggested or sponsored.",
+    img: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80&fit=crop",
+  },
+  {
+    title: "Deep-link to the episode",
+    desc: "Each result links straight to the Kara & Nate YouTube episode — watch the full trip before you book.",
+    img: "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80&fit=crop",
+  },
+];
+
 const glowFeatures = [
   {
     title: "Built around your skin",
@@ -129,6 +160,8 @@ function HeroSlide({
         <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-5 w-fit backdrop-blur-sm">
           {slide.badgeIcon === "sparkles" ? (
             <Sparkles className="w-3 h-3" />
+          ) : slide.badgeIcon === "compass" ? (
+            <Compass className="w-3 h-3" />
           ) : (
             <Pill className="w-3 h-3" />
           )}
@@ -204,7 +237,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
 // ── Main Landing ──
 export default function MainLanding() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [activeTab, setActiveTab] = useState<"glow" | "vita">("glow");
+  const [activeTab, setActiveTab] = useState<"roam" | "glow" | "vita">("roam");
 
   // Auto-rotate hero every 5s
   useEffect(() => {
@@ -275,6 +308,17 @@ export default function MainLanding() {
         <div className="flex items-center justify-center mb-10">
           <div className="flex gap-1 bg-muted/50 rounded-full p-1 border border-border/50">
             <button
+              onClick={() => setActiveTab("roam")}
+              className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+                activeTab === "roam"
+                  ? "bg-background shadow-sm text-foreground border border-border/50"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <Compass className="w-3.5 h-3.5" />
+              Roam
+            </button>
+            <button
               onClick={() => setActiveTab("glow")}
               className={`flex items-center gap-1.5 px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                 activeTab === "glow"
@@ -301,7 +345,16 @@ export default function MainLanding() {
 
         {/* Section heading */}
         <div className="text-center mb-10">
-          {activeTab === "glow" ? (
+          {activeTab === "roam" ? (
+            <>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+                Creator-vetted travel, matched to you.
+              </h2>
+              <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
+                4 questions. We match you with the right Kara & Nate episode for your vibe, region, and travel style.
+              </p>
+            </>
+          ) : activeTab === "glow" ? (
             <>
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
                 Skincare that fits your skin — not someone else's.
@@ -324,19 +377,57 @@ export default function MainLanding() {
 
         {/* Feature cards */}
         <div className="grid sm:grid-cols-3 gap-4 mb-10">
-          {(activeTab === "glow" ? glowFeatures : vitaFeatures).map((f) => (
+          {(activeTab === "roam" ? roamFeatures : activeTab === "glow" ? glowFeatures : vitaFeatures).map((f) => (
             <FeatureCard key={f.title} feature={f} />
           ))}
         </div>
 
         {/* CTA */}
         <div className="flex justify-center">
-          <a href={activeTab === "glow" ? "#/glow" : "#/vita"}>
+          <a href={activeTab === "roam" ? "#/roam" : activeTab === "glow" ? "#/glow" : "#/vita"}>
             <Button size="lg" className="gap-2 rounded-full px-8 h-12 text-sm font-semibold shadow-sm">
-              {activeTab === "glow" ? "Build My Skincare Routine" : "Build My Vitamin Routine"}
+              {activeTab === "roam" ? "Find My Travel Pick" : activeTab === "glow" ? "Build My Skincare Routine" : "Build My Vitamin Routine"}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </a>
+        </div>
+      </section>
+
+      {/* ── SPLIT PROMO — Roam ── */}
+      <section className="border-t border-border/50 overflow-hidden">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 items-stretch">
+          <div className="flex flex-col justify-center px-8 py-12 bg-muted/20 order-2 md:order-1">
+            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full mb-5 w-fit dark:bg-amber-950 dark:border-amber-800 dark:text-amber-400">
+              <Compass className="w-3 h-3" />
+              Roam — Travel Picks
+            </span>
+            <h2 className="text-2xl font-bold text-foreground mb-3 leading-tight">
+              Skip the generic travel blog. Watch someone who's actually been.
+            </h2>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              24 destinations personally documented by Kara & Nate — matched to your vibe, region, trip length, and travel style in 4 questions.
+            </p>
+            <ul className="space-y-2 mb-8">
+              {["4-question travel quiz", "Roam, Glow, and Vita — all in one place", "Deep-link to the full YouTube episode"].map((item) => (
+                <li key={item} className="flex items-center gap-2 text-sm text-foreground">
+                  <CheckCircle className="w-4 h-4 text-amber-500 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="#/roam">
+              <Button className="gap-2 rounded-full w-fit px-6">
+                Try Roam <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
+          <div className="h-72 md:h-auto overflow-hidden order-1 md:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=900&q=85&fit=crop"
+              alt="Travel"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -438,8 +529,14 @@ export default function MainLanding() {
             Free, evidence-based, and built around you — not a generic list.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="#/glow">
+            <a href="#/roam">
               <Button size="lg" className="gap-2 rounded-full px-8 font-semibold">
+                <Compass className="w-4 h-4" />
+                Find My Travel Pick
+              </Button>
+            </a>
+            <a href="#/glow">
+              <Button size="lg" variant="outline" className="gap-2 rounded-full px-8 font-semibold">
                 <Sparkles className="w-4 h-4" />
                 Build Skincare Routine
               </Button>
