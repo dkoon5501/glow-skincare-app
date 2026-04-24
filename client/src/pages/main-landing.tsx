@@ -8,7 +8,7 @@ const heroSlides = [
     id: "roam",
     label: "Travel",
     headline: "Travel picks\ncurated by\ncreators who've been.",
-    sub: "24 creator-vetted destinations from Kara & Nate — matched to your vibe, region, and travel style.",
+    sub: "250+ creator-vetted destinations from 8 trusted travel creators — matched to your vibe, region, and travel style.",
     cta: "Find My Travel Pick",
     href: "#/roam",
     badge: "Roam",
@@ -58,18 +58,18 @@ const trustItems = [
 // ── Feature rows ──
 const roamFeatures = [
   {
-    title: "4 questions, 1 perfect pick",
-    desc: "Choose your vibe, region, trip length, and travel style. We surface the Kara & Nate episode that fits your exact situation.",
+    title: "5 questions, 1 perfect pick",
+    desc: "Choose your vibe, region, trip length, travel style, and sleep style. We surface the creator episode that fits your exact situation.",
     img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80&fit=crop",
   },
   {
-    title: "24 creator-vetted destinations",
-    desc: "Every pick has been personally visited and filmed by Kara & Nate — not algorithmically suggested or sponsored.",
+    title: "250+ creator-vetted destinations",
+    desc: "Every pick was personally visited and filmed by one of 8 trusted travel creators — not algorithmically suggested or sponsored.",
     img: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80&fit=crop",
   },
   {
     title: "Deep-link to the episode",
-    desc: "Each result links straight to the Kara & Nate YouTube episode — watch the full trip before you book.",
+    desc: "Each result links straight to the creator's YouTube episode — watch the full trip before you book.",
     img: "https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=800&q=80&fit=crop",
   },
 ];
@@ -412,7 +412,7 @@ export default function MainLanding() {
                 Creator-vetted travel, matched to you.
               </h2>
               <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
-                4 questions. We match you with the right Kara & Nate episode for your vibe, region, and travel style.
+                5 questions. We match you with the right creator episode for your vibe, region, and travel style.
               </p>
             </>
           ) : activeTab === "glow" ? (
@@ -466,10 +466,10 @@ export default function MainLanding() {
               Skip the generic travel blog. Watch someone who's actually been.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              24 destinations personally documented by Kara & Nate — matched to your vibe, region, trip length, and travel style in 4 questions.
+              250+ destinations personally documented by 8 trusted travel creators — matched to your vibe, region, trip length, and travel style in 5 questions.
             </p>
             <ul className="space-y-2 mb-8">
-              {["4-question travel quiz", "Roam, Glow, and Vita — all in one place", "Deep-link to the full YouTube episode"].map((item) => (
+              {["5-question travel quiz", "Roam, Glow, and Vita — all in one place", "Deep-link to the full YouTube episode"].map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-foreground">
                   <CheckCircle className="w-4 h-4 text-amber-500 shrink-0" />
                   {item}

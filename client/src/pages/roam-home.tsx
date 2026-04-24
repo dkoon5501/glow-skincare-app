@@ -1,9 +1,11 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import {
   roamQuestions,
+  roamUSZones,
   generateRoamResults,
   type RoamAnswers,
   type RoamResult,
+  type USZone,
 } from "@/lib/roam-data";
 import { shareRoamResults } from "@/lib/roam-share";
 import { saveRoamRoutine } from "@/lib/firestore";
@@ -30,6 +32,8 @@ import {
   BookOpen,
   ExternalLink,
   CheckCircle2,
+  MapPin,
+  SkipForward,
 } from "lucide-react";
 
 // ── Landing data ──
@@ -38,54 +42,58 @@ const ROAM_HOW_IT_WORKS = [
   {
     icon: Compass,
     step: "01",
-    title: "4 Quick Questions",
-    description: "Tell us your travel vibe, preferred region, trip length, and who you're traveling with.",
+    title: "5 Quick Questions",
+    description: "Tell us your vibe, region, trip length, travel style, and where you want to sleep. Pick the United States and you can narrow it further by zone.",
   },
   {
     icon: Play,
     step: "02",
     title: "Smart Match",
-    description: "Our algorithm scores 24 creator-vetted destinations against your answers and surfaces your top picks.",
+    description: "Our algorithm scores 250+ creator-vetted destinations against your answers and surfaces your top picks.",
   },
   {
     icon: ExternalLink,
     step: "03",
     title: "Top Pick + Alternates",
-    description: "Get your #1 matched destination with 3 alternates — each with a full episode from Kara & Nate.",
+    description: "Get your #1 matched destination with 3 alternates — each credited to the creator whose episode inspired it.",
   },
 ];
 
 const ROAM_DIFFERENTIATORS = [
   {
     title: "Real Creator Footage",
-    description: "Every destination comes with a full Kara & Nate YouTube episode — not stock photos or blog posts. See the real experience before you book.",
+    description: "Every destination links to a full YouTube episode from one of 8 trusted travel creators — not stock photos or blog posts. See the real experience before you book.",
   },
   {
     title: "Honest Opinions",
-    description: "Kara & Nate don't filter out the bad stuff. Their content covers what actually happened, including what didn't go as planned.",
+    description: "The creators we pull from don't filter out the bad stuff. Their episodes cover what actually happened — including what didn't go as planned.",
   },
   {
     title: "Matched to You",
-    description: "Your travel vibe, budget style, region, and group type all factor into the scoring. Two people get two different results.",
+    description: "Your vibe, budget, region, group, and where you want to sleep all factor into the scoring. Two people get two very different results.",
   },
   {
-    title: "24 Curated Picks",
-    description: "We didn't scrape a list. Each of the 24 destinations was selected from Kara & Nate's most memorable episodes across 6 regions.",
+    title: "250+ Curated Picks",
+    description: "We didn't scrape a list. Each destination was selected from a specific creator episode that captures the place at its best.",
   },
 ];
 
 const ROAM_FAQS = [
   {
-    q: "Who are Kara & Nate?",
-    a: "Kara & Nate are full-time travel creators who have visited 100+ countries and documented their experiences on YouTube. They started traveling in 2016 and built one of the most authentic long-term travel channels on the platform. We curated 24 of their most destination-defining episodes.",
+    q: "Which creators did you curate from?",
+    a: "Kara & Nate, The Bucket List Family, Lost LeBlanc, Mark Wiens, Outdoor Boys, Wandering Wagars, Eric Stoen / Travel Babbo, and Jeb Brooks — 8 full-time travel creators who have collectively documented hundreds of destinations across every continent.",
   },
   {
     q: "How are destinations matched to me?",
-    a: "Your vibe (luxury/budget/offbeat/adventure), preferred region, trip duration, and travel style (solo/partner/family/group) are each scored against the attributes of every destination in our database. The highest-scoring match becomes your top pick.",
+    a: "Your vibe (luxury/budget/offbeat/adventure), region (optionally a US zone), duration, travel style (solo/partner/family/group), and sleep style (hotel/hostel/outdoor/RV) are each scored against every destination. The highest scoring match becomes your top pick.",
+  },
+  {
+    q: "What's the US zone picker?",
+    a: "If you pick United States as your region, we show a second screen that lets you narrow to a zone — Pacific Coast, Rocky Mountains, Southwest, Southeast, Alaska & Hawaii, or the inland West. You can skip it to see all US episodes.",
   },
   {
     q: "Can I get results for a region I didn't pick?",
-    a: "The quiz filters to your selected region first, then scores within it. If you want to explore a different region, just retake the quiz — it takes under a minute.",
+    a: "The quiz filters to your selected region first, then scores within it. Episodes tagged as Global always surface as low-weight fallbacks. To explore a different region, just retake the quiz.",
   },
   {
     q: "Do I need an account?",
@@ -118,7 +126,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         </h1>
 
         <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-          24 destinations hand-curated from Kara & Nate's most memorable YouTube episodes — matched to your vibe, region, and travel style.
+          250+ destinations hand-curated from 8 trusted YouTube travel creators — matched to your vibe, region, trip length, group, and sleep style.
         </p>
 
         <Button
@@ -130,7 +138,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
           <ArrowRight className="w-4 h-4" />
         </Button>
         <p className="mt-4 text-xs text-muted-foreground">
-          4 questions&nbsp;&bull;&nbsp;No account required&nbsp;&bull;&nbsp;100% free
+          5 questions&nbsp;&bull;&nbsp;No account required&nbsp;&bull;&nbsp;100% free
         </p>
       </section>
 
@@ -139,7 +147,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-xl font-bold text-foreground tracking-tight">How It Works</h2>
-            <p className="mt-2 text-sm text-muted-foreground">4 questions. Your top pick in under a minute.</p>
+            <p className="mt-2 text-sm text-muted-foreground">5 questions. Your top pick in under a minute.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {ROAM_HOW_IT_WORKS.map(({ icon: Icon, step, title, description }) => (
@@ -201,7 +209,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-xl font-bold text-foreground tracking-tight mb-4">Ready to find your next destination?</h2>
           <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-            24 creator-vetted picks from Kara & Nate — matched to your vibe and travel style in under a minute.
+            250+ creator-vetted picks from 8 trusted travel creators — matched to your vibe and travel style in under a minute.
           </p>
           <Button
             size="lg"
@@ -212,7 +220,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
             <ArrowRight className="w-4 h-4" />
           </Button>
           <p className="mt-4 text-xs text-muted-foreground">
-            4 questions&nbsp;•&nbsp;No account required&nbsp;•&nbsp;100% free
+            5 questions&nbsp;•&nbsp;No account required&nbsp;•&nbsp;100% free
           </p>
         </div>
       </section>
@@ -220,7 +228,87 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
   );
 }
 
+// ── US Zone Picker (conditional step after region=United States) ──
+
+function USZonePicker({
+  onSelect,
+  onSkip,
+  onBack,
+  currentStepNum,
+  totalSteps,
+  progress,
+}: {
+  onSelect: (zone: USZone) => void;
+  onSkip: () => void;
+  onBack: () => void;
+  currentStepNum: number;
+  totalSteps: number;
+  progress: number;
+}) {
+  return (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-lg mx-auto px-4 py-6">
+        <div className="flex items-center justify-between mb-4">
+          <button
+            onClick={onBack}
+            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+          >
+            <ArrowLeft className="w-4 h-4" /> Back
+          </button>
+          <span className="text-xs text-muted-foreground">
+            {currentStepNum} of {totalSteps}
+          </span>
+        </div>
+
+        <div className="w-full h-1.5 bg-muted/30 rounded-full mb-8">
+          <div
+            className="h-full bg-amber-500 rounded-full transition-all duration-500"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+
+        <h2 className="text-xl font-bold text-foreground mb-1">
+          Any part of the US in particular?
+        </h2>
+        <p className="text-sm text-muted-foreground mb-6">
+          Pick a zone to narrow your picks, or skip to see everything in the US.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {roamUSZones.map((zone) => (
+            <button
+              key={zone.value}
+              onClick={() => onSelect(zone.value)}
+              className="text-left p-3.5 rounded-xl border border-card-border bg-card hover:border-amber-300 dark:hover:border-amber-700 transition-all"
+            >
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+                <div>
+                  <span className="text-sm font-medium text-foreground">{zone.label}</span>
+                  <p className="text-xs text-muted-foreground mt-0.5">{zone.description}</p>
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <button
+          onClick={onSkip}
+          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground"
+        >
+          <SkipForward className="w-4 h-4" />
+          Skip — show all US picks
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // ── Roam Quiz Flow ──
+
+type QuizStep =
+  | { kind: "question"; questionIndex: number }
+  | { kind: "usZone" };
 
 function RoamQuizFlow({
   onComplete,
@@ -229,30 +317,96 @@ function RoamQuizFlow({
   onComplete: (answers: RoamAnswers) => void;
   onBack: () => void;
 }) {
-  const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<RoamAnswers>({});
+  const [stepIndex, setStepIndex] = useState(0);
 
-  const question = roamQuestions[currentQ];
-  const progress = ((currentQ + 1) / roamQuestions.length) * 100;
-  const isRegionQuestion = question.id === "region";
-
-  function handleSelect(value: string) {
-    const newAnswers = { ...answers, [question.id]: value };
-    setAnswers(newAnswers);
-    if (currentQ < roamQuestions.length - 1) {
-      setTimeout(() => setCurrentQ(currentQ + 1), 280);
-    } else {
-      onComplete(newAnswers);
+  // Compute steps dynamically: insert the US zone picker after region if region === "United States".
+  const steps: QuizStep[] = useMemo(() => {
+    const s: QuizStep[] = [];
+    for (let i = 0; i < roamQuestions.length; i++) {
+      s.push({ kind: "question", questionIndex: i });
+      if (roamQuestions[i].id === "region" && answers.region === "United States") {
+        s.push({ kind: "usZone" });
+      }
     }
+    return s;
+  }, [answers.region]);
+
+  const currentStep = steps[stepIndex];
+  const totalSteps = steps.length;
+  const progress = ((stepIndex + 1) / totalSteps) * 100;
+
+  const advance = useCallback(
+    (newAnswers: RoamAnswers) => {
+      // Recompute steps with the new answers so we can decide whether to insert zone picker.
+      const nextSteps: QuizStep[] = [];
+      for (let i = 0; i < roamQuestions.length; i++) {
+        nextSteps.push({ kind: "question", questionIndex: i });
+        if (roamQuestions[i].id === "region" && newAnswers.region === "United States") {
+          nextSteps.push({ kind: "usZone" });
+        }
+      }
+      const nextIndex = stepIndex + 1;
+      if (nextIndex >= nextSteps.length) {
+        onComplete(newAnswers);
+      } else {
+        setStepIndex(nextIndex);
+      }
+    },
+    [stepIndex, onComplete],
+  );
+
+  function handleQuestionSelect(value: string) {
+    if (currentStep.kind !== "question") return;
+    const q = roamQuestions[currentStep.questionIndex];
+    const newAnswers = { ...answers };
+    newAnswers[q.id] = value;
+    // If region changed away from United States, drop any previously chosen usZone.
+    if (q.id === "region" && value !== "United States" && newAnswers.usZone) {
+      delete newAnswers.usZone;
+    }
+    setAnswers(newAnswers);
+    setTimeout(() => advance(newAnswers), 280);
+  }
+
+  function handleZoneSelect(zone: USZone) {
+    const newAnswers = { ...answers, usZone: zone };
+    setAnswers(newAnswers);
+    setTimeout(() => advance(newAnswers), 280);
+  }
+
+  function handleZoneSkip() {
+    const newAnswers = { ...answers };
+    delete newAnswers.usZone;
+    setAnswers(newAnswers);
+    advance(newAnswers);
   }
 
   function handleBack() {
-    if (currentQ > 0) {
-      setCurrentQ(currentQ - 1);
+    if (stepIndex > 0) {
+      setStepIndex(stepIndex - 1);
     } else {
       onBack();
     }
   }
+
+  if (currentStep.kind === "usZone") {
+    return (
+      <USZonePicker
+        onSelect={handleZoneSelect}
+        onSkip={handleZoneSkip}
+        onBack={handleBack}
+        currentStepNum={stepIndex + 1}
+        totalSteps={totalSteps}
+        progress={progress}
+      />
+    );
+  }
+
+  const question = roamQuestions[currentStep.questionIndex];
+  const isRegionQuestion = question.id === "region";
+  const isVibeQuestion = question.id === "vibe";
+  const useGrid = isRegionQuestion || isVibeQuestion;
 
   return (
     <div className="min-h-screen bg-background">
@@ -265,7 +419,7 @@ function RoamQuizFlow({
             <ArrowLeft className="w-4 h-4" /> Back
           </button>
           <span className="text-xs text-muted-foreground">
-            {currentQ + 1} of {roamQuestions.length}
+            {stepIndex + 1} of {totalSteps}
           </span>
         </div>
 
@@ -281,13 +435,13 @@ function RoamQuizFlow({
           <p className="text-sm text-muted-foreground mb-6">{question.subtitle}</p>
         )}
 
-        <div className={isRegionQuestion ? "grid grid-cols-2 gap-2" : "space-y-2"}>
+        <div className={useGrid ? "grid grid-cols-2 gap-2" : "space-y-2"}>
           {question.options.map((opt) => {
             const isSelected = answers[question.id] === opt.value;
             return (
               <button
                 key={opt.value}
-                onClick={() => handleSelect(opt.value)}
+                onClick={() => handleQuestionSelect(opt.value)}
                 className={`w-full text-left p-3.5 rounded-xl border transition-all ${
                   isSelected
                     ? "border-amber-400 bg-amber-50 dark:border-amber-600 dark:bg-amber-950/30"
@@ -301,7 +455,7 @@ function RoamQuizFlow({
                     {isSelected && (
                       <CheckCircle2 className="w-4 h-4 text-amber-500 inline ml-2" />
                     )}
-                    {opt.description && !isRegionQuestion && (
+                    {opt.description && !useGrid && (
                       <p className="text-xs text-muted-foreground mt-0.5">{opt.description}</p>
                     )}
                   </div>
@@ -425,17 +579,19 @@ function SaveRoamRoutineSection({
 function ShareRoamButton({
   answers,
   topPickTitle,
+  topPickCreator,
 }: {
   answers: RoamAnswers;
   topPickTitle: string;
+  topPickCreator?: string;
 }) {
   const [status, setStatus] = useState<"idle" | "copied" | "shared" | "failed">("idle");
 
   const handleShare = useCallback(async () => {
-    const result = await shareRoamResults(answers, topPickTitle);
+    const result = await shareRoamResults(answers, topPickTitle, topPickCreator);
     setStatus(result);
     if (result === "copied") setTimeout(() => setStatus("idle"), 2500);
-  }, [answers, topPickTitle]);
+  }, [answers, topPickTitle, topPickCreator]);
 
   return (
     <Button
@@ -464,6 +620,7 @@ const VIBE_LABELS: Record<string, string> = {
 };
 
 const DURATION_LABELS: Record<string, string> = {
+  weekend: "Weekend",
   week: "~1 week",
   twoWeeks: "~2 weeks",
   month: "1+ month",
@@ -476,7 +633,28 @@ const STYLE_LABELS: Record<string, string> = {
   group: "👥 Group",
 };
 
+const ACCOMMODATION_LABELS: Record<string, string> = {
+  hotel: "🏨 Hotel",
+  hostel: "🛏️ Hostel",
+  outdoor: "⛺️ Outdoor",
+  rv: "🚐 RV",
+};
+
 // ── Episode card (top pick) ──
+
+function CreatorLink({ creator, handle }: { creator: string; handle: string }) {
+  const url = `https://www.youtube.com/${handle.startsWith("@") ? handle : `@${handle}`}`;
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-xs font-medium text-amber-700 dark:text-amber-300 hover:underline"
+    >
+      {creator}
+    </a>
+  );
+}
 
 function TopPickCard({ result }: { result: RoamResult }) {
   const ep = result.episode;
@@ -514,7 +692,12 @@ function TopPickCard({ result }: { result: RoamResult }) {
 
       {/* Content */}
       <div className="p-5">
-        <p className="text-xs text-muted-foreground mb-1">{ep.destination}</p>
+        <div className="flex items-center justify-between gap-2 mb-1">
+          <p className="text-xs text-muted-foreground">{ep.destination}</p>
+          <span className="text-xs text-muted-foreground">
+            by <CreatorLink creator={ep.creator} handle={ep.creatorHandle} />
+          </span>
+        </div>
         <h3 className="text-base font-bold text-foreground mb-2 leading-snug">{ep.title}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed mb-4">{ep.description}</p>
 
@@ -572,7 +755,10 @@ function AlternateCard({ result }: { result: RoamResult }) {
       </div>
       <div className="p-4">
         <p className="text-xs text-muted-foreground mb-0.5">{ep.destination}</p>
-        <h4 className="text-sm font-semibold text-foreground mb-2 leading-snug line-clamp-2">{ep.title}</h4>
+        <h4 className="text-sm font-semibold text-foreground mb-1 leading-snug line-clamp-2">{ep.title}</h4>
+        <p className="text-[11px] text-muted-foreground mb-2">
+          by <CreatorLink creator={ep.creator} handle={ep.creatorHandle} />
+        </p>
         <ul className="space-y-0.5 mb-3">
           {ep.highlights.slice(0, 2).map((h) => (
             <li key={h} className="flex items-start gap-1.5 text-xs text-muted-foreground">
@@ -611,6 +797,12 @@ export function RoamResults({
   const topPick = results[0];
   const alternates = results.slice(1, 4);
 
+  const regionLabel = answers.region
+    ? answers.region === "United States" && answers.usZone
+      ? `United States — ${answers.usZone}`
+      : answers.region
+    : null;
+
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-lg mx-auto px-4 py-6 space-y-6">
@@ -620,11 +812,11 @@ export function RoamResults({
             variant="outline"
             className="mb-3 text-xs border-amber-300 text-amber-700 dark:border-amber-700 dark:text-amber-300"
           >
-            Kara & Nate (YouTube creators)
+            Curated from 8 trusted travel creators
           </Badge>
           <h1 className="text-xl font-bold text-foreground">Your Travel Picks</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Matched from 24 creator-vetted destinations
+            Matched from 250+ creator-vetted destinations
           </p>
         </div>
 
@@ -635,8 +827,8 @@ export function RoamResults({
               {VIBE_LABELS[answers.vibe] ?? answers.vibe}
             </Badge>
           )}
-          {answers.region && (
-            <Badge variant="outline" className="text-xs">{answers.region}</Badge>
+          {regionLabel && (
+            <Badge variant="outline" className="text-xs">{regionLabel}</Badge>
           )}
           {answers.duration && (
             <Badge variant="outline" className="text-xs">
@@ -646,6 +838,11 @@ export function RoamResults({
           {answers.travelStyle && (
             <Badge variant="outline" className="text-xs">
               {STYLE_LABELS[answers.travelStyle] ?? answers.travelStyle}
+            </Badge>
+          )}
+          {answers.accommodation && (
+            <Badge variant="outline" className="text-xs">
+              {ACCOMMODATION_LABELS[answers.accommodation] ?? answers.accommodation}
             </Badge>
           )}
         </div>
@@ -673,7 +870,7 @@ export function RoamResults({
         {/* Disclaimer */}
         <Card className="p-4">
           <p className="text-xs text-muted-foreground leading-relaxed">
-            Episodes sourced from Kara & Nate's YouTube channel (youtube.com/@KaraandNate). Roam is not affiliated with Kara & Nate. All travel decisions are your own — do your own research before booking.
+            Episodes sourced from the YouTube channels of the creators credited on each card. Roam is not affiliated with any creator. All travel decisions are your own — do your own research before booking.
           </p>
         </Card>
 
@@ -683,7 +880,11 @@ export function RoamResults({
             {isSharedView ? "Take the Quiz" : "Retake Quiz"}
           </Button>
           {topPick && (
-            <ShareRoamButton answers={answers} topPickTitle={topPick.episode.title} />
+            <ShareRoamButton
+              answers={answers}
+              topPickTitle={topPick.episode.title}
+              topPickCreator={topPick.episode.creator}
+            />
           )}
           <Button
             onClick={() => { window.location.hash = "#/vita"; }}
