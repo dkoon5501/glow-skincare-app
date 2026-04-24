@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Pill, Star, CheckCircle, Compass } from "lucide-react";
+import { ArrowRight, ArrowLeft, Sparkles, Pill, Star, CheckCircle, Compass } from "lucide-react";
 
 // ── Hero slides ──
 const heroSlides = [
@@ -113,22 +113,40 @@ const vitaFeatures = [
 // ── Social proof ──
 const testimonials = [
   {
+    quote: "Never would have found the Uyuni Salt Flats without Roam. One quiz, one perfect trip.",
+    name: "Alex D.",
+    tag: "Roam user",
+    img: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    quote: "Booked Iceland two weeks after getting my Roam result. Kara & Nate's episode showed me exactly what to expect.",
+    name: "Sam K.",
+    tag: "Roam user",
+    img: "https://randomuser.me/api/portraits/women/17.jpg",
+  },
+  {
     quote: "Finally a skincare routine I actually stick to. Everything is explained and the products don't conflict.",
     name: "Maya R.",
     tag: "Glow user",
-    img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80&fit=crop&face",
+    img: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    quote: "Three months in and my skin has genuinely never looked better. Worth the five minutes.",
+    name: "Chen W.",
+    tag: "Glow user",
+    img: "https://randomuser.me/api/portraits/men/85.jpg",
   },
   {
     quote: "I've tried so many vitamin routines. This is the first one that felt personalized to me, not just a generic stack.",
     name: "Jordan T.",
     tag: "Vita user",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80&fit=crop&face",
+    img: "https://randomuser.me/api/portraits/men/52.jpg",
   },
   {
     quote: "The provider discount alone saved me more than I expected. Clean, fast, no upsell.",
     name: "Priya S.",
     tag: "Vita user",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&fit=crop&face",
+    img: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];
 
@@ -209,26 +227,69 @@ function FeatureCard({ feature }: { feature: (typeof glowFeatures)[0] }) {
   );
 }
 
-// ── Testimonial Card ──
-function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
+// ── Testimonials Carousel ──
+function TestimonialsCarousel() {
+  const [active, setActive] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const reset = useCallback((next: number) => {
+    setActive(next);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => setActive((p) => (p + 1) % testimonials.length), 5000);
+  }, []);
+
+  useEffect(() => {
+    timerRef.current = setInterval(() => setActive((p) => (p + 1) % testimonials.length), 5000);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, []);
+
+  const t = testimonials[active];
+
   return (
-    <div className="rounded-2xl border border-border/50 bg-card p-5 flex flex-col gap-4">
-      <div className="flex gap-0.5">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-        ))}
-      </div>
-      <p className="text-sm text-foreground leading-relaxed flex-1">"{t.quote}"</p>
-      <div className="flex items-center gap-3">
-        <img
-          src={t.img}
-          alt={t.name}
-          className="w-9 h-9 rounded-full object-cover"
-        />
-        <div>
-          <p className="text-xs font-semibold text-foreground">{t.name}</p>
-          <p className="text-[10px] text-muted-foreground">{t.tag}</p>
+    <div className="flex flex-col items-center gap-5">
+      {/* Card */}
+      <div className="w-full max-w-md rounded-2xl border border-border/50 bg-card p-6 flex flex-col gap-4 min-h-[168px]">
+        <div className="flex gap-0.5">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
+          ))}
         </div>
+        <p className="text-sm text-foreground leading-relaxed flex-1">"{t.quote}"</p>
+        <div className="flex items-center gap-3">
+          <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover" />
+          <div>
+            <p className="text-xs font-semibold text-foreground">{t.name}</p>
+            <p className="text-[10px] text-muted-foreground">{t.tag}</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="flex items-center gap-4">
+        <button
+          onClick={() => reset((active - 1 + testimonials.length) % testimonials.length)}
+          className="w-7 h-7 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Previous"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+        </button>
+        <div className="flex gap-1.5">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => reset(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/30"}`}
+              aria-label={`Testimonial ${i + 1}`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={() => reset((active + 1) % testimonials.length)}
+          className="w-7 h-7 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Next"
+        >
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
     </div>
   );
@@ -250,7 +311,7 @@ export default function MainLanding() {
   const goToSlide = useCallback((i: number) => setActiveSlide(i), []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
 
       {/* ── HERO ── */}
       <section className="relative w-full h-[88vh] min-h-[560px] max-h-[820px] overflow-hidden bg-black">
@@ -508,14 +569,10 @@ export default function MainLanding() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="border-t border-border/50 py-16">
+      <section className="border-t border-border/50 py-12">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-xl font-bold text-foreground text-center mb-8">What people are saying</h2>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {testimonials.map((t) => (
-              <TestimonialCard key={t.name} t={t} />
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 
