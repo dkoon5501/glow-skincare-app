@@ -15,6 +15,8 @@ import SharedVitaResults from "@/pages/shared-vita-results";
 import RateMyRoutine from "@/pages/rate-my-routine";
 import MainLanding from "@/pages/main-landing";
 import VitaHome from "@/pages/vita-home";
+import RoamHome from "@/pages/roam-home";
+import SharedRoamResults from "@/pages/shared-roam-results";
 
 function AppRouter() {
   return (
@@ -24,6 +26,8 @@ function AppRouter() {
         <Route path="/" component={MainLanding} />
         <Route path="/glow" component={Home} />
         <Route path="/vita" component={VitaHome} />
+        <Route path="/roam" component={RoamHome} />
+        <Route path="/roam/:encoded" component={SharedRoamResults} />
         <Route path="/my-routines" component={MyRoutines} />
         <Route path="/r/:encoded" component={SharedResults} />
         <Route path="/v/:encoded" component={SharedVitaResults} />
