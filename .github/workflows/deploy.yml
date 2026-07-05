@@ -20,6 +20,9 @@ jobs:
       # Type-gate: the 2026-07 Glow data corruption shipped because nothing ran tsc
       - run: npm run check
 
+      # Data-gate: Roam catalog schema + quiz-coverage validation
+      - run: node scripts/validate-roam-data.mjs
+
       - run: npm run build
 
       - name: Deploy to Netlify
