@@ -17,6 +17,9 @@ jobs:
 
       - run: npm ci
 
+      # Type-gate: the 2026-07 Glow data corruption shipped because nothing ran tsc
+      - run: npm run check
+
       - run: npm run build
 
       - name: Deploy to Netlify
