@@ -8,7 +8,7 @@ const heroSlides = [
     id: "roam",
     label: "Travel",
     headline: "Travel picks\ncurated by\ncreators who've been.",
-    sub: "250+ creator-filmed episodes — matched to your vibe, region, and travel style.",
+    sub: "350+ creator-filmed episodes — matched to your vibe, region, and travel style.",
     cta: "Find My Travel Pick",
     href: "#/roam",
     badge: "Roam",
@@ -63,7 +63,7 @@ const roamFeatures = [
     img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80&fit=crop",
   },
   {
-    title: "250+ creator-filmed episodes",
+    title: "350+ creator-filmed episodes",
     desc: "Every pick links to the real YouTube episode filmed there, credited to the channel that made it — not stock photos or sponsored lists.",
     img: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80&fit=crop",
   },
@@ -132,7 +132,7 @@ const socialProofStats = [
   },
   {
     icon: Compass,
-    value: "250+",
+    value: "350+",
     label: "Creator-vetted travel episodes",
     detail: "Every pick backed by a real creator episode",
   },
@@ -413,7 +413,7 @@ export default function MainLanding() {
               Skip the generic travel blog. Watch someone who's actually been.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              250+ creator-filmed episodes — matched to your vibe, region, trip length, and travel style in 5 questions.
+              350+ creator-filmed episodes — matched to your vibe, region, trip length, and travel style in 5 questions.
             </p>
             <ul className="space-y-2 mb-8">
               {["5-question travel quiz", "Roam, Glow, and Vita — all in one place", "Deep-link to the full YouTube episode"].map((item) => (

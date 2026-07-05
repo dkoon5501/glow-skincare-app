@@ -49,7 +49,7 @@ const ROAM_HOW_IT_WORKS = [
     icon: Play,
     step: "02",
     title: "Smart Match",
-    description: "Our algorithm scores 250+ creator-filmed episodes against your answers and surfaces your top picks.",
+    description: "Our algorithm scores 350+ creator-filmed episodes against your answers and surfaces your top picks.",
   },
   {
     icon: ExternalLink,
@@ -73,7 +73,7 @@ const ROAM_DIFFERENTIATORS = [
     description: "Your vibe, budget, region, group, and where you want to sleep all factor into the scoring. Two people get two very different results.",
   },
   {
-    title: "250+ Curated Picks",
+    title: "350+ Curated Picks",
     description: "We didn't scrape a list. Each destination was selected from a specific creator episode that captures the place at its best.",
   },
 ];
@@ -81,7 +81,7 @@ const ROAM_DIFFERENTIATORS = [
 const ROAM_FAQS = [
   {
     q: "Which creators did you curate from?",
-    a: "Our catalog spans 250+ episodes from dozens of travel channels — anchored by full-time creators like Kara & Nate, The Bucket List Family, Lost LeBlanc, Mark Wiens, Outdoor Boys, Wandering Wagars, and Jeb Brooks. Every episode is credited and linked to the channel that actually filmed it.",
+    a: "Our catalog spans 350+ episodes from 21 travel channels — including Kara and Nate, Mark Wiens, Lost LeBlanc, The Bucket List Family, Drew Binsky, Yes Theory, Best Ever Food Review Show, Itchy Boots, Peter Santenello, and Indigo Traveller. Every episode is credited and linked to the channel that actually filmed it.",
   },
   {
     q: "How are destinations matched to me?",
@@ -126,7 +126,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         </h1>
 
         <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-          250+ creator-filmed episodes — matched to your vibe, region, trip length, group, and sleep style.
+          350+ creator-filmed episodes — matched to your vibe, region, trip length, group, and sleep style.
         </p>
 
         <Button
@@ -209,7 +209,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-xl font-bold text-foreground tracking-tight mb-4">Ready to find your next destination?</h2>
           <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-            250+ creator-filmed picks — matched to your vibe and travel style in under a minute.
+            350+ creator-filmed picks — matched to your vibe and travel style in under a minute.
           </p>
           <Button
             size="lg"
@@ -656,6 +656,17 @@ function CreatorLink({ creator, handle }: { creator: string; handle: string }) {
   );
 }
 
+// ~7% of videos have no maxresdefault; YouTube then serves a decodable 120x90 gray
+// placeholder with the 404, so onError never fires — detect it via naturalWidth on
+// load and swap to hqdefault, which exists for every video.
+function swapPlaceholderThumb(e: React.SyntheticEvent<HTMLImageElement>, videoId: string) {
+  const img = e.currentTarget;
+  if (img.naturalWidth === 120 && !img.dataset.fallback) {
+    img.dataset.fallback = "1";
+    img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  }
+}
+
 function TopPickCard({ result }: { result: RoamResult }) {
   const ep = result.episode;
   const thumb = `https://img.youtube.com/vi/${ep.videoId}/maxresdefault.jpg`;
@@ -670,6 +681,7 @@ function TopPickCard({ result }: { result: RoamResult }) {
           alt={ep.title}
           className="w-full h-full object-cover"
           loading="lazy"
+          onLoad={(e) => swapPlaceholderThumb(e, ep.videoId)}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className="absolute top-3 left-3">
@@ -740,6 +752,7 @@ function AlternateCard({ result }: { result: RoamResult }) {
           alt={ep.title}
           className="w-full h-full object-cover"
           loading="lazy"
+          onLoad={(e) => swapPlaceholderThumb(e, ep.videoId)}
         />
         <a
           href={watchUrl}
@@ -797,6 +810,13 @@ export function RoamResults({
   const topPick = results[0];
   const alternates = results.slice(1, 4);
 
+  // Honest fallback note: the chosen US zone has no episodes in the catalog yet,
+  // so the results shown are general US picks, not zone matches.
+  const zoneHasNoEpisodes =
+    answers.region === "United States" &&
+    !!answers.usZone &&
+    !results.some((r) => r.episode.usZone === answers.usZone);
+
   const regionLabel = answers.region
     ? answers.region === "United States" && answers.usZone
       ? `United States — ${answers.usZone}`
@@ -816,7 +836,7 @@ export function RoamResults({
           </Badge>
           <h1 className="text-xl font-bold text-foreground">Your Travel Picks</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Matched from 250+ creator-filmed episodes
+            Matched from 350+ creator-filmed episodes
           </p>
         </div>
 
@@ -846,6 +866,12 @@ export function RoamResults({
             </Badge>
           )}
         </div>
+
+        {zoneHasNoEpisodes && (
+          <p className="text-xs text-muted-foreground text-center">
+            No {answers.usZone} episodes in the catalog yet — showing our top U.S. picks instead.
+          </p>
+        )}
 
         {/* Top pick */}
         {topPick && <TopPickCard result={topPick} />}
