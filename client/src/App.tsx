@@ -17,6 +17,8 @@ import MainLanding from "@/pages/main-landing";
 import VitaHome from "@/pages/vita-home";
 import RoamHome from "@/pages/roam-home";
 import SharedRoamResults from "@/pages/shared-roam-results";
+import Privacy from "@/pages/privacy";
+import Terms from "@/pages/terms";
 
 function AppRouter() {
   return (
@@ -32,6 +34,8 @@ function AppRouter() {
         <Route path="/r/:encoded" component={SharedResults} />
         <Route path="/v/:encoded" component={SharedVitaResults} />
         <Route path="/rate-my-routine" component={RateMyRoutine} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/terms" component={Terms} />
         <Route component={NotFound} />
       </Switch>
       <Footer />
