@@ -1,0 +1,92 @@
+{
+  "selectedAt": "2026-07-04",
+  "criteria": "English-language creator-led channels, active <=12mo, long-form destination episodes; ranked by subscribers cross-checked vs Feedspot Top 100 2026 / AIR Media-Tech / SocialBlade; 18 top-50-caliber + 3 strategic US-parks channels for zone coverage (incl. inland West).",
+  "poolSize": 80,
+  "verified": 79,
+  "roster": [
+    {
+      "handle": "markwiens",
+      "channelName": "Mark Wiens"
+    },
+    {
+      "handle": "besteverfoodreviewshow",
+      "channelName": "Best Ever Food Review Show"
+    },
+    {
+      "handle": "yestheory",
+      "channelName": "Yes Theory"
+    },
+    {
+      "handle": "drewbinsky",
+      "channelName": "Drew Binsky"
+    },
+    {
+      "handle": "karaandnate",
+      "channelName": "Kara and Nate"
+    },
+    {
+      "handle": "baldandbankrupt",
+      "channelName": "bald and bankrupt"
+    },
+    {
+      "handle": "petersantenello",
+      "channelName": "Peter Santenello"
+    },
+    {
+      "handle": "strictlydumpling",
+      "channelName": "Strictly Dumpling"
+    },
+    {
+      "handle": "fearlessandfar",
+      "channelName": "Fearless & Far"
+    },
+    {
+      "handle": "jordentually",
+      "channelName": "Jorden Tually"
+    },
+    {
+      "handle": "itchyboots",
+      "channelName": "Itchy Boots"
+    },
+    {
+      "handle": "lostleblanc",
+      "channelName": "Lost LeBlanc"
+    },
+    {
+      "handle": "indigotraveller",
+      "channelName": "Indigo Traveller"
+    },
+    {
+      "handle": "evazubeck",
+      "channelName": "Eva zu Beck"
+    },
+    {
+      "handle": "kurtcaz",
+      "channelName": "Kurt Caz"
+    },
+    {
+      "handle": "thebucketlistfamily",
+      "channelName": "The Bucket List Family"
+    },
+    {
+      "handle": "luxurytravelexpert",
+      "channelName": "The Luxury Travel Expert"
+    },
+    {
+      "handle": "woltersworld",
+      "channelName": "Wolters World"
+    },
+    {
+      "handle": "morethanjustparks",
+      "channelName": "More Than Just Parks"
+    },
+    {
+      "handle": "throughmylens",
+      "channelName": "Through My Lens"
+    },
+    {
+      "handle": "trentandallie",
+      "channelName": "Trent & Allie"
+    }
+  ]
+}

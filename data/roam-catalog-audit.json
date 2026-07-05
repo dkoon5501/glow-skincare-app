@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-07-05",
+  "method": "yt-dlp channel enumeration -> en subtitles -> LLM extraction -> blind transcript-only destination verification (roster provenance: data/roam-roster-audit.json)",
+  "previousCatalog": 257,
+  "survivors": 176,
+  "droppedOffRoster": 81,
+  "newVerified": 180,
+  "total": 356,
+  "perCreator": {
+    "Kara and Nate": 52,
+    "Mark Wiens": 63,
+    "Best Ever Food Review Show": 11,
+    "Lost LeBlanc": 51,
+    "The Bucket List Family": 45,
+    "Drew Binsky": 11,
+    "Yes Theory": 12,
+    "bald and bankrupt": 12,
+    "Peter Santenello": 8,
+    "Strictly Dumpling": 12,
+    "Fearless & Far": 12,
+    "Jorden Tually": 8,
+    "Itchy Boots": 8,
+    "Indigo Traveller": 12,
+    "Eva zu Beck": 6,
+    "Kurt Caz": 12,
+    "The Luxury Travel Expert": 7,
+    "Wolters World": 3,
+    "More Than Just Parks": 1,
+    "Through My Lens": 9,
+    "Trent & Allie": 1
+  },
+  "perRegion": {
+    "Asia": 137,
+    "Europe": 58,
+    "Americas": 18,
+    "Africa": 39,
+    "Middle East": 29,
+    "Oceania": 12,
+    "North America": 5,
+    "Central America": 5,
+    "United States": 31,
+    "South America": 12,
+    "Global": 6,
+    "Caribbean": 4
+  },
+  "zones": {
+    "Alaska & Hawaii": 6,
+    "Rocky Mountains": 3,
+    "Southwest": 10,
+    "Southeast": 8,
+    "Pacific Coast": 4
+  }
+}
