@@ -51,7 +51,10 @@ export function decodeRoamAnswers(encoded: string): RoamAnswers | null {
     for (let i = 0; i < order.length; i++) {
       const p = parts[i];
       if (p === "_") continue;
-      out[order[i]] = LONG[p] || p;
+      const value = LONG[p];
+      // unknown segment = corrupted/garbage link → invalid, not fabricated answers
+      if (!value) return null;
+      out[order[i]] = value;
     }
     return Object.keys(out).length > 0 ? out : null;
   } catch {
