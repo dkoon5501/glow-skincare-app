@@ -184,10 +184,24 @@ export const supplementDatabase: Supplement[] = [
     dosage: "5000 IU daily",
     price: "~$10-14",
     keyIngredients: ["Vitamin D3 (Cholecalciferol)"],
-    bestFor: ["vit_d_deficiency", "immunity", "joint", "low_sun", "sedentary"],
-    whyRecommended: "The most common deficiency worldwide. D3 is the bioavailable form, and 5000 IU is the standard correction dose recommended by most practitioners for adults with low levels.",
+    bestFor: ["vit_d_deficiency"],
+    whyRecommended: "A correction dose for diagnosed vitamin D deficiency. Note: 5000 IU exceeds the 4000 IU daily upper limit for adults, so it should only be used to restore low blood levels under your clinician's guidance — with follow-up testing to step down once levels normalize.",
     timing: "morning",
     amazonUrl: "https://www.amazon.com/dp/B004GW4ON8?tag=buildmyroutine-20",
+    verified: true,
+  },
+  {
+    id: "vitd-nature-made-2000",
+    name: "Vitamin D3 2000 IU",
+    brand: "Nature Made",
+    category: "vitamin_d",
+    form: "softgel",
+    dosage: "2000 IU daily",
+    price: "~$8-12",
+    keyIngredients: ["Vitamin D3 (Cholecalciferol)"],
+    bestFor: ["immunity", "joint", "low_sun", "sedentary"],
+    whyRecommended: "The most common nutrient gap worldwide. D3 is the bioavailable form, and 1000-2000 IU daily is a safe maintenance dose for adults without a diagnosed deficiency — well within the 4000 IU daily upper limit.",
+    timing: "morning",
     verified: true,
   },
   {
@@ -354,8 +368,8 @@ export const supplementDatabase: Supplement[] = [
     dosage: "1 tablet daily (with vitamin C for absorption)",
     price: "~$6-10",
     keyIngredients: ["Ferrous Sulfate"],
-    bestFor: ["iron_deficiency", "female", "energy", "budget"],
-    whyRecommended: "Standard iron replacement for diagnosed deficiency. Take with vitamin C and away from calcium, coffee, and tea for best absorption. Expert tip: ferrous sulfate is the best-absorbed over-the-counter form.",
+    bestFor: ["iron_deficiency"],
+    whyRecommended: "Standard iron replacement for diagnosed iron deficiency or anemia — supplemental iron at this dose is only appropriate with a confirmed deficiency. Take with vitamin C and away from calcium, coffee, and tea for best absorption. Expert tip: ferrous sulfate is the best-absorbed over-the-counter form.",
     timing: "morning",
     amazonUrl: "https://www.amazon.com/dp/B001F1GO2Y?tag=buildmyroutine-20",
     verified: true,
@@ -389,7 +403,7 @@ export const supplementDatabase: Supplement[] = [
     bestFor: ["pregnant", "female"],
     whyRecommended: "Methylated folate (not folic acid) for optimal neural tube development, plus choline and iron — two nutrients most prenatals under-dose. Thorne is third-party tested for purity.",
     timing: "with_food",
-    amazonUrl: "https://www.amazon.com/dp/B000FGWDM8?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Thorne+Basic+Prenatal&tag=buildmyroutine-20",
     verified: true,
   },
 ];
@@ -426,6 +440,45 @@ function buildProfile(answers: VitaAnswers): VitaProfile {
   const profileCode = `${ageLetter}${sexLetter}-${dietLetter}${goals.length}${conditions.length}`;
 
   return { ageRange: age, sex, dietType: diet, goals, conditions, lifestyle, profileCode };
+}
+
+// Human-readable labels for internal tags, used in user-visible "reason" strings.
+const tagLabels: Record<string, string> = {
+  energy: "more energy",
+  sleep: "better sleep",
+  immunity: "immune support",
+  joint: "joint & bone health",
+  gut: "gut health & digestion",
+  stress: "stress & mood",
+  beauty: "hair, skin & nails",
+  fitness: "fitness & recovery",
+  heart: "heart health",
+  cognitive: "cognitive function",
+  vit_d_deficiency: "vitamin D deficiency",
+  iron_deficiency: "iron deficiency",
+  digestive: "digestive issues",
+  anxiety: "high stress or anxiety",
+  insomnia: "trouble sleeping",
+  joint_pain: "joint pain or stiffness",
+  pregnant: "pregnancy",
+  active: "active lifestyle",
+  sedentary: "mostly sedentary lifestyle",
+  low_sun: "limited sun exposure",
+  caffeine: "high caffeine intake",
+  alcohol: "regular alcohol intake",
+  medications: "prescription medications",
+  standard: "standard diet",
+  vegetarian: "vegetarian diet",
+  vegan: "vegan diet",
+  keto: "keto / low-carb diet",
+  mediterranean: "Mediterranean diet",
+  female: "women's nutrient needs",
+  male: "men's nutrient needs",
+  "60+": "age 60+",
+};
+
+function humanizeTag(tag: string): string {
+  return tagLabels[tag] ?? tag.replace(/_/g, " ");
 }
 
 function scoreSupplements(profile: VitaProfile, preference: string): SupplementRecommendation[] {
@@ -490,8 +543,16 @@ function scoreSupplements(profile: VitaProfile, preference: string): SupplementR
       continue;
     }
 
-    // Skip iron unless deficient or female
-    if (supp.category === "iron" && !tags.has("iron_deficiency") && profile.sex !== "female") {
+    // Skip iron unless there is an explicit indication (diagnosed iron deficiency / anemia).
+    // Pregnancy is covered by the prenatal (which already contains iron), so standalone
+    // iron is suppressed when a prenatal will be recommended.
+    if (supp.category === "iron" && (!tags.has("iron_deficiency") || tags.has("pregnant"))) {
+      continue;
+    }
+
+    // Skip high-dose vitamin D (5000 IU exceeds the 4000 IU/day adult upper limit)
+    // unless the user reported a diagnosed vitamin D deficiency.
+    if (supp.id === "vitd-nature-made-5000" && !tags.has("vit_d_deficiency")) {
       continue;
     }
 
@@ -499,7 +560,7 @@ function scoreSupplements(profile: VitaProfile, preference: string): SupplementR
       const priority = score >= 8 ? "essential" : score >= 4 ? "recommended" : "optional";
       const topReasons = reasons.slice(0, 3);
       const reason = topReasons.length > 0
-        ? `Matches your ${topReasons.join(", ")} ${topReasons.length === 1 ? "goal" : "goals"}.`
+        ? `Based on your answers: ${topReasons.map(humanizeTag).join(", ")}.`
         : supp.whyRecommended;
       all.push({ supplement: supp, score, priority, reason });
     }
@@ -552,8 +613,9 @@ export function generateVitaRoutine(answers: VitaAnswers): VitaRoutine {
   if (tags.has("iron_deficiency")) {
     warnings.push("Take iron separately from calcium, coffee, and tea — these reduce absorption. Pair with vitamin C to enhance absorption by up to 67%.");
   }
-  if (morning.some(r => r.supplement.category === "vitamin_d") && morning.some(r => r.supplement.category === "iron")) {
-    warnings.push("Take vitamin D and iron at different times of day for optimal absorption.");
+  const allRecs = [...morning, ...evening, ...withFood];
+  if (allRecs.some(r => r.supplement.id === "vitd-nature-made-5000")) {
+    warnings.push("Your routine includes 5000 IU vitamin D3, which is above the 4000 IU daily upper limit for adults. This correction dose is intended for diagnosed deficiency only — confirm the dose with your clinician and recheck your levels so you can step down to a maintenance dose once they normalize.");
   }
 
   return { profile, morning, evening, withFood, warnings };
