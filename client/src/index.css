@@ -148,6 +148,13 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  /* No section may ever widen the page past the viewport (mobile horizontal-scroll guard).
+     clip (not hidden) so html/body don't become scroll containers and break position:sticky. */
+  html,
+  body {
+    overflow-x: clip;
+  }
 }
 
 @layer utilities {

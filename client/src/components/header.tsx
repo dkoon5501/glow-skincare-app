@@ -30,7 +30,7 @@ export function Header() {
       className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-sm"
       data-testid="site-header"
     >
-      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-2 sm:gap-4">
         {/* Logo */}
         <button
           onClick={() => navigate("/")}
@@ -50,7 +50,7 @@ export function Header() {
         <nav className="flex items-center gap-1 bg-muted/40 rounded-full px-1 py-1 border border-border/40">
           <button
             onClick={() => navigate("/roam")}
-            className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1 px-2.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
               location.startsWith("/roam")
                 ? "bg-background shadow-sm text-foreground border border-border/50"
                 : "text-muted-foreground hover:text-foreground"
@@ -61,7 +61,7 @@ export function Header() {
           </button>
           <button
             onClick={() => navigate("/glow")}
-            className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1 px-2.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
               location.startsWith("/glow") || location.startsWith("/rate")
                 ? "bg-background shadow-sm text-foreground border border-border/50"
                 : "text-muted-foreground hover:text-foreground"
@@ -72,7 +72,7 @@ export function Header() {
           </button>
           <button
             onClick={() => navigate("/vita")}
-            className={`flex items-center gap-1 px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
+            className={`flex items-center gap-1 px-2.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
               location.startsWith("/vita")
                 ? "bg-background shadow-sm text-foreground border border-border/50"
                 : "text-muted-foreground hover:text-foreground"
@@ -147,11 +147,12 @@ export function Header() {
             variant="ghost"
             size="sm"
             onClick={() => signInWithGoogle()}
-            className="gap-1.5 text-xs"
+            className="gap-1.5 text-xs px-2 sm:px-3"
             data-testid="header-sign-in"
+            aria-label="Sign In"
           >
             <LogIn className="w-3.5 h-3.5" />
-            Sign In
+            <span className="hidden sm:inline">Sign In</span>
           </Button>
         )}
         </div>
