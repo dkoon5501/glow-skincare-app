@@ -8,8 +8,9 @@
 // <meta property="og:..."> tags for crawlers, plus a tiny <script> that
 // redirects real humans to the matching hash route so the SPA takes over.
 //
-// A Netlify `_redirects` file routes `/r/*` and `/v/*` to the shared
-// `/r/index.html` and `/v/index.html` shells respectively.
+// A Netlify `_redirects` file routes `/r/*`, `/v/*` and `/roam/*` to the
+// shared `/r/index.html`, `/v/index.html` and `/roam/index.html` shells
+// respectively.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -110,9 +111,11 @@ const staticRedirect = (hash) => `      (function(){
         } catch (e) {}
       })();`;
 
-// For /r/* and /v/* (dynamic shared routes): capture the path segment after
-// the prefix and forward it into the hash route so the SPA decodes it.
-const dynamicRedirect = (prefix) => `      (function(){
+// For /r/*, /v/* and /roam/* (dynamic shared routes): capture the path
+// segment after the prefix and forward it into the hash route so the SPA
+// decodes it. `fallbackHash` is where to send humans when no encoded
+// segment is present.
+const dynamicRedirect = (prefix, fallbackHash) => `      (function(){
         try {
           var p = location.pathname || "";
           var m = p.match(/^\\/${prefix}\\/(.+?)\\/?$/);
@@ -121,7 +124,7 @@ const dynamicRedirect = (prefix) => `      (function(){
             return;
           }
           // No encoded segment — bounce to the appropriate quiz.
-          location.replace("/#/${prefix === "r" ? "glow" : "vita"}");
+          location.replace("/#${fallbackHash}");
         } catch (e) {}
       })();`;
 
@@ -151,7 +154,7 @@ const routes = [
       "View this personalized, dermatologist-guided skincare routine — then build your own for free in 2 minutes.",
     ogImage: `${BASE}/og-image.png`,
     canonical: `${BASE}/r`,
-    redirectScript: dynamicRedirect("r"),
+    redirectScript: dynamicRedirect("r", "/glow"),
   },
   {
     dir: "v",
@@ -160,7 +163,18 @@ const routes = [
       "View this personalized vitamin & supplement routine — then build your own for free in 2 minutes.",
     ogImage: `${BASE}/og-vita.png`,
     canonical: `${BASE}/v`,
-    redirectScript: dynamicRedirect("v"),
+    redirectScript: dynamicRedirect("v", "/vita"),
+  },
+  {
+    dir: "roam",
+    title: "Someone shared their Roam travel picks with you",
+    description:
+      "View these creator-vetted travel picks matched to a 2-minute quiz — then take the quiz to get your own.",
+    // TODO(David): add a Roam-specific /og-roam.png; reusing the Glow image
+    // until one exists so link previews aren't broken.
+    ogImage: `${BASE}/og-image.png`,
+    canonical: `${BASE}/roam`,
+    redirectScript: dynamicRedirect("roam", "/roam"),
   },
 ];
 
@@ -171,11 +185,12 @@ for (const r of routes) {
   console.log(`[og-shells] wrote ${r.dir}/index.html`);
 }
 
-// Netlify redirects so /r/ANYTHING and /v/ANYTHING serve the shell.
-// Pretty URLs already map /glow → /glow/index.html automatically.
+// Netlify redirects so /r/ANYTHING, /v/ANYTHING and /roam/ANYTHING serve
+// the shell. Pretty URLs already map /glow → /glow/index.html automatically.
 const redirects = `# Dynamic share routes — serve the prerendered shell for crawlers.
-/r/*    /r/index.html   200
-/v/*    /v/index.html   200
+/r/*     /r/index.html     200
+/v/*     /v/index.html     200
+/roam/*  /roam/index.html  200
 
 # SPA fallback for any other unknown path — load the main app.
 /*      /index.html     200

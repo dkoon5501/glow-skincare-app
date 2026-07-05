@@ -49,7 +49,7 @@ const ROAM_HOW_IT_WORKS = [
     icon: Play,
     step: "02",
     title: "Smart Match",
-    description: "Our algorithm scores 250+ creator-vetted destinations against your answers and surfaces your top picks.",
+    description: "Our algorithm scores 250+ creator-filmed episodes against your answers and surfaces your top picks.",
   },
   {
     icon: ExternalLink,
@@ -62,7 +62,7 @@ const ROAM_HOW_IT_WORKS = [
 const ROAM_DIFFERENTIATORS = [
   {
     title: "Real Creator Footage",
-    description: "Every destination links to a full YouTube episode from one of 8 trusted travel creators — not stock photos or blog posts. See the real experience before you book.",
+    description: "Every destination links to a full YouTube episode from the channel that actually filmed it — not stock photos or blog posts. See the real experience before you book.",
   },
   {
     title: "Honest Opinions",
@@ -81,7 +81,7 @@ const ROAM_DIFFERENTIATORS = [
 const ROAM_FAQS = [
   {
     q: "Which creators did you curate from?",
-    a: "Kara & Nate, The Bucket List Family, Lost LeBlanc, Mark Wiens, Outdoor Boys, Wandering Wagars, Eric Stoen / Travel Babbo, and Jeb Brooks — 8 full-time travel creators who have collectively documented hundreds of destinations across every continent.",
+    a: "Our catalog spans 250+ episodes from dozens of travel channels — anchored by full-time creators like Kara & Nate, The Bucket List Family, Lost LeBlanc, Mark Wiens, Outdoor Boys, Wandering Wagars, and Jeb Brooks. Every episode is credited and linked to the channel that actually filmed it.",
   },
   {
     q: "How are destinations matched to me?",
@@ -126,7 +126,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         </h1>
 
         <p className="text-base md:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-          250+ destinations hand-curated from 8 trusted YouTube travel creators — matched to your vibe, region, trip length, group, and sleep style.
+          250+ creator-filmed episodes — matched to your vibe, region, trip length, group, and sleep style.
         </p>
 
         <Button
@@ -209,7 +209,7 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-xl font-bold text-foreground tracking-tight mb-4">Ready to find your next destination?</h2>
           <p className="text-sm text-muted-foreground mb-8 leading-relaxed">
-            250+ creator-vetted picks from 8 trusted travel creators — matched to your vibe and travel style in under a minute.
+            250+ creator-filmed picks — matched to your vibe and travel style in under a minute.
           </p>
           <Button
             size="lg"
@@ -812,11 +812,11 @@ export function RoamResults({
             variant="outline"
             className="mb-3 text-xs border-amber-300 text-amber-700 dark:border-amber-700 dark:text-amber-300"
           >
-            Curated from 8 trusted travel creators
+            Every pick links to its real creator episode
           </Badge>
           <h1 className="text-xl font-bold text-foreground">Your Travel Picks</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Matched from 250+ creator-vetted destinations
+            Matched from 250+ creator-filmed episodes
           </p>
         </div>
 
