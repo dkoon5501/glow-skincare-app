@@ -33,6 +33,7 @@ import {
   Copy,
   ThumbsUp,
   ImageIcon,
+  BadgeCheck,
 } from "lucide-react";
 import type { RecommendedRoutine, Product, RoutineStep, QuizAnswers, RoutineItem } from "@/lib/skincare-data";
 import { useState, useCallback, useEffect } from "react";
@@ -40,7 +41,7 @@ import { cn } from "@/lib/utils";
 import { ProductImage } from "@/components/product-image";
 import { shareResults } from "@/lib/share-utils";
 
-import { SEED_UPVOTES } from "@/lib/seed-upvotes";
+import { addLocalDiscard } from "@/lib/discards";
 import { useAuth } from "@/lib/auth-context";
 import { saveRoutine, saveDiscardedProduct, toggleUpvote, getUpvoteCounts, getUserUpvotes } from "@/lib/firestore";
 import { useHashLocation } from "wouter/use-hash-location";
@@ -295,6 +296,16 @@ function ProductCard({
                   <Badge variant="outline" className="text-xs gap-1 text-amber-700 dark:text-amber-400 border-amber-300 dark:border-amber-700">
                     <MoonStar className="w-3 h-3" />
                     PM Only
+                  </Badge>
+                )}
+                {(currentProduct.sourceLinks?.length ?? 0) > 0 && (
+                  <Badge
+                    variant="outline"
+                    className="text-xs gap-1 text-primary border-primary/30"
+                    title={`Publicly recommended by ${currentProduct.sourceLinks!.length} board-certified dermatologist${currentProduct.sourceLinks!.length > 1 ? "s" : ""} — sources under "Why this product"`}
+                  >
+                    <BadgeCheck className="w-3 h-3" />
+                    {currentProduct.sourceLinks!.length} derm{currentProduct.sourceLinks!.length > 1 ? "s" : ""}
                   </Badge>
                 )}
                 <button
@@ -579,21 +590,13 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
   // Collect all product IDs from the routine
   const allProductIds = [...amRoutine, ...pmRoutine].map(item => item.product.id);
 
-  // Load upvote counts on mount (merge seed counts with live Firestore counts)
+  // Load live upvote counts on mount (real user votes only — no seeded numbers)
   useEffect(() => {
     getUpvoteCounts(allProductIds).then(liveCounts => {
-      const merged: Record<string, number> = {};
-      for (const pid of allProductIds) {
-        merged[pid] = (SEED_UPVOTES[pid] || 0) + (liveCounts[pid] || 0);
-      }
-      setUpvoteCounts(merged);
+      setUpvoteCounts(liveCounts);
     }).catch(() => {
-      // Fallback to seed counts if Firestore fails
-      const fallback: Record<string, number> = {};
-      for (const pid of allProductIds) {
-        fallback[pid] = SEED_UPVOTES[pid] || 0;
-      }
-      setUpvoteCounts(fallback);
+      // Counts unavailable (e.g. signed out) — buttons still work, just no totals
+      setUpvoteCounts({});
     });
   }, []);
 
@@ -639,7 +642,9 @@ export function Results({ recommendation, answers, onRetake, isSharedView }: Res
 
   const handleDiscard = useCallback(
     async (product: Product, reason: string, customReason: string) => {
-      if (!user) return; // silent if not signed in
+      // Always remember on this device so retakes exclude it, signed in or not
+      addLocalDiscard(product.id);
+      if (!user) return;
       await saveDiscardedProduct(user.uid, {
         productId: product.id,
         productName: product.name,

@@ -48,7 +48,7 @@ const TIME_OPTIONS = [
 ];
 
 // Build brand → products lookup from database
-const KNOWN_BRANDS = [...new Set(productDatabase.map((p) => p.brand))].sort();
+const KNOWN_BRANDS = Array.from(new Set(productDatabase.map((p) => p.brand))).sort();
 
 function getProductsForBrand(brand: string, category?: string): Product[] {
   return productDatabase.filter(

@@ -37,7 +37,7 @@ export function multiAddToCartUrl(amazonUrls: string[]): string | null {
   if (asins.length === 0) return null;
 
   // Deduplicate
-  const unique = [...new Set(asins)];
+  const unique = Array.from(new Set(asins));
 
   const params = unique
     .map((asin, i) => `ASIN.${i + 1}=${asin}&Quantity.${i + 1}=1`)

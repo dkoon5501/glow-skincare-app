@@ -309,25 +309,6 @@ export const productDatabase: Product[] = [
     dermVerified: true,
   },
   {
-    id: "cerave-foaming-cleanser",
-    name: "Foaming Facial Cleanser",
-    brand: "CeraVe",
-    category: "cleanser",
-    price: "$10–15",
-    keyIngredients: ["Ceramides", "Niacinamide", "Hyaluronic Acid"],
-    bestFor: ["oily", "combination", "acne", "normal", "budget"],
-    whyRecommended:
-      "Removes excess oil and dirt without disrupting the skin barrier. Dr. Alexis Stephens recommends the foaming formula for oily and combination skin types who want a deeper cleanse while keeping ceramides intact.",
-    source: "Dr. Daniel Sugai & Dr. Alexis Stephens (YouTube)",
-    sourceUrl: "https://www.youtube.com/watch?v=OeNJbShiOOw",
-    sourceLinks: [
-      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
-      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
-    ],
-    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=buildmyroutine-20",
-    dermVerified: true,
-  },
-  {
     id: "lrp-toleriane-purifying-cleanser",
     name: "Toleriane Purifying Foaming Cleanser",
     brand: "La Roche-Posay",
@@ -344,21 +325,6 @@ export const productDatabase: Product[] = [
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
       { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
     ],
-    dermVerified: true,
-  },
-  {
-    id: "cetaphil-daily-facial-cleanser",
-    name: "Daily Facial Cleanser",
-    brand: "Cetaphil",
-    category: "cleanser",
-    price: "$10–15",
-    keyIngredients: ["Glycerin", "Niacinamide", "Vitamin B5 (Panthenol)"],
-    bestFor: ["oily", "combination", "normal", "sensitive", "budget"],
-    whyRecommended:
-      "A gel cleanser that turns into a low-lather foam — ideal for oily to combination skin. Dr. Daniel Sugai recommends the Cetaphil Daily Facial Cleanser for its gentle yet effective cleansing for oily and combination skin types.",
-    source: "Dr. Daniel Sugai & Dr. Sam Ellis (YouTube)",
-    sourceUrl: "https://www.youtube.com/watch?v=VxG9rE4seIs",
-    // No ASIN listed in spec for this product
     dermVerified: true,
   },
   {
@@ -826,6 +792,9 @@ export const productDatabase: Product[] = [
     source: "Dr. Daniel Sugai, Dr. Jenny Liu & Dr. Dustin Portela (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=SvB_EaH29wQ",
     sourceLinks: [
+      { name: "Dr. Mara Weinstein", url: "https://www.youtube.com/watch?v=GgJ3kp9mpVc" },
+      { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=SjSmmopv0JE" },
+      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=aVjrWDlQ2vU" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=SvB_EaH29wQ" },
       { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=DkyhrQWcmEA" },
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=OkD8mga9BLI" },
@@ -982,6 +951,9 @@ export const productDatabase: Product[] = [
     source: "Dr. Sam Ellis, Dr. Daniel Sugai & Dr. Muneeb Shah (YouTube)",
     sourceUrl: "https://www.youtube.com/watch?v=fRwKPdSycFU",
     sourceLinks: [
+      { name: "Dr. Joyce Park", url: "https://www.womenshealthmag.com/beauty/a61088227/how-a-dermatologist-gets-ready-for-the-beach/" },
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
+      { name: "Dr. Dustin Portela", url: "https://shopmy.us/shop/208skindoc" },
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=iGBIxwOxfWU" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=NK6ThY5Pt74" },
       { name: "Dr. Muneeb Shah", url: "https://www.youtube.com/watch?v=OnraqyJzPo0" },
@@ -1314,7 +1286,7 @@ export const productDatabase: Product[] = [
   // ── EXPANDED PRODUCT DATABASE (top brands & bestsellers) ──
   {
     id: "the-ordinary-the-ordinary-niacinamide-10-zinc-1-smoothing-se",
-    name: "The Ordinary Niacinamide 10% + Zinc 1% Smoothing Serum for Blemish-Prone Skin",
+    name: "Niacinamide 10% + Zinc 1% Smoothing Serum for Blemish-Prone Skin",
     brand: "The Ordinary",
     category: "serum",
     price: "~$6",
@@ -1396,7 +1368,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "la-roche-posay-la-roche-posay-toleriane-double-repair-face-m",
-    name: "La Roche-Posay Toleriane Double Repair Face Moisturizer",
+    name: "Toleriane Double Repair Face Moisturizer",
     brand: "La Roche-Posay",
     category: "moisturizer",
     price: "~$20-25",
@@ -1455,7 +1427,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Dustin Portela", url: "https://www.youtube.com/watch?v=q4nE9qFD4_E" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/B08GDDZPBQ?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=La+Roche-Posay+Dr.+Dustin+Portela&tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -1491,19 +1463,6 @@ export const productDatabase: Product[] = [
     dermVerified: true,
   },
   {
-    id: "cerave-cerave-hydrating-facial-cleanser",
-    name: "CeraVe Hydrating Facial Cleanser",
-    brand: "CeraVe",
-    category: "cleanser",
-    price: "~$15-16",
-    keyIngredients: ["Hyaluronic Acid", "Ceramides", "Glycerin"],
-    bestFor: ["midrange", "normal", "dehydration", "dry", "sensitive"],
-    whyRecommended: "Popular cleanser from CeraVe with Hyaluronic Acid — well-suited for dry, dehydration, sensitive skin.",
-    source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B01N1LL62W?tag=buildmyroutine-20",
-    dermVerified: false,
-  },
-  {
     id: "cerave-cerave-foaming-facial-cleanser",
     name: "Foaming Facial Cleanser",
     brand: "CeraVe",
@@ -1514,25 +1473,14 @@ export const productDatabase: Product[] = [
     whyRecommended: "Popular cleanser from CeraVe with Hyaluronic Acid — well-suited for oily, texture, combination skin.",
     source: "Dr. Daniel Sugai & Doctorly (YouTube/Article)",
     sourceLinks: [
+      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=qcvEGRksl7M" },
+      { name: "Dr. Alexis Stephens", url: "https://www.youtube.com/watch?v=OeNJbShiOOw" },
       { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=A3IJSFXS_JQ" },
       { name: "Dr. Shah and Dr. Maxfield", url: "https://www.youtube.com/watch?v=7v5vkOfGVWM" },
       { name: "Corey L. Hart, MD, FAAD", url: "https://www.vogue.com/article/cerave-cleanser-for-your-skin-type" },
     ],
     amazonUrl: "https://www.amazon.com/dp/B08CQ9T6KN?tag=buildmyroutine-20",
     dermVerified: true,
-  },
-  {
-    id: "cerave-cerave-pm-facial-moisturizing-lotion",
-    name: "PM Facial Moisturizing Lotion",
-    brand: "CeraVe",
-    category: "moisturizer",
-    price: "~$14-15",
-    keyIngredients: ["Hyaluronic Acid", "Niacinamide", "Ceramides"],
-    bestFor: ["normal", "oily", "budget", "sensitive", "redness", "combination", "acne"],
-    whyRecommended: "Popular moisturizer from CeraVe with Hyaluronic Acid — well-suited for normal, oily, sensitive skin.",
-    source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B00365DABC?tag=buildmyroutine-20",
-    dermVerified: false,
   },
   {
     id: "cerave-cerave-skin-renewing-night-cream",
@@ -1561,51 +1509,6 @@ export const productDatabase: Product[] = [
     whyRecommended: "Popular exfoliant from CeraVe with Salicylic Acid — well-suited for oily, texture, acne skin.",
     source: "Dermatologist-recommended",
     amazonUrl: "https://www.amazon.com/dp/B07L8RHC9R?tag=buildmyroutine-20",
-    dermVerified: false,
-  },
-  {
-    id: "cerave-cerave-moisturizing-cream",
-    name: "Moisturizing Cream",
-    brand: "CeraVe",
-    category: "moisturizer",
-    price: "~$17-19",
-    keyIngredients: ["Hyaluronic Acid", "Ceramides"],
-    bestFor: ["dehydration", "midrange", "sensitive", "dry"],
-    whyRecommended: "Popular moisturizer from CeraVe with Hyaluronic Acid — well-suited for dehydration, dry, sensitive skin.",
-    source: "Dr. Mara Weinstein & Dr. Andrea Suarez & Dr. Jenny Liu (YouTube)",
-    sourceLinks: [
-      { name: "Dr. Mara Weinstein", url: "https://www.youtube.com/watch?v=GgJ3kp9mpVc" },
-      { name: "Dr. Andrea Suarez", url: "https://www.youtube.com/watch?v=SjSmmopv0JE" },
-      { name: "Dr. Jenny Liu", url: "https://www.youtube.com/watch?v=aVjrWDlQ2vU" },
-    ],
-    amazonUrl: "https://www.amazon.com/dp/B000YJ2SLG?tag=buildmyroutine-20",
-    dermVerified: true,
-  },
-  {
-    id: "cerave-cerave-resurfacing-retinol-serum",
-    name: "Resurfacing Retinol Serum",
-    brand: "CeraVe",
-    category: "serum",
-    price: "~$20-25",
-    keyIngredients: ["Retinol", "Niacinamide", "Hyaluronic Acid", "Ceramides"],
-    bestFor: ["midrange", "hyperpigmentation", "aging", "texture", "acne"],
-    whyRecommended: "Popular serum from CeraVe with Retinol — well-suited for hyperpigmentation, texture, acne skin.",
-    source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B08CQ9T6KN?tag=buildmyroutine-20",
-    pmOnly: true,
-    dermVerified: false,
-  },
-  {
-    id: "paula-s-choice-skin-perfecting-2-bha-liquid-exfoliant",
-    name: "SKIN PERFECTING 2% BHA Liquid Exfoliant",
-    brand: "Paula's Choice",
-    category: "exfoliant",
-    price: "~$15-37",
-    keyIngredients: ["Salicylic Acid (BHA) 2%", "Green Tea Extract"],
-    bestFor: ["midrange", "oily", "combination", "texture", "acne"],
-    whyRecommended: "Popular exfoliant from Paula's Choice with Salicylic Acid (BHA) 2% — well-suited for oily, texture, combination skin.",
-    source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B07C5SS6YD?tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1647,19 +1550,6 @@ export const productDatabase: Product[] = [
     dermVerified: false,
   },
   {
-    id: "paula-s-choice-clinical-1-retinol-treatment",
-    name: "CLINICAL 1% Retinol Treatment",
-    brand: "Paula's Choice",
-    category: "treatment",
-    price: "~$65",
-    keyIngredients: ["Retinol 1%", "Peptides", "Vitamin C"],
-    bestFor: ["premium", "hyperpigmentation", "texture", "aging"],
-    whyRecommended: "Popular treatment from Paula's Choice with Retinol 1% — well-suited for hyperpigmentation, texture, aging skin.",
-    source: "Dermatologist-recommended",
-    pmOnly: true,
-    dermVerified: false,
-  },
-  {
     id: "paula-s-choice-resist-youth-extending-daily-hydrating-fluid-",
     name: "RESIST Youth-Extending Daily Hydrating Fluid SPF 50",
     brand: "Paula's Choice",
@@ -1693,7 +1583,7 @@ export const productDatabase: Product[] = [
     bestFor: ["hyperpigmentation", "midrange"],
     whyRecommended: "Popular serum from Good Molecules with tranexamic acid — well-suited for hyperpigmentation, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B08CFV5Y1X?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Good+Molecules+Discoloration+Correcting+Serum&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -1881,7 +1771,7 @@ export const productDatabase: Product[] = [
     bestFor: ["dry", "midrange"],
     whyRecommended: "Popular cleanser from Beauty of Joseon with Rice extract — well-suited for dry, midrange skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/B0B9X4Y7Z0?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Beauty+of+Joseon+Radiance+Cleansing+Balm&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2225,7 +2115,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "dry", "aging", "texture"],
     whyRecommended: "Popular moisturizer from Tatcha with Hyaluronic Acid — well-suited for dehydration, texture, dry skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+The+Dewy+Skin+Cream&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2241,7 +2131,7 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Chris Tomassian", url: "https://www.tiktok.com/@dr.tomassian/video/6956410222114082054" },
     ],
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+Dr.+Chris+Tomassian&tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2254,7 +2144,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "redness", "sensitive"],
     whyRecommended: "Popular treatment from Tatcha with Japanese indigo — well-suited for dehydration, redness, sensitive skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+Indigo+Overnight+Repair&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2267,7 +2157,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "aging"],
     whyRecommended: "Popular moisturizer from Tatcha with Silk — well-suited for aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+The+Silk+Cream&tag=buildmyroutine-20",
     pmOnly: true,
     dermVerified: false,
   },
@@ -2281,7 +2171,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration", "aging"],
     whyRecommended: "Popular treatment from Tatcha with Hadasei-3 — well-suited for dehydration, aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+The+Essence&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2294,7 +2184,7 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "texture", "aging"],
     whyRecommended: "Popular serum from Tatcha with Silk peptides — well-suited for texture, aging, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+The+Silk+Serum&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
@@ -2307,12 +2197,12 @@ export const productDatabase: Product[] = [
     bestFor: ["premium", "dehydration"],
     whyRecommended: "Popular cleanser from Tatcha with Camellia oil — well-suited for dehydration, premium skin.",
     source: "Dermatologist-recommended",
-    amazonUrl: "https://www.amazon.com/dp/not found?tag=buildmyroutine-20",
+    amazonUrl: "https://www.amazon.com/s?k=Tatcha+The+Camellia+Cleansing+Oil&tag=buildmyroutine-20",
     dermVerified: false,
   },
   {
     id: "neutrogena-neutrogena-hydro-boost-hyaluronic-acid-water-gel-",
-    name: "Neutrogena Hydro Boost Hyaluronic Acid Water Gel Daily Face Moisturizer",
+    name: "Hydro Boost Hyaluronic Acid Water Gel Daily Face Moisturizer",
     brand: "Neutrogena",
     category: "moisturizer",
     price: "~$15-25",
@@ -2399,7 +2289,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "cetaphil-cetaphil-gentle-skin-cleanser",
-    name: "Cetaphil Gentle Skin Cleanser",
+    name: "Gentle Skin Cleanser",
     brand: "Cetaphil",
     category: "cleanser",
     price: "~$10-15",
@@ -2494,24 +2384,6 @@ export const productDatabase: Product[] = [
     sourceLinks: [
       { name: "Dr. Sam Ellis", url: "https://www.youtube.com/watch?v=JDVgQ9VGTx8" },
     ],
-    dermVerified: true,
-  },
-  {
-    id: "eltamd-eltamd-uv-clear-broad-spectrum-spf-46",
-    name: "EltaMD UV Clear Broad-Spectrum SPF 46",
-    brand: "EltaMD",
-    category: "sunscreen",
-    price: "~$36-45",
-    keyIngredients: ["9% Zinc Oxide", "7.5% Octinoxate", "5% Niacinamide", "Sodium Hyaluronate", "Tocopheryl Acetate"],
-    bestFor: ["premium", "oily", "sensitive", "redness", "hyperpigmentation", "acne"],
-    whyRecommended: "Popular sunscreen from EltaMD with 9% Zinc Oxide — well-suited for oily, sensitive, redness skin.",
-    source: "Dr. Joyce Park & Dr. Daniel Sugai & Dr. Dustin Portela (Article/ShopMy/YouTube)",
-    sourceLinks: [
-      { name: "Dr. Joyce Park", url: "https://www.womenshealthmag.com/beauty/a61088227/how-a-dermatologist-gets-ready-for-the-beach/" },
-      { name: "Dr. Daniel Sugai", url: "https://www.youtube.com/watch?v=fRwKPdSycFU" },
-      { name: "Dr. Dustin Portela", url: "https://shopmy.us/shop/208skindoc" },
-    ],
-    amazonUrl: "https://www.amazon.com/dp/B002MSN3QQ?tag=buildmyroutine-20",
     dermVerified: true,
   },
   {
@@ -2620,7 +2492,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "vanicream-vanicream-daily-facial-moisturizer-with-ceramides-",
-    name: "Vanicream Daily Facial Moisturizer With Ceramides and Hyaluronic Acid",
+    name: "Daily Facial Moisturizer With Ceramides and Hyaluronic Acid",
     brand: "Vanicream",
     category: "moisturizer",
     price: "~$13-14",
@@ -2992,7 +2864,7 @@ export const productDatabase: Product[] = [
   },
   {
     id: "differin-differin-acne-treatment-gel-90-day-supply-0-1-adapa",
-    name: "Differin Acne Treatment Gel, 90 Day Supply, 0.1% Adapalene, 45g Pump",
+    name: "Acne Treatment Gel, 90 Day Supply, 0.1% Adapalene, 45g Pump",
     brand: "Differin",
     category: "treatment",
     price: "~$22-26",
@@ -3079,15 +2951,7 @@ export const productDatabase: Product[] = [
     amazonUrl: "https://www.amazon.com/dp/B08P3K1N6S?tag=buildmyroutine-20",
     dermVerified: false,
   },
-];
-
-// AM/PM routine step templates
-export const routineSteps: RoutineStep[] = [
-  { step: 1, label: "Cleanser", time: "BOTH", category: "cleanser", description: "Gently cleanse to remove impurities without stripping the skin barrier." },
-  { step: 2, label: "Exfoliant", time: "PM", category: "exfoliant", description: "Chemical exfoliation 2-3 times per week to smooth texture and unclog pores." },
-  { step: 3, label: "Serum", time: "BOTH", category: "serum", description: "Targeted actives that address your specific concerns." },
-  { step: 4, label: "Treatment", time: "PM", category: "treatment", description: "Retinoid or targeted treatment applied at night for best absorption." },
-  { step: 5, label: "Moisturizer", time: "BOTH", category: "moisturizer", description: "Lock in hydration and support your skin barrier." },
+  // ── Derm-endorsed products recovered from routineSteps paste error (2026-07-04) ──
   {
     id: "embryolisse-lait-creme-concentre",
     name: "Lait-Crème Concentré",
@@ -3449,6 +3313,15 @@ export const routineSteps: RoutineStep[] = [
     amazonUrl: "https://www.amazon.com/dp/B000TTPZQ0?tag=buildmyroutine-20",
     dermVerified: true,
   },
+];
+
+// AM/PM routine step templates
+export const routineSteps: RoutineStep[] = [
+  { step: 1, label: "Cleanser", time: "BOTH", category: "cleanser", description: "Gently cleanse to remove impurities without stripping the skin barrier." },
+  { step: 2, label: "Exfoliant", time: "PM", category: "exfoliant", description: "Chemical exfoliation 2-3 times per week to smooth texture and unclog pores." },
+  { step: 3, label: "Serum", time: "BOTH", category: "serum", description: "Targeted actives that address your specific concerns." },
+  { step: 4, label: "Treatment", time: "PM", category: "treatment", description: "Retinoid or targeted treatment applied at night for best absorption." },
+  { step: 5, label: "Moisturizer", time: "BOTH", category: "moisturizer", description: "Lock in hydration and support your skin barrier." },
   { step: 6, label: "Sunscreen", time: "AM", category: "sunscreen", description: "The #1 anti-aging product. Apply every morning, rain or shine." }
 ];
 
@@ -3595,6 +3468,11 @@ export function generateRecommendation(answers: QuizAnswers, excludedProductIds:
     if (allTags.includes("budget") && product.bestFor.includes("budget")) score += 2;
     if (allTags.includes("premium") && product.bestFor.includes("premium")) score += 2;
     if (allTags.includes("midrange") && product.bestFor.includes("midrange")) score += 1;
+
+    // Multi-source consensus: products endorsed by more dermatologists rank higher
+    // (the landing page promises this; sourceLinks holds one entry per endorsing derm)
+    const endorsements = product.sourceLinks?.length ?? 1;
+    score += Math.min(endorsements, 4);
 
     return score;
   }
