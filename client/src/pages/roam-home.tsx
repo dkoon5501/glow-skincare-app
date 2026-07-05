@@ -8,6 +8,7 @@ import {
   type USZone,
 } from "@/lib/roam-data";
 import { shareRoamResults } from "@/lib/roam-share";
+import { getRoamDiscards, addRoamDiscard, clearRoamDiscards } from "@/lib/roam-discards";
 import { saveRoamRoutine } from "@/lib/firestore";
 import { useAuth } from "@/lib/auth-context";
 import { useHashLocation } from "wouter/use-hash-location";
@@ -34,6 +35,7 @@ import {
   CheckCircle2,
   MapPin,
   SkipForward,
+  RefreshCw,
 } from "lucide-react";
 
 // ── Landing data ──
@@ -667,7 +669,7 @@ function swapPlaceholderThumb(e: React.SyntheticEvent<HTMLImageElement>, videoId
   }
 }
 
-function TopPickCard({ result }: { result: RoamResult }) {
+function TopPickCard({ result, onReplace }: { result: RoamResult; onReplace?: () => void }) {
   const ep = result.episode;
   const thumb = `https://img.youtube.com/vi/${ep.videoId}/maxresdefault.jpg`;
   const watchUrl = `https://www.youtube.com/watch?v=${ep.videoId}`;
@@ -700,6 +702,17 @@ function TopPickCard({ result }: { result: RoamResult }) {
             <Play className="w-6 h-6 text-red-600 fill-red-600 ml-1" />
           </div>
         </a>
+        {onReplace && (
+          <button
+            onClick={onReplace}
+            className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 hover:bg-black/75 text-white text-xs font-medium px-3 py-1.5 transition-colors"
+            aria-label="Replace this video with the next best match"
+            data-testid="button-replace-top"
+          >
+            <RefreshCw className="w-3.5 h-3.5" />
+            Replace
+          </button>
+        )}
       </div>
 
       {/* Content */}
@@ -739,7 +752,7 @@ function TopPickCard({ result }: { result: RoamResult }) {
 
 // ── Alternate card (compact) ──
 
-function AlternateCard({ result }: { result: RoamResult }) {
+function AlternateCard({ result, onReplace }: { result: RoamResult; onReplace?: () => void }) {
   const ep = result.episode;
   const thumb = `https://img.youtube.com/vi/${ep.videoId}/maxresdefault.jpg`;
   const watchUrl = `https://www.youtube.com/watch?v=${ep.videoId}`;
@@ -765,6 +778,16 @@ function AlternateCard({ result }: { result: RoamResult }) {
             <Play className="w-4 h-4 text-red-600 fill-red-600 ml-0.5" />
           </div>
         </a>
+        {onReplace && (
+          <button
+            onClick={onReplace}
+            className="absolute top-2 right-2 flex items-center justify-center w-7 h-7 rounded-full bg-black/55 hover:bg-black/75 text-white transition-colors"
+            aria-label="Replace this video with the next best match"
+            data-testid="button-replace-alt"
+          >
+            <RefreshCw className="w-3.5 h-3.5" />
+          </button>
+        )}
       </div>
       <div className="p-4">
         <p className="text-xs text-muted-foreground mb-0.5">{ep.destination}</p>
@@ -807,8 +830,30 @@ export function RoamResults({
   onRetake: () => void;
   isSharedView?: boolean;
 }) {
-  const topPick = results[0];
-  const alternates = results.slice(1, 4);
+  // Device-level "replaced" list: hiding a video promotes the next-best match,
+  // and retakes skip hidden videos too. Shared views always show the sharer's
+  // actual picks, so the list is ignored (and the Replace control hidden) there.
+  const [hiddenIds, setHiddenIds] = useState<string[]>(() =>
+    isSharedView ? [] : getRoamDiscards(),
+  );
+  const visible = useMemo(
+    () => (isSharedView ? results : results.filter((r) => !hiddenIds.includes(r.episode.id))),
+    [results, hiddenIds, isSharedView],
+  );
+  const topPick = visible[0];
+  const alternates = visible.slice(1, 4);
+  const hiddenHereCount = isSharedView
+    ? 0
+    : results.length - visible.length;
+
+  const replaceEpisode = (id: string) => {
+    addRoamDiscard(id);
+    setHiddenIds(getRoamDiscards());
+  };
+  const resetHidden = () => {
+    clearRoamDiscards();
+    setHiddenIds([]);
+  };
 
   // Honest fallback note: the chosen US zone has no episodes in the catalog yet,
   // so the results shown are general US picks, not zone matches.
@@ -874,7 +919,24 @@ export function RoamResults({
         )}
 
         {/* Top pick */}
-        {topPick && <TopPickCard result={topPick} />}
+        {topPick && (
+          <TopPickCard
+            result={topPick}
+            onReplace={isSharedView ? undefined : () => replaceEpisode(topPick.episode.id)}
+          />
+        )}
+
+        {/* All matches replaced */}
+        {!topPick && results.length > 0 && (
+          <Card className="p-6 text-center space-y-3">
+            <p className="text-sm text-muted-foreground">
+              You've replaced every match for this quiz.
+            </p>
+            <Button variant="outline" onClick={resetHidden} className="rounded-full">
+              Bring back replaced videos
+            </Button>
+          </Card>
+        )}
 
         {/* Alternates */}
         {alternates.length > 0 && (
@@ -882,15 +944,29 @@ export function RoamResults({
             <h2 className="text-sm font-semibold text-foreground mb-3">Also consider</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {alternates.map((r) => (
-                <AlternateCard key={r.episode.id} result={r} />
+                <AlternateCard
+                  key={r.episode.id}
+                  result={r}
+                  onReplace={isSharedView ? undefined : () => replaceEpisode(r.episode.id)}
+                />
               ))}
             </div>
           </div>
         )}
 
-        {/* Save — hide on shared views */}
+        {/* Replaced-videos note */}
+        {hiddenHereCount > 0 && topPick && (
+          <p className="text-xs text-muted-foreground text-center">
+            {hiddenHereCount} video{hiddenHereCount === 1 ? "" : "s"} replaced ·{" "}
+            <button onClick={resetHidden} className="underline hover:text-foreground" data-testid="button-reset-replaced">
+              bring them back
+            </button>
+          </p>
+        )}
+
+        {/* Save — hide on shared views; saves the visible (post-replacement) picks */}
         {!isSharedView && (
-          <SaveRoamRoutineSection answers={answers} results={results} />
+          <SaveRoamRoutineSection answers={answers} results={visible} />
         )}
 
         {/* Disclaimer */}
