@@ -25,20 +25,26 @@ changes need David's PharmD sign-off) · **Roam** (travel; episode data lives in
   `RESUME-STATE.md` plus `/Users/dkoon/Max/NOW.md`, then schedule autoresume for one minute after reset.
   If still limited on wake, do no work and retry every 15 minutes until reset clears.
 
-## State (07-04 late — repair week SHIPPED, all of the 07-04 review's known issues fixed)
-- Glow routineSteps corruption FIXED (Save Routine + Rate My Routine work; products deduped to 200;
-  honest "N derms" badges; consensus scoring + discard memory live). Do NOT re-add seed-upvotes.
-- Roam: share links work via `roam/` OG shell + `_redirects`; 56 misattributed episodes re-credited
-  (attribution = the channel that HOSTS the video, verified via oEmbed); scoring deterministic;
-  corrupted share codes → invalid-link screen. Marketing no longer claims "8 trusted creators".
-- Vita dosing gated (2000 IU D default, 5000 IU deficiency-only, iron needs deficiency/pregnancy)
-  — awaiting David's PharmD sign-off; clinical changes ONLY with his approval.
-- Privacy + Terms pages live; testimonials replaced with real-number stat band (never invent counts).
-- CI gates (deploy.yml): `npm run check` (tsc) + `scripts/validate-roam-data.mjs` (schema + 112-combo
-  quiz coverage via the real scorer) + monthly `scripts/check-links.mjs` action.
-- IN FLIGHT: Roam creator expansion — top-50 research done, 21-channel roster, yt-dlp transcript
-  ingestion pipeline in session scratchpad `roam-ingest/` (enumerate → select → subs → extract
-  workflow with blind destination verification). US zone "West" currently has 0 episodes (honest;
-  taxonomy overlaps Rocky Mtns/Southwest — candidate for a redesign, ask David).
+## State (07-05 — Roam creator expansion SHIPPED: 7f63c10 + 9b67fd0)
+- Roam catalog: **356 verified episodes / 21 channels** (176 oEmbed-verified survivors kept, 81
+  off-roster dropped, 180 new via transcript extraction + blind destination verification).
+  Provenance: `data/roam-catalog-audit.json` + `data/roam-roster-audit.json`. Regenerate via the
+  roam-ingest pipeline only — never hand-add episodes.
+- Scorer uses HARD TIERS (+100 direct-region, +50 zone): a chosen region can never be topped by a
+  Global fallback, a chosen US zone always ranks its episodes first. Don't shrink these back to
+  nudge-sized bonuses — preference points max at 11.4.
+- All titles are editorial "Dest: Label" house style (297 rewritten). Validator rejects clickbait
+  artifacts, asserts region honesty + zone ordering through the real scorer in CI.
+- Thumbnails: maxresdefault 404s decode as a 120x90 placeholder (onError never fires) — cards swap
+  to hqdefault via naturalWidth check on load.
+- OPEN (David decisions): US zone taxonomy — West has 0 episodes, no Northeast/Midwest buckets;
+  NYC + Badlands deliberately zoneless (ZONELESS_OK in validator). Vita dosing PharmD sign-off
+  still pending; clinical changes ONLY with his approval.
+- Glow: routineSteps fixed 07-04 (Save/Rate work, 200 products deduped, honest "N derms" badges,
+  consensus scoring, discard memory). Do NOT re-add seed-upvotes.
+- Privacy + Terms live; real-number stat band (never invent counts). CI gates (deploy.yml):
+  `npm run check` + `scripts/validate-roam-data.mjs` + monthly `scripts/check-links.mjs`.
+- NEXT (David 07-05): make all-inclusive resorts easy to search; if coverage is thin, research and
+  add the top 50-100 all-inclusives via the verified pipeline.
 
 If this repo moves off ~/Desktop, update /Users/dkoon/Max/PROJECTS.md and this file.
