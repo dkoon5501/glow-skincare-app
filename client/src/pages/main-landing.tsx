@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Sparkles, Pill, Star, CheckCircle, Compass } from "lucide-react";
+import { ArrowRight, Sparkles, Pill, CheckCircle, Compass } from "lucide-react";
 
 // ── Hero slides ──
 const heroSlides = [
@@ -8,7 +8,7 @@ const heroSlides = [
     id: "roam",
     label: "Travel",
     headline: "Travel picks\ncurated by\ncreators who've been.",
-    sub: "250+ creator-vetted destinations from 8 trusted travel creators — matched to your vibe, region, and travel style.",
+    sub: "250+ creator-filmed episodes — matched to your vibe, region, and travel style.",
     cta: "Find My Travel Pick",
     href: "#/roam",
     badge: "Roam",
@@ -51,7 +51,7 @@ const heroSlides = [
 const trustItems = [
   "Free, no account required",
   "Evidence-based recommendations",
-  "250+ dermatologist-picked products",
+  "200 dermatologist-picked products",
   "Provider discount pricing",
 ];
 
@@ -63,8 +63,8 @@ const roamFeatures = [
     img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80&fit=crop",
   },
   {
-    title: "250+ creator-vetted destinations",
-    desc: "Every pick was personally visited and filmed by one of 8 trusted travel creators — not algorithmically suggested or sponsored.",
+    title: "250+ creator-filmed episodes",
+    desc: "Every pick links to the real YouTube episode filmed there, credited to the channel that made it — not stock photos or sponsored lists.",
     img: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=800&q=80&fit=crop",
   },
   {
@@ -110,43 +110,31 @@ const vitaFeatures = [
   },
 ];
 
-// ── Social proof ──
-const testimonials = [
+// ── Social proof — real counts from our own database ──
+const socialProofStats = [
   {
-    quote: "Never would have found the Uyuni Salt Flats without Roam. One quiz, one perfect trip.",
-    name: "Alex D.",
-    tag: "Roam user",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
+    icon: Sparkles,
+    value: "200+",
+    label: "Dermatologist-recommended products",
+    detail: "Every product cites the dermatologist who recommended it",
   },
   {
-    quote: "Booked Iceland two weeks after getting my Roam result. Kara & Nate's episode showed me exactly what to expect.",
-    name: "Sam K.",
-    tag: "Roam user",
-    img: "https://randomuser.me/api/portraits/women/17.jpg",
+    icon: CheckCircle,
+    value: "20+",
+    label: "Board-certified dermatologist sources",
+    detail: "Named sources, linked to the original video or post",
   },
   {
-    quote: "Finally a skincare routine I actually stick to. Everything is explained and the products don't conflict.",
-    name: "Maya R.",
-    tag: "Glow user",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
+    icon: Pill,
+    value: "14",
+    label: "Expert-reviewed supplements",
+    detail: "Each with timing and evidence notes built in",
   },
   {
-    quote: "Three months in and my skin has genuinely never looked better. Worth the five minutes.",
-    name: "Chen W.",
-    tag: "Glow user",
-    img: "https://randomuser.me/api/portraits/men/85.jpg",
-  },
-  {
-    quote: "I've tried so many vitamin routines. This is the first one that felt personalized to me, not just a generic stack.",
-    name: "Jordan T.",
-    tag: "Vita user",
-    img: "https://randomuser.me/api/portraits/men/52.jpg",
-  },
-  {
-    quote: "The provider discount alone saved me more than I expected. Clean, fast, no upsell.",
-    name: "Priya S.",
-    tag: "Vita user",
-    img: "https://randomuser.me/api/portraits/women/68.jpg",
+    icon: Compass,
+    value: "250+",
+    label: "Creator-vetted travel episodes",
+    detail: "Every pick backed by a real creator episode",
   },
 ];
 
@@ -227,70 +215,29 @@ function FeatureCard({ feature }: { feature: (typeof glowFeatures)[0] }) {
   );
 }
 
-// ── Testimonials Carousel ──
-function TestimonialsCarousel() {
-  const [active, setActive] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const reset = useCallback((next: number) => {
-    setActive(next);
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => setActive((p) => (p + 1) % testimonials.length), 5000);
-  }, []);
-
-  useEffect(() => {
-    timerRef.current = setInterval(() => setActive((p) => (p + 1) % testimonials.length), 5000);
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, []);
-
-  const t = testimonials[active];
-
+// ── Social Proof Band ──
+function SocialProofBand() {
   return (
-    <div className="flex flex-col items-center gap-5">
-      {/* Card */}
-      <div className="w-full max-w-md rounded-2xl border border-border/50 bg-card p-6 flex flex-col gap-4 min-h-[168px]">
-        <div className="flex gap-0.5">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-          ))}
-        </div>
-        <p className="text-sm text-foreground leading-relaxed flex-1">"{t.quote}"</p>
-        <div className="flex items-center gap-3">
-          <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover" />
-          <div>
-            <p className="text-xs font-semibold text-foreground">{t.name}</p>
-            <p className="text-[10px] text-muted-foreground">{t.tag}</p>
+    <div className="flex flex-col items-center gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+        {socialProofStats.map(({ icon: Icon, value, label, detail }) => (
+          <div
+            key={label}
+            className="rounded-2xl border border-border/50 bg-card p-5 flex flex-col items-center text-center gap-2"
+          >
+            <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+              <Icon className="w-4 h-4 text-primary" />
+            </div>
+            <p className="text-2xl font-bold text-foreground tracking-tight">{value}</p>
+            <p className="text-xs font-semibold text-foreground leading-snug">{label}</p>
+            <p className="text-[11px] text-muted-foreground leading-relaxed">{detail}</p>
           </div>
-        </div>
+        ))}
       </div>
-
-      {/* Controls */}
-      <div className="flex items-center gap-4">
-        <button
-          onClick={() => reset((active - 1 + testimonials.length) % testimonials.length)}
-          className="w-7 h-7 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Previous"
-        >
-          <ArrowLeft className="w-3.5 h-3.5" />
-        </button>
-        <div className="flex gap-1.5">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => reset(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-primary" : "w-1.5 bg-muted-foreground/30"}`}
-              aria-label={`Testimonial ${i + 1}`}
-            />
-          ))}
-        </div>
-        <button
-          onClick={() => reset((active + 1) % testimonials.length)}
-          className="w-7 h-7 rounded-full border border-border/60 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Next"
-        >
-          <ArrowRight className="w-3.5 h-3.5" />
-        </button>
-      </div>
+      <p className="text-xs text-muted-foreground text-center max-w-md leading-relaxed">
+        No paid reviews, no invented testimonials. These numbers are counted straight
+        from our own database — and every recommendation links back to its original source.
+      </p>
     </div>
   );
 }
@@ -466,7 +413,7 @@ export default function MainLanding() {
               Skip the generic travel blog. Watch someone who's actually been.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              250+ destinations personally documented by 8 trusted travel creators — matched to your vibe, region, trip length, and travel style in 5 questions.
+              250+ creator-filmed episodes — matched to your vibe, region, trip length, and travel style in 5 questions.
             </p>
             <ul className="space-y-2 mb-8">
               {["5-question travel quiz", "Roam, Glow, and Vita — all in one place", "Deep-link to the full YouTube episode"].map((item) => (
@@ -511,7 +458,7 @@ export default function MainLanding() {
               Know exactly what you're putting on your skin.
             </h2>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              250+ dermatologist-picked products. Every recommendation is dermVerified — no filler brands, no affiliate fluff.
+              200 dermatologist-recommended products. Every recommendation is dermVerified — no filler brands, no affiliate fluff.
             </p>
             <ul className="space-y-2 mb-8">
               {["8-question skin quiz", "AM & PM product lineup", "Rate My Routine ingredient scan"].map((item) => (
@@ -568,11 +515,14 @@ export default function MainLanding() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* ── SOCIAL PROOF ── */}
       <section className="border-t border-border/50 py-12">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-xl font-bold text-foreground text-center mb-8">What people are saying</h2>
-          <TestimonialsCarousel />
+          <h2 className="text-xl font-bold text-foreground text-center mb-2">Real sources, real numbers</h2>
+          <p className="text-sm text-muted-foreground text-center max-w-md mx-auto mb-8 leading-relaxed">
+            Everything we recommend is traceable to a named expert. Here's what's actually inside.
+          </p>
+          <SocialProofBand />
         </div>
       </section>
 
