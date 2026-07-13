@@ -1,0 +1,1755 @@
+{
+  "generatedAt": "2026-07-13",
+  "method": "LLM research (property facts, no prices) -> yt-dlp YouTube search -> on-property title verification (>=70% of distinctive name tokens must appear in the video title; listicles, sub-4min teasers and >90min vlogs rejected) -> full extract for real upload year. Video IDs come from YouTube search results only, never from a model.",
+  "total": 79,
+  "withVideo": 78,
+  "coverage": 0.987,
+  "perRegion": {
+    "Asia": 7,
+    "Africa": 5,
+    "Middle East": 2,
+    "Oceania": 4,
+    "Caribbean": 25,
+    "Europe": 8,
+    "Central America": 6,
+    "North America": 22
+  },
+  "resorts": [
+    {
+      "resort": "Lily Beach Resort & Spa",
+      "region": "Asia",
+      "matched": true,
+      "video": {
+        "videoId": "XAVyxTGk4hg",
+        "videoTitle": "Lily Beach Resort MALDIVES 🌊🌴 True PARADISE | FULL ISLAND TOUR 4K | South ARI Atoll Vlog",
+        "channel": "Maldives Arena",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "pNryUE0uOs0",
+          "title": "Discover Lily Beach Resort, Maldives",
+          "score": 1,
+          "rejected": "too short (139s)"
+        }
+      ]
+    },
+    {
+      "resort": "Sun Siyam Iru Fushi",
+      "region": "Asia",
+      "matched": true,
+      "video": {
+        "videoId": "kjmYoPgJi58",
+        "videoTitle": "Sun Siyam Iru Fushi (All Inclusive) | 5 Star Beach Resort in the Maldives",
+        "channel": "Grand Retreats",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "dmALYEOF0Ro",
+          "title": "Sun Siyam Iru Fushi 5* MALDIVES | Deluxe BEACH Villa with POOL 🌴| Room Tour Overwater | Vlog",
+          "score": 1,
+          "rejected": "too short (237s)"
+        }
+      ]
+    },
+    {
+      "resort": "Centara Ras Fushi Resort & Spa Maldives",
+      "region": "Asia",
+      "matched": true,
+      "video": {
+        "videoId": "411EJZON_ug",
+        "videoTitle": "Centara Ras Fushi Resort & Spa Maldives 🏝️ 4K Tour | Best Resort in Maldives | Best Overwater Villas",
+        "channel": "Travel Lens Tales",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "qhxilugdtY0",
+          "title": "Centara Ras Fushi ADULTS - only resort 🌞 MALDIVES 🌴 | Lagoon View Beach Villa with Swirl Pool TOUR",
+          "score": 1,
+          "rejected": "too short (200s)"
+        }
+      ]
+    },
+    {
+      "resort": "Niva Kuramathi Maldives",
+      "region": "Asia",
+      "matched": false,
+      "video": null,
+      "rejectedCandidates": [
+        {
+          "id": "uFy329T9DRo",
+          "title": "Kuramathi Maldives FULL In-depth Tour (4 Star Island Resort North Ari / Rasdhoo Atoll)",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "9eXviRXz8Dk",
+          "title": "Trip to Kuramathi, Maldives | Resort and marine life | 4K HD | May 2025",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "60GGz7nqQ9o",
+          "title": "🏝️MALDIVES.THE BEST ALL INCLUSIVE RESORT | Kuramathi Maldives. WALKING TOUR | 4K HDR",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "5mEQnVSHQJ4",
+          "title": "Kuramathi Island Resort Maldives | A Complete Tour and Resort Review  | Pickyourtrail",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Siyam World Maldives",
+      "region": "Asia",
+      "matched": true,
+      "video": {
+        "videoId": "UKKxT_EAy58",
+        "videoTitle": "Siyam World Resort Maldives | Full Island Guide & Honest Review",
+        "channel": "Ayo World",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "CrDWspmtUbo",
+          "title": "Discover Siyam World Maldives: Ultimate Luxury Escape | World Holiday Vibes",
+          "score": 1,
+          "rejected": "too short (184s)"
+        },
+        {
+          "id": "a8jVkqb9Bwo",
+          "title": "Siyam World resort tour November 2025",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Club Med Bali",
+      "region": "Asia",
+      "matched": true,
+      "video": {
+        "videoId": "scQnvURo_p8",
+        "videoTitle": "Club Med Bali, Indonesia, Roomtour, All Inclusive @AllHotelReview",
+        "channel": "All Hotel Review",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "wuWM1-PGQXo",
+          "title": "Take a tour of Club Med Bali - Indonesia [360°]",
+          "score": 1,
+          "rejected": "too short (162s)"
+        }
+      ]
+    },
+    {
+      "resort": "Club Med Phuket",
+      "region": "Asia",
+      "matched": true,
+      "video": {
+        "videoId": "O1rfwMI5oJM",
+        "videoTitle": "2024 Club Med Phuket",
+        "channel": "The Traveling Guy",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "45Ke3YdaBOI",
+          "title": "Take a tour of Club Med Phuket - Thailand [360°]",
+          "score": 1,
+          "rejected": "too short (166s)"
+        },
+        {
+          "id": "t6zxYdXbqpM",
+          "title": "Discover Club Med Phuket | Thailand",
+          "score": 1,
+          "rejected": "too short (63s)"
+        },
+        {
+          "id": "Y14GXk5u_6s",
+          "title": "A typical day in Club Med Phuket mp4",
+          "score": 1,
+          "rejected": "too short (131s)"
+        }
+      ]
+    },
+    {
+      "resort": "Rixos Premium Seagate",
+      "region": "Africa",
+      "matched": true,
+      "video": {
+        "videoId": "Snn7Ml6AOrg",
+        "videoTitle": "I Visited Egypt's Most LUXURIOUS Resort - Rixos Premium Seagate | Sharm El Sheikh",
+        "channel": "T in Travel",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "TUQg6GfJca0",
+          "title": "I Got Lost in LUXURY at Rixos Seagate Sharm El Sheikh - Comprehensive Review",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "7iQAz6bELG8",
+          "title": "Rixos Premium Seagate | Rixos Hotels",
+          "score": 1,
+          "rejected": "too short (20s)"
+        }
+      ]
+    },
+    {
+      "resort": "Hotel Riu Palace Zanzibar",
+      "region": "Africa",
+      "matched": true,
+      "video": {
+        "videoId": "94Xbaq0j5so",
+        "videoTitle": "RIU Palace Zanzibar | All-Inclusive Resort Virtual Tour",
+        "channel": "The Wright Getaway",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Rixos Premium Magawish Suites & Villas",
+      "region": "Africa",
+      "matched": true,
+      "video": {
+        "videoId": "IUmMO2_qP7I",
+        "videoTitle": "Rixos Premium Magawish Suites & Villas, Hurgada 🇪🇬",
+        "channel": "eva traveling",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "rwI3gCovb_M",
+          "title": "Rixos Premium Magawish Suites & Villas in Hurghada | Luxury Five Star All Inclusive Hotel Guide",
+          "score": 1,
+          "rejected": "too short (139s)"
+        }
+      ]
+    },
+    {
+      "resort": "Club Med Seychelles",
+      "region": "Africa",
+      "matched": true,
+      "video": {
+        "videoId": "3ZY4Ry4jQck",
+        "videoTitle": "Club Med Seychelles - ALL INCLUSIVE RESORT REVIEW",
+        "channel": "Stays and Getaways",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "PGPbn29yyV8",
+          "title": "Club Med opens its new Eco-chic Exclusive Resort in Seychelles - LUXE.TV",
+          "score": 1,
+          "rejected": "too short (239s)"
+        },
+        {
+          "id": "pzEOnHiwiPE",
+          "title": "Club Med Seychelles @R5Travel",
+          "score": 1,
+          "rejected": "too short (60s)"
+        },
+        {
+          "id": "quG2-bcCVNs",
+          "title": "⁠ClubMed Seychelles @LuxuryFamilyHotel",
+          "score": 1,
+          "rejected": "too short (100s)"
+        }
+      ]
+    },
+    {
+      "resort": "Hotel Riu Palace Mauritius",
+      "region": "Africa",
+      "matched": true,
+      "video": {
+        "videoId": "TfVDSG1hNLY",
+        "videoTitle": "🌴 Hotel Riu Palace Mauritius Review! Adults Only All Inclusive Resort Full Tour & Honest Experience",
+        "channel": "TravelFinanceAdvisor",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "Ooib13Ugntk",
+          "title": "RIU Palace Hotel. Mauritius. Elite Club Room Tour",
+          "score": 1,
+          "rejected": "too short (163s)"
+        }
+      ]
+    },
+    {
+      "resort": "Rixos Bab Al Bahr",
+      "region": "Middle East",
+      "matched": true,
+      "video": {
+        "videoId": "i1I36yB8Wuo",
+        "videoTitle": "Rixos Bab Al Bahr | Dubai/ Ras Al Khaimah, UAE | 5⭐️ Hotel tour",
+        "channel": "GoldenTime",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "vMk4b6Z_8Vg",
+          "title": "Rixos Bab Al Bahr | Rixos Hotels",
+          "score": 1,
+          "rejected": "too short (121s)"
+        },
+        {
+          "id": "4e24tENDFOc",
+          "title": "Rixos Bab Al Bahr 5* | Spojené arabské emiráty | www.lastminutky.sk",
+          "score": 1,
+          "rejected": "too short (187s)"
+        },
+        {
+          "id": "f2E1UUGl9hQ",
+          "title": "The ULTIMATE Rixos Bab Al Bahr Guide 🇦🇪 Room, Beach & EVERY Restaurant Reviewed!",
+          "score": 1,
+          "rejected": "too long (6482s)"
+        }
+      ]
+    },
+    {
+      "resort": "Castaway Island, Fiji",
+      "region": "Oceania",
+      "matched": true,
+      "video": {
+        "videoId": "RIR5W1RnxLY",
+        "videoTitle": "Castaway Island Fiji | A Family Friendly Paradise",
+        "channel": "The Adventure Buddies",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "lHTML8dPfPA",
+          "title": "Castaway Island Fiji Family trip 2024",
+          "score": 1,
+          "rejected": "too short (186s)"
+        },
+        {
+          "id": "cXM7eCTeS8k",
+          "title": "Castaway Island Fiji | Fiji Accommodation",
+          "score": 1,
+          "rejected": "too short (93s)"
+        },
+        {
+          "id": "9zCn5dnYE4M",
+          "title": "Castaway Island Resort | Welcome Home",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Rixos The Palm Hotel & Suites",
+      "region": "Middle East",
+      "matched": true,
+      "video": {
+        "videoId": "X4norxWmkww",
+        "videoTitle": "Rixos The Palm Hotel & Suites Dubai Review - Is This Ultra All Inclusive Any Good?",
+        "channel": "Travel Dash",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "4mqSrh_Tw0w",
+          "title": "Rixos The Palm",
+          "score": 1,
+          "rejected": "too short (119s)"
+        }
+      ]
+    },
+    {
+      "resort": "Turtle Island Fiji",
+      "region": "Oceania",
+      "matched": true,
+      "video": {
+        "videoId": "Z_beS9Q5fNc",
+        "videoTitle": "TURTLE ISLAND A ROMANTIC REFUGE IN FIJI'S YASAWA ISLANDS",
+        "channel": "LUXTRVL Travel Agency",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "cNGFpC10Dm0",
+          "title": "What makes TURTLE ISLAND so UNIQUE!",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "y1pEVQVGboQ",
+          "title": "Mark & Mark in Fiji",
+          "score": 0.3333333333333333,
+          "rejected": "weak title match (0.33)"
+        }
+      ]
+    },
+    {
+      "resort": "OUTRIGGER Fiji Beach Resort",
+      "region": "Oceania",
+      "matched": true,
+      "video": {
+        "videoId": "aYt5UvWRmt0",
+        "videoTitle": "Fiji Outrigger Beach Resort FULL TOUR",
+        "channel": "Chris Jackson",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "BW6SgdiE4lA",
+          "title": "The Outrigger Hotel Fiji - Your Ultimate Escape at Outrigger Hotel",
+          "score": 1,
+          "rejected": "too short (129s)"
+        }
+      ]
+    },
+    {
+      "resort": "The Brando",
+      "region": "Oceania",
+      "matched": true,
+      "video": {
+        "videoId": "ISztSsI_dv4",
+        "videoTitle": "WORLD'S BEST RESORT | The Brando, French Polynesia",
+        "channel": "Ricky Zhang Travel",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "mdDBCtkWt9A",
+          "title": "THE BRANDO | Phenomenal private island resort in French Polynesia (full tour in 4K)",
+          "score": 1,
+          "rejected": "too long (5725s)"
+        },
+        {
+          "id": "2kCFXS9YBqM",
+          "title": "A Private Paradise: The Brando Resort Experience | Ultimate Travel Guide",
+          "score": 1,
+          "rejected": "too short (195s)"
+        },
+        {
+          "id": "1XJq_QCuhjQ",
+          "title": "The Brando Resort -  1 Bedroom Villa - An Insiders View - Tahiti By Carl",
+          "score": 1,
+          "rejected": "too short (181s)"
+        },
+        {
+          "id": "__l-nrVdtQQ",
+          "title": "The Brando Resort Tetiarao  - All Inclusive Resort - The Ultimate Private Resort",
+          "score": 1,
+          "rejected": "too short (158s)"
+        }
+      ]
+    },
+    {
+      "resort": "Excellence Punta Cana",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "Ahxz2RWlIec",
+        "videoTitle": "Excellence Punta Cana All-Inclusive Resort | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Secrets Cap Cana Resort & Spa",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "5388GpfLCR0",
+        "videoTitle": "Secrets Cap Cana: Punta Cana's Newest Five Diamond Resort",
+        "channel": "Coolist",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Hyatt Ziva Cap Cana",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "v4N6hKZn8nk",
+        "videoTitle": "A Full Tour of the HYATT ZIVA CAP CANA PUNTA CANA Resort",
+        "channel": "NittyGrittyTravelers",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "QdRqa1x9l4A",
+          "title": "Hyatt Ziva Cap Cana Is One of Our TOP 5 Punta Cana Resorts",
+          "score": 1,
+          "rejected": "listicle"
+        },
+        {
+          "id": "vpPKx8dMRkM",
+          "title": "Hyatt Ziva Capa Cana Resort Tour Punta Cana | Things To Know Before You Stay",
+          "score": 1,
+          "rejected": "too short (216s)"
+        }
+      ]
+    },
+    {
+      "resort": "Hard Rock Hotel & Casino Punta Cana",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "KTGepZH3ifc",
+        "videoTitle": "Hard Rock Hotel & Casino Punta Cana | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Sandals Negril Beach Resort & Spa",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "0DOQgW-1cEo",
+        "videoTitle": "Sandals Negril Jamaica- Full Resort Tour - ALL-INCLUSIVE experience 🌴",
+        "channel": "Trendy Traveler",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Beaches Negril Resort & Spa",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "kirIjFHF-sQ",
+        "videoTitle": "Beaches Negril, Jamaica 2026 | Complete Resort Tour & Walkthrough in 4K",
+        "channel": "Coastal Compass Travel Company",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Excellence Oyster Bay",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "h_gblL4ykYc",
+        "videoTitle": "This Is Why Excellence Oyster Bay is the #1 All-Inclusive Resort in Jamaica",
+        "channel": "Coolist",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Couples Swept Away",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "XQnAUllHOLA",
+        "videoTitle": "Couples Swept Away Negril Jamaica All Inclusive Resort | (Adult's Only)",
+        "channel": "Luxscape",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "OjfOBgQ3ECY",
+          "title": "Exploring Couples Swept Away | Trading Places from Couples Negril",
+          "score": 1,
+          "rejected": "too short (238s)"
+        },
+        {
+          "id": "LC6KhDB5Gwg",
+          "title": "Couples Swept Away Negril Jamaica - WHAT TO EXPECT - All Inclusive ADULT ONLY Resort",
+          "score": 1,
+          "rejected": "too short (187s)"
+        }
+      ]
+    },
+    {
+      "resort": "Sandals Royal Bahamian",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "jJQR3OP5L28",
+        "videoTitle": "Sandals Royal Bahamian - EVERYTHING you need to know | Luxury all-inclusive resort in Nassau Bahamas",
+        "channel": "Honeymoon Always",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Riu Palace Antillas",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "PV4iuhGMrs0",
+        "videoTitle": "Hotel Riu Palace Antillas Aruba | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "pKRQ--V8bzw",
+          "title": "Riu Antillas- FULL RESORT TOUR!!",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "gT2Z6PSuat4",
+          "title": "BEST ARUBA ALL INCLUSIVE Resort  - RIU ANTILLAS RESORT ARUBA Palm Beach",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Warwick Paradise Island Bahamas",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "thW4XCiRuHI",
+        "videoTitle": "Warwick Paradise Island Bahamas All-Inclusive Adults Only Resort: Worth the $$$?",
+        "channel": "Space Coast Fishing Experience",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "ezVlsnZBGvs",
+          "title": "Warwick Paradise Island Bahamas (WoW)",
+          "score": 1,
+          "rejected": "too short (228s)"
+        },
+        {
+          "id": "snJmA-2JZ0k",
+          "title": "Warwick Paradise Island Bahamas   All Inclusive  - Adults Only - FULL REVIEW ✅🔥",
+          "score": 1,
+          "rejected": "too short (189s)"
+        }
+      ]
+    },
+    {
+      "resort": "Sandals Grande St. Lucian",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "sRkxHh_2gRY",
+        "videoTitle": "Sandals Grande St Lucian | EVERYTHING you need to know about this luxury resort",
+        "channel": "Honeymoon Always",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Coconut Bay Beach Resort & Spa",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "vgWa1HJoQ5E",
+        "videoTitle": "Tour the Resort: Coconut Bay Beach Resort & Spa in Saint Lucia 🌴",
+        "channel": "Coconut Bay Beach Resort & Spa",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "LCmcqEdybzI",
+          "title": "The New 2025 Resort Tour Video Showcasing Several of the 2024 Renovations",
+          "score": 0,
+          "rejected": "weak title match (0.00)"
+        }
+      ]
+    },
+    {
+      "resort": "Divi Aruba All Inclusive",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "u4C76r9yoxQ",
+        "videoTitle": "NEW: Divi Aruba All Inclusive Resort | (Full Tour & Review)",
+        "channel": "Luxscape",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "BodyHoliday Saint Lucia",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "GPd67yCZCeY",
+        "videoTitle": "BodyHoliday Saint Lucia Review: Luxury Wellness Resort Tour & Pricing 2026",
+        "channel": "TripTalesToday",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "82u1LcsUlsk",
+          "title": "St Lucia and The Bodyholiday Video",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "7onvpzJnOkg",
+          "title": "BodyHoliday, Saint Lucia Resort Video 2019",
+          "score": 1,
+          "rejected": "too short (229s)"
+        },
+        {
+          "id": "1wPfmNYWA0k",
+          "title": "BodyHoliday St Lucia Resort Tour 2020 - Adults Only All Inclusive Wellness Resort",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "riKYVEK9WRw",
+          "title": "BodyHoliday Resort Video",
+          "score": 0.3333333333333333,
+          "rejected": "too short (151s)"
+        }
+      ]
+    },
+    {
+      "resort": "Club Med Turkoise",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "BfzjiWBDUQk",
+        "videoTitle": "The most detailed walkthrough of Club Med Turkoise, Turks and Caicos, Part 1. Narrated  walking tour",
+        "channel": "Jmed's Brick Clix",
+        "tourYear": 2020,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "_n1-l5xG_V0",
+          "title": "Club Med Turks and Caicos Review",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        },
+        {
+          "id": "GhWPjyDI2q8",
+          "title": "Take a tour of Club Med Turkoise - Turks and Caicos [360°]",
+          "score": 1,
+          "rejected": "too short (176s)"
+        },
+        {
+          "id": "FWXHpzO6UCI",
+          "title": "Club Med Turkoise from the sky - Turks and Caicos | Drone Series",
+          "score": 1,
+          "rejected": "too short (81s)"
+        },
+        {
+          "id": "Myd01C66zYs",
+          "title": "Turks & Caicos, Club Med Turkoise",
+          "score": 1,
+          "rejected": "too short (159s)"
+        }
+      ]
+    },
+    {
+      "resort": "Sandals Royal Barbados",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "Giq-K0Kxg8U",
+        "videoTitle": "Sandals Barbados & Sandals Royal Barbados | Plus the BEST excursion in Barbados!",
+        "channel": "Honeymoon Always",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "HTL7ZEjyHKs",
+          "title": "Sandals Barbados All-Inclusive Resort Tour 2025",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "Ped8YUezopY",
+          "title": "Sandals Barbados Resort Tour",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Beaches Turks & Caicos",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "dhsSm4VfiQw",
+        "videoTitle": "Beaches Turks & Caicos Resort Review | Room Tours, Food, Pools, Excursions and MORE! Sandals Resorts",
+        "channel": "Honeymoon Always",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "O2 Beach Club & Spa",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "vN6_sKIIB0Q",
+        "videoTitle": "O2 Beach Club and Spa Walk Through",
+        "channel": "BlissfulBoys",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "5N13ub-bFNg",
+          "title": "O2 Beach Club & Spa by Ocean Hotels - All Inclusive Resort - Church, Barbados",
+          "score": 1,
+          "rejected": "too short (176s)"
+        },
+        {
+          "id": "jXID0OuXsvU",
+          "title": "The Luxury Hotel Room with the BEST Views in the Caribbean | Full Tour",
+          "score": 0,
+          "rejected": "weak title match (0.00)"
+        },
+        {
+          "id": "kkq7lTpFD9s",
+          "title": "O2 Beach Club & Spa I Christ Church I Barbados",
+          "score": 1,
+          "rejected": "too short (163s)"
+        },
+        {
+          "id": "kRaHUxBO0r8",
+          "title": "O2 Beach Club & Spa, Barbados",
+          "score": 1,
+          "rejected": "too short (121s)"
+        }
+      ]
+    },
+    {
+      "resort": "Hammock Cove Antigua",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "OS2HDa5mkho",
+        "videoTitle": "Hammock Cove Antigua - Resort Tour [4K]",
+        "channel": "A to B Travel",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "9fng9r0fShc",
+          "title": "Hammock Cove Resort Tour Antigua",
+          "score": 1,
+          "rejected": "too short (186s)"
+        },
+        {
+          "id": "e-1Xcfcpabg",
+          "title": "Spectacular Tour of Hammock Cove Antigua",
+          "score": 1,
+          "rejected": "too short (118s)"
+        },
+        {
+          "id": "aXDgJ_vMKa0",
+          "title": "Hammock Cove, Antigua - Resort Tour",
+          "score": 1,
+          "rejected": "too short (128s)"
+        }
+      ]
+    },
+    {
+      "resort": "Sandals Grande Antigua",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "ocZu-xS-3fY",
+        "videoTitle": "Sandals Grande Antigua FULL REVIEW + Cooking class excursion",
+        "channel": "Honeymoon Always",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "SSJ9ZZfloBI",
+          "title": "Sandals Antigua Resort Walkthrough",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "fEz1880KKm4",
+          "title": "Sandals Grande Antigua Resort Tour",
+          "score": 1,
+          "rejected": "too short (162s)"
+        }
+      ]
+    },
+    {
+      "resort": "Sandals Royal Curaçao",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "g2ZPBgQhfK8",
+        "videoTitle": "Sandals Royal Curaçao Full Review | Food, room tours, pools, beach, excursions and more!",
+        "channel": "Honeymoon Always",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Sandals Grenada Resort & Spa",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "KsXRgt5ZhO4",
+        "videoTitle": "Sandals Grenada FULL REVIEW & Excursions | Everything you need to know",
+        "channel": "Honeymoon Always",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Dreams Curaçao Resort, Spa & Casino",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "V7gP21pjBg4",
+        "videoTitle": "Dreams Curacao Resort Spa & Casino - 2026 | (Everything You NEED To Know!)",
+        "channel": "Royal Retreats",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "_-0_xTYkNxM",
+          "title": "Dreams Curaçao Resort Full Tour & Review 2026 🌴All Inclusive Beach, Food, Pools, Rooms & Nightlife",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "SKHvgLXPjSQ",
+          "title": "🇨🇼 Dreams Curaçao Resort Tour | What to Expect Before You Book",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "_fQ3oUCPSBY",
+          "title": "Dreams Curacao One Year Later Has it Changed?",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "Yky9nXqYp0M",
+          "title": "The Best Luxury All-Inclusive Resort In Curacao? Dreams Curacao Resort",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Ikos Olivia",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "__333kVDQ4A",
+        "videoTitle": "IKOS resort Olivia in Halkidiki",
+        "channel": "Travels with Charlie and friends",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "6TWl_iyVzBY",
+          "title": "Ikos Olivia - Halkidiki, Greece | Hotel Tour Video",
+          "score": 1,
+          "rejected": "too short (60s)"
+        }
+      ]
+    },
+    {
+      "resort": "Spice Island Beach Resort",
+      "region": "Caribbean",
+      "matched": true,
+      "video": {
+        "videoId": "58drLylMxkI",
+        "videoTitle": "SPICE ISLAND BEACH RESORT - HONEST REVIEW",
+        "channel": "Breathless Getaways",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "QwlIca0Pmgc",
+          "title": "The Spice Island Beach Resort in Grenada",
+          "score": 1,
+          "rejected": "too short (185s)"
+        },
+        {
+          "id": "aM0lpHkgcKk",
+          "title": "Spice Island Beach Resort: The Ultimate Caribbean Getaway | Travel Guide",
+          "score": 1,
+          "rejected": "too short (173s)"
+        },
+        {
+          "id": "lvc5E4nNR3M",
+          "title": "Spice Island Beach Resort",
+          "score": 1,
+          "rejected": "too short (127s)"
+        },
+        {
+          "id": "hkTKcbglMpA",
+          "title": "Spice Island Beach Resort, Grenada",
+          "score": 1,
+          "rejected": "too short (145s)"
+        }
+      ]
+    },
+    {
+      "resort": "Grecotel LUXME White Palace",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "Bib52AwZCnc",
+        "videoTitle": "Grecotel LUXME White Palace, Crete Greece - Hotel Overview - 5 Star Luxury All-Inclusive Paradise",
+        "channel": "Travel with Nicola & Isabella",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "YWzhsfxCWkM",
+          "title": "Grecotel  LuxMe White Palace - Greece - Crete (4K UHD + DRONE)",
+          "score": 1,
+          "rejected": "too short (228s)"
+        }
+      ]
+    },
+    {
+      "resort": "Ikos Porto Petro",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "GfKRhesAHOM",
+        "videoTitle": "We Tried the Hyped Ikos Porto Petro – Was It Worth It?",
+        "channel": "Discovering our world | One adventure at a time",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "-JJ9MJz_N2w",
+          "title": "Ikos Porto Petro vs Club Med | Luxury All-Inclusive in Majorca",
+          "score": 1,
+          "rejected": "too short (225s)"
+        },
+        {
+          "id": "q2Y3JICjMdI",
+          "title": "Ikos Porto Petro - New for 2023",
+          "score": 1,
+          "rejected": "too short (36s)"
+        },
+        {
+          "id": "tLNFL2kd5sU",
+          "title": "Ikos Porto Petro Property Launch Video",
+          "score": 1,
+          "rejected": "too short (30s)"
+        }
+      ]
+    },
+    {
+      "resort": "Rixos Premium Belek",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "y_l98Vm5nsw",
+        "videoTitle": "RIXOS PREMIUM BELEK HOTEL TOUR 2026",
+        "channel": "HotelCollector.eu",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "EwQeuytWaZ4",
+          "title": "Rixos Premium Belek | Rixos Hotels",
+          "score": 1,
+          "rejected": "too short (30s)"
+        }
+      ]
+    },
+    {
+      "resort": "Mitsis Selection Alila",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "Yur7b602ebY",
+        "videoTitle": "Mitsis Selection Alila - Luxury All Inclusive resort, Rhodes, Greece (full tour)",
+        "channel": "VIP Luxury Resorts",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "DKbhOJPzyus",
+          "title": "Mitsis Selection Alila - Rhodes, Greece | Hotel Tour Video",
+          "score": 1,
+          "rejected": "too short (84s)"
+        },
+        {
+          "id": "CwuzsLumDM4",
+          "title": "Mitsis Selection Alila, Rhodes, Greece",
+          "score": 1,
+          "rejected": "too short (163s)"
+        },
+        {
+          "id": "0-k3BH7PUgU",
+          "title": "Mitsis Alila Resort and Spa | 5* Rhodes Resort Experience",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Iberostar Selection Fuerteventura Palace",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "RsfHl9r7EWc",
+        "videoTitle": "Iberostar Selection Fuerteventura Palace Hotel Tour",
+        "channel": "Samantha Hobbs",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "Ga5FEhSdADo",
+          "title": "Iberostar Selection Fuerteventura Palace - You Won't Expect This | Fuerteventura, Spain🌟",
+          "score": 1,
+          "rejected": "too short (163s)"
+        },
+        {
+          "id": "7w2YTtB3z30",
+          "title": "Iberostar Selection Fuerteventura Palace | Fuerteventura, Spain | Hotel Review 🛏️",
+          "score": 1,
+          "rejected": "too short (130s)"
+        }
+      ]
+    },
+    {
+      "resort": "Dreams Las Mareas Costa Rica",
+      "region": "Central America",
+      "matched": true,
+      "video": {
+        "videoId": "G0_GemDatU0",
+        "videoTitle": "Dreams Las Mareas Resort Costa Rica | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Pestana Porto Santo All Inclusive",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "4OgqVyVjXYg",
+        "videoTitle": "Pestana Porto Santo All Inclusive Premium Beach & SPA Resort: FULL HOTEL TOUR & REVIEW | 4K60fps HDR",
+        "channel": "TRAVEL PHOTO",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "2uNdPRaU4mo",
+          "title": "Pestana Porto Santo Beach Resort & Spa All Inclusive - Watch Before You Book | Porto Santo Island⭐",
+          "score": 1,
+          "rejected": "too short (158s)"
+        }
+      ]
+    },
+    {
+      "resort": "Rixos Premium Bodrum",
+      "region": "Europe",
+      "matched": true,
+      "video": {
+        "videoId": "aHc85lwEWGU",
+        "videoTitle": "RIXOS PREMIUM BODRUM TURKEY HOTEL TOUR",
+        "channel": "HotelCollector.eu",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "CU0RpQFuW9o",
+          "title": "Sea, food and endless fun! | Rixos Premium Bodrum",
+          "score": 1,
+          "rejected": "too short (94s)"
+        }
+      ]
+    },
+    {
+      "resort": "Coco Plum Island Resort",
+      "region": "Central America",
+      "matched": true,
+      "video": {
+        "videoId": "tbpfK91WFFw",
+        "videoTitle": "Coco Plum Island Resort Belize 2022",
+        "channel": "BuzzinDSM",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "OC8OlSgdCNU",
+          "title": "Coco Plum Island Resort | Standard Cabana Room Tour",
+          "score": 1,
+          "rejected": "too short (229s)"
+        },
+        {
+          "id": "xYG2EGAdaJo",
+          "title": "Private island life in Belize, but make it adults-only and all inclusive.",
+          "score": 0.3333333333333333,
+          "rejected": "too short (128s)"
+        },
+        {
+          "id": "L_5RM1TQpNU",
+          "title": "Coco Plum Island Resort Family",
+          "score": 1,
+          "rejected": "too short (113s)"
+        }
+      ]
+    },
+    {
+      "resort": "Planet Hollywood Costa Rica, An Autograph Collection All-Inclusive Resort",
+      "region": "Central America",
+      "matched": true,
+      "video": {
+        "videoId": "aUNuA3p1L3k",
+        "videoTitle": "Planet Hollywood Costa Rica by Royalton, An Autograph Collection All-Inclusive Resort 2025",
+        "channel": "Just Travel",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Secrets Papagayo Costa Rica",
+      "region": "Central America",
+      "matched": true,
+      "video": {
+        "videoId": "uLvLEuwY3mA",
+        "videoTitle": "Secrets Papagayo Resort Costa Rica | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "3JIyfFUZdos",
+          "title": "Secrets Papagayo All Inclusive Resort - Is 7 Days at a Nature Based All Inclusive For You?",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        }
+      ]
+    },
+    {
+      "resort": "The Westin Reserva Conchal, an All-Inclusive Golf Resort & Spa",
+      "region": "Central America",
+      "matched": true,
+      "video": {
+        "videoId": "qorpPGMIjNM",
+        "videoTitle": "The Westin Reserva Conchal Costa Rica 🌴 All Inclusive Golf Resort, Beach, Rooms, Food & Full Review",
+        "channel": "TravelFinanceAdvisor",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "qaN6be5f8Q0",
+          "title": "The Westin Reserva Conchal, an All-Inclusive Golf Resort & Spa Guanacaste Province,Costa Rica",
+          "score": 1,
+          "rejected": "too short (190s)"
+        },
+        {
+          "id": "Nmfr5Se2ZTs",
+          "title": "Costa Rica: The W vs The Westin - Which One for You?",
+          "score": 0.25,
+          "rejected": "weak title match (0.25)"
+        }
+      ]
+    },
+    {
+      "resort": "Dreams Playa Bonita Panama",
+      "region": "Central America",
+      "matched": true,
+      "video": {
+        "videoId": "X62-zJIzk28",
+        "videoTitle": "Tour of Dreams Playa Bonita Resort, an all-inclusive resort in Panama | Trips with Angie",
+        "channel": "Trips with Angie",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "UUY6fwnC_YM",
+          "title": "Dreams Playa Bonita Panama 🇵🇦 | ALL INCLUSIVE Review 2025 🔥 | Resort and Spa, Swimming Pools, Beach",
+          "score": 1,
+          "rejected": "too short (163s)"
+        }
+      ]
+    },
+    {
+      "resort": "Le Blanc Spa Resort Cancun",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "guAolo7N2Xc",
+        "videoTitle": "Le Blanc Spa Resort Cancun | Full Walkthrough Tour 4K | 2020",
+        "channel": "Harr Travel",
+        "tourYear": 2020,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Hyatt Ziva Cancun",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "NDblpdWnWP0",
+        "videoTitle": "Hyatt Ziva Cancun All Inclusive 2025 (Honest Review & Full Tour)",
+        "channel": "Luxscape",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Excellence Playa Mujeres",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "_3H52kuIT94",
+        "videoTitle": "Excellence Playa Mujeres - A Full Resort Walk Through Tour",
+        "channel": "New Travel Escapes",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Secrets The Vine Cancun",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "mQELZxP0tI8",
+        "videoTitle": "Secrets The Vine Cancun All-Inclusive | (HONEST Review & Full Tour)",
+        "channel": "Luxscape",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "Q8YIGUPx0MQ",
+          "title": "Touring Secrets the Vine in Camcun",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Moon Palace Cancun",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "J-BAn0PZ0h4",
+        "videoTitle": "Moon Palace The Grand Cancun All-Inclusive Resort - IS THIS A REAL 5-STAR HOTEL?",
+        "channel": "Lakemaker",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "ElMLEvTRRMI",
+          "title": "Moon Palace The Grand - ULTIMATE Family Resort - Full Tour & Honest Review 🏖️",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        }
+      ]
+    },
+    {
+      "resort": "Grand Velas Riviera Maya",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "jtrvfjEVyr4",
+        "videoTitle": "Grand Velas Resort Riviera Maya, Cancun | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "UNICO 20°87° Hotel Riviera Maya",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "_Mkt9LVdSE8",
+        "videoTitle": "Honest Hotel Unico 2087 Riviera Maya Review: Pros & Cons to Consider",
+        "channel": "Viva La Travelista",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "vZcTD5xX3xQ",
+          "title": "Unico 20°87°: The Resort That Blew Us Away (Full Tour + Honest Review)",
+          "score": 0.6,
+          "rejected": "weak title match (0.60)"
+        }
+      ]
+    },
+    {
+      "resort": "Hotel Xcaret México",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "gnGxxV570VM",
+        "videoTitle": "Honest Hotel Xcaret Mexico Review: Pros & Cons to Consider",
+        "channel": "Viva La Travelista",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Secrets Maroma Beach Riviera Cancun",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "T_edlJZN-tk",
+        "videoTitle": "Secrets Maroma Beach Riviera Cancun Resort | (Full Tour & Honest Review)",
+        "channel": "Luxscape",
+        "tourYear": 2023,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "o9l9LpmqaAc",
+          "title": "Secrets Maroma Review & Tour: What You Need to Know First",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        }
+      ]
+    },
+    {
+      "resort": "TRS Yucatan Hotel",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "hVmvoIdQLbQ",
+        "videoTitle": "TRS YUCATAN Walk Through: Lobby, Restaurants, Bars, Pools, Beach and more! Riviera Maya/Cancun",
+        "channel": "New Travel Escapes",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Dreams Tulum Resort & Spa",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "94VjoxubrOI",
+        "videoTitle": "🌴 Dreams Tulum Resort & Spa Full Tour 2026 | Honest All Inclusive Review You Need Before Booking",
+        "channel": "TravelFinanceAdvisor",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Le Blanc Spa Resort Los Cabos",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "qoN3bO03cVA",
+        "videoTitle": "Le Blanc All-Inclusive Resort Los Cabos | An In Depth Look Inside",
+        "channel": "Details in Luxury",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "JL_f_jj3i_U",
+          "title": "Honest Experience Staying at Le Blanc Spa Resort In Cabo Mexico",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        },
+        {
+          "id": "FqexwXRbEf4",
+          "title": "Le Blanc Resort | A Week in Cabo, Mexico",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        }
+      ]
+    },
+    {
+      "resort": "Hyatt Ziva Los Cabos",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "LTRBC4H4Fhc",
+        "videoTitle": "Why Hyatt Ziva Los Cabos Is The #1 Most Popular Hotel in Cabo 🏝️🇲🇽",
+        "channel": "Coolist",
+        "tourYear": 2022,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "4H4Ydv4YS60",
+          "title": "Los Cabos Family Friendly Resort: Hyatt Ziva Los Cabos",
+          "score": 1,
+          "rejected": "too short (183s)"
+        }
+      ]
+    },
+    {
+      "resort": "Grand Velas Los Cabos",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "Xcpo_6C2VE0",
+        "videoTitle": "Inside The Best Resort In Mexico | Grand Velas Los Cabos",
+        "channel": "Details in Luxury",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "HyrHLEn5auU",
+          "title": "Grand Velas Cabo Resort tour",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        },
+        {
+          "id": "2MCvV_W1ZLI",
+          "title": "$1,000 ALL INCLUSIVE Luxury Resort in Cabo Mexico | MICHELIN STAR Restaurant INCLUDED!",
+          "score": 0,
+          "rejected": "weak title match (0.00)"
+        },
+        {
+          "id": "2hQ9-UYuaSY",
+          "title": "Grand Velas Los Cabos - The Ultimate Luxury All-Inclusive Resort",
+          "score": 1,
+          "rejected": "too short (153s)"
+        }
+      ]
+    },
+    {
+      "resort": "Secrets Puerto Los Cabos Golf & Spa Resort",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "Q01rG7BAzhY",
+        "videoTitle": "Secrets Puerto Los Cabos Golf & Spa Resort | Complete Walkthrough Tour & Review | 4K",
+        "channel": "Harr Travel",
+        "tourYear": 2021,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "a_EqilEvKs0",
+          "title": "Secrets Los Cabos Resort Review",
+          "score": 0.6,
+          "rejected": "too short (162s)"
+        },
+        {
+          "id": "_LR7UGVCVgI",
+          "title": "Secrets Puerto Los Cabo room tour",
+          "score": 0.6,
+          "rejected": "weak title match (0.60)"
+        },
+        {
+          "id": "klmdaxAC5uQ",
+          "title": "Secrets Puerto Los Cabos. Resort tour. On Point Travel",
+          "score": 0.8,
+          "rejected": "too short (223s)"
+        }
+      ]
+    },
+    {
+      "resort": "Grand Velas Riviera Nayarit",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "1PmXkP_vrk8",
+        "videoTitle": "Grand Velas Riviera Nayarit – All Inclusive Resort Walkthrough | Nuevo Vallarta, Mexico",
+        "channel": "Resort Reviews - Destination Guides",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "1tdXI8bd3c0",
+          "title": "Grand Velas Riviera Nayarit Resort Tour | Luxury Puerto Vallarta All-Inclusive",
+          "score": 1,
+          "rejected": "too short (151s)"
+        }
+      ]
+    },
+    {
+      "resort": "Hard Rock Hotel Los Cabos",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "rAD5g2J17Hk",
+        "videoTitle": "Hard Rock Hotel Los Cabos | Full Walkthrough Tour, All Public Spaces 4K | 2020",
+        "channel": "Harr Travel",
+        "tourYear": 2020,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Hyatt Ziva Puerto Vallarta",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "isia0Ea5AIw",
+        "videoTitle": "HYATT ZIVA Puerto Vallarta | FULL REVIEW 2025",
+        "channel": "Sam And Jer",
+        "tourYear": 2025,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "O_0h3JKzSxc",
+          "title": "Inside A 5-Star All-Inclusive Resort In Puerto Vallarta",
+          "score": 0.5,
+          "rejected": "weak title match (0.50)"
+        }
+      ]
+    },
+    {
+      "resort": "Secrets Vallarta Bay Puerto Vallarta",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "CSeTT6are44",
+        "videoTitle": "Secrets Vallarta Bay Puerto Vallarta Full Tour & Honest Review | 🌊 Rooms, Pools, Beach, Food & Spa😍",
+        "channel": "TravelFinanceAdvisor",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": []
+    },
+    {
+      "resort": "Cozumel Palace",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "N2TIjqIrvGA",
+        "videoTitle": "You've Heard of Moon Palace... Well This is COZUMEL PALACE",
+        "channel": "Coolist",
+        "tourYear": 2024,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "nGuEiwfQlVs",
+          "title": "Cozumel Palace resort view",
+          "score": 1,
+          "rejected": "too short (176s)"
+        }
+      ]
+    },
+    {
+      "resort": "Iberostar Waves Cozumel",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "RVoTk7W5v5Y",
+        "videoTitle": "Iberostar Waves Cozumel Review 2026 | All-Inclusive Resort, Snorkeling, Rooms, Food & Full Tour",
+        "channel": "TripTalesToday",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "YA7lebuZqpc",
+          "title": "Iberostar Cozumel Resort Review 2023",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "ck7WiIYTOcw",
+          "title": "Iberostar Resort In Cozumel! / Your Complete Guide",
+          "score": 0.6666666666666666,
+          "rejected": "weak title match (0.67)"
+        },
+        {
+          "id": "fcEObO5CuGI",
+          "title": "Discover Cozumel | The Ultimate Iberostar Waves Travel Experience",
+          "score": 1,
+          "rejected": "too short (47s)"
+        }
+      ]
+    },
+    {
+      "resort": "Secrets Aura Cozumel",
+      "region": "North America",
+      "matched": true,
+      "video": {
+        "videoId": "C3-TycsK5Qw",
+        "videoTitle": "Secrets Aura Cozumel, Mexico • FULL Walkthrough",
+        "channel": "Ken Domik",
+        "tourYear": 2026,
+        "matchScore": 1
+      },
+      "rejectedCandidates": [
+        {
+          "id": "A5YHYhsY0dc",
+          "title": "Secrets Aura Cozumel, Mexico Review 🏝️ May 2024",
+          "score": 1,
+          "rejected": "too short (155s)"
+        }
+      ]
+    }
+  ]
+}

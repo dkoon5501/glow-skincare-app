@@ -166,6 +166,18 @@ const routes = [
     redirectScript: dynamicRedirect("v", "/vita"),
   },
   {
+    // Static page, but it lives under the /roam/* dynamic prefix — so it needs both
+    // its own shell (for a truthful link preview) and a _redirects rule ordered
+    // BEFORE /roam/* below, or the share-code shell would claim it.
+    dir: "roam/all-inclusive",
+    title: "All-Inclusive Resort Finder — Roam",
+    description:
+      "Browse genuinely all-inclusive resorts where the rate covers meals and drinks, each with a real property tour on YouTube. No invented prices.",
+    ogImage: `${BASE}/og-image.png`,
+    canonical: `${BASE}/roam/all-inclusive`,
+    redirectScript: staticRedirect("/roam/all-inclusive"),
+  },
+  {
     dir: "roam",
     title: "Someone shared their Roam travel picks with you",
     description:
@@ -187,7 +199,10 @@ for (const r of routes) {
 
 // Netlify redirects so /r/ANYTHING, /v/ANYTHING and /roam/ANYTHING serve
 // the shell. Pretty URLs already map /glow → /glow/index.html automatically.
-const redirects = `# Dynamic share routes — serve the prerendered shell for crawlers.
+const redirects = `# Static page under a dynamic prefix — must precede /roam/* (first match wins).
+/roam/all-inclusive  /roam/all-inclusive/index.html  200
+
+# Dynamic share routes — serve the prerendered shell for crawlers.
 /r/*     /r/index.html     200
 /v/*     /v/index.html     200
 /roam/*  /roam/index.html  200

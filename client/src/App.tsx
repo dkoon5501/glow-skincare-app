@@ -16,6 +16,7 @@ import RateMyRoutine from "@/pages/rate-my-routine";
 import MainLanding from "@/pages/main-landing";
 import VitaHome from "@/pages/vita-home";
 import RoamHome from "@/pages/roam-home";
+import RoamAllInclusive from "@/pages/roam-all-inclusive";
 import SharedRoamResults from "@/pages/shared-roam-results";
 import Privacy from "@/pages/privacy";
 import Terms from "@/pages/terms";
@@ -29,6 +30,9 @@ function AppRouter() {
         <Route path="/glow" component={Home} />
         <Route path="/vita" component={VitaHome} />
         <Route path="/roam" component={RoamHome} />
+        {/* Must precede /roam/:encoded — wouter's Switch is first-wins, so the
+            share-code route would otherwise swallow this static path. */}
+        <Route path="/roam/all-inclusive" component={RoamAllInclusive} />
         <Route path="/roam/:encoded" component={SharedRoamResults} />
         <Route path="/my-routines" component={MyRoutines} />
         <Route path="/r/:encoded" component={SharedResults} />

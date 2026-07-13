@@ -44,7 +44,18 @@ changes need David's PharmD sign-off) · **Roam** (travel; episode data lives in
   consensus scoring, discard memory). Do NOT re-add seed-upvotes.
 - Privacy + Terms live; real-number stat band (never invent counts). CI gates (deploy.yml):
   `npm run check` + `scripts/validate-roam-data.mjs` + monthly `scripts/check-links.mjs`.
-- NEXT (David 07-05): make all-inclusive resorts easy to search; if coverage is thin, research and
-  add the top 50-100 all-inclusives via the verified pipeline.
+## Roam — All-Inclusive Resorts (07-13, SHIPPED)
+- Page `/roam/all-inclusive` (`client/src/pages/roam-all-inclusive.tsx`), linked from the Roam landing.
+  Its `<Route>` MUST stay **above** `/roam/:encoded` — wouter's Switch is first-wins, so the share-code
+  route would otherwise swallow it. Same trap in `_redirects` (its rule precedes `/roam/*`).
+- Data `client/src/lib/roam-resorts.ts` — GENERATED, never hand-edit. Regenerate:
+  `node scripts/ingest-resorts.mjs` (reads `data/resorts-raw.json`, needs `yt-dlp` on PATH).
+- **Video IDs never come from a model.** The ingest searches YouTube via yt-dlp and only accepts a
+  video whose title independently names the property (>=70% of distinctive name tokens), rejecting
+  listicles, sub-4min teasers and >90min vlogs. Real upload year is shown as "Tour filmed YYYY".
+  Provenance incl. rejected candidates: `data/roam-resorts-audit.json`.
+- **No prices, ever** — all-inclusive rates swing by season/package. `validate-roam-resorts.mjs`
+  fails CI if a price-shaped string appears, if a region drops under its floor, or if video
+  coverage falls under 80%.
 
 If this repo moves off ~/Desktop, update /Users/dkoon/Max/PROJECTS.md and this file.

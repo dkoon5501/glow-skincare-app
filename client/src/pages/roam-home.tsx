@@ -142,6 +142,17 @@ function RoamLanding({ onStart }: { onStart: () => void }) {
         <p className="mt-4 text-xs text-muted-foreground">
           5 questions&nbsp;&bull;&nbsp;No account required&nbsp;&bull;&nbsp;100% free
         </p>
+
+        <p className="mt-6 text-sm text-muted-foreground">
+          Just want a resort?{" "}
+          <a
+            href="#/roam/all-inclusive"
+            className="font-medium text-amber-700 dark:text-amber-400 hover:underline"
+            data-testid="link-all-inclusive"
+          >
+            Browse all-inclusives
+          </a>
+        </p>
       </section>
 
       {/* HOW IT WORKS */}

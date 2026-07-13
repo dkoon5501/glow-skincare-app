@@ -23,6 +23,10 @@ jobs:
       # Data-gate: Roam catalog schema + quiz-coverage validation
       - run: node scripts/validate-roam-data.mjs
 
+      # Data-gate: all-inclusive resorts — schema, region floors, video-coverage
+      # floor, and the no-invented-prices rule
+      - run: node scripts/validate-roam-resorts.mjs
+
       - run: npm run build
 
       - name: Deploy to Netlify
